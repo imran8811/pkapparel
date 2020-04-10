@@ -1,3 +1,4 @@
+<?php $base_url = 'https://www.pkapparel.com/'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -1134,18 +1135,19 @@
 		<div class="holder clearfix">
 			<div class="head-contact clearfix">
 				<div class="clearfix">
-					<a href="index.php" class="logo">
+					<a href="/" class="logo">
 						<img src="images/logo.jpg" alt="logo" width="200" title="PK Apparel Home">
 					</a>
 					<nav id="nav" class="open-close">
 						<a href="" class="opener">Menu</a>
 						<ul class="navigation">
-							<li><a href="about.php">About us</a></li>
-							<li><a href="factory.php">Factory</a></li>
-							<li><a href="jeans-pants.php">Jeans Pants</a></li>
-							<li><a href="jeans-shirts.php">Jeans Shirts</a></li>
-							<li><a href="blog.php">Blog</a></li>
-							<li><a href="contact.php">Contact us</a></li>
+              <li><a href="<?php echo $base_url; ?>index">Home</a></li>
+              <li><a href="<?php echo $base_url; ?>about">About us</a></li>
+              <li><a href="<?php echo $base_url; ?>factory">Factory</a></li>
+              <li><a href="<?php echo $base_url; ?>jeans-pants.php">Jeans Pants</a></li>
+              <li><a href="<?php echo $base_url; ?>jeans-shirts.php">Jeans Shirts</a></li>
+              <li><a href="<?php echo $base_url; ?>blog">Blog</a></li>
+              <li><a href="<?php echo $base_url; ?>contact">Contact us</a></li>
 						</ul>
 					</nav>
 					<ul class="social-network">
@@ -1157,12 +1159,12 @@
 			</div>
 			<nav class="main-menu">
 				<ul>
-					<li><a href="about.php">About us</a></li>
-					<li><a href="factory.php">Factory</a></li>
-					<li><a href="jeans-pants.php">Jeans Pants</a></li>
-					<li><a href="jeans-shirts.php">Jeans Shirts</a></li>
-					<li><a href="blog.php">Blog</a></li>
-					<li><a href="contact.php">Contact us</a></li>
+          <li><a href="<?php echo $base_url; ?>about">About us</a></li>
+          <li><a href="<?php echo $base_url; ?>factory">Factory</a></li>
+          <li><a href="<?php echo $base_url; ?>jeans-pants.php">Jeans Pants</a></li>
+          <li><a href="<?php echo $base_url; ?>jeans-shirts.php">Jeans Shirts</a></li>
+          <li><a href="<?php echo $base_url; ?>blog">Blog</a></li>
+          <li><a href="<?php echo $base_url; ?>contact">Contact us</a></li>
 				</ul>
 			</nav>
 		</div><!--end of header holder-->
@@ -1217,11 +1219,6 @@
 				<strong class="quote-head">Request a quote</strong>
 				<span class="show-msg"></span>
 				<form action="#" class="inquiry-form">
-					<!--<div class="input-wrap">-->
-						<!--<label for="user-name">Name:</label>-->
-						<!--<input type="text" id="user-name" class="user-name">-->
-						<!--<span class="error-alert"></span>-->
-					<!--</div>-->
 					<div class="input-wrap">
 						<label for="user-email">Email:</label>
 						<input type="text" id="user-email" class="user-email">
@@ -1308,33 +1305,6 @@
 				</div>
 			</div>
 		</div>
-		<!--<div class="main-outer">-->
-			<!--<h2 class="section-heading">T Shirts Manufacturers and Wholesaler</h2>-->
-			<!--<div class="inner-wrap">-->
-				<!--<div class="img-wrap">-->
-					<!--<img src="images/t-shirt-manufacturer-and-wholesaler.jpg" alt="t-shirt-manufacturer-and-wholesaler" title="t-shirt-manufacturer-and-wholesaler">-->
-				<!--</div>-->
-				<!--<div class="text-area">-->
-					<!--<strong class="sub-head">We manufacture and wholesale T Shirts</strong>-->
-					<!--<p>We manufacture T-Shirts of a wide range including digital printed, sticker printed and painted; so we can call it fun and attire in wholesale. All these can be topped with a patch of embroidered logo or a word to add a style statement. We have worked on changing the traditional concept of a T-Shirt being casual by styling it with a good quality fabric and exemplary stitching that a T-Shirt could be worn as a formal upper wear now.</p>-->
-					<!--<p>This is what makes our buyers hooked to us and we are successfully labelled as one the best T-Shirt manufacturer and wholesaler both. The T-shirts are the new style holder these days and its even more fun to wear them now as they are provided by the Pk-apparel T-shirts: Manufacturer and Wholesaler.</p>-->
-				<!--</div>-->
-			<!--</div>-->
-		<!--</div>-->
-		<!--<div class="main-outer">-->
-			<!--<h2 class="section-heading">Hoodies Manufacturer and Wholesaler</h2>-->
-			<!--<div class="inner-wrap">-->
-				<!--<div class="img-wrap">-->
-					<!--<img src="images/hoodies-manufacturer-and-wholesaler.jpg" alt="hoodies-manufacturer-and-wholesaler" title="hoodies-manufacturer-and-wholesaler">-->
-				<!--</div>-->
-				<!--<div class="text-area">-->
-					<!--<strong class="sub-head">We manufacture and wholesale hoodies</strong>-->
-					<!--<p>Hoodies Manufacturer and Wholesaler are hooding the fashion industry these days. Who doesn't like hoodies? It's the most manufactured product of our product line. Our hoodies are made with the best cotton to give the finest result. We use the best quality material in our manufacturing to ensure that our customer does feel the comfort for which a hoodie is usually worn. Our hoodies are a free size and stretchable. We also have the ones which size from small to large. Moreover, we mostly have XL size in most of our manufactured articles because we love to think for the oversized people.</p>-->
-					<!--<p>They need to look as beautiful as all the other sized people look. Moreover, we provide the customized hoodies in design and size both. It is decided to provide this just for the sake of our customer's comfort and ease. The hoodies Manufacturer and Wholesaler of PK Apparel are loved just because they are always at clients services to be best suited for them.</p>-->
-					<!--<p>We at PK Apparel are passionate about our work and are growing as the best manufacturer and wholesaler in the market. Our products are so attractive that all most of our customers tend to buy them at first glance. PK Apparel has the best back up team undoubtedly with designers from the field of textile, digital and fashion. We have a team of professional to lead and trainee all our workers so they produce the best out of their qualities.</p>-->
-				<!--</div>-->
-			<!--</div>-->
-		<!--</div>-->
 		<div class="main-outer">
 			<div class="section-heading">Why choose us</div>
 			<div class="boxes">
@@ -1407,24 +1377,12 @@
 		var userContact = $("#user-contact").val();
 		var inquiryDetails = $("#details").val();
 		function validate_inquiry_form(){
-//			var v_user_name			= false;
 			var	v__user_email		= false;
 			var v_inquiry_details	= false;
 			function validateEmail(email){
 				var re = /\S+@\S+\.\S+/;
 				return re.test(email);
 			}
-//			if(userName == ""){
-//				$("#user-name").siblings(".error-alert").text("Required");
-//				$("#user-name").addClass("input-error");
-//			} else if(userName.length < 3){
-//				$("#user-name").siblings(".error-alert").text("Minimum 3 characters");
-//				$("#user-name").addClass("input-error");
-//			} else {
-//				$("#user-name").siblings(".error-alert").text("");
-//				$("#user-name").removeClass("input-error");
-//				v_user_name = true;
-//			}
 			if(userEmail == ""){
 				$("#user-email").siblings(".error-alert").text("Required");
 				$("#user-email").addClass("input-error");
@@ -1459,7 +1417,6 @@
 				type : "POST",
 				url : "mail.php",
 				data :  {
-//					user_name		: userName,
 					user_email		: userEmail,
 					user_contact	: userContact,
 					inquiry_details	: inquiryDetails,
@@ -1471,7 +1428,6 @@
 						$(".show-msg").text("Server Error, Try Later").addClass("msg-error").show().delay(8000).fadeOut("slow");
 					} else {
 						$(".inquiry-loader").hide();
-//						$("#user-name").val("");
 						$("#user-email").val("");
 						$("#user-contact").val("");
 						$("#details").val("");
@@ -1496,18 +1452,5 @@
 	ga('create', 'UA-71901684-1', 'auto');
 	ga('send', 'pageview');
 </script>
-<!--Start of Tawk.to Script-->
-<!--<script type="text/javascript">-->
-<!--	var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();-->
-<!--	(function(){-->
-<!--		var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];-->
-<!--		s1.async=true;-->
-<!--		s1.src='https://embed.tawk.to/5d26d2f722d70e36c2a53213/default';-->
-<!--		s1.charset='UTF-8';-->
-<!--		s1.setAttribute('crossorigin','*');-->
-<!--		s0.parentNode.insertBefore(s1,s0);-->
-<!--	})();-->
-<!--</script>-->
-<!-- End of Tawk.to Script -->
 </body>
 </html>

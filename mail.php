@@ -1,8 +1,5 @@
 <?php
-//getStatus();
-//function getStatus(){
 	if(isset($_POST['send_inquiry'])) {
-//		$name        	= $_REQUEST['user_name'];
 		$email         	= $_REQUEST['user_email'];
 		$contact        = $_REQUEST['user_contact'];
 		$details        = $_REQUEST['inquiry_details'];
@@ -18,4 +15,4 @@
 	} else {
 		echo "0";
 	}
-//}
+?>
