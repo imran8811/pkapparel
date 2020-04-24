@@ -1,3 +1,4 @@
+<?php $base_url = 'https://www.pkapparel.com/';?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,19 +17,19 @@
 		<div class="holder clearfix">
       <div class="head-contact clearfix">
 				<div class="clearfix">
-					<a href="index.php" class="logo">
+					<a href="/" class="logo">
 						<img src="images/logo.jpg" alt="logo" width="200" title="PK Apparel Home">
 					</a>
 					<nav id="nav" class="open-close">
 						<a href="" class="opener">Menu</a>
 						<ul class="navigation">
-              <li><a href="<?php echo $base_url; ?>index">Home</a></li>
-              <li><a href="<?php echo $base_url; ?>about">About us</a></li>
-              <li><a href="<?php echo $base_url; ?>factory">Factory</a></li>
-              <li><a href="<?php echo $base_url; ?>jeans-pants.php">Jeans Pants</a></li>
-              <li><a href="<?php echo $base_url; ?>jeans-shirts.php">Jeans Shirts</a></li>
-              <li><a href="<?php echo $base_url; ?>blog">Blog</a></li>
-              <li><a href="<?php echo $base_url; ?>contact">Contact us</a></li>
+              <li><a href="/">Home</a></li>
+              <li><a href="about">About us</a></li>
+              <li><a href="factory">Factory</a></li>
+              <li><a href="jeans-pants.php">Jeans Pants</a></li>
+              <li><a href="jeans-shirts.php">Jeans Shirts</a></li>
+              <li><a href="blog">Blog</a></li>
+              <li><a href="contact">Contact us</a></li>
 						</ul>
 					</nav>
 					<ul class="social-network">
@@ -40,12 +41,12 @@
 			</div>
 			<nav class="main-menu">
 				<ul>
-          <li><a href="<?php echo $base_url; ?>about">About us</a></li>
-          <li><a href="<?php echo $base_url; ?>factory">Factory</a></li>
-          <li><a href="<?php echo $base_url; ?>jeans-pants.php">Jeans Pants</a></li>
-          <li><a href="<?php echo $base_url; ?>jeans-shirts.php">Jeans Shirts</a></li>
-          <li><a href="<?php echo $base_url; ?>blog">Blog</a></li>
-          <li><a href="<?php echo $base_url; ?>contact">Contact us</a></li>
+          <li><a href="about">About us</a></li>
+          <li><a href="factory">Factory</a></li>
+          <li><a href="jeans-pants.php">Jeans Pants</a></li>
+          <li><a href="jeans-shirts.php">Jeans Shirts</a></li>
+          <li><a href="blog">Blog</a></li>
+          <li><a href="contact">Contact us</a></li>
 				</ul>
 			</nav>
 		</div><!--end of header holder-->
@@ -83,9 +84,7 @@
 				<div class="sing-add">
 					<h2>Factory</h2><br>
 					<ul>
-						<li>
-							21-KM, Ferozepur road, <br>Lahore, Pakistan
-						</li>
+						<li>21-KM, Ferozepur road, <br>Lahore, Pakistan</li>
 						<li>
 							<span>Email:</span>
 							<span><a href="mailto:&#105;&#109;&#114;&#097;&#110;&#064;&#112;&#107;&#097;&#112;&#112;&#097;&#114;&#101;&#108;&#046;&#099;&#111;&#109;">&#105;&#109;&#114;&#097;&#110;&#064;&#112;&#107;&#097;&#112;&#112;&#097;&#114;&#101;&#108;&#046;&#099;&#111;&#109;</a></span>
@@ -95,13 +94,6 @@
 							<span>pkapparel</span>
 						</li>
 					</ul>
-<!--					<div class="mapouter">-->
-						<!--<div class="gmap_canvas">-->
-							<!--<iframe width="500" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=pkapparel&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>-->
-							<!--&lt;!&ndash;<a href="https://www.embedgooglemap.net"></a>&ndash;&gt;-->
-						<!--</div>-->
-						<!--<style>.mapouter{text-align:right;height:500px;width:500px;}.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:500px;}</style>-->
-<!--					</div>-->
 				</div>
 			</div>
 		</div>

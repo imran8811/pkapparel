@@ -6,7 +6,7 @@
     <meta name="keywords" content="Wholesale Jeans Manufacturers"/>
     <meta name="description" content="Looking for the best Wholesale Jeans Manufacturers in town? It is important to first understand the world of denim jeans and how it works well in your favor." />
     <meta name="google-site-verification" content="tq6NZzCuCj2a7kvdssFcuBKb8z0BdAjdUhS4e_IuiNY" />
-    <title>Wholesale Jeans Manufacturers Paving Their Way</title>
+    <title>Wholesale Jeans Manufacturers</title>
     <link rel="icon" href="../images/favicon.png" type="image/png">
     <link type="text/css" rel="stylesheet" href="../css/stylesheet.css">
 </head>

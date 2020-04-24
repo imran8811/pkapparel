@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="keywords" content="jeans pants manufacturers"/>
-    <meta name="description" content="Looking for jeans pants manufacturers"/>
+    <meta name="description" content="PK Apparel Specializes in jeans pants manufacturing and wholesale, jeans Jackets wholesale, Jeans Shirt and all other denim products. We stand behind all of the products that we handle and we are the company that stand behind the quality and performance of the products they build"/>
     <meta name="google-site-verification" content="tq6NZzCuCj2a7kvdssFcuBKb8z0BdAjdUhS4e_IuiNY" />
-    <title>Looking for jeans pants manufacturers</title>
+    <title>Keans Pants Manufacturers</title>
     <link rel="icon" href="../images/favicon.png" type="image/png">
     <link type="text/css" rel="stylesheet" href="../css/stylesheet.css">
 </head>

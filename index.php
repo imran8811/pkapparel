@@ -1,4 +1,4 @@
-<?php $base_url = 'https://www.pkapparel.com/'; ?>
+<?php $base_url = 'https://www.pkapparel.com/';?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,8 +9,8 @@
 	<meta name="google-site-verification" content="tq6NZzCuCj2a7kvdssFcuBKb8z0BdAjdUhS4e_IuiNY" />
 	<title>Jeans Pants Manufacturer and Wholesaler - Denim Pants Manufacturer and Wholesaler </title>
 	<link rel="icon" href="images/favicon.png" type="image/png">
-	<!--<link type="text/css" rel="stylesheet" href="css/stylesheet.css">-->
-	<style>
+	<link type="text/css" rel="stylesheet" href="css/stylesheet.css">
+	<!-- <style>
 		* {
 			box-sizing:border-box;
 			margin:0;
@@ -1127,7 +1127,7 @@
 			.footerNav {display: none;}
 			footer p {font-size: 12px;}
 		}
-	</style>
+	</style> -->
 </head>
 <body>
 <div class="wrapper">
@@ -1141,13 +1141,13 @@
 					<nav id="nav" class="open-close">
 						<a href="" class="opener">Menu</a>
 						<ul class="navigation">
-              <li><a href="<?php echo $base_url; ?>index">Home</a></li>
-              <li><a href="<?php echo $base_url; ?>about">About us</a></li>
-              <li><a href="<?php echo $base_url; ?>factory">Factory</a></li>
-              <li><a href="<?php echo $base_url; ?>jeans-pants.php">Jeans Pants</a></li>
-              <li><a href="<?php echo $base_url; ?>jeans-shirts.php">Jeans Shirts</a></li>
-              <li><a href="<?php echo $base_url; ?>blog">Blog</a></li>
-              <li><a href="<?php echo $base_url; ?>contact">Contact us</a></li>
+              <li><a href="/">Home</a></li>
+              <li><a href="about">About us</a></li>
+              <li><a href="factory">Factory</a></li>
+              <li><a href="jeans-pants.php">Jeans Pants</a></li>
+              <li><a href="jeans-shirts.php">Jeans Shirts</a></li>
+              <li><a href="blog">Blog</a></li>
+              <li><a href="contact">Contact us</a></li>
 						</ul>
 					</nav>
 					<ul class="social-network">
@@ -1159,12 +1159,12 @@
 			</div>
 			<nav class="main-menu">
 				<ul>
-          <li><a href="<?php echo $base_url; ?>about">About us</a></li>
-          <li><a href="<?php echo $base_url; ?>factory">Factory</a></li>
-          <li><a href="<?php echo $base_url; ?>jeans-pants.php">Jeans Pants</a></li>
-          <li><a href="<?php echo $base_url; ?>jeans-shirts.php">Jeans Shirts</a></li>
-          <li><a href="<?php echo $base_url; ?>blog">Blog</a></li>
-          <li><a href="<?php echo $base_url; ?>contact">Contact us</a></li>
+          <li><a href="about">About us</a></li>
+          <li><a href="factory">Factory</a></li>
+          <li><a href="jeans-pants.php">Jeans Pants</a></li>
+          <li><a href="jeans-shirts.php">Jeans Shirts</a></li>
+          <li><a href="blog">Blog</a></li>
+          <li><a href="contact">Contact us</a></li>
 				</ul>
 			</nav>
 		</div><!--end of header holder-->
@@ -1241,8 +1241,58 @@
 			</div>
 		</div>
 		<div class="main-outer">
-			<h1 class="section-heading">Jeans Pants Manufacturers</h1>
-			<div class="inner-wrap">
+			<strong class="section-heading">Jeans Pants for men</strong>
+      <ul class='product-list'>
+        <li>
+          <a href="#">
+            <img src="./images/jeans-pants/jeans-pants-wholesalers.jpg" class="img-list" alt="jeans-pants-wholesalers">
+            <strong class="text-heading">Price: $5 Ex-factory</strong>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <img src="./images/jeans-pants/jeans-pants-wholesalers.jpg" class="img-list" alt="jeans-pants-wholesalers">
+            <strong class="text-heading">dummy text</strong>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <img src="./images/jeans-pants/jeans-pants-wholesalers.jpg" class="img-list" alt="jeans-pants-wholesalers">
+            <strong class="text-heading">dummy text</strong>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <img src="./images/jeans-pants/jeans-pants-wholesalers.jpg" class="img-list" alt="jeans-pants-wholesalers">
+            <strong class="text-heading">dummy text</strong>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <img src="./images/jeans-pants/jeans-pants-wholesalers.jpg" class="img-list" alt="jeans-pants-wholesalers">
+            <strong class="text-heading">dummy text</strong>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <img src="./images/jeans-pants/jeans-pants-wholesalers.jpg" class="img-list" alt="jeans-pants-wholesalers">
+            <strong class="text-heading">dummy text</strong>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <img src="./images/jeans-pants/jeans-pants-wholesalers.jpg" class="img-list" alt="jeans-pants-wholesalers">
+            <strong class="text-heading">dummy text</strong>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <img src="./images/jeans-pants/jeans-pants-wholesalers.jpg" class="img-list" alt="jeans-pants-wholesalers">
+            <strong class="text-heading">dummy text</strong>
+          </a>
+        </li>
+      </ul>
+			<!-- <div class="inner-wrap">
 				<div class="img-wrap">
 					<img src="images/jeans-pants-manufacturer-and-wholesaler.jpg" alt="jeans-pants-manufacturer-wholesaler" title="jeans-pants-manufacturer-wholesaler">
 				</div>
@@ -1251,7 +1301,7 @@
 					<p>Jeans and Denim go hand in hand in the fashion industry. Now a days Jeans and the Denim Pants are the fashion tags of youth. Both these materials have been ruling the industry for ages. While many manufacturers choose these to develop an end product we stand out in the market for choosing both these and experimenting something unique out of them every time. We are the  Jeans and Denim pants Manufacturer and Wholesaler and produce different varieties starting from  wide bottomed to skin fitted to ripped and then formal pants.</p>
 					<p>Our jeans are styled with embroidered patches or studs to just give them an extra look. We do have simple pants for there is always another side of the fashion that never ceases to exist and that is simplicity. The world renowned jeans and Denim Pants Manufacturer and Wholesaler have simple variety of jeans as well that holds fashion and uniqueness altogether.</p>
 				</div>
-			</div>
+			</div> -->
 		</div>
 		<div class="main-outer">
 			<h2 class="section-heading">Denim Shirts Manufacturer and Wholesaler</h2>
@@ -1262,7 +1312,7 @@
 				<div class="text-area">
 					<strong class="sub-head">We manufacture and wholesale jeans shirts</strong>
 					<p>Jeans and Denim shirts are everyone's favourite these days and are categorized as one of the top seller product which is best suited for every gender. We have successfully made through a huge range of Jeans and Denim shirts which along with being of high quality are very trendy in the market. Our wholesale buyers usually depend on a higher quote of products from this particular category as compared to others.</p>
-					<p>Denim shirts could be worn casually and formally too with a straight creased pant paired with heels for the perfect event look. Denim shirts could be styled in different ways and is a must in everyone's wardrobe.  Jeans and Denim shirts Manufacturer and Wholesaler has  shifted the fashion sense in a different direction. The Pk-apparels, the jeans and Denim shirts Manufacturer and Wholesaler  has started manufacturing the  Jeans and Denim shirts since they were at the edge of the designing industry.</p>
+					<p>Denim shirts could be worn casually and formally too with a straight creased pant paired with heels for the perfect event look. Denim shirts could be styled in different ways and is a must in everyone's wardrobe.  Jeans and Denim shirts Manufacturer and Wholesaler has shifted the fashion sense in a different direction. The Pk-apparels, the jeans and Denim shirts Manufacturer and Wholesaler  has started manufacturing the  Jeans and Denim shirts since they were at the edge of the designing industry.</p>
 				</div>
 			</div>
 		</div>
@@ -1323,7 +1373,7 @@
 			</div>
 		</div>
 	</div>
-	<?php include_once('footer.php'); ?>
+	<?php include_once 'footer.php';?>
 </div> <!-- end of wrapper -->
 <script src="js/jquery-3.3.1.js"></script>
 <script src="js/custom.js"></script>
@@ -1372,7 +1422,6 @@
 <script>
 	$(".inquiry-form").on("submit", function (e) {
 		e.preventDefault();
-//		var userName = $("#user-name").val();
 		var userEmail = $("#user-email").val();
 		var userContact = $("#user-contact").val();
 		var inquiryDetails = $("#details").val();

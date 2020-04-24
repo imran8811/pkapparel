@@ -1,3 +1,4 @@
+<?php $base_url = 'https://www.pkapparel.com/';?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,13 +23,13 @@
 					<nav id="nav" class="open-close">
 						<a href="" class="opener">Menu</a>
 						<ul class="navigation">
-              <li><a href="<?php echo $base_url; ?>index">Home</a></li>
-              <li><a href="<?php echo $base_url; ?>about">About us</a></li>
-              <li><a href="<?php echo $base_url; ?>factory">Factory</a></li>
-              <li><a href="<?php echo $base_url; ?>jeans-pants.php">Jeans Pants</a></li>
-              <li><a href="<?php echo $base_url; ?>jeans-shirts.php">Jeans Shirts</a></li>
-              <li><a href="<?php echo $base_url; ?>blog">Blog</a></li>
-              <li><a href="<?php echo $base_url; ?>contact">Contact us</a></li>
+              <li><a href="/">Home</a></li>
+              <li><a href="about">About us</a></li>
+              <li><a href="factory">Factory</a></li>
+              <li><a href="jeans-pants.php">Jeans Pants</a></li>
+              <li><a href="jeans-shirts.php">Jeans Shirts</a></li>
+              <li><a href="blog">Blog</a></li>
+              <li><a href="contact">Contact us</a></li>
 						</ul>
 					</nav>
 					<ul class="social-network">
@@ -40,12 +41,12 @@
 			</div>
 			<nav class="main-menu">
 				<ul>
-          <li><a href="<?php echo $base_url; ?>about">About us</a></li>
-          <li><a href="<?php echo $base_url; ?>factory">Factory</a></li>
-          <li><a href="<?php echo $base_url; ?>jeans-pants.php">Jeans Pants</a></li>
-          <li><a href="<?php echo $base_url; ?>jeans-shirts.php">Jeans Shirts</a></li>
-          <li><a href="<?php echo $base_url; ?>blog">Blog</a></li>
-          <li><a href="<?php echo $base_url; ?>contact">Contact us</a></li>
+          <li><a href="about">About us</a></li>
+          <li><a href="factory">Factory</a></li>
+          <li><a href="jeans-pants.php">Jeans Pants</a></li>
+          <li><a href="jeans-shirts.php">Jeans Shirts</a></li>
+          <li><a href="blog">Blog</a></li>
+          <li><a href="contact">Contact us</a></li>
 				</ul>
 			</nav>
 		</div><!--end of header holder-->
@@ -183,7 +184,7 @@
 			</div>
 		</div>
 	</div>
-	<?php include_once('footer.php'); ?>
+	<?php include_once 'footer.php';?>
 </div> <!-- end of wrapper -->
 <script type="text/javascript" src="js/jquery-3.3.1.js"></script>
 <script type="text/javascript" src="js/custom.js"></script>
@@ -201,18 +202,5 @@
 	ga('create', 'UA-71901684-1', 'auto');
 	ga('send', 'pageview');
 </script>
-<!--Start of Tawk.to Script-->
-<!--<script type="text/javascript">-->
-<!--	var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();-->
-<!--	(function(){-->
-<!--		var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];-->
-<!--		s1.async=true;-->
-<!--		s1.src='https://embed.tawk.to/5d26d2f722d70e36c2a53213/default';-->
-<!--		s1.charset='UTF-8';-->
-<!--		s1.setAttribute('crossorigin','*');-->
-<!--		s0.parentNode.insertBefore(s1,s0);-->
-<!--	})();-->
-<!--</script>-->
-<!-- End of Tawk.to Script -->
 </body>
 </html>

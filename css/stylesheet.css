@@ -1168,3 +1168,17 @@ footer p {
 		width: 100%;
 	}
 }
+/* new style */
+.product-list {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+.product-list li {
+	flex: 0 0 25%;
+}
+.product-list .img-list {
+	display: block;
+	width: 100%;
+	height: auto;
+}
