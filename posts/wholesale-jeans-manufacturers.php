@@ -12,36 +12,7 @@
 </head>
 <body>
 <div class="wrapper">
-    <header>
-        <div class="holder clearfix">
-            <div class="head-contact clearfix">
-                <a href="../index.php" class="logo">
-                    <img src="../images/logo.jpg" alt="logo" width="200">
-                </a>
-                <nav id="nav" class="open-close">
-                    <a href="" class="opener">Menu</a>
-                    <ul class="navigation">
-                        <li><a href="../about.php">About us</a></li>
-                        <li><a href="../factory.php">Factory</a></li>
-                        <li><a href="../jeans-pants.php">Jeans Pants</a></li>
-                        <li><a href="../jeans-shirts.php">Jeans Shirts</a></li>
-                        <li><a href="../blog.php">Blog</a></li>
-                        <li><a href="../contact.php">Contact us</a></li>
-                    </ul>
-                </nav>
-            </div>
-            <nav class="main-menu">
-                <ul>
-                    <li><a href="../about.php">About us</a></li>
-                    <li><a href="../factory.php">Factory</a></li>
-                    <li><a href="../jeans-pants.php">Jeans Pants</a></li>
-                    <li><a href="../jeans-shirts.php">Jeans Shirts</a></li>
-                    <li><a href="../blog.php">Blog</a></li>
-                    <li><a href="../contact.php">Contact us</a></li>
-                </ul>
-            </nav>
-        </div><!--end of header holder-->
-    </header>
+    <?php include_once('../header-menu.php'); ?>
     <div class="holder">
         <div class="detail-post">
             <div class="single-post">

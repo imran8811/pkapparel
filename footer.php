@@ -1,14 +1,15 @@
+<?php $base_url = 'https://www.pkapparel.com/'; ?>
 <footer id="footer">
   <div class="holder">
     <nav class="main-menu">
       <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="about">About us</a></li>
-        <li><a href="factory">Factory</a></li>
-        <li><a href="jeans-pants.php">Jeans Pants</a></li>
-        <li><a href="jeans-shirts.php">Jeans Shirts</a></li>
-        <li><a href="blog">Blog</a></li>
-        <li><a href="contact">Contact us</a></li>
+        <li><a href="<?php echo $base_url; ?>">Home</a></li>
+        <li><a href="<?php echo $base_url; ?>about">About us</a></li>
+        <li><a href="<?php echo $base_url; ?>factory">Factory</a></li>
+        <li><a href="<?php echo $base_url; ?>jeans-pants.php">Jeans Pants</a></li>
+        <li><a href="<?php echo $base_url; ?>jeans-shirts.php">Jeans Shirts</a></li>
+        <li><a href="<?php echo $base_url; ?>blog">Blog</a></li>
+        <li><a href="<?php echo $base_url; ?>contact">Contact us</a></li>
       </ul>
     </nav>
     <ul class="social-network">

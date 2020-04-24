@@ -1131,44 +1131,7 @@
 </head>
 <body>
 <div class="wrapper">
-	<header>
-		<div class="holder clearfix">
-			<div class="head-contact clearfix">
-				<div class="clearfix">
-					<a href="/" class="logo">
-						<img src="images/logo.jpg" alt="logo" width="200" title="PK Apparel Home">
-					</a>
-					<nav id="nav" class="open-close">
-						<a href="" class="opener">Menu</a>
-						<ul class="navigation">
-              <li><a href="/">Home</a></li>
-              <li><a href="about">About us</a></li>
-              <li><a href="factory">Factory</a></li>
-              <li><a href="jeans-pants.php">Jeans Pants</a></li>
-              <li><a href="jeans-shirts.php">Jeans Shirts</a></li>
-              <li><a href="blog">Blog</a></li>
-              <li><a href="contact">Contact us</a></li>
-						</ul>
-					</nav>
-					<ul class="social-network">
-						<li><a href="https://www.facebook.com/pkapparelfactory" target="_blank">facebook</a></li>
-						<li class="instagram"><a href="https://www.instagram.com/pkapparelfactory" target="_blank">instagram</a></li>
-						<li class="twitter"><a href="https://www.twitter.com/pkapparelfactry" target="_blank">twitter</a></li>
-					</ul>
-				</div>
-			</div>
-			<nav class="main-menu">
-				<ul>
-          <li><a href="about">About us</a></li>
-          <li><a href="factory">Factory</a></li>
-          <li><a href="jeans-pants.php">Jeans Pants</a></li>
-          <li><a href="jeans-shirts.php">Jeans Shirts</a></li>
-          <li><a href="blog">Blog</a></li>
-          <li><a href="contact">Contact us</a></li>
-				</ul>
-			</nav>
-		</div><!--end of header holder-->
-	</header>
+	<?php include_once('./header-menu.php'); ?>
 	<div id="main">
 		<div class="main-slider">
 			<div class="slider-wrap">
@@ -1241,58 +1204,8 @@
 			</div>
 		</div>
 		<div class="main-outer">
-			<strong class="section-heading">Jeans Pants for men</strong>
-      <ul class='product-list'>
-        <li>
-          <a href="#">
-            <img src="./images/jeans-pants/jeans-pants-wholesalers.jpg" class="img-list" alt="jeans-pants-wholesalers">
-            <strong class="text-heading">Price: $5 Ex-factory</strong>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <img src="./images/jeans-pants/jeans-pants-wholesalers.jpg" class="img-list" alt="jeans-pants-wholesalers">
-            <strong class="text-heading">dummy text</strong>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <img src="./images/jeans-pants/jeans-pants-wholesalers.jpg" class="img-list" alt="jeans-pants-wholesalers">
-            <strong class="text-heading">dummy text</strong>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <img src="./images/jeans-pants/jeans-pants-wholesalers.jpg" class="img-list" alt="jeans-pants-wholesalers">
-            <strong class="text-heading">dummy text</strong>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <img src="./images/jeans-pants/jeans-pants-wholesalers.jpg" class="img-list" alt="jeans-pants-wholesalers">
-            <strong class="text-heading">dummy text</strong>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <img src="./images/jeans-pants/jeans-pants-wholesalers.jpg" class="img-list" alt="jeans-pants-wholesalers">
-            <strong class="text-heading">dummy text</strong>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <img src="./images/jeans-pants/jeans-pants-wholesalers.jpg" class="img-list" alt="jeans-pants-wholesalers">
-            <strong class="text-heading">dummy text</strong>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <img src="./images/jeans-pants/jeans-pants-wholesalers.jpg" class="img-list" alt="jeans-pants-wholesalers">
-            <strong class="text-heading">dummy text</strong>
-          </a>
-        </li>
-      </ul>
-			<!-- <div class="inner-wrap">
+			<strong class="section-heading">Jeans Pants Manufacturer</strong>
+			<div class="inner-wrap">
 				<div class="img-wrap">
 					<img src="images/jeans-pants-manufacturer-and-wholesaler.jpg" alt="jeans-pants-manufacturer-wholesaler" title="jeans-pants-manufacturer-wholesaler">
 				</div>
@@ -1301,7 +1214,7 @@
 					<p>Jeans and Denim go hand in hand in the fashion industry. Now a days Jeans and the Denim Pants are the fashion tags of youth. Both these materials have been ruling the industry for ages. While many manufacturers choose these to develop an end product we stand out in the market for choosing both these and experimenting something unique out of them every time. We are the  Jeans and Denim pants Manufacturer and Wholesaler and produce different varieties starting from  wide bottomed to skin fitted to ripped and then formal pants.</p>
 					<p>Our jeans are styled with embroidered patches or studs to just give them an extra look. We do have simple pants for there is always another side of the fashion that never ceases to exist and that is simplicity. The world renowned jeans and Denim Pants Manufacturer and Wholesaler have simple variety of jeans as well that holds fashion and uniqueness altogether.</p>
 				</div>
-			</div> -->
+			</div>
 		</div>
 		<div class="main-outer">
 			<h2 class="section-heading">Denim Shirts Manufacturer and Wholesaler</h2>
