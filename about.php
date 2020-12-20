@@ -1,4 +1,3 @@
-<?php $base_url = 'https://www.pkapparel.com/';?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
