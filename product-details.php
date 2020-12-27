@@ -18,6 +18,8 @@
   <meta name="google-site-verification" content="tq6NZzCuCj2a7kvdssFcuBKb8z0BdAjdUhS4e_IuiNY" />
   <title>Expert Jeans Manufacturers and wholesale dealers of export-quality Denim | PK Apparel</title>
   <link rel="icon" href="./assets/images/favicon.png" type="image/png">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+  <link type="text/css" rel="stylesheet" href="./assets/css/jquery-confirm.css">
   <link type="text/css" rel="stylesheet" href="./assets/css/style.css">
   <link type="text/css" rel="stylesheet" href="./assets/css/style-wholesale.css">
 </head>
@@ -37,25 +39,23 @@
       <?php foreach($pro_details as $details): ?>
         <div class="details-inner clearfix">
           <div class="gallery-area">
-            <div class="zoom-images" id="zoom-fig">
-              <div class="main-img">
-                <a href="<?php echo $details['image_front'];?>" class="MagicZoom" id="jeans" data-options="expandZoomOn: click">
-                  <img src="<?php echo $details['image_front'];?>">
-                </a>
+            <div class="swiper-container gallery-top">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide" style="background-image:url(./assets/images/jeans-denim-shorts-manufacturer-and-wholesaler.jpg)"></div>
+                <div class="swiper-slide" style="background-image:url(./assets/images/jeans-denim-shorts-manufacturer-and-wholesaler.jpg)"></div>
+                <div class="swiper-slide" style="background-image:url(./assets/images/jeans-denim-shorts-manufacturer-and-wholesaler.jpg)"></div>
+                <div class="swiper-slide" style="background-image:url(./assets/images/jeans-denim-shorts-manufacturer-and-wholesaler.jpg)"></div>
               </div>
-              <div class="selectors">
-                <a data-zoom-id="jeans" href="<?php echo $details['image_back'];?>" data-image="<?php echo $details['image_back'];?>">
-                  <img src="<?php echo $details['image_back'];?>" alt="Image Back">
-                </a>
-                <a data-zoom-id="jeans" href="<?php echo $details['image_side'];?>" data-image="<?php echo $details['image_side'];?>">
-                  <img src="<?php echo $details['image_side'];?>" alt="Image Side">
-                </a>
-                <a data-zoom-id="jeans" href="<?php echo $details['image_other_one'];?>" data-image="<?php echo $details['image_other_one'];?>">
-                  <img src="<?php echo $details['image_other_one'];?>" alt="Other Image">
-                </a>
-                <a data-zoom-id="jeans" href="<?php echo $details['image_other_two'];?>" data-image="<?php echo $details['image_other_two'];?>">
-                  <img src="<?php echo $details['image_other_two'];?>" alt="Other Image">
-                </a>
+              <!-- Add Arrows -->
+              <div class="swiper-button-next swiper-button-white"></div>
+              <div class="swiper-button-prev swiper-button-white"></div>
+            </div>
+            <div class="swiper-container gallery-thumbs">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide" style="background-image:url(./assets/images/jeans-denim-shorts-manufacturer-and-wholesaler.jpg)"></div>
+                <div class="swiper-slide" style="background-image:url(./assets/images/jeans-denim-shorts-manufacturer-and-wholesaler.jpg)"></div>
+                <div class="swiper-slide" style="background-image:url(./assets/images/jeans-denim-shorts-manufacturer-and-wholesaler.jpg)"></div>
+                <div class="swiper-slide" style="background-image:url(./assets/images/jeans-denim-shorts-manufacturer-and-wholesaler.jpg)"></div>
               </div>
             </div>
           </div>
@@ -134,22 +134,42 @@
   </div>
   <?php include_once ('./footer.php'); ?>
 </div>
-<script src="./assets/js/jquery-3.3.1.js"></script>
+<script src="./assets/js/jquery-3.5.1.js"></script>
 <script type="text/javascript" src="./assets/js/confirm.min.js"></script>
 <script type="text/javascript" src="./assets/js/modal.js"></script>
 <?php include_once("./assets/js/productDetailsjs.php"); ?>
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script>
+  var galleryThumbs = new Swiper('.gallery-thumbs', {
+      spaceBetween: 10,
+      slidesPerView: 4,
+      freeMode: true,
+      watchSlidesVisibility: true,
+      watchSlidesProgress: true,
+    });
+  var galleryTop = new Swiper('.gallery-top', {
+    spaceBetween: 10,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    thumbs: {
+      swiper: galleryThumbs
+    }
+  });
+</script>
 <div id="reviews" style="display: none;">
-    <ul class="review-list">
-        <?php foreach($get_reviews as $review): ?>
-            <li>
-                <p><?php echo $review["review_text"] ?></p>
-                <ul>
-                    <li>Ratings:</li>
-                    <li>User: <strong><?php echo $review["full_name"] ?></strong></li>
-                </ul>
-            </li>
-        <?php endforeach; ?>
-    </ul>
+  <ul class="review-list">
+    <?php foreach($get_reviews as $review): ?>
+      <li>
+        <p><?php echo $review["review_text"] ?></p>
+        <ul>
+          <li>Ratings:</li>
+          <li>User: <strong><?php echo $review["full_name"] ?></strong></li>
+        </ul>
+      </li>
+    <?php endforeach; ?>
+  </ul>
 </div>
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-71901684-1"></script>
 <script>

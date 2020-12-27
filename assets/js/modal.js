@@ -5,19 +5,19 @@
 (function($) {
 
   var modals = [],
-      getCurrent = function() {
-        return modals.length ? modals[modals.length - 1] : null;
-      },
-      selectCurrent = function() {
-        var i,
-            selected = false;
-        for (i=modals.length-1; i>=0; i--) {
-          if (modals[i].$blocker) {
-            modals[i].$blocker.toggleClass('current',!selected).toggleClass('behind',selected);
-            selected = true;
-          }
+    getCurrent = function() {
+      return modals.length ? modals[modals.length - 1] : null;
+    },
+    selectCurrent = function() {
+      var i,
+          selected = false;
+      for (i=modals.length-1; i>=0; i--) {
+        if (modals[i].$blocker) {
+          modals[i].$blocker.toggleClass('current',!selected).toggleClass('behind',selected);
+          selected = true;
         }
-      };
+      }
+    };
 
   $.modal = function(el, options) {
     var remove, target;

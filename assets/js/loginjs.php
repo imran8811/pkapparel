@@ -42,7 +42,7 @@
             $(".gif").show().text("loading...")
             $.ajax({
                 type: "POST",
-                url: "<?php echo $base_url; ?>api.php",
+                url: "<?php echo $base_url; ?>/api.php",
                 data: {
                     login: 1,
                     email: email,

@@ -9,6 +9,7 @@
 	<title>Jeans Manufacturer and Wholesale - Jeans Pants Jeans Jackets</title>
 	<link rel="icon" href="./assets/images/favicon.png" type="image/png">
 	<link type="text/css" rel="stylesheet" href="./assets/css/style.css">
+	<link type="text/css" rel="stylesheet" href="./assets/css/style-wholesale.css">
 </head>
 <body>
 <div class="wrapper">
@@ -240,7 +241,7 @@
 	</div>
 	<?php include_once 'footer.php';?>
 </div> <!-- end of wrapper -->
-<script src="./assets/js/jquery-3.3.1.js"></script>
+<script src="./assets/js/jquery-3.5.1.js"></script>
 <script src="./assets/js/jssor.slider.min.js"></script>
 <script>
 	jssor_1_slider_init = function() {

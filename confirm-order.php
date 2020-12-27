@@ -39,15 +39,15 @@
   </div><!-- end of main -->
   <?php include_once './footer.php';?>
 </div> <!-- end of wrapper -->
-<script type="text/javascript" src="js/jquery-3.3.1.js"></script>
-<script type="text/javascript" src="js/custom.js"></script>
+<script type="text/javascript" src="./assets/jsjquery-3.5.1.js"></script>
+<script type="text/javascript" src="./assets/jscustom.js"></script>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-71901684-1"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'UA-71901684-1');
-  </script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-71901684-1');
+</script>
 </body>
 </html>

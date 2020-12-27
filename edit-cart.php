@@ -1,5 +1,5 @@
 <?php
-	include_once("header.php");
+	include_once("./init.php");
 	$p_id           = $_GET['p'];
 	$JeansPants     = new JeansPants();
 	$cart           = new Cart();
@@ -14,6 +14,23 @@
 //	print_r($get_cart_item_details);
 //	echo "</pre>";
 ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="keywords" content="Jeans pants Manufacturers, Jeans pants Wholesalers, Jeans Pants suppliers"/>
+	<meta name="description" content="PK Apparel Specializes in jeans pants manufacturing and wholesale, jeans Jackets wholesale, Jeans Shirt and all other denim products. We stand behind all of the products that we handle and we are the company that stand behind the quality and performance of the products they build"/>
+	<meta name="google-site-verification" content="tq6NZzCuCj2a7kvdssFcuBKb8z0BdAjdUhS4e_IuiNY" />
+	<title>Jeans Manufacturer and Wholesale - Jeans Pants Jeans Jackets</title>
+	<link rel="icon" href="./assets/images/favicon.png" type="image/png">
+	<link type="text/css" rel="stylesheet" href="./assets/css/style.css">
+	<link type="text/css" rel="stylesheet" href="./assets/css/style-wholesale.css">
+</head>
+<body>
+<div class="wrapper">
+	<?php include_once('./header-menu.php'); ?>
+	<div class="main">
 <div class="page-editcart clearfix">
 	<div class="crumb-area">
 		<ul class="breadcrumb">
@@ -98,7 +115,10 @@
 		<h2 class="notice">No item in cart</h2>
 	<?php } ?>
 </div>
+  </div>
+</div>
 <?php include_once("footer.php"); ?>
+<script src="./assets/js/jquery-3.5.1.js"></script>
 <script>
 	calculateTotal();
 	$(".update-cart").on("click", function(e){
@@ -115,7 +135,7 @@
 			});
 			$.ajax({
 				type:"POST",
-				url: "<?php echo $base_url; ?>api.php",
+				url: "<?php echo $base_url; ?>/api.php",
 				data: {
 					p_id: '<?php echo $p_id ?>',
 					sizes_qty : size_qty,
@@ -172,3 +192,5 @@
 		$(".notice-list .t-amount").text(proPrice);
 	}
 </script>
+</body>
+</html>

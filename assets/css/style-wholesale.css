@@ -177,7 +177,7 @@ h1, h2, h3, h4, h5, h6 {color: inherit;}
     text-align: left;
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
     font-size: 14px;
-    z-index: 1;
+    z-index: 5;
     display: none;
     min-height: 100px;
 }
@@ -675,6 +675,7 @@ table tbody td {
 .details-inner .gallery-area {
     float: left;
     width: 40%;
+    height: 600px;
 }
 .details-inner .gallery-area img {
     display: block;
@@ -879,7 +880,7 @@ table tbody td {
     max-width: 80%;
     margin: 0 auto;
     background: #fff;
-    padding: 30px 20px 20px;
+    padding: 0 20px 20px;
     position: relative;
 }
 .page-checkout .page-head {

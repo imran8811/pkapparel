@@ -259,7 +259,7 @@
   </div>
 </div>
 <?php include_once ("./footer.php");?>
-<script src="./assets/js/jquery-3.3.1.js"></script>
+<script src="./assets/js/jquery-3.5.1.js"></script>
 <?php include_once ("./assets/js/checkoutjs.php");?>
 </body>
 </html>

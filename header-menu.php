@@ -58,7 +58,7 @@
 		        <?php } ?>
               <li class="link-cart">
                 <a href="cart.php"><i class="fa fa-cart-arrow-down"></i> Cart (<span class="total-cart" style="color: red"><?php echo $count_cart_items; ?></span>)</a>
-                  <div class="cart-hover">
+                <div class="cart-hover">
 				        <?php if($count_cart_items > 0) { ?>
                   <div class="outer-wrap">
 						        <?php foreach($get_cart_items as $row): ?>
@@ -93,7 +93,7 @@
                         <div class='qty-amount'>
                           <span class='qty'><?php echo array_sum(explode(",",$row["qty"])) ?></span> X
                           <span class='unit-amount'><?php echo $row["item_price"] ?></span>
-                          <a href="<?php echo $base_url; ?>edit-cart.php?p=<?php echo $row['p_id']; ?>" class='btn-edit'>Edit</a>
+                          <a href="<?php echo $base_url; ?>/edit-cart.php?p=<?php echo $row['p_id']; ?>" class='btn-edit'>Edit</a>
                           <a href='#' data-id="<?php echo $row['p_id']; ?>" class='btn-remove'>Remove</a>
                         </div>
                     </div>

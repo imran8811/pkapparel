@@ -52,37 +52,37 @@
             type:"POST",
             url: "<?php echo $base_url; ?>/api.php",
             data: {
-                add_address: 1,
-                address : $(".form-addaddress .add-input").val(),
-                address_continue : $(".form-addaddress .add-cont-input").val(),
-                city: $(".form-addaddress .add-cities option:selected").text()
+              add_address: 1,
+              address : $(".form-addaddress .add-input").val(),
+              address_continue : $(".form-addaddress .add-cont-input").val(),
+              city: $(".form-addaddress .add-cities option:selected").text()
             },
             success: function(res){
-                $(".gif").hide();
-                if(res == 1){
-                    $.alert({
-                        title: "Success",
-                        content: 'Address Added',
-                        type: 'green',
-                        boxWidth: '30%',
-                        useBootstrap: false,
-                        animation: 'zoom',
-                        animationSpeed: 200,
-                        onClose: function(){
-                            location.reload();
-                        }
-                    });
-                } else {
-                    $.alert({
-                        title: "Error",
-                        content: 'Server Error, try later',
-                        type: 'red',
-                        boxWidth: '30%',
-                        useBootstrap: false,
-                        animation: 'zoom',
-                        animationSpeed: 200
-                    });
-                }
+              $(".gif").hide();
+              if(res == 1){
+                $.alert({
+                  title: "Success",
+                  content: 'Address Added',
+                  type: 'green',
+                  boxWidth: '30%',
+                  useBootstrap: false,
+                  animation: 'zoom',
+                  animationSpeed: 200,
+                  onClose: function(){
+                    location.reload();
+                  }
+                });
+              } else {
+                $.alert({
+                  title: "Error",
+                  content: 'Server Error, try later',
+                  type: 'red',
+                  boxWidth: '30%',
+                  useBootstrap: false,
+                  animation: 'zoom',
+                  animationSpeed: 200
+                });
+              }
             }
         })
     })
