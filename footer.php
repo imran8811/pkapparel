@@ -1,4 +1,4 @@
-<?php $base_url = 'https://www.pkapparel.com'; ?>
+<?php $base_url = $_SERVER['HTTP_HOST'] === 'localhost:8080'? 'http://localhost:8080/pkwebnew' : 'https://www.pkapparel.com' ?>
 <div class="footer-links-wrap">
   <div class="holder boxes">
     <ul class="footer-links">
@@ -16,7 +16,7 @@
       <li><a href="<?php echo $base_url; ?>/jeans-pants/jeans-factory.php">Jeans Factory</a></li>
     </ul>
     <ul class="footer-links">
-      <li><a href="<?php echo $base_url; ?>/jeans-pants/jeans-pant-wholesale.php">Jeans Pant Wholesale</a></li>
+      <li><a href="<?php echo $base_url; ?>/jeans-pants/jeans-pants-wholesale.php">Jeans Pant Wholesale</a></li>
       <li><a href="<?php echo $base_url; ?>/jeans-pants/jean-manufacturers.php">Jean Manufacturers</a></li>
       <li><a href="<?php echo $base_url; ?>/jeans-pants/jeans-supplier.php">Jeans Supplier</a></li>
       <li><a href="<?php echo $base_url; ?>/jeans-pants/jeans-wholesale.php">Jeans Wholesale</a></li>

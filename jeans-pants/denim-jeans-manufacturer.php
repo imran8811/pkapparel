@@ -7,16 +7,16 @@
     <meta name="description" content="PK Apparel Specializes in jeans pants manufacturing and wholesale, jeans Jackets wholesale, Jeans Shirt and all other denim products. We stand behind all of the products that we handle and we are the company that stand behind the quality and performance of the products they build"/>
     <meta name="google-site-verification" content="tq6NZzCuCj2a7kvdssFcuBKb8z0BdAjdUhS4e_IuiNY" />
     <title>Denim Jeans Manufacturer</title>
-    <link rel="icon" href="../images/favicon.png" type="image/png">
-    <link type="text/css" rel="stylesheet" href="../css/stylesheet.css">
+    <link rel="icon" href="../assets/images/favicon.png" type="image/png">
+    <link type="text/css" rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body>
 <div class="wrapper">
     <?php include_once('../header-menu.php'); ?>
-    <div id="main">
+    <div class="main">
         <div class="page-details">
             <div class="image-area">
-                <img src="../images/jeans-pants/denim-jeans-manufacturer.jpg" alt="denim jeans manufacturer">
+                <img src="../assets/images/jeans-pants/denim-jeans-manufacturer.jpg" alt="denim jeans manufacturer">
             </div>
             <div class="details-area">
                 <strong>Style# 13127</strong>
@@ -59,7 +59,7 @@
                     </li>
                 </ul>
                 <div class="btn-back-wrap">
-                    <a href="../jeans-pants.php" class="btn-back">Back</a>
+                    <a href="../men/jeans-pants.php" class="btn-back">Back</a>
                 </div>
             </div>
         </div>

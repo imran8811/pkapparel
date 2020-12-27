@@ -2,8 +2,8 @@
 	$MerchantID     = "00157561"; //Your Merchant from transaction Credentials
 	$Password       = "01s80xv0de"; //Your Password from transaction Credentials
 	$ReturnURL      = "https://www.pkapparel.com/payment-return.php"; //Your Return URL
-	$HashKey 		= "05y2tb7598";//Your HashKey integrity salt from transaction Credentials
-	$PostURL 		= "https://payments.jazzcash.com.pk/CustomerPortal/transactionmanagement/merchantform";
+	$HashKey 		    = "05y2tb7598";//Your HashKey integrity salt from transaction Credentials
+	$PostURL 		    = "https://payments.jazzcash.com.pk/CustomerPortal/transactionmanagement/merchantform";
 
 	date_default_timezone_set("Asia/karachi");
 	$currentDollarRate = 160;
@@ -51,13 +51,13 @@
 	<meta name="description" content="PK Apparel Specializes in jeans pants manufacturing and wholesale, jeans Jackets wholesale, Jeans Shirt and all other denim products. We stand behind all of the products that we handle and we are the company that stand behind the quality and performance of the products they build"/>
 	<meta name="google-site-verification" content="tq6NZzCuCj2a7kvdssFcuBKb8z0BdAjdUhS4e_IuiNY" />
 	<title>Confirm Order</title>
-	<link rel="icon" href="images/favicon.png" type="image/png">
-	<link type="text/css" rel="stylesheet" href="css/stylesheet.css">
+	<link rel="icon" href="./assets/images/favicon.png" type="image/png">
+	<link type="text/css" rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
 <div class="wrapper">
 	<?php include_once('./header-menu.php'); ?>
-	<div id="main">
+	<div class="main">
 		<div id="content" class="confirm-payment">
 			<div class="big-gap width-50">
 				<h2 class="payment-heading">Please confirm below details:</h2>

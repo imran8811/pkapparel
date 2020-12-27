@@ -7,40 +7,32 @@
 	<meta name="description" content="PK Apparel Specializes in jeans pants manufacturing and wholesale, jeans Jackets wholesale, Jeans Shirt and all other denim products. We stand behind all of the products that we handle and we are the company that stand behind the quality and performance of the products they build"/>
 	<meta name="google-site-verification" content="tq6NZzCuCj2a7kvdssFcuBKb8z0BdAjdUhS4e_IuiNY" />
 	<title>Jeans Manufacturer and Wholesale - Jeans Pants Jeans Jackets</title>
-	<link rel="icon" href="images/favicon.png" type="image/png">
-	<link type="text/css" rel="stylesheet" href="css/stylesheet.css">
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-71901684-1"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'UA-71901684-1');
-  </script>
+	<link rel="icon" href="./assets/images/favicon.png" type="image/png">
+	<link type="text/css" rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
 <div class="wrapper">
 	<?php include_once('./header-menu.php'); ?>
-	<div id="main">
-  <div class="main-slider">
+	<div class="main">
+    <div class="main-slider">
 			<div class="slider-wrap">
 				<div id="jssor_1" style="position:relative;margin:0 auto;top:0px;left:0px;width:1200px;height:500px;overflow:hidden;visibility:hidden;">
 					<!-- Loading Screen -->
 					<div data-u="loading" class="jssorl-009-spin" style="position:absolute;top:0px;left:50%;width:100%;height:100%;text-align:center;background-color:rgba(0,0,0,0.7);">
-						<img style="margin-top:-19px;position:relative;top:50%;width:38px;height:38px;" src="images/spin.svg" alt="spinner" title="spinner" />
+						<img style="margin-top:-19px;position:relative;top:50%;width:38px;height:38px;" src="./assets/images/spin.svg" alt="spinner" title="spinner" />
 					</div>
 					<div data-u="slides" style="cursor:default;position:relative;top:0px;left:0px;width:1200px;height:500px;overflow:hidden;">
 						<div>
-							<img data-u="image" src="images/gallery/jeans-manufacturers.jpg" alt="jeans-manufacturers" title="jeans-manufacturers">
+							<img data-u="image" src="./assets/images/gallery/jeans-manufacturers.jpg" alt="jeans-manufacturers" title="jeans-manufacturers">
 						</div>
 						<div>
-							<img data-u="image" src="images/gallery/jeans-wholesalers.jpg" alt="jeans-wholesalers" title="jeans-wholesalers">
+							<img data-u="image" src="./assets/images/gallery/jeans-wholesalers.jpg" alt="jeans-wholesalers" title="jeans-wholesalers">
 						</div>
 						<div>
-            <img data-u="image" src="images/gallery/jeans-manufacturers.jpg" alt="jeans-manufacturers" title="jeans-manufacturers">
+            <img data-u="image" src="./assets/images/gallery/jeans-manufacturers.jpg" alt="jeans-manufacturers" title="jeans-manufacturers">
 						</div>
 						<div>
-            <img data-u="image" src="images/gallery/jeans-wholesalers.jpg" alt="jeans-wholesalers" title="jeans-wholesalers">
+            <img data-u="image" src="./assets/images/gallery/jeans-wholesalers.jpg" alt="jeans-wholesalers" title="jeans-wholesalers">
 						</div>
 					</div>
 					<!-- Bullet Navigator -->
@@ -95,25 +87,25 @@
       <ul class="men-product-list">
         <li>
           <a href="/men/jeans-pants.php" class='inner-manufacture'>
-            <img src="./images/jeans-pant-main.jpg" alt="jeans pants">
+            <img src="./assets/images/jeans-pant-main.jpg" alt="jeans pants">
             <span class="product-category">Jeans Pants</span>
           </a>
         </li>
         <li>
           <a href="/men/jeans-jackets.php" class='inner-manufacture'>
-            <img src="./images/jeans-jacket-main.jpg" alt="Jeans Jackets">
+            <img src="./assets/images/jeans-jacket-main.jpg" alt="Jeans Jackets">
             <span class="product-category">Jeans Jackets</span>
           </a>
         </li>
         <li>
           <a href="/men/jeans-shirts.php" class='inner-manufacture'>
-            <img src="./images/jeans-shirt-main.jpg" alt="jeans shirts">
+            <img src="./assets/images/jeans-shirt-main.jpg" alt="jeans shirts">
             <span class="product-category">Jeans Shirts</span>
           </a>
         </li>
         <li>
           <a href="/men/jeans-shorts.php" class='inner-manufacture'>
-            <img src="./images/jeans-short-main.jpg" alt="jeans shorts">
+            <img src="./assets/images/jeans-short-main.jpg" alt="jeans shorts">
             <span class="product-category">Jeans Shorts</span>
           </a>
         </li>
@@ -124,25 +116,25 @@
       <ul class="men-product-list">
         <li>
           <a href="/women/jeans-pants.php" class='inner-manufacture'>
-            <img src="./images/women-jeans.jpg" alt="jeans pants">
+            <img src="./assets/images/women-jeans.jpg" alt="jeans pants">
             <span class="product-category">Jeans Pants</span>
           </a>
         </li>
         <li>
           <a href="/women/jeans-jackets.php" class='inner-manufacture'>
-            <img src="./images/women-jacket.jpg" alt="Jeans Jackets">
+            <img src="./assets/images/women-jacket.jpg" alt="Jeans Jackets">
             <span class="product-category">Jeans Jackets</span>
           </a>
         </li>
         <li>
           <a href="/women/jeans-shirts.php" class='inner-manufacture'>
-            <img src="./images/women-shirt.jpg" alt="jeans shirts">
+            <img src="./assets/images/women-shirt.jpg" alt="jeans shirts">
             <span class="product-category">Jeans Shirts</span>
           </a>
         </li>
         <li>
           <a href="/women/jeans-shorts.php" class='inner-manufacture'>
-            <img src="./images/women-short.jpg" alt="jeans shorts">
+            <img src="./assets/images/women-short.jpg" alt="jeans shorts">
             <span class="product-category">Jeans Shorts</span>
           </a>
         </li>
@@ -248,8 +240,8 @@
 	</div>
 	<?php include_once 'footer.php';?>
 </div> <!-- end of wrapper -->
-<script src="js/jquery-3.3.1.js"></script>
-<script src="js/jssor.slider.min.js"></script>
+<script src="./assets/js/jquery-3.3.1.js"></script>
+<script src="./assets/js/jssor.slider.min.js"></script>
 <script>
 	jssor_1_slider_init = function() {
 		var jssor_1_SlideshowTransitions = [
@@ -291,7 +283,15 @@
 	};
 	jssor_1_slider_init();
 </script>
-<script src="js/custom.js"></script>
+<script src="./assets/js/custom.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-71901684-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-71901684-1');
+</script>
 <!-- <script>
 	(function (i, s, o, g, r, a, m) {
 		i['GoogleAnalyticsObject'] = r;

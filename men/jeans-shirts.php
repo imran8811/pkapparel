@@ -7,71 +7,71 @@
     <meta name="description" content="PK Apparel Specializes in jeans pants manufacturing and wholesale, jeans Jackets wholesale, Jeans Shirt and all other denim products. We stand behind all of the products that we handle and we are the company that stand behind the quality and performance of the products they build"/>
     <meta name="google-site-verification" content="tq6NZzCuCj2a7kvdssFcuBKb8z0BdAjdUhS4e_IuiNY" />
     <title>Jeans Shirts - Wholesale Jeans, Jeans Wholesalers, Wholesale Denim Pants</title>
-    <link rel="icon" href="../images/favicon.png" type="image/png">
-    <link type="text/css" rel="stylesheet" href="../css/stylesheet.css">
+    <link rel="icon" href="../assets/images/favicon.png" type="image/png">
+    <link type="text/css" rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body>
 <div class="wrapper">
     <?php include_once('../header-menu.php'); ?>
-    <div id="main">
+    <div class="main">
         <div class="holder">
             <div class="box">
-                <img src="../images/jeans-shirts/denim-shirt-manufacturers.jpg" alt="Denim Shirts Manufacturers" height="350" />
+                <img src="../assets/images/jeans-shirts/denim-shirt-manufacturers.jpg" alt="Denim Shirts Manufacturers" height="350" />
                 <a href="../jeans-shirts/denim-shirt-manufacturers.php" title="Denim Shirts Manufacturers" class="view-details">View Details</a>
                 <span class="caption">Style# 7521</span>
             </div>
             <div class="box">
-                <img src="../images/jeans-shirts/denim-shirt-supplier.jpg" alt="Denim Shirt Supplier" height="350" />
+                <img src="../assets/images/jeans-shirts/denim-shirt-supplier.jpg" alt="Denim Shirt Supplier" height="350" />
                 <a href="../jeans-shirts/denim-shirt-supplier.php" title="Denim Shirt Supplier" class="view-details">View Details</a>
                 <span class="caption">Style# 7525</span>
             </div>
             <div class="box">
-                <img src="../images/jeans-shirts/denim-shirt-suppliers.jpg" alt="Denim Shirt Suppliers" height="350" />
-                <a href="jeans-shirts/denim-shirt-suppliers.php" title="Denim Shirt Supplier" class="view-details">View Details</a>
+                <img src="../assets/images/jeans-shirts/denim-shirt-suppliers.jpg" alt="Denim Shirt Suppliers" height="350" />
+                <a href="../jeans-shirts/denim-shirt-suppliers.php" title="Denim Shirt Supplier" class="view-details">View Details</a>
                 <span class="caption">Style# 7524</span>
             </div>
             <div class="box">
-                <img src="../images/jeans-shirts/denim-shirt-wholesaler.jpg" alt="Denim Shirt Wholesaler" height="350" />
+                <img src="../assets/images/jeans-shirts/denim-shirt-wholesaler.jpg" alt="Denim Shirt Wholesaler" height="350" />
                 <a href="../jeans-shirts/denim-shirt-wholesaler.php" title="Denim Shirt Wholesaler" class="view-details">View Details</a>
                 <span class="caption">Style# 7523</span>
             </div>
             <div class="box">
-                <img src="../images/jeans-shirts/denim-shirt-wholesalers.jpg" alt="Denim Shirt Wholesalers" height="350" />
+                <img src="../assets/images/jeans-shirts/denim-shirt-wholesalers.jpg" alt="Denim Shirt Wholesalers" height="350" />
                 <a href="../jeans-shirts/denim-shirt-wholesalers.php" title="Denim Shirt Wholesalers" class="view-details">View Details</a>
                 <span class="caption">Style# 7522</span>
             </div>
             <div class="box">
-                <img src="../images/jeans-shirts/jeans-shirts-manufacturer.jpg" alt="Jeans Shirts Manufacturer" height="350" />
+                <img src="../assets/images/jeans-shirts/jeans-shirts-manufacturer.jpg" alt="Jeans Shirts Manufacturer" height="350" />
                 <a href="../jeans-shirts/jeans-shirts-manufacturer.php" title="Jeans Shirts Manufacturer" class="view-details">View Details</a>
                 <span class="caption">Style# 7516</span>
             </div>
             <div class="box">
-                <img src="../images/jeans-shirts/jeans-shirts-manufacturers.jpg" alt="Jeans Shirts Manufacturer" height="350" />
+                <img src="../assets/images/jeans-shirts/jeans-shirts-manufacturers.jpg" alt="Jeans Shirts Manufacturer" height="350" />
                 <a href="../jeans-shirts/jeans-shirts-manufacturers.php" title="Jeans Shirts Manufacturer" class="view-details">View Details</a>
                 <span class="caption">Style# 7515</span>
             </div>
             <div class="box">
-                <img src="../images/jeans-shirts/jeans-shirts-supplier.jpg" alt="Jeans Shirts Supplier" height="350" />
+                <img src="../assets/images/jeans-shirts/jeans-shirts-supplier.jpg" alt="Jeans Shirts Supplier" height="350" />
                 <a href="../jeans-shirts/jeans-shirts-supplier.php" title="Jeans Shirts Supplier" class="view-details">View Details</a>
                 <span class="caption">Style# 7520</span>
             </div>
             <div class="box">
-                <img src="../images/jeans-shirts/jeans-shirts-suppliers.jpg" alt="Jeans Shirts Supplier" height="350" />
+                <img src="../assets/images/jeans-shirts/jeans-shirts-suppliers.jpg" alt="Jeans Shirts Supplier" height="350" />
                 <a href="../jeans-shirts/jeans-shirts-suppliers.php" title="Jeans Shirts Supplier" class="view-details">View Details</a>
                 <span class="caption">Style# 7519</span>
             </div>
             <div class="box">
-                <img src="../images/jeans-shirts/jeans-shirts-wholesaler.jpg" alt="Jeans Shirts Wholesaler" height="350" />
+                <img src="../assets/images/jeans-shirts/jeans-shirts-wholesaler.jpg" alt="Jeans Shirts Wholesaler" height="350" />
                 <a href="../jeans-shirts/jeans-shirts-wholesaler.php" title="Jeans Shirts Wholesaler" class="view-details">View Details</a>
                 <span class="caption">Style# 7518</span>
             </div>
             <div class="box">
-                <img src="../images/jeans-shirts/jeans-shirts-wholesalers.jpg" alt="Jeans Shirts Wholesalers" height="350" />
+                <img src="../assets/images/jeans-shirts/jeans-shirts-wholesalers.jpg" alt="Jeans Shirts Wholesalers" height="350" />
                 <a href="../jeans-shirts/jeans-shirts-wholesalers.php" title="Jeans Shirts Wholesalers" class="view-details">View Details</a>
                 <span class="caption">Style# 7517</span>
             </div>
             <div class="box">
-                <img src="../images/jeans-shirts/jeansshirt-manufacturers.jpg" alt="Jeansshirts Manufacturers" height="350" />
+                <img src="../assets/images/jeans-shirts/jeansshirt-manufacturers.jpg" alt="Jeansshirts Manufacturers" height="350" />
                 <a href="../jeans-shirts/jeansshirt-manufacturers.php" title="Jeansshirts Manufacturers" class="view-details">View Details</a>
                 <span class="caption">Style# 7526</span>
             </div>
@@ -95,21 +95,15 @@
     </div>
     <?php include_once '../footer.php';?>
 </div> <!-- end of wrapper -->
-<script type="text/javascript" src="js/jquery-3.3.1.js"></script>
-<script type="text/javascript" src="js/custom.js"></script>
-<script>
-    (function (i, s, o, g, r, a, m) {
-        i['GoogleAnalyticsObject'] = r;
-        i[r] = i[r] || function () {
-                    (i[r].q = i[r].q || []).push(arguments)
-                }, i[r].l = 1 * new Date();
-        a = s.createElement(o), m = s.getElementsByTagName(o)[0];
-        a.async = 1;
-        a.src = g;
-        m.parentNode.insertBefore(a, m)
-    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
-    ga('create', 'UA-71901684-1', 'auto');
-    ga('send', 'pageview');
-</script>
+<script type="text/javascript" src="../js/jquery-3.3.1.js"></script>
+<script type="text/javascript" src="../js/custom.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-71901684-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-71901684-1');
+  </script>
 </body>
 </html>

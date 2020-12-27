@@ -7,53 +7,47 @@
   <meta name="description" content="PK Apparel Specializes in jeans pants manufacturing and wholesale, jeans Jackets wholesale, Jeans Shirt and all other denim products. We stand behind all of the products that we handle and we are the company that stand behind the quality and performance of the products they build"/>
   <meta name="google-site-verification" content="tq6NZzCuCj2a7kvdssFcuBKb8z0BdAjdUhS4e_IuiNY" />
   <title>Confirm Order</title>
-  <link rel="icon" href="images/favicon.png" type="image/png">
-  <link type="text/css" rel="stylesheet" href="css/stylesheet.css">
+  <link rel="icon" href="./assets/images/favicon.png" type="image/png">
+  <link type="text/css" rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
 <div class="wrapper">
   <?php include_once('./header-menu.php'); ?>
-  <div id="main">
-      <div id="content">
-          <div class="confirm-payment">
-              <div class="big-gap">
-                  <h2 class="payment-heading">Please enter details</h2>
-                  <form method="post" action="payment.php">
-                      <div class="input-wrap">
-                          <label for="InvoiceID">Invoice ID</label>
-                          <input type="number" id="InvoiceID" name="invoice-id" required>
-                          <span class="error-alert"></span>
-                      </div>
-                      <div class="input-wrap">
-                          <label for="InvoiceAmount">Invoice Amount (USD)</label>
-                          <input type="number" id="InvoiceAmount" name="invoice-amount" required>
-                          <span class="error-alert"></span>
-                      </div>
-                      <div class="input-wrap">
-                          <input type="submit" value="Confirm Order">
-                      </div>
-                  </form>
-              </div>
-          </div>
+  <div class="main">
+    <div id="content">
+      <div class="confirm-payment">
+        <div class="big-gap">
+          <h2 class="payment-heading">Please enter details</h2>
+          <form method="post" action="payment.php">
+            <div class="input-wrap">
+              <label for="InvoiceID">Invoice ID</label>
+              <input type="number" id="InvoiceID" name="invoice-id" required>
+              <span class="error-alert"></span>
+            </div>
+            <div class="input-wrap">
+              <label for="InvoiceAmount">Invoice Amount (USD)</label>
+              <input type="number" id="InvoiceAmount" name="invoice-amount" required>
+              <span class="error-alert"></span>
+            </div>
+            <div class="input-wrap">
+              <input type="submit" value="Confirm Order">
+            </div>
+          </form>
+        </div>
       </div>
+    </div>
   </div><!-- end of main -->
-  <?php include_once 'footer.php';?>
+  <?php include_once './footer.php';?>
 </div> <!-- end of wrapper -->
 <script type="text/javascript" src="js/jquery-3.3.1.js"></script>
 <script type="text/javascript" src="js/custom.js"></script>
-<script>
-    (function (i, s, o, g, r, a, m) {
-        i['GoogleAnalyticsObject'] = r;
-        i[r] = i[r] || function () {
-                    (i[r].q = i[r].q || []).push(arguments)
-                }, i[r].l = 1 * new Date();
-        a = s.createElement(o), m = s.getElementsByTagName(o)[0];
-        a.async = 1;
-        a.src = g;
-        m.parentNode.insertBefore(a, m)
-    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
-    ga('create', 'UA-71901684-1', 'auto');
-    ga('send', 'pageview');
-</script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-71901684-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-71901684-1');
+  </script>
 </body>
 </html>

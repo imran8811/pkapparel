@@ -7,111 +7,111 @@
   <meta name="description" content="PK Apparel Specializes in jeans pants manufacturing and wholesale, jeans Jackets wholesale, Jeans Shirt and all other denim products. We stand behind all of the products that we handle and we are the company that stand behind the quality and performance of the products they build"/>
   <meta name="google-site-verification" content="tq6NZzCuCj2a7kvdssFcuBKb8z0BdAjdUhS4e_IuiNY" />
   <title>Jeans Pants - Wholesale Jeans, Jeans Wholesalers, Wholesale Denim Pants</title>
-  <link rel="icon" href="../images/favicon.png" type="image/png">
-  <link type="text/css" rel="stylesheet" href="../css/stylesheet.css">
+  <link rel="icon" href="../assets/images/favicon.png" type="image/png">
+  <link type="text/css" rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body>
 <div class="wrapper">
   <?php include_once '../header-menu.php';?>
-    <div id="main">
+    <div class="main">
       <div class="holder">
         <div class="box">
-          <img src="../images/jeans-pants/bulk-jeans.jpg" alt="Bulk Jeans" height="350" />
+          <img src="../assets/images/jeans-pants/bulk-jeans.jpg" alt="Bulk Jeans" height="350" />
           <a href="../jeans-pants/bulk-jeans.php" title="Bulk Jeans" class="view-details">View Details</a>
           <span class="caption">Style# 13121</span>
         </div>
         <div class="box">
-          <img src="../images/jeans-pants/buy-jeans-in-bulk.jpg" alt="Buy Jeans in Bulk" height="350" />
+          <img src="../assets/images/jeans-pants/buy-jeans-in-bulk.jpg" alt="Buy Jeans in Bulk" height="350" />
           <a href="../jeans-pants/buy-jeans-in-bulk.php" title="Buy Jeans in Bulk" class="view-details">View Details</a>
           <span class="caption">Style# 13132</span>
         </div>
         <div class="box">
-          <img src="../images/jeans-pants/cheap-mens-jeans-wholesale.jpg" alt="Cheap Mens Jeans Wholesale" height="350" />
+          <img src="../assets/images/jeans-pants/cheap-mens-jeans-wholesale.jpg" alt="Cheap Mens Jeans Wholesale" height="350" />
           <a href="../jeans-pants/cheap-mens-jeans-wholesale.php" title="Cheap Mens Jeans Wholesale" class="view-details">View Details</a>
           <span class="caption">Style# 13134</span>
         </div>
         <div class="box">
-          <img src="../images/jeans-pants/denim-jeans-manufacturer.jpg" alt="Denim Jeans Manufacturer" height="350" />
+          <img src="../assets/images/jeans-pants/denim-jeans-manufacturer.jpg" alt="Denim Jeans Manufacturer" height="350" />
           <a href="../jeans-pants/denim-jeans-manufacturer.php" title="Denim Jeans Manufacturer" class="view-details">View Details</a>
           <span class="caption">Style# 13138</span>
         </div>
         <div class="box">
-          <img src="../images/jeans-pants/denim-manufacturers.jpg" alt="Denim Manufacturers" height="350" />
+          <img src="../assets/images/jeans-pants/denim-manufacturers.jpg" alt="Denim Manufacturers" height="350" />
           <a href="../jeans-pants/denim-manufacturers.php" title="Denim Manufacturers" class="view-details">View Details</a>
           <span class="caption">Style# 13126</span>
         </div>
         <div class="box">
-          <img src="../images/jeans-pants/denim-wholesale.jpg" alt="Denim Wholesale" height="350" />
+          <img src="../assets/images/jeans-pants/denim-wholesale.jpg" alt="Denim Wholesale" height="350" />
           <a href="../jeans-pants/denim-wholesale.php" title="Denim Wholesale" class="view-details">View Details</a>
           <span class="caption">Style# 13145</span>
         </div>
         <div class="box">
-          <img src="../images/jeans-pants/jean-manufacturers.jpg" alt="Jean Manufacturers" height="350" />
+          <img src="../assets/images/jeans-pants/jean-manufacturers.jpg" alt="Jean Manufacturers" height="350" />
           <a href="../jeans-pants/jean-manufacturers.php" title="Jean Manufacturers" class="view-details">View Details</a>
           <span class="caption">Style# 13125</span>
         </div>
         <div class="box">
-          <img src="../images/jeans-pants/jeans-manufacturers.jpg" alt="Jeans Manufacturers" height="350" />
+          <img src="../assets/images/jeans-pants/jeans-manufacturers.jpg" alt="Jeans Manufacturers" height="350" />
           <a href="../jeans-pants/jeans-manufacturers.php" title="Jeans Manufacturers" class="view-details">View Details</a>
           <span class="caption">Style# 13128</span>
         </div>
         <div class="box">
-          <img src="../images/jeans-pants/jeans-factory.jpg" alt="Jeans Factory" height="350" />
+          <img src="../assets/images/jeans-pants/jeans-factory.jpg" alt="Jeans Factory" height="350" />
           <a href="../jeans-pants/jeans-factory.php" title="Jeans Factory" class="view-details">View Details</a>
           <span class="caption">Style# 13149</span>
         </div>
         <div class="box">
-          <img src="../images/jeans-pants/jeans-manufacturer.jpg" alt="Jeans Manufacturer" height="350" />
+          <img src="../assets/images/jeans-pants/jeans-manufacturer.jpg" alt="Jeans Manufacturer" height="350" />
           <a href="../jeans-pants/jeans-manufacturer.php" title="Jeans Manufacturer" class="view-details">View Details</a>
           <span class="caption">Style# 13127</span>
         </div>
         <div class="box">
-          <img src="../images/jeans-pants/jeans-pants-manufacturer.jpeg" alt="Jeans Pants Manufacturer" height="350" />
+          <img src="../assets/images/jeans-pants/jeans-pants-manufacturer.jpeg" alt="Jeans Pants Manufacturer" height="350" />
           <a href="../jeans-pants/jeans-pants-manufacturer.php" title="Jeans Pants Manufacturer" class="view-details">View Details</a>
           <span class="caption">Style# 13123</span>
         </div>
         <div class="box">
-          <img src="../images/jeans-pants/jeans-pants-wholesale.jpg" alt="Jeans Pants Wholesale" height="350" />
+          <img src="../assets/images/jeans-pants/jeans-pants-wholesale.jpg" alt="Jeans Pants Wholesale" height="350" />
           <a href="../jeans-pants/jeans-pants-wholesale.php" title="Jeans Pants Wholesale" class="view-details">View Details</a>
           <span class="caption">Style# 13122</span>
         </div>
         <div class="box">
-          <img src="../images/jeans-pants/jeans-supplier.jpg" alt="Jeans Supplier" height="350" />
+          <img src="../assets/images/jeans-pants/jeans-supplier.jpg" alt="Jeans Supplier" height="350" />
           <a href="../jeans-pants/jeans-supplier.php" title="Jeans Supplier" class="view-details">View Details</a>
           <span class="caption">Style# 13137</span>
         </div>
         <div class="box">
-          <img src="../images/jeans-pants/jeans-wholesale.jpg" alt="Jeans Wholesale" height="350" />
+          <img src="../assets/images/jeans-pants/jeans-wholesale.jpg" alt="Jeans Wholesale" height="350" />
           <a href="../jeans-pants/jeans-wholesale.php" title="Jeans Wholesale" class="view-details">View Details</a>
           <span class="caption">Style# 13131</span>
         </div>
         <div class="box">
-          <img src="../images/jeans-pants/wholesale-denim-jeans.jpg" alt="Wholesale Denim Jeans" height="350" />
-          <a href="jeans-pants/wholesale-denim-jeans.php" title="Wholesale Denim Jeans" class="view-details">View Details</a>
+          <img src="../assets/images/jeans-pants/wholesale-denim-jeans.jpg" alt="Wholesale Denim Jeans" height="350" />
+          <a href="../jeans-pants/wholesale-denim-jeans.php" title="Wholesale Denim Jeans" class="view-details">View Details</a>
           <span class="caption">Style# 13124</span>
         </div>
         <div class="box">
-          <img src="../images/jeans-pants/wholesale-jeans-bulk.jpg" alt="Wholesale Jeans Bulk" height="350" />
+          <img src="../assets/images/jeans-pants/wholesale-jeans-bulk.jpg" alt="Wholesale Jeans Bulk" height="350" />
           <a href="../jeans-pants/wholesale-jeans-bulk.php" title="Wholesale Jeans Bulk" class="view-details">View Details</a>
           <span class="caption">Style# 13130</span>
         </div>
         <div class="box">
-          <img src="../images/jeans-pants/wholesale-jeans-mens.jpg" alt="Wholesale Jeans Mens" height="350" />
+          <img src="../assets/images/jeans-pants/wholesale-jeans-mens.jpg" alt="Wholesale Jeans Mens" height="350" />
           <a href="../jeans-pants/wholesale-jeans-mens.php" title="Wholesale Jeans Mens" class="view-details">View Details</a>
           <span class="caption">Style# 13129</span>
         </div>
         <div class="box">
-          <img src="../images/jeans-pants/wholesale-jeans-online.jpg" alt="Wholesale Jeans Online" height="350" />
+          <img src="../assets/images/jeans-pants/wholesale-jeans-online.jpg" alt="Wholesale Jeans Online" height="350" />
           <a href="../jeans-pants/wholesale-jeans-online.php" title="Wholesale Jeans Online" class="view-details">View Details</a>
           <span class="caption">Style# 13136</span>
         </div>
         <div class="box">
-          <img src="../images/jeans-pants/wholesale-jeans-suppliers.jpg" alt="Wholesale Jeans Suppliers" height="350" />
+          <img src="../assets/images/jeans-pants/wholesale-jeans-suppliers.jpg" alt="Wholesale Jeans Suppliers" height="350" />
           <a href="../jeans-pants/wholesale-jeans-suppliers.php" title="Wholesale Jeans Suppliers" class="view-details">View Details</a>
           <span class="caption">Style# 13135</span>
         </div>
         <div class="box">
-          <img src="../images/jeans-pants/wholesale-jeans.jpg" alt="Wholesale Jeans" height="350" />
+          <img src="../assets/images/jeans-pants/wholesale-jeans.jpg" alt="Wholesale Jeans" height="350" />
           <a href="../jeans-pants/wholesale-jeans.php" title="Wholesale Jeans" class="view-details">View Details</a>
           <span class="caption">Style# 13148</span>
         </div>
@@ -135,21 +135,15 @@
     </div>
     <?php include_once '../footer.php';?>
 </div> <!-- end of wrapper -->
-<script type="text/javascript" src="../js/jquery-3.3.1.js"></script>
-<script type="text/javascript" src="../js/custom.js"></script>
-<script>
-  (function (i, s, o, g, r, a, m) {
-    i['GoogleAnalyticsObject'] = r;
-    i[r] = i[r] || function () {
-                (i[r].q = i[r].q || []).push(arguments)
-            }, i[r].l = 1 * new Date();
-    a = s.createElement(o), m = s.getElementsByTagName(o)[0];
-    a.async = 1;
-    a.src = g;
-    m.parentNode.insertBefore(a, m)
-  })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
-  ga('create', 'UA-71901684-1', 'auto');
-  ga('send', 'pageview');
-</script>
+<!-- <script type="text/javascript" src="../js/jquery-3.3.1.js"></script> -->
+<!-- <script type="text/javascript" src="../js/custom.js"></script> -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-71901684-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-71901684-1');
+  </script>
 </body>
 </html>

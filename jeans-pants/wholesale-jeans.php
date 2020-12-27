@@ -7,16 +7,16 @@
     <meta name="description" content="PK Apparel Specializes in jeans pants manufacturing and wholesale, jeans Jackets wholesale, Jeans Shirt and all other denim products. We stand behind all of the products that we handle and we are the company that stand behind the quality and performance of the products they build"/>
     <meta name="google-site-verification" content="tq6NZzCuCj2a7kvdssFcuBKb8z0BdAjdUhS4e_IuiNY" />
     <title>Wholesale Jeans</title>
-    <link rel="icon" href="../images/favicon.png" type="image/png">
-    <link type="text/css" rel="stylesheet" href="../css/stylesheet.css">
+    <link rel="icon" href="../assets/images/favicon.png" type="image/png">
+    <link type="text/css" rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body>
 <div class="wrapper">
     <?php include_once('../header-menu.php'); ?>
-    <div id="main">
+    <div class="main">
         <div class="page-details">
             <div class="image-area">
-                <img src="../images/jeans-pants/wholesale-jeans.jpg" alt="wholesale jeans">
+                <img src="../assets/images/jeans-pants/wholesale-jeans.jpg" alt="wholesale jeans">
             </div>
             <div class="details-area">
                 <strong>Style# 13137</strong>

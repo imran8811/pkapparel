@@ -7,8 +7,8 @@
     <meta name="description" content="Wholesale Denim Jeans Suppliers make sure that you get the best quality of denim jeans. They understand the importance of making the most effort to outshine not only themselves in this field, but their clients as well."/>
     <meta name="google-site-verification" content="tq6NZzCuCj2a7kvdssFcuBKb8z0BdAjdUhS4e_IuiNY" />
     <title>Wholesale Denim Jeans Suppliers</title>
-    <link rel="icon" href="../images/favicon.png" type="image/png">
-    <link type="text/css" rel="stylesheet" href="../css/stylesheet.css">
+    <link rel="icon" href="../assets/images/favicon.png" type="image/png">
+    <link type="text/css" rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body>
 <div class="wrapper">
@@ -18,7 +18,7 @@
             <div class="single-post">
                 <div class="post-heading"><h1>Wholesale Denim Jeans Suppliers</h1></div>
                 <div class="image-holder">
-                    <img src="../images/posts/wholesale-denim-jeans-suppliers.jpg" alt="wholesale denim jeans suppliers">
+                    <img src="../assets/images/posts/wholesale-denim-jeans-suppliers.jpg" alt="wholesale denim jeans suppliers">
                 </div>
                 <div class="text-area">
                     <div class="content">
@@ -38,19 +38,13 @@
 </div> <!-- end of wrapper -->
 <script type="text/javascript" src="../js/jquery-3.3.1.js"></script>
 <script type="text/javascript" src="../js/custom.js"></script>
-<script>
-    (function (i, s, o, g, r, a, m) {
-        i['GoogleAnalyticsObject'] = r;
-        i[r] = i[r] || function () {
-                    (i[r].q = i[r].q || []).push(arguments)
-                }, i[r].l = 1 * new Date();
-        a = s.createElement(o), m = s.getElementsByTagName(o)[0];
-        a.async = 1;
-        a.src = g;
-        m.parentNode.insertBefore(a, m)
-    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
-    ga('create', 'UA-71901684-1', 'auto');
-    ga('send', 'pageview');
-</script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-71901684-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-71901684-1');
+  </script>
 </body>
 </html>
