@@ -1,5 +1,5 @@
 <?php 
-  require_once("./init.php");
+  require_once(dirname(__FILE__) . './init.php');
 	$cart = new Cart();
 	if(isset($_SESSION['sess_id'])){
 		$count_cart_items = $cart->count_cart_items();
@@ -9,7 +9,6 @@
 	if($count_cart_items > 0){
 		$get_cart_items = $cart->get_cart_items();
 	}
-  print_r($_SESSION);
   $base_url = $_SERVER['HTTP_HOST'] === 'localhost:8080'? 'http://localhost:8080/pkwebnew' : 'https://www.pkapparel.com' 
 ?>
 <header>
@@ -22,7 +21,7 @@
         <nav id="nav" class="open-close">
           <a href="" class="opener">Menu</a>
           <ul class="navigation">
-            <li><a href="<?php echo $base_url; ?>">Home</a></li>
+            <li><a href="<?php echo $base_url; ?>/stock.php">Stock</a></li>
             <li><a href="<?php echo $base_url; ?>/about.php">About us</a></li>
             <li><a href="<?php echo $base_url; ?>/factory.php">Factory</a></li>
             <li><a href="<?php echo $base_url; ?>/men/jeans-pants.php">Jeans Pants</a></li>
@@ -119,6 +118,7 @@
     </div>
     <nav class="main-menu">
       <ul>
+        <li><a href="<?php echo $base_url; ?>/stock.php">Stock</a></li>
         <li><a href="<?php echo $base_url; ?>/about.php">About us</a></li>
         <li><a href="<?php echo $base_url; ?>/factory.php">Factory</a></li>
         <li><a href="<?php echo $base_url; ?>/men/jeans-pants.php">Jeans Pants</a></li>

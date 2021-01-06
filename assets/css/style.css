@@ -1141,6 +1141,17 @@ footer p {
 .gallery-thumbs .swiper-slide-thumb-active {
   opacity: 1;
 }
+.stock-wrap {
+  display: flex;
+}
+.stock-wrap .product-filters {
+  width: 20%;
+}
+.stock-wrap .men-product-list {
+  align-items: flex-start;
+  width: 80%;
+}
+
 @media screen and (max-width: 1023px){
 	.main {padding: 0 10px 20px;}
 	.products .boxes{width: 103%;}

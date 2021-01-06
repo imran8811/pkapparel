@@ -13,7 +13,7 @@
 	if($count_cart_items > 0){
 		$get_cart_items = $cart->get_cart_items();
 	}
-    print_r($_SESSION);
+  print_r($_SESSION);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -26,6 +26,7 @@
   <title>Expert Jeans Manufacturers and wholesale dealers of export-quality Denim | PK Apparel</title>
   <link rel="icon" href="../assets/images/favicon.png" type="image/png">
   <link type="text/css" rel="stylesheet" href="../assets/css/style.css">
+  <link type="text/css" rel="stylesheet" href="../assets/css/style-wholesale.css">
 </head>
 <body>
 <div class="wrapper">
@@ -265,6 +266,8 @@
   </div>
   <?php include_once ('../footer.php'); ?>
 </div>
+<script src="../assets/js/jquery-3.5.1.min.js"></script>
+<script src="../assets/js/custom.js"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-71901684-1"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
