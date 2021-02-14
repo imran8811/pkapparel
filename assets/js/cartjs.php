@@ -53,7 +53,7 @@
         var cart_items_count = $(".link-cart .total-cart").text();
         $.ajax({
             type: "POST",
-            url: base_url + "/api.php",
+            url: base_url + "/api",
             data: {
                 cart_remove: 1,
                 p_id: $(this).data("id")

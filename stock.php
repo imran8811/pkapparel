@@ -1,5 +1,5 @@
 <?php
-	require_once("./init.php");
+	require_once("./init");
 	$base_url = $_SERVER['HTTP_HOST'] === 'localhost:8080'? 'http://localhost:8080/pkwebnew' : 'https://www.pkapparel.com';
   $cart = new Cart();
   $JeansPants	= new JeansPants();
@@ -130,7 +130,7 @@
     // }).then(res => console.log(res));
     $.ajax({
       type: "POST",
-      url: "<?php echo $base_url; ?>/api.php",
+      url: "<?php echo $base_url; ?>/api",
       data: {
         filter_search: 1,
         dept : params.dept,

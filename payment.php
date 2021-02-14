@@ -1,7 +1,7 @@
 <?php
 	$MerchantID     = "00157561"; //Your Merchant from transaction Credentials
 	$Password       = "01s80xv0de"; //Your Password from transaction Credentials
-	$ReturnURL      = "https://www.pkapparel.com/payment-return.php"; //Your Return URL
+	$ReturnURL      = "https://www.pkapparel.com/payment-return"; //Your Return URL
 	$HashKey 		    = "05y2tb7598";//Your HashKey integrity salt from transaction Credentials
 	$PostURL 		    = "https://payments.jazzcash.com.pk/CustomerPortal/transactionmanagement/merchantform";
 

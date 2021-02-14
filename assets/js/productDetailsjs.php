@@ -13,7 +13,7 @@
         });
         $.ajax({
             type:"POST",
-            url: "<?php echo $base_url; ?>/api.php",
+            url: "<?php echo $base_url; ?>/api",
             data: {
               p_id: '<?php echo $p_id ?>',
               sizes_qty : size_qty,
@@ -127,7 +127,7 @@
                 }
             })
         } else {
-            window.location = "saved-items.php";
+            window.location = "saved-items";
         }
     });
 </script>

@@ -63,7 +63,7 @@
                     </li>
                 </ul>
                 <div class="btn-back-wrap">
-                    <a href="../men/jeans-pants.php" class="btn-back">Back</a>
+                    <a href="../men/jeans-pants" class="btn-back">Back</a>
                 </div>
             </div>
         </div>

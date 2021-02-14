@@ -18,7 +18,7 @@
       <div class="confirm-payment">
         <div class="big-gap">
           <h2 class="payment-heading">Please enter details</h2>
-          <form method="post" action="payment.php">
+          <form method="post" action="payment">
             <div class="input-wrap">
               <label for="InvoiceID">Invoice ID</label>
               <input type="number" id="InvoiceID" name="invoice-id" required>

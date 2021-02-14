@@ -87,25 +87,25 @@
       <h2 class="section-heading">Jeans for Men</h2>
       <ul class="men-product-list">
         <li>
-          <a href="/men/jeans-pants.php" class='inner-manufacture'>
+          <a href="/men/jeans-pants" class='inner-manufacture'>
             <img src="./assets/images/jeans-pant-main.jpg" alt="jeans pants">
             <span class="product-category">Jeans Pants</span>
           </a>
         </li>
         <li>
-          <a href="/men/jeans-jackets.php" class='inner-manufacture'>
+          <a href="/men/jeans-jackets" class='inner-manufacture'>
             <img src="./assets/images/jeans-jacket-main.jpg" alt="Jeans Jackets">
             <span class="product-category">Jeans Jackets</span>
           </a>
         </li>
         <li>
-          <a href="/men/jeans-shirts.php" class='inner-manufacture'>
+          <a href="/men/jeans-shirts" class='inner-manufacture'>
             <img src="./assets/images/jeans-shirt-main.jpg" alt="jeans shirts">
             <span class="product-category">Jeans Shirts</span>
           </a>
         </li>
         <li>
-          <a href="/men/jeans-shorts.php" class='inner-manufacture'>
+          <a href="/men/jeans-shorts" class='inner-manufacture'>
             <img src="./assets/images/jeans-short-main.jpg" alt="jeans shorts">
             <span class="product-category">Jeans Shorts</span>
           </a>
@@ -116,25 +116,25 @@
       <h2 class="section-heading">Jeans for Women</h2>
       <ul class="men-product-list">
         <li>
-          <a href="/women/jeans-pants.php" class='inner-manufacture'>
+          <a href="/women/jeans-pants" class='inner-manufacture'>
             <img src="./assets/images/women-jeans.jpg" alt="jeans pants">
             <span class="product-category">Jeans Pants</span>
           </a>
         </li>
         <li>
-          <a href="/women/jeans-jackets.php" class='inner-manufacture'>
+          <a href="/women/jeans-jackets" class='inner-manufacture'>
             <img src="./assets/images/women-jacket.jpg" alt="Jeans Jackets">
             <span class="product-category">Jeans Jackets</span>
           </a>
         </li>
         <li>
-          <a href="/women/jeans-shirts.php" class='inner-manufacture'>
+          <a href="/women/jeans-shirts" class='inner-manufacture'>
             <img src="./assets/images/women-shirt.jpg" alt="jeans shirts">
             <span class="product-category">Jeans Shirts</span>
           </a>
         </li>
         <li>
-          <a href="/women/jeans-shorts.php" class='inner-manufacture'>
+          <a href="/women/jeans-shorts" class='inner-manufacture'>
             <img src="./assets/images/women-short.jpg" alt="jeans shorts">
             <span class="product-category">Jeans Shorts</span>
           </a>

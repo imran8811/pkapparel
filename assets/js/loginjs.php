@@ -42,7 +42,7 @@
             $(".gif").show().text("loading...")
             $.ajax({
                 type: "POST",
-                url: "<?php echo $base_url; ?>/api.php",
+                url: "<?php echo $base_url; ?>/api",
                 data: {
                     login: 1,
                     email: email,
@@ -64,7 +64,7 @@
     //		var email = $("#user-email").val();
     //		$.ajax({
     //			type: "POST",
-    //			url: "<?php //echo $base_url; ?>//api.php",
+    //			url: "<?php //echo $base_url; ?>//api",
     //			data: {
     //				email: email,
     //				rsnd_lnk:1

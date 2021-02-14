@@ -17,62 +17,62 @@
         <div class="holder">
             <div class="box">
                 <img src="../assets/images/jeans-shirts/denim-shirt-manufacturers.jpg" alt="Denim Shirts Manufacturers" height="350" />
-                <a href="../jeans-shirts/denim-shirt-manufacturers.php" title="Denim Shirts Manufacturers" class="view-details">View Details</a>
+                <a href="../jeans-shirts/denim-shirt-manufacturers" title="Denim Shirts Manufacturers" class="view-details">View Details</a>
                 <span class="caption">Style# 7521</span>
             </div>
             <div class="box">
                 <img src="../assets/images/jeans-shirts/denim-shirt-supplier.jpg" alt="Denim Shirt Supplier" height="350" />
-                <a href="../jeans-shirts/denim-shirt-supplier.php" title="Denim Shirt Supplier" class="view-details">View Details</a>
+                <a href="../jeans-shirts/denim-shirt-supplier" title="Denim Shirt Supplier" class="view-details">View Details</a>
                 <span class="caption">Style# 7525</span>
             </div>
             <div class="box">
                 <img src="../assets/images/jeans-shirts/denim-shirt-suppliers.jpg" alt="Denim Shirt Suppliers" height="350" />
-                <a href="../jeans-shirts/denim-shirt-suppliers.php" title="Denim Shirt Supplier" class="view-details">View Details</a>
+                <a href="../jeans-shirts/denim-shirt-suppliers" title="Denim Shirt Supplier" class="view-details">View Details</a>
                 <span class="caption">Style# 7524</span>
             </div>
             <div class="box">
                 <img src="../assets/images/jeans-shirts/denim-shirt-wholesaler.jpg" alt="Denim Shirt Wholesaler" height="350" />
-                <a href="../jeans-shirts/denim-shirt-wholesaler.php" title="Denim Shirt Wholesaler" class="view-details">View Details</a>
+                <a href="../jeans-shirts/denim-shirt-wholesaler" title="Denim Shirt Wholesaler" class="view-details">View Details</a>
                 <span class="caption">Style# 7523</span>
             </div>
             <div class="box">
                 <img src="../assets/images/jeans-shirts/denim-shirt-wholesalers.jpg" alt="Denim Shirt Wholesalers" height="350" />
-                <a href="../jeans-shirts/denim-shirt-wholesalers.php" title="Denim Shirt Wholesalers" class="view-details">View Details</a>
+                <a href="../jeans-shirts/denim-shirt-wholesalers" title="Denim Shirt Wholesalers" class="view-details">View Details</a>
                 <span class="caption">Style# 7522</span>
             </div>
             <div class="box">
                 <img src="../assets/images/jeans-shirts/jeans-shirts-manufacturer.jpg" alt="Jeans Shirts Manufacturer" height="350" />
-                <a href="../jeans-shirts/jeans-shirts-manufacturer.php" title="Jeans Shirts Manufacturer" class="view-details">View Details</a>
+                <a href="../jeans-shirts/jeans-shirts-manufacturer" title="Jeans Shirts Manufacturer" class="view-details">View Details</a>
                 <span class="caption">Style# 7516</span>
             </div>
             <div class="box">
                 <img src="../assets/images/jeans-shirts/jeans-shirts-manufacturers.jpg" alt="Jeans Shirts Manufacturer" height="350" />
-                <a href="../jeans-shirts/jeans-shirts-manufacturers.php" title="Jeans Shirts Manufacturer" class="view-details">View Details</a>
+                <a href="../jeans-shirts/jeans-shirts-manufacturers" title="Jeans Shirts Manufacturer" class="view-details">View Details</a>
                 <span class="caption">Style# 7515</span>
             </div>
             <div class="box">
                 <img src="../assets/images/jeans-shirts/jeans-shirts-supplier.jpg" alt="Jeans Shirts Supplier" height="350" />
-                <a href="../jeans-shirts/jeans-shirts-supplier.php" title="Jeans Shirts Supplier" class="view-details">View Details</a>
+                <a href="../jeans-shirts/jeans-shirts-supplier" title="Jeans Shirts Supplier" class="view-details">View Details</a>
                 <span class="caption">Style# 7520</span>
             </div>
             <div class="box">
                 <img src="../assets/images/jeans-shirts/jeans-shirts-suppliers.jpg" alt="Jeans Shirts Supplier" height="350" />
-                <a href="../jeans-shirts/jeans-shirts-suppliers.php" title="Jeans Shirts Supplier" class="view-details">View Details</a>
+                <a href="../jeans-shirts/jeans-shirts-suppliers" title="Jeans Shirts Supplier" class="view-details">View Details</a>
                 <span class="caption">Style# 7519</span>
             </div>
             <div class="box">
                 <img src="../assets/images/jeans-shirts/jeans-shirts-wholesaler.jpg" alt="Jeans Shirts Wholesaler" height="350" />
-                <a href="../jeans-shirts/jeans-shirts-wholesaler.php" title="Jeans Shirts Wholesaler" class="view-details">View Details</a>
+                <a href="../jeans-shirts/jeans-shirts-wholesaler" title="Jeans Shirts Wholesaler" class="view-details">View Details</a>
                 <span class="caption">Style# 7518</span>
             </div>
             <div class="box">
                 <img src="../assets/images/jeans-shirts/jeans-shirts-wholesalers.jpg" alt="Jeans Shirts Wholesalers" height="350" />
-                <a href="../jeans-shirts/jeans-shirts-wholesalers.php" title="Jeans Shirts Wholesalers" class="view-details">View Details</a>
+                <a href="../jeans-shirts/jeans-shirts-wholesalers" title="Jeans Shirts Wholesalers" class="view-details">View Details</a>
                 <span class="caption">Style# 7517</span>
             </div>
             <div class="box">
                 <img src="../assets/images/jeans-shirts/jeansshirt-manufacturers.jpg" alt="Jeansshirts Manufacturers" height="350" />
-                <a href="../jeans-shirts/jeansshirt-manufacturers.php" title="Jeansshirts Manufacturers" class="view-details">View Details</a>
+                <a href="../jeans-shirts/jeansshirt-manufacturers" title="Jeansshirts Manufacturers" class="view-details">View Details</a>
                 <span class="caption">Style# 7526</span>
             </div>
         </div>

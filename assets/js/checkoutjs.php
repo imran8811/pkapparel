@@ -50,7 +50,7 @@
         $(".gif").text("Adding...").show();
         $.ajax({
             type:"POST",
-            url: "<?php echo $base_url; ?>/api.php",
+            url: "<?php echo $base_url; ?>/api",
             data: {
               add_address: 1,
               address : $(".form-addaddress .add-input").val(),

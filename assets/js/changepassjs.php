@@ -40,7 +40,7 @@
             $(".gif").show().text("loading...");
             $.ajax({
                 type: "POST",
-                url: "<?php echo $base_url; ?>api.php",
+                url: "<?php echo $base_url; ?>api",
                 data: {
                     update_pass: 1,
                     user_id: <?php echo $_SESSION["user_id"]; ?>,

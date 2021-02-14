@@ -1,5 +1,5 @@
 <?php
-	require_once("../init.php");
+	require_once("../init");
 	$base_url = $_SERVER['HTTP_HOST'] === 'localhost:8080'? 'http://localhost:8080/pkwebnew' : 'https://www.pkapparel.com';
   $cart = new Cart();
   $JeansPants	= new JeansPants();
@@ -52,43 +52,43 @@
       </li>
       <?php endforeach; ?>
       <!-- <li>
-        <a href="/men/jeans-pants.php" class='inner-manufacture'>
+        <a href="/men/jeans-pants" class='inner-manufacture'>
           <img src="../assets/images/jeans-pant-main.jpg" alt="Jeans Jackets">
           <span class="product-category">PK-10052</span>
         </a>
       </li>
       <li>
-        <a href="/men/jeans-pants.php" class='inner-manufacture'>
+        <a href="/men/jeans-pants" class='inner-manufacture'>
           <img src="../assets/images/jeans-pant-main.jpg" alt="jeans shirts">
           <span class="product-category">PK-10053</span>
         </a>
       </li>
       <li>
-        <a href="/men/jeans-pants.php" class='inner-manufacture'>
+        <a href="/men/jeans-pants" class='inner-manufacture'>
           <img src="../assets/images/jeans-pant-main.jpg" alt="jeans shorts">
           <span class="product-category">PK-10054</span>
         </a>
       </li>
       <li>
-        <a href="/men/jeans-pants.php" class='inner-manufacture'>
+        <a href="/men/jeans-pants" class='inner-manufacture'>
           <img src="../assets/images/jeans-pant-main.jpg" alt="jeans pants">
           <span class="product-category">PK-10055</span>
         </a>
       </li>
       <li>
-        <a href="/men/jeans-pants.php" class='inner-manufacture'>
+        <a href="/men/jeans-pants" class='inner-manufacture'>
           <img src="../assets/images/jeans-pant-main.jpg" alt="Jeans Jackets">
           <span class="product-category">PK-10056</span>
         </a>
       </li>
       <li>
-        <a href="/men/jeans-pants.php" class='inner-manufacture'>
+        <a href="/men/jeans-pants" class='inner-manufacture'>
           <img src="../assets/images/jeans-pant-main.jpg" alt="jeans shirts">
           <span class="product-category">PK-10057</span>
         </a>
       </li>
       <li>
-        <a href="/men/jeans-pants.php" class='inner-manufacture'>
+        <a href="/men/jeans-pants" class='inner-manufacture'>
           <img src="../assets/images/jeans-pant-main.jpg" alt="jeans shorts">
           <span class="product-category">PK-10058</span>
         </a>
