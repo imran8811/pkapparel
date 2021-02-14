@@ -57,16 +57,15 @@
         echo $result;
     }
 
-    if(isset($_POST['filter_res'])){
-        $type     = (isset($_POST['dept_id']) ? $_POST['dept_id']: '' );
-        $min_value     = (isset($_POST['min_value']) ? $_POST['min_value']: '' );
-        $max_value     = (isset($_POST['max_value']) ? $_POST['max_value']: '' );
-        $sizes          = (isset($_POST['sizes']) ? $_POST['sizes']: array() );
-        $colors     = (isset($_POST['colors']) ? $_POST['colors']: array() );
-        $result = $JeansPants->filter_jeans_pants($min_value, $max_value, $sizes, $colors);
-//        print_r($result);
-        echo json_encode($result);
-//        echo $result;
+    if(isset($_POST['filter_search'])){
+      $dept     = (isset($_POST['dept']) ? $_POST['dept']: '' );
+      $category = (isset($_POST['category']) ? $_POST['category']: '' );
+      $sizes    = (isset($_POST['sizes']) ? $_POST['sizes']: array() );
+      $colors   = (isset($_POST['colors']) ? $_POST['colors']: array() );
+      $result   = $misc->filter_search($dept, $category, $sizes, $colors);
+      // print_r($category);
+      echo json_encode($result);
+      //  echo $result;
     }
 
     if(isset($_POST['cart_remove'])){
@@ -75,10 +74,10 @@
         echo $result;
     }
 
-    if(isset($_POST['rmv_sv_tm'])){
-        $result = $misc->remove_saved_item();
-        echo $result;
-    }
+    // if(isset($_POST['rmv_sv_tm'])){
+    //     $result = $misc->remove_saved_item();
+    //     echo $result;
+    // }
 
     if(isset($_POST['address_make_default'])){
         $result = $misc->make_add_default();

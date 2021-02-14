@@ -839,7 +839,7 @@ footer p {
   margin: 20px 0;
 }
 .footer-links li {
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
 .footer-links li a {
   color: #4d4d4d;
@@ -1075,19 +1075,19 @@ footer p {
   overflow: hidden;
   border-bottom: 1px solid #ccc;
 }
-.faqs-list li:nth-child(odd) {
+.faqs-list h3 {
   background-color: #f5f5f5;
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
   color: #333333;
   padding: 10px 20px;
 }
-.faqs-list li:nth-child(even) {
+.faqs-list .accepted-asnwer {
   background-color: #fff;
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
   color: #333333;
-  padding: 10px 18px;
+  padding: 13px 18px;
 }
 .landing-content p, .landing-content ul {
   margin: 0 0 20px;

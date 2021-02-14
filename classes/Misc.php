@@ -125,5 +125,24 @@ class Misc {
         }
     }
 
+    public static function filter_search($dept, $category, $sizes, $colors){
+      $dept === 'men'? $dept_id = 1 : $dept_id = 2;
+      $colors = join("','",$colors);   
+      $query = self::$con->prepare(
+        "SELECT c.*, i.*, s.*, 
+        GROUP_CONCAT(s.size_name) as sizes, 
+        GROUP_CONCAT(DISTINCT s.color_name) as colors, 
+        GROUP_CONCAT(s.stock) as qty 
+        FROM $category c 
+        INNER JOIN images i ON c.p_id = i.p_id
+        INNER JOIN stock s ON c.p_id = s.p_id
+        WHERE s.color_name IN ('$colors')
+        GROUP BY c.p_id"
+      );
+      $query->execute();
+      $result = $query->fetchAll();
+      return $result;
+    }
+
 
 }

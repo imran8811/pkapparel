@@ -51,13 +51,6 @@ class JeansPants {
 		return $result;
 	}
 
-	public static function filter_jeans_pants($dept_id, $sizes, $colors, $min_value, $max_value){
-		$query = self::$con->prepare("SELECT j.*, i.*, s.*, GROUP_CONCAT(s.size_name) as sizes, GROUP_CONCAT(DISTINCT s.color_name) as colors, GROUP_CONCAT(s.stock) as qty FROM jeans_pants j INNER JOIN images i ON j.p_id = i.p_id INNER JOIN stock s ON FIND_IN_SET(s.color_name, '$colors') AND j.dept_id = $dept_id GROUP BY j.p_id");
-		$query->execute();
-		$result = $query->fetchAll();
-		return $result;
-	}
-
 	public static function paginate($this_page_first_result, $results_per_page, $dept_id, $cat_id){
 		$query  = self::$con->prepare("SELECT j.*, i.*, GROUP_CONCAT(DISTINCT s.size_name) AS sizes FROM jeans_pants j LEFT JOIN images i ON j.p_id = i.p_id LEFT JOIN stock s ON j.p_id = s.p_id WHERE dept_id = $dept_id AND cat_id = $cat_id GROUP BY j.p_id LIMIT $this_page_first_result, $results_per_page");
 		$query->execute();
