@@ -66,8 +66,8 @@
     </div><!-- end of main -->
     <?php include_once('../footer.php'); ?>
 </div> <!-- end of wrapper -->
-<script type="text/javascript" src="../js/jquery-3.5.1.js"></script>
-<script type="text/javascript" src="../js/custom.js"></script>
+<script type="text/javascript" src="../assets/js/jquery-3.5.1.min.js"></script>
+<script type="text/javascript" src="../assets/js/custom.js"></script>
 <script>
     (function (i, s, o, g, r, a, m) {
         i['GoogleAnalyticsObject'] = r;
