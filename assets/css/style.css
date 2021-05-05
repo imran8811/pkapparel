@@ -577,7 +577,7 @@ header .main-menu {
 .page-details .btn-back:after {
 	content: "";
 	position: absolute;
-	background: url("../assets/images/arrow-back.png") no-repeat;
+	background: url("../images/arrow-back.png") no-repeat;
 	left: 14px;
 	top: 14px;
 	width: 20px;

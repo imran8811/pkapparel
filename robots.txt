@@ -1,0 +1,9 @@
+
+User-agent: *
+
+Disallow: 
+
+Disallow: /cgi-bin/
+Disallow: /admin/
+
+Sitemap: http://www.pkapparel.com/sitemap.xml

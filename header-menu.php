@@ -11,7 +11,7 @@
         <nav id="nav" class="open-close">
           <a href="" class="opener">Menu</a>
           <ul class="navigation">
-            <li><a href="<?php echo $base_url; ?>/stock">Stock</a></li>
+            <!-- <li><a href="<?php echo $base_url; ?>/stock">Stock</a></li> -->
             <li><a href="<?php echo $base_url; ?>/about">About us</a></li>
             <li><a href="<?php echo $base_url; ?>/factory">Factory</a></li>
             <li><a href="<?php echo $base_url; ?>/men/jeans-pants">Jeans Pants</a></li>
@@ -28,7 +28,7 @@
     </div>
     <nav class="main-menu">
       <ul>
-        <li><a href="<?php echo $base_url; ?>/stock">Stock</a></li>
+        <!-- <li><a href="<?php echo $base_url; ?>/stock">Stock</a></li> -->
         <li><a href="<?php echo $base_url; ?>/about">About us</a></li>
         <li><a href="<?php echo $base_url; ?>/factory">Factory</a></li>
         <li><a href="<?php echo $base_url; ?>/men/jeans-pants">Jeans Pants</a></li>

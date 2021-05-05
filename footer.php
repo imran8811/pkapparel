@@ -45,11 +45,11 @@
       </ul>
     </nav>
     <br />
-    <!-- <ul class="social-network">
-      <li><a href="https://www.facebook.com/pkapparelfactory" target="_blank">facebook</a></li>
-      <li class="instagram"><a href="https://www.instagram.com/pkapparelfactory" target="_blank">instagram</a></li>
-      <li class="twitter"><a href="https://www.twitter.com/pkapparelfactry" target="_blank">twitter</a></li>
-    </ul> -->
+    <ul class="social-network">
+      <li><a href="https://www.facebook.com/pkapparelpakistan" target="_blank">facebook</a></li>
+      <li class="instagram"><a href="https://www.instagram.com/pkapparelpakistan" target="_blank">instagram</a></li>
+      <li class="twitter"><a href="https://www.twitter.com/pkapparelpak" target="_blank">twitter</a></li>
+    </ul>
     <p><strong>&nbsp;&copy;&nbsp;PK Apparel | All Rights Reserved <?php echo Date('Y'); ?></strong></p>
   </div>
 </footer>
