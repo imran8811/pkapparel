@@ -10,6 +10,14 @@
 	<link rel="icon" href="./assets/images/favicon.png" type="image/png">
 	<link type="text/css" rel="stylesheet" href="./assets/css/style.css">
 	<link type="text/css" rel="stylesheet" href="./assets/css/style-wholesale.css">
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TTX4WPE230"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-TTX4WPE230');
+  </script>
 </head>
 <body>
 <div class="wrapper">
@@ -17,23 +25,23 @@
 	<div class="main">
     <div class="main-slider">
 			<div class="slider-wrap">
-				<div id="jssor_1" style="position:relative;margin:0 auto;top:0px;left:0px;width:1200px;height:500px;overflow:hidden;visibility:hidden;">
+				<div id="jssor_1" style="position:relative;margin:0 auto;top:0px;left:0px;width:1200px;height:400px;overflow:hidden;visibility:hidden;">
 					<!-- Loading Screen -->
 					<div data-u="loading" class="jssorl-009-spin" style="position:absolute;top:0px;left:50%;width:100%;height:100%;text-align:center;background-color:rgba(0,0,0,0.7);">
 						<img style="margin-top:-19px;position:relative;top:50%;width:38px;height:38px;" src="./assets/images/spin.svg" alt="spinner" title="spinner" />
 					</div>
-					<div data-u="slides" style="cursor:default;position:relative;top:0px;left:0px;width:1200px;height:500px;overflow:hidden;">
-						<div>
+					<div data-u="slides" style="cursor:default;position:relative;top:0px;left:0px;width:1200px;height:400px;overflow:hidden;">
+            <div>
+              <img data-u="image" src="./assets/images/gallery/offer-banner.jpg" alt="jeans-manufacturers" title="jeans-manufacturers">
+						</div>
+            <div>
+              <img data-u="image" src="./assets/images/gallery/chino-pant-banner.jpg" alt="Chino Pant Wholesale" title="Chino Pant Wholesale">
+						</div>
+            <div>
 							<img data-u="image" src="./assets/images/gallery/jeans-manufacturers.jpg" alt="jeans-manufacturers" title="jeans-manufacturers">
 						</div>
 						<div>
 							<img data-u="image" src="./assets/images/gallery/jeans-wholesalers.jpg" alt="jeans-wholesalers" title="jeans-wholesalers">
-						</div>
-						<div>
-            <img data-u="image" src="./assets/images/gallery/jeans-manufacturers.jpg" alt="jeans-manufacturers" title="jeans-manufacturers">
-						</div>
-						<div>
-            <img data-u="image" src="./assets/images/gallery/jeans-wholesalers.jpg" alt="jeans-wholesalers" title="jeans-wholesalers">
 						</div>
 					</div>
 					<!-- Bullet Navigator -->
@@ -297,14 +305,14 @@
 <script>
 	jssor_1_slider_init = function() {
 		var jssor_1_SlideshowTransitions = [
-			{$Duration:1200,$Opacity:2}
+			{$Duration:5000,$Opacity:0.5}
 		];
 		var jssor_1_options = {
-			$AutoPlay: 1,
+			$AutoPlay: 0,
 			$SlideshowOptions: {
 				$Class: $JssorSlideshowRunner$,
 				$Transitions: jssor_1_SlideshowTransitions,
-				$TransitionsOrder: 1
+				$TransitionsOrder: 2
 			},
 			$ArrowNavigatorOptions: {
 				$Class: $JssorArrowNavigator$
@@ -337,12 +345,12 @@
 </script>
 <script src="./assets/js/custom.js"></script>
 <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-71901684-1"></script>
+<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-71901684-1"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'UA-71901684-1');
-</script>
+</script> -->
 </body>
 </html>

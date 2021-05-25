@@ -9,6 +9,14 @@
     <title>Factory - Wholesale Jeans, Jeans Wholesalers, Wholesale Denim Pants</title>
     <link rel="icon" href="./assets/images/favicon.png" type="image/png">
     <link type="text/css" rel="stylesheet" href="./assets/css/style.css">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TTX4WPE230"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-TTX4WPE230');
+    </script>
 </head>
 <body>
 <div class="wrapper">
@@ -47,9 +55,9 @@
             <h2 class="section-heading">Stitching</h2>
             <ul class="area-list">
               <li><strong>Area = 10000 x 7000 sqft</strong></li>
-              <li><strong>Machines = 1000+</strong></li>
-              <li><strong>Workers = 5000+</strong></li>
-              <li><strong>Capacity = 1,000,000 garments per month</strong></li>
+              <li><strong>Machines = 450-500</strong></li>
+              <li><strong>Workers = 500-600</strong></li>
+              <li><strong>Capacity = 50000-60000 garments per month</strong></li>
             </ul>
             <div class="clearfix">
                 <div class="left">
@@ -95,7 +103,7 @@
               <h2 class="section-heading">Packing</h2>
               <ul class="area-list">
                   <li><strong>Area = 6000 x 4000 sqft</strong></li>
-                  <li><strong>Capacity = 1500000 pcs of shipment storage</strong></li>
+                  <li><strong>Capacity = 15000 pcs of shipment storage</strong></li>
               </ul>
               <div class="clearfix">
                   <div class="left">
@@ -112,13 +120,5 @@
 </div> <!-- end of wrapper -->
 <script type="text/javascript" src="./assets/js/jquery-3.5.1.min.js"></script>
 <script type="text/javascript" src="./assets/js/custom.js"></script>
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-71901684-1"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'UA-71901684-1');
-  </script>
 </body>
 </html>

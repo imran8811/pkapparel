@@ -9,10 +9,18 @@
     <title>Jeans Shirts Manufacturer</title>
     <link rel="icon" href="../assets/images/favicon.png" type="image/png">
     <link type="text/css" rel="stylesheet" href="../assets/css/style.css">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TTX4WPE230"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-TTX4WPE230');
+    </script>
 </head>
 <body>
 <div class="wrapper">
-    <?php include_once('../header-menu.php'); ?>
+    <?php include_once '../header-menu.php';?>
     <div class="main">
         <div class="page-details">
             <div class="image-area">
@@ -64,17 +72,9 @@
             </div>
         </div>
     </div><!-- end of main -->
-    <?php include_once('../footer.php'); ?>
+    <?php include_once '../footer.php';?>
 </div> <!-- end of wrapper -->
 <script type="text/javascript" src="../assets/js/jquery-3.5.1.min.js"></script>
 <script type="text/javascript" src="../assets/js/custom.js"></script>
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-71901684-1"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'UA-71901684-1');
-  </script>
 </body>
 </html>
