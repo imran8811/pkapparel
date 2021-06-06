@@ -708,6 +708,9 @@ header .main-menu {
   margin: 0 0 0 15px;
   font-weight: bold;
 }
+.whatsapp-inquiry li:first-child {
+	margin: 0 0 8px;
+}
 .social-network li a  {
 	display: block;
 	background: url("../images/fb-icon.png") no-repeat;
@@ -1149,6 +1152,9 @@ footer p {
 .stock-wrap .men-product-list {
   align-items: flex-start;
   width: 80%;
+}
+.mb-25 {
+	margin-bottom: 25px;
 }
 
 @media screen and (max-width: 1023px){

@@ -124,14 +124,15 @@
 		<div class="holder">
 			<div class="single-post">
 				<h2>
-					<a href="posts/jeans-manufacturing-cost-in-india" title="Jeans manufacturing cost in india">Jeans manufacturing cost in india</a>
+					<a href="posts/jeans-manufacturing-cost" title="Jeans manufacturing cost">Jeans manufacturing cost</a>
 				</h2>
 				<div class="outer">
 					<div class="image-holder">
 						<img width="500" height="334" src="./assets/images/posts/jeans-pants-wholesalers.jpg" alt="jeans-pants-wholesalers">
 					</div>
 					<div class="text-area">
-						<p>Even though most of our products come with the label 'made in china', it is without a doubt reasonable to think that India is not very far when it comes to manufacturing goods such as jeans pants. Due to the number of goods India produces each year, it is now being called the next manufacturing<a class="read-more" href="posts/jeans-manufacturing-cost-in-india"> Read More</a>
+						<p>When it comes to calculating the cost of jeans, there are a few elements to consider. Fabric, wash, thread, trims, embellishments, and units are all variables that play a part. Fabric and wash account for a major portion of the cost of these jeans. Since the fabric cost has been discussed, let us shift our focus to the wash.
+							<a class="read-more" href="posts/jeans-manufacturing-cost"> Read More</a>
 						</p>
 					</div>
 				</div>
