@@ -4,12 +4,12 @@
   <div class="swiper-wrapper">
     <!-- Slides -->
     <div class="swiper-slide">
-      <a href="/wholesale-shop">
+      <a href="https://www.wholesale.pkapparel.com">
         <img src="public/images/gallery/chino-pant-banner2.jpg" />
       </a>
     </div>
     <div class="swiper-slide">
-      <a href="/wholesale-shop">
+      <a href="https://www.wholesale.pkapparel.com">
         <img src="public/images/gallery/jeans-pants-banner.jpg" />
       </a>
     </div>

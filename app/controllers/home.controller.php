@@ -1,11 +1,7 @@
 <?php
 
-use Framework\Controller;
-use Framework\ViewerController;
+use Core\Controller;
 
 class HomeController extends Controller {
 
-  public function index(){
-    return $this->view("/views/home");
-  }
 }

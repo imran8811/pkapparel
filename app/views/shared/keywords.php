@@ -1,11 +1,11 @@
 <div class="row p-5 border-bottom border-info">
-  <ul class="col-12 col-md-6 col-lg-3 mb-3">
+  <!-- <ul class="col-12 col-md-6 col-lg-3 mb-3">
     <li><a href="/wholesale-shop/men/jeans-pant">Men Jeans Pants</a></li>
     <li><a href="/wholesale-shop/women/jeans-pant">Women Jeans Pants</a></li>
     <li><a href="/wholesale-shop/men/t-shirt">Men T-shirts</a></li>
     <li><a href="/wholesale-shop/girls/jeans-pant">Girls Jeans Pants</a></li>
     <li><a href="/wholesale-shop/men/chino-pant">Men Chino Pants</a></li>
-  </ul>
+  </ul> -->
   <ul class="col-12 col-md-6 col-lg-3 mb-3">
     <li><a href="/post/bulk-jeans">Bulk Jeans</a></li>
     <li><a href="/post/jeans-manufacturers">Jeans Manufacturers</a></li>

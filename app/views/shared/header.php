@@ -31,7 +31,6 @@
 <body>
   <div class="main-wrapper">
     <header>
-      <?php include_once(__DIR__."/header-top.php"); ?>
       <div class="header-main border-bottom row mt-4 pb-3">
         <div class="col-md-4 mb-3">
           <a href="/">
@@ -39,10 +38,12 @@
           </a>
         </div>
         <ul class="header-menu col-md-8 pt-3">
-          <li><a href="/wholesale-shop/men">Men</a></li>
-          <li><a href="/wholesale-shop/women">Women</a></li>
-          <li><a href="/wholesale-shop/boys">Boys</a></li>
-          <li><a href="/wholesale-shop/girls">Girls</a></li>
+          <li><a href="https://www.wholesale.pkapparel.com">Wholesale</a></li>
+          <li><a href="/about">About us</a></li>
+          <li><a href="/factory">Factory</a></li>
+          <li><a href="/blog">Blog</a></li>
+          <li><a href="/contact">Contact us</a></li>
+          <li><a href="https://www.retail.pkapparel.com">Retail</a></li>
         </ul>
       </div>
     </header>

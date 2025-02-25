@@ -3,25 +3,23 @@
     <div class="mb-5 text-center">
       <nav class="footer-menu">
         <ul>
-          <li><a href="/wholesale-shop/men">men</a></li>
-          <li><a href="/wholesale-shop/women">Women</a></li>
-          <li><a href="/wholesale-shop/boys">Boys</a></li>
-          <li><a href="/wholesale-shop/girls">girls</a></li>
+          <li><a href="https://www.wholesale.pkapparel.com">Wholesale Shop</a></li>
           <li><a href="/about">About us</a></li>
           <li><a href="/factory">Factory</a></li>
           <li><a href="/blog">Blog</a></li>
           <li><a href="/contact">Contact us</a></li>
+          <li><a href="https://www.retail.pkapparel.com">Retail</a></li>
         </ul>
       </nav>
     </div>
-    <div class="footer-menu">
+    <!-- <div class="footer-menu">
       <ul class="social-links mb-5">
         <li><a href="https://www.facebook.com/pkapparel1" target="_blank"><i class="fa-brands fa-facebook"></i></a></li>
         <li><a href="https://www.instagram.com/pkapparel_official" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
         <li><a href="https://www.tiktok.com/@pkapparel" target="_blank"><i class="fa-brands fa-tiktok"></i></a></li>
         <li><a href="https://www.linkedin.com/company/pkapparel" target="_blank"><i class="fa-brands fa-linkedin"></i></a></li>
       </ul>
-    </div>
+    </div> -->
     <div class="footer-bottom">
       <?php include_once(dirname(__DIR__) . "/shared/keywords.php"); ?>
       <p class="text-center pt-5 pb-5 mb-0"><strong>Copyrights&nbsp;&copy;&nbsp;PK Apparel Pvt. Ltd. | All Rights Reserved 2015-<?php echo date('Y') ?></strong></p>

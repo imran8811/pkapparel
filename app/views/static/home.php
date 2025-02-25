@@ -4,19 +4,19 @@
   <div class="sub-cat-section">
     <div class="shop-now-overlay">
       <h3>Men</h3>
-      <a href="/wholesale-shop/men" class="btn btn-primary">Shop Now</a>
+      <a href="https://www.wholesale.pkapparel.com/men" class="btn btn-primary">Shop Now</a>
     </div>
   </div>
   <div class="sub-cat-section">
     <div class="shop-now-overlay">
       <h3>Boys</h3>
-      <a href="/wholesale-shop/boys" class="btn btn-primary">Shop Now</a>
+      <a href="https://www.wholesale.pkapparel.com/boys" class="btn btn-primary">Shop Now</a>
     </div>
   </div>
   <div class="sub-cat-section">
     <div class="shop-now-overlay">
       <h3>Women</h3>
-      <a href="wholesale-shop/women" class="btn btn-primary">Shop Now</a>
+      <a href="https://www.wholesale.pkapparel.com/women" class="btn btn-primary">Shop Now</a>
     </div>
   </div>
 </div>

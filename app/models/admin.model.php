@@ -1,12 +1,56 @@
 <?php
-
 namespace app\Models;
 
 use Core\Model;
+use PDO;
+use PDOException;
+// require_once "Core/Model.php";
 
-class ProductModel extends Model {
+class AdminModel extends Model {
   public function __construct(){
     parent::__construct();
+  }
+
+  public function login($email, $password){
+    try{
+      $query = "SELECT * FROM admin_users WHERE email=?";
+      $stmt= $this->pdo->prepare($query);
+      $stmt->execute([$email]);
+      $res = $stmt->fetch();
+      if($res){
+        $passwordVerify = password_verify($password, $res['password']);
+        if($passwordVerify){
+          $token = $this->generateSaveSessionToken($res['email']);
+          if($token){
+            $data = [
+              'email'    => $res['email'],
+              'token'    => $token,
+            ];
+            return $data;
+          } else {
+            return false;
+          }
+        } else {
+          return false;
+        }
+      } else {
+       return false;
+      }
+    } catch(PDOException $e){
+      return $e->getMessage();
+    }
+  }
+
+  private function generateSaveSessionToken($userEmail){
+    $token = bin2hex(random_bytes(16));
+    $query = 'INSERT INTO sessions (token, user_email)
+              values(:user_token, :user_email)
+              ON DUPLICATE KEY UPDATE token=VALUES(token),user_email=VALUES(user_email)';
+    $stmt= $this->pdo->prepare($query);
+    $stmt->bindParam(':user_token', $token, PDO::PARAM_STR);
+    $stmt->bindParam(':user_email', $userEmail, PDO::PARAM_STR);
+    $res = $stmt->execute();
+    return $res? $token : false;
   }
 
   public function getAllProducts() {

@@ -1,54 +1,54 @@
 <?php
 $metaData = [
   "" => [
-    "title" => "Garments Manufacturer and Exporter PK Apparel",
+    "title" => "Garments Manufacturer Wholesaler and Exporter",
     "keywords" => "t shirts factory manufacturer, hoodie making, jeans supplier",
     "description" => "t shirts factory manufacturer, hoodie making, jeans supplier"
   ],
   "about" => [
-    "title" => "About Us - Garments manufacturer and exporter",
+    "title" => "About Us - Garments manufacturer and Wholesaler",
     "keywords" => "t shirts factory manufacturer, hoodie making, jeans supplier",
     "description" => "t shirts factory manufacturer, hoodie making, jeans supplier"
   ],
   "contact" => [
-    "title" => "Contact Us - Garments manufacturer and exporter",
+    "title" => "Contact Us - Garments manufacturer and Wholesaler",
     "keywords" => "t shirts factory manufacturer, hoodie making, jeans supplier",
     "description" => "t shirts factory manufacturer, hoodie making, jeans supplier"
   ],
   "factory" => [
-    "title" => "Factory Visit - Garments manufacturer and exporter",
+    "title" => "Factory Visit - Garments manufacturer and Wholesaler",
     "keywords" => "t shirts factory manufacturer, hoodie making, jeans supplier",
     "description" => "t shirts factory manufacturer, hoodie making, jeans supplier"
   ],
   "blog" => [
-    "title" => "Blog - Garments manufacturer and exporter",
+    "title" => "Blog - Garments manufacturer and Wholesaler",
     "keywords" => "t shirts factory manufacturer, hoodie making, jeans supplier",
     "description" => "t shirts factory manufacturer, hoodie making, jeans supplier"
   ],
   "wholesale-shop" => [
     "title" => "Garments Wholesale Shop for men women boys and girls",
     "keywords" => "t shirts factory manufacturer, hoodie making, jeans supplier",
-    "description" => "t shirts factory manufacturer, hoodie making, jeans supplier"
+    "description" => "Garments Wholesale Shop for men women boys and girls"
   ],
   "men" => [
-    "title" => "Men Garments-PK Apparel",
+    "title" => "Men Garments Jeans Pants Jackets Tshirts Hoodies Cargo Trousers",
     "keywords" => "t shirts factory manufacturer, hoodie making, jeans supplier",
-    "description" => "t shirts factory manufacturer, hoodie making, jeans supplier"
+    "description" => "Men Garments Jeans Pants Jackets Tshirts Hoodies Cargo Trousers"
   ],
   "women" => [
-    "title" => "Garments Wholesale Shop for men women boys and girls",
+    "title" => "Women Garments Jeans Pants Jackets Tshirts Hoodies Cargo Trousers",
     "keywords" => "t shirts factory manufacturer, hoodie making, jeans supplier",
-    "description" => "t shirts factory manufacturer, hoodie making, jeans supplier"
+    "description" => "Women Garments Jeans Pants Jackets Tshirts Hoodies Cargo Trousers"
   ],
   "boys" => [
-    "title" => "Garments Wholesale Shop for men women boys and girls",
+    "title" => "Boys Garments Jeans Pants Jackets Tshirts Hoodies Cargo Trousers",
     "keywords" => "t shirts factory manufacturer, hoodie making, jeans supplier",
-    "description" => "t shirts factory manufacturer, hoodie making, jeans supplier"
+    "description" => "Boys Garments Jeans Pants Jackets Tshirts Hoodies Cargo Trousers"
   ],
   "girls" => [
-    "title" => "Garments Wholesale Shop for men women boys and girls",
+    "title" => "Girls Garments Jeans Pants Jackets Tshirts Hoodies Cargo Trousers",
     "keywords" => "t shirts factory manufacturer, hoodie making, jeans supplier",
-    "description" => "t shirts factory manufacturer, hoodie making, jeans supplier"
+    "description" => "Girls Garments Jeans Pants Jackets Tshirts Hoodies Cargo Trousers"
   ],
   "jeans-manufacturing-cost" => [
     "title" => "Jeans Manufacturing Cost",
@@ -57,7 +57,7 @@ $metaData = [
   ],
 ];
 
-$bannedCountries = ["Pakistan", "India", "China", "Vietnam", "Bangladesh"];
+$bannedCountries = ["Pakistan", "India", "China", "Vietnam", "Bangladesh", "Nepal", "Sri Lanka"];
 
 return [
   "metaData" => $metaData,

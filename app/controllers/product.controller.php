@@ -1,9 +1,7 @@
 <?php
-
-// namespace App\Controllers;
-
-require_once "Core/Controller.php";
-require_once "app/models/product.model.php";
+namespace app\Controllers;
+use Core\Controller;
+use app\Models\ProductModel;
 
 class ProductController extends Controller {
   protected $productModel;
@@ -37,6 +35,4 @@ class ProductController extends Controller {
     return $getProductByArticleNo;
   }
 }
-
-
 ?>

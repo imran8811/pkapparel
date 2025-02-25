@@ -1,6 +1,7 @@
 <?php
 
-// namespace Core;
+namespace Core;
+use PDO;
 
 class Model {
   public $db_name;
