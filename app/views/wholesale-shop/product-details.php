@@ -1,6 +1,7 @@
 <?php
   include_once("app/views/shared/header.php");
   require_once "app/controllers/product.controller.php";
+  use app\Controllers\ProductController;
   $productController = new ProductController();
   $article_no = explode("-", $name);
   $article_no = end($article_no);
@@ -74,12 +75,12 @@
   <div class="mb-5">
     <nav aria-label="breadcrumb" class="mb-5 px-4">
       <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="/">Wholesale Shop</a></li>
+        <li class="breadcrumb-item"><a href="/wholesale-shop">Wholesale Shop</a></li>
         <li class="breadcrumb-item text-capitalize">
-          <a href="/<?php echo $productDetails['dept'] ?>"><?php echo $productDetails['dept'] ?></a>
+          <a href="/wholesale-shop/<?php echo $productDetails['dept'] ?>"><?php echo $productDetails['dept'] ?></a>
         </li>
         <li class="breadcrumb-item text-capitalize">
-          <a href="/<?php echo $productDetails['category'] ?>"><?php echo $productDetails['category'] ?></a>
+          <a href="/wholesale-shop/<?php echo $productDetails['dept'] ?>/<?php echo $productDetails['category'] ?>"><?php echo $productDetails['category'] ?></a>
         </li>
         <li class="breadcrumb-item active" aria-current="page"><?php echo $productDetails['article_no'] ?></li>
       </ol>

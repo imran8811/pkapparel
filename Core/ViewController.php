@@ -2,10 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Framework;
+namespace Core;
 
-class ViewerController
-{
+class ViewerController {
   public function render(string $template, array $data = []): string {
     extract($data, EXTR_SKIP);
     ob_start();

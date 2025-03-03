@@ -19,19 +19,19 @@
         <ol class="breadcrumb">
           <?php if(isset($dept)): ?>
             <li class="breadcrumb-item">
-              <a href="/">Wholesale Shop</a>
+              <a href="/wholesale-shop">Wholesale Shop</a>
             </li>
           <?php endif; ?>
           <?php if(isset($dept)): ?>
             <li class="breadcrumb-item text-capitalize">
-              <a href="/<?php echo $dept ?>">
+              <a href="/wholesale-shop/<?php echo $dept ?>">
                 <?php echo $dept ?>
               </a>
             </li>
           <?php endif; ?>
           <?php if(isset($category)): ?>
             <li class="breadcrumb-item text-capitalize">
-              <a href="/<?php echo $dept ?>/<?php echo $ategory ?>">
+              <a href="/wholesale-shop/<?php echo $dept ?>/<?php echo $category ?>">
                 <?php echo $category ?>
               </a>
             </li>
@@ -51,7 +51,7 @@
           <div class="boxes">
             <?php foreach($getProducts as $product): ?>
               <div class="box mb-5">
-                <a href="/<?php echo $product['dept'] ?>/<?php echo $product['category'] ?>/<?php echo $product['slug'] . '-' . $product['article_no'] ?>" class="d-block" rel="noreferrer">
+                <a href="/wholesale-shop/<?php echo $product['dept'] ?>/<?php echo $product['category'] ?>/<?php echo $product['slug'] . '-' . $product['article_no'] ?>" class="d-block" rel="noreferrer">
                   <img
                     src=<?php echo $product['image_front'] ?>
                     alt=<?php echo $product['product_name'] ?>
@@ -60,7 +60,7 @@
                 </a>
                 <a
                   class="text-capitalize d-block pt-3 px-3 text-dark"
-                  href="/<?php echo $product['dept'] ?>/<?php echo $product['category'] ?>/<?php echo $product['slug'] . '-' . $product['article_no'] ?>">
+                  href="/wholesale-shop/<?php echo $product['dept'] ?>/<?php echo $product['category'] ?>/<?php echo $product['slug'] . '-' . $product['article_no'] ?>">
                   <span><?php echo $product['article_no'] ?>-</span>
                   <span><?php echo $product['product_name'] ?></span><br />
                   <span class="text-danger">Price: $<?php echo $product['price'] ?></span>

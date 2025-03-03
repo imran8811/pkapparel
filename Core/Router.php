@@ -3,53 +3,45 @@
 namespace Core;
 
 class Router {
-  public function __construct()
-  {
-
-  }
+  public function __construct(){}
 
   public function get($route, $path_to_include){
     if ($_SERVER['REQUEST_METHOD'] == 'GET') {
       $this->route($route, $path_to_include);
     }
   }
-  public function post($route, $path_to_include)
-  {
+  public function post($route, $path_to_include){
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       $this->route($route, $path_to_include);
     }
   }
-  public function put($route, $path_to_include)
-  {
+  public function put($route, $path_to_include){
     if ($_SERVER['REQUEST_METHOD'] == 'PUT') {
       $this->route($route, $path_to_include);
     }
   }
-  public function patch($route, $path_to_include)
-  {
+  public function patch($route, $path_to_include){
     if ($_SERVER['REQUEST_METHOD'] == 'PATCH') {
       $this->route($route, $path_to_include);
     }
   }
-  public function delete($route, $path_to_include)
-  {
+  public function delete($route, $path_to_include){
     if ($_SERVER['REQUEST_METHOD'] == 'DELETE') {
       $this->route($route, $path_to_include);
     }
   }
-  public function any($route, $path_to_include)
-  {
+  public function any($route, $path_to_include){
     $this->route($route, $path_to_include);
   }
 
-  public function route($route, $path_to_include)  {
+  public function route($route, $path_to_include){
     $callback = $path_to_include;
     if (!is_callable($callback)) {
       if (!strpos($path_to_include, '.php')) {
         $path_to_include .= '.php';
       }
     }
-    if ($route == "/404") {
+    if ($route == "/404"){
       include_once dirname(__DIR__ ). "/$path_to_include";
       exit();
     }

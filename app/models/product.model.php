@@ -1,7 +1,7 @@
 <?php
 
 namespace app\Models;
-require_once(dirname(dirname(__DIR__)) . "/Core/Model.php");
+include_once(dirname(dirname(__DIR__)). "/Core/Model.php");
 use Core\Model;
 
 class ProductModel extends Model {
