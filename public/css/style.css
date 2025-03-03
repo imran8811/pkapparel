@@ -591,8 +591,6 @@ h3 { font-size: 1.4rem;}
 }
 .header-menu, .footer-menu ul {
 	list-style: none;
-	font-size: 14px;
-	line-height: 20px;
 	font-weight: bold;
 	text-align: right;
 }
@@ -610,7 +608,7 @@ h3 { font-size: 1.4rem;}
 .header-menu li { background: none; }
 .header-menu li a {
 	color: #333;
-	font-size: 18px;
+	font-size: 15px;
 }
 .header-menu li:hover a, .footer-menu ul li:hover a { text-decoration:none; }
 .header-menu li:first-child, .footer-menu ul li:first-child {

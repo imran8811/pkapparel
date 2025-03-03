@@ -1,25 +1,10 @@
 <?php
   include_once("app/views/shared/header.php");
-  $constants = include(dirname(dirname(__DIR__))."/constants.php");
-  $metaData = $constants['metaData'];
-  $currentPage = $_SERVER['REQUEST_URI'];
-  $currentPage = explode('/', $currentPage);
-  $currentPage = end($currentPage);
-  $heading = $metaData[$currentPage]['title'];
-  $description = $metaData[$currentPage]['description'];
-  // $heading = "Jeans Manufacturing Cost";
-  // $description = "Good quality jeans manufacturing cost is between $3.5 to $5.2, depending on the material, sizes, styling and washing affects.";
 ?>
 <div class="container-fluid page-content">
   <div class="row">
-    <div class="tagline mb-5">
-      <div class="bg-img"></div>
-      <div class="col-12 col-lg-6 text-center tagline-text">
-        <h1 class="heading mb-4"><?php echo $heading ?></h1>
-        <p class="para"><?php echo $description ?></p>
-      </div>
-    </div>
-    <div class='mb-5'>
+    <?php include_once(dirname(__DIR__). '/shared/tagline.php') ?>
+    <div class='col-12 mb-5'>
       <h2 class="h2 text-center mb-5 mt-4 section-heading">Step by step guide to jeans manufacturing cost</h2>
       <p class='mb-4'>Every person knows that jeans are one of the most common apparel everyone uses. Whether it is party dress or worker apparel, jeans are easily worn in every type of clothing. Jeans have their importance. However, clothing brands must know the actual jeans cost, especially when they need custom designing and styling. Production of these jeans involves a complex interplay of material, technology, labor, washing, and packaging costs. Every clothing brand needs competitive jeans manufacturing costs without compromising the quality of jeans. PK Apparel understands all these elements and presents a fair distribution of the cost of manufacturing jeans.</p>
       <h3>Jeans manufacturing cost: The ultimate guide</h3>
@@ -39,7 +24,6 @@
         <li>Shipping</li>
       </ol>
       <p class='mb-4'>All the costs are discussed in detail in the following discussion, and you will get an idea of each. However, these are the basic costs required to produce denim and jeans.</p>
-      <ProductListing dept="men" category="jeans-pant" numberOfRecords={6} />
       <img src="/public/images/posts/jeans-wholesale.jpg" alt="<?php echo $heading ?>" class="img-fluid mb-5" />
       <h3>Step 1: Raw material</h3>
       <h3>What is the raw material for jeans?</h3>

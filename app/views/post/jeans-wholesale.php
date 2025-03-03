@@ -3,14 +3,9 @@
   $heading = "Jeans Wholesale";
   $description = "Manufacturer and exporter of denim products, jeans pants, jeans jackets, jeans shorts for men, women and kids.";
 ?>
-<div class="container page-content">
+<div class="container-fluid page-content">
   <div class="row">
-    <div class="tagline mb-5">
-      <div class="col-12 col-lg-6 text-center pt-5 text-white">
-        <h1 class="heading mb-4"><?php echo $heading ?></h1>
-        <p class="para"><?php echo $description ?></p>
-      </div>
-    </div>
+    <?php include_once(dirname(__DIR__). '/shared/tagline.php') ?>
     <div class='mb-5'>
       <p class='mb-4'><strong>Jeans wholesale</strong> business has elevated in the past decade. Although it was first invented for factory workers, it did not take much time for it to become an essential part of catwalks. The rugged fabric has flattered everybody from celebrities to workers. Denim jeans are, now, the ultimate fashion statement, a must-have in every wardrobe. Any product’s ability to capture a huge percentage of the market is highly dependent on its uniqueness. The innovation of dyeing yarn before weaving and using it in the warp only while keeping the weft white is phenomenal. However, the twill weave of denim is a major reason for its success. </p>
       <p class='mb-4'>A good pair of jeans tells the story of its owner. It explains the lifestyle of the person who wears as it ages with time. <strong>Jeans wholesale</strong> market is in equilibrium. Denim lovers are intrigued by the natural worn-out effect of jeans. The more washed down, the better it looks. Jeans are gaining momentum in the world. They are becoming appropriate for meetings, outings, and parties. A premium quality pair of jeans is recognized even in a shredding plant.</p>

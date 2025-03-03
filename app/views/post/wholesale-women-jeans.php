@@ -3,14 +3,9 @@
   $heading = "Wholesale Women Jeans";
   $description = "Manufacturer and exporter of denim products, jeans pants, jeans jackets, jeans shorts for men, women and kids.";
 ?>
-<div class="container page-content">
+<div class="container-fluid page-content">
   <div class="row">
-    <div class="tagline mb-5">
-      <div class="col-12 col-lg-6 text-center pt-5 text-white">
-        <h1 class="heading mb-4"><?php echo $heading ?></h1>
-        <p class="para"><?php echo $description ?></p>
-      </div>
-    </div>
+    <?php include_once(dirname(__DIR__). '/shared/tagline.php') ?>
     <div class="mb-5">
       <p class="mb-3">Year after year, trends change and women fashion experiences drastic changes. From long dresses to short skirts and tank tops, there have been quite lot variations; some additions and some fashion buried forever. If there is one thing that has always been in the latest trends and the number one choice of women from around the world then it has to be classic jeans. A <strong>wholesale women jeans</strong> is one type of business that keeps getting bigger as the demand only increases every passing year. This is the reason why hundreds of wholesale women jeans brands have opened up competing for greater shares.</p>
       <ProductListing dept="women" category="jeans-pant" numberOfRecords={4} />

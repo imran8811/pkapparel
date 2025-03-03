@@ -37,7 +37,7 @@
             <img src="/public/images/logo.jpg" alt="PK Apparel logo" title="PK Apparel Home" />
           </a>
         </div>
-        <ul class="header-menu col-md-8 pt-3">
+        <ul class="header-menu col-md-8 my-4">
           <li><a href="https://www.wholesale.pkapparel.com">Wholesale</a></li>
           <li><a href="/about">About us</a></li>
           <li><a href="/factory">Factory</a></li>

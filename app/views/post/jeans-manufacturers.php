@@ -3,14 +3,9 @@
   $heading = "Jeans Manufacturers - Jeans Factories";
   $description = "We offer top-notch jeans at amazing prices to customers who need a real blend of quality and style. So, place your order with a renowned jeans manufacturer.";
 ?>
-<div class="container page-content">
+<div class="container-fluid page-content">
   <div class="row">
-    <div class="tagline mb-5">
-      <div class="col-12 col-lg-6 text-center pt-5 text-white">
-        <h1 class="heading mb-4"><?php echo $heading ?></h1>
-        <p class="para"><?php echo $description ?></p>
-      </div>
-    </div>
+    <?php include_once(dirname(__DIR__). '/shared/tagline.php') ?>
     <div class="mb-5">
       <p class='mb-4'>As a leading name in the denim industry, we are here to create splendid jeans that cater to the needs of unparalleled craftsmanship, distinction, and dedication to the best quality. Our experienced staff produces visually enchanting and premium quality jeans that fit the requirements of clothing brands.
       Our jeans are created by skilled artisans with state-of-the-art designs and facilities. All such things enable PK Apparel to produce jeans that meet the expectations of global clothing brands. </p>

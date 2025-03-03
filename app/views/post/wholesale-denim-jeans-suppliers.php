@@ -3,14 +3,9 @@
   $heading = "Wholesale Denim Jeans Suppliers";
   $description = "Manufacturer and exporter of denim products, jeans pants, jeans jackets, jeans shorts for men, women and kids.";
 ?>
-<div class="container page-content">
+<div class="container-fluid page-content">
   <div class="row">
-    <div class="tagline mb-5">
-      <div class="col-12 col-lg-6 text-center pt-5 text-white">
-        <h1 class="heading mb-4"><?php echo $heading ?></h1>
-        <p class="para"><?php echo $description ?></p>
-      </div>
-    </div>
+    <?php include_once(dirname(__DIR__). '/shared/tagline.php') ?>
     <div class="mb-5">
       <p class='mb-3'>Denim is an aberration that has opened a whole new window for textile industries. It is the invention that was needed in this world. This era of Denim has increased the versatility of the fashion industry and has given them new roots to strengthen their success. Denim is the idea that can be converted into a fabric for home textiles, or a fabric for jeans or even a fabric for dress or shirt. It has unlimited end uses and each end use demands a particular set of properties that are not easy to impart. Therefore, it is extremely important for a businessman to keep in mind the best <strong>Wholesale Denim Jeans Supplier.</strong></p>
       <h2>Staying In Fashion Forever</h2>

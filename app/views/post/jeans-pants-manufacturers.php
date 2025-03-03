@@ -3,14 +3,9 @@
   $heading = "Jeans Pants Manufacturers";
   $description = "Manufacturer and exporter of denim products, jeans pants, jeans jackets, jeans shorts for men, women and kids.";
 ?>
-<div class="container page-content">
+<div class="container-fluid page-content">
   <div class="row">
-    <div class="tagline mb-5">
-      <div class="col-12 col-lg-6 text-center pt-5 text-white">
-        <h1 class="heading mb-4"><?php echo $heading ?></h1>
-        <p class="para"><?php echo $description ?></p>
-      </div>
-    </div>
+    <?php include_once(dirname(__DIR__). '/shared/tagline.php') ?>
     <div class="mb-5">
       <p class="mb-4">If you are looking for a top quality jeans manufacturer in town, then head over to PK Apparel. PK Apparel is the number one jeans and pants manufacturing company providing stylish and fashionable jeans. If there is a name for perfection and customer satisfaction, then undoubtedly it is PK Apparel.</p>
       <p class="mb-3">For over 2 years of experience dealing in manufacturing and export of high quality jeans, the company has gained popularity and trust to make it one of the leading names in the industry. Years of effort, time, practice and precision has made PK Apparel a trusted name and the number one choice.</p>

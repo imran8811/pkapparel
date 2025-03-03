@@ -3,14 +3,9 @@
   $heading = "Wholesale Jeans Bulk";
   $description = "Manufacturer and exporter of denim products, jeans pants, jeans jackets, jeans shorts for men, women and kids.";
 ?>
-<div class="container page-content">
+<div class="container-fluid page-content">
   <div class="row">
-    <div class="tagline mb-5">
-      <div class="col-12 col-lg-6 text-center pt-5 text-white">
-        <h1 class="heading mb-4"><?php echo $heading ?></h1>
-        <p class="para"><?php echo $description ?></p>
-      </div>
-    </div>
+    <?php include_once(dirname(__DIR__). '/shared/tagline.php') ?>
     <div className="mb-5">
       <h3>Wholesale jeans bulk</h3>
       <p className='mb-4'>Denim jeans were first introduced in the market as jeans for men, it didn&apos;t take much longer for them to turn into high-waisted jeans for women. People&apos;s love for denim is eternal. It is not a phase that will soon disappear. The bond has been built over for decades. From ripped jeans to skinny jeans, all categories are being manufactured in the <strong>wholesale jeans bulk</strong>. However, the journey that denim went through in life is still unknown to the majority. Many misconceptions have arisen over the years. </p>

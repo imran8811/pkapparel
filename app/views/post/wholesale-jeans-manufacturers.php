@@ -3,14 +3,9 @@
   $heading = "Wholesale Jeans Manufacturers";
   $description = "It is the right time to order low-cost and brilliant quality denim and jeans from the best wholesale jeans suppliers with your required specifications.";
 ?>
-<div class="container page-content">
+<div class="container-fluid page-content">
   <div class="row">
-    <div class="tagline mb-5">
-      <div class="col-12 col-lg-6 text-center pt-5 text-white">
-        <h1 class="heading mb-4"><?php echo $heading ?></h1>
-        <p class="para"><?php echo $description ?></p>
-      </div>
-    </div>
+    <?php include_once(dirname(__DIR__). '/shared/tagline.php') ?>
     <div className="mb-5">
       <p className="mb-3">Denim is an eclectic art that has no end. Considering the types of denim fabric and their advantages, it is not peculiar for denim to pave its way into the textile industry and outshine all other types of fabrics. Of all the garments that can be made from this fabric, the roots of it are embedded in denim jeans. <strong>wholesale jeans manufacturers</strong> have a huge responsibility on themselves to keep the essence of true denim jeans in their production.</p>
       <h2>Adding Uniqueness to Denim Jeans</h2>

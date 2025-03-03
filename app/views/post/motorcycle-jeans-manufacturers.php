@@ -3,14 +3,9 @@
   $heading = "Motorcycle Jeans Manufacturers";
   $description = "Manufacturer and exporter of denim products, jeans pants, jeans jackets, jeans shorts for men, women and kids.";
 ?>
-<div class="container page-content">
+<div class="container-fluid page-content">
   <div class="row">
-    <div class="tagline mb-5">
-      <div class="col-12 col-lg-6 text-center pt-5 text-white">
-        <h1 class="heading mb-4"><?php echo $heading ?></h1>
-        <p class="para"><?php echo $description ?></p>
-      </div>
-    </div>
+    <?php include_once(dirname(__DIR__). '/shared/tagline.php') ?>
     <div class="mb-5">
       <p class='mb-3'>Jeans with aramid protection will never run out of fashion. They will remain a signature style for the motorcycles. It is impossible to venture out with regular jeans once you are introduced to the best quality that <strong>Motorcycle Jeans manufacturers</strong> are providing.</p>
       <p class='mb-3'>Denim jeans for motor cycles are in demand for the past decade. Denim jeans made up of Motorcycle, aramid and protective padding is the best choice for motorcycle riders. Such jeans allow them to carry on with their biking to the best of their potential without holding back.</p>

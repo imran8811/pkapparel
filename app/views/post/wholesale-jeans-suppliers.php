@@ -3,14 +3,9 @@
   $heading = "Wholesale Jeans Suppliers";
   $description = "Manufacturer and exporter of denim products, jeans pants, jeans jackets, jeans shorts for men, women and kids.";
 ?>
-<div class="container page-content">
+<div class="container-fluid page-content">
   <div class="row">
-    <div class="tagline mb-5">
-      <div class="col-12 col-lg-6 text-center pt-5 text-white">
-        <h1 class="heading mb-4"><?php echo $heading ?></h1>
-        <p class="para"><?php echo $description ?></p>
-      </div>
-    </div>
+    <?php include_once(dirname(__DIR__). '/shared/tagline.php') ?>
     <div className="mb-5">
       <p className='mb-4'>Clothing brands are always in search of wholesale jeans suppliers who are well aware of how to source the best jeans and denim products. It is a realm of beauty and fashion where jeans are one of the known attire for their practicality, comfort, and style. We found denim to be a part of all types of dressing, from casual to formal. The versatile adaptability of the jeans makes them hold a quintessential place in clothing fashion. And that is the reason brands need to purchase jeans from a credible and affordable source like PK Apparel.</p>
       <h2 className="mb-3">Jeans suppliers with multiple fabric and design options</h2>
