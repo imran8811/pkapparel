@@ -37,13 +37,12 @@
             <img src="/public/images/logo.jpg" alt="PK Apparel logo" title="PK Apparel Home" />
           </a>
         </div>
-        <ul class="header-menu col-md-8 my-4">
-          <li><a href="https://www.wholesale.pkapparel.com">Wholesale</a></li>
+        <ul class="header-menu col-md-8 mt-3 mb-3">
+          <li><a href="/wholesale-shop">Wholesale Shop</a></li>
           <li><a href="/about">About us</a></li>
           <li><a href="/factory">Factory</a></li>
           <li><a href="/blog">Blog</a></li>
           <li><a href="/contact">Contact us</a></li>
-          <li><a href="https://www.retail.pkapparel.com">Retail</a></li>
         </ul>
       </div>
     </header>

@@ -1,8 +1,3 @@
 /vendor/
 .env
 .htaccess
-/wordpress
-/localhost-default
-/pk-apis-php
-/wholesale
-/retail

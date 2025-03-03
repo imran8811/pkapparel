@@ -1,5 +1,9 @@
 <?php
 namespace app\Controllers;
+
+include_once(dirname(dirname(__DIR__)). "/Core/Controller.php");
+include_once(dirname(__DIR__). "/models/product.model.php");
+
 use Core\Controller;
 use app\Models\ProductModel;
 

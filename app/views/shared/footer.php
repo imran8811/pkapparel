@@ -3,12 +3,11 @@
     <div class="mb-5 text-center">
       <nav class="footer-menu">
         <ul>
-          <li><a href="https://www.wholesale.pkapparel.com">Wholesale</a></li>
+          <li><a href="/wholesale-shop">Wholesale Shop</a></li>
           <li><a href="/about">About us</a></li>
           <li><a href="/factory">Factory</a></li>
           <li><a href="/blog">Blog</a></li>
           <li><a href="/contact">Contact us</a></li>
-          <li><a href="https://www.retail.pkapparel.com">Retail</a></li>
         </ul>
       </nav>
     </div>
