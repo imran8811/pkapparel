@@ -603,7 +603,6 @@ h3 { font-size: 1.4rem;}
 	display: inline-block;
 	padding: 0 0 0 20px;
 	margin: 0 0 0 20px;
-	text-transform:capitalize;
 }
 .header-menu li { background: none; }
 .header-menu li a {
