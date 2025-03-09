@@ -25,28 +25,33 @@
   $router->get('/post/wholesale-jeans-suppliers', 'app/views/post/wholesale-jeans-suppliers.php');
   $router->get('/post/wholesale-women-jeans', 'app/views/post/wholesale-women-jeans.php');
 
+  //admin
+  $router->get('/admin', 'app/views/admin/index.php');
+  $router->get('/admin/login', 'app/views/admin/admin-login.php');
+  $router->post('/admin/login', 'app/views/admin/admin-login.php');
+  $router->get('/admin/add-product', 'app/views/admin/add-product.php');
+  $router->post('/admin/add-product', 'app/views/admin/add-product.php');
+  $router->get('/admin/logout/$token', function($token){
+    echo $token;
+  });
+
   //authentication
-  $router->get('/wholesale-shop/login', 'app/views/auth/login.php');
-  $router->get('/wholesale-shop/signup', 'app/views/auth/signup.php');
-  $router->get('/wholesale-shop/forgot-password', 'app/views/auth/forgot-password.php');
-  $router->get('/wholesale-shop/reset-password', 'app/views/auth/reset-password.php');
-  $router->get('/wholesale-shop/user-account', 'app/views/auth/user-account.php');
+  $router->get('/login', 'app/views/auth/login.php');
+  $router->get('/signup', 'app/views/auth/signup.php');
+  $router->get('/forgot-password', 'app/views/auth/forgot-password.php');
+  $router->get('/reset-password', 'app/views/auth/reset-password.php');
+  $router->get('/user-account', 'app/views/auth/user-account.php');
 
   //wholesale shop
   $router->get('/wholesale-shop', 'app/views/wholesale-shop/shop.php');
   $router->get('/wholesale-shop/$dept', 'app/views/wholesale-shop/shop.php');
   $router->get('/wholesale-shop/$dept/$category', 'app/views/wholesale-shop/shop.php');
   $router->get('/wholesale-shop/$dept/$category/$name', 'app/views/wholesale-shop/product-details.php');
-  $router->get('/wholesale-shop/cart', 'app/views/wholesale-shop/cart.php');
-  $router->get('/wholesale-shop/checkout', 'app/views/wholesale-shop/checkout.php');
-  $router->get('/wholesale-shop/orders', 'app/views/wholesale-shop/orders.php');
-  $router->get('/wholesale-shop/orders-invoice', 'app/views/wholesale-shop/orders-invoice.php');
+  $router->get('/cart', 'app/views/wholesale-shop/cart.php');
+  $router->get('/checkout', 'app/views/wholesale-shop/checkout.php');
+  $router->get('/orders', 'app/views/wholesale-shop/orders.php');
+  $router->get('/orders-invoice', 'app/views/wholesale-shop/orders-invoice.php');
 
-  //admin
-  $router->get('/wholesale-shop/admin', 'app/views/admin/index.php');
-  $router->get('/wholesale-shop/admin/login', 'app/views/admin/admin-login.php');
-  $router->post('/wholesale-shop/admin/login', 'app/views/admin/admin-login.php');
-  $router->get('/wholesale-shop/admin/add-product', 'app/views/admin/add-product.php');
 
   // get('/user/$id', 'views/user');
   // get('/user/$name/$last_name', 'views/full_name.php');

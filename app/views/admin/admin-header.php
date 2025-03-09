@@ -1,6 +1,4 @@
-<?php
-
-?>
+<?php ?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -18,14 +16,14 @@
     <header class='container-fluid'>
       <div class='row'>
         <div class='col-6 mt-3'>
-          <a href="/admin" class="navbar-brand">
+          <a href="/" class="navbar-brand">
             <img src="/public/images/logo.jpg" alt="logo" class="img-fluid" title="PK Apparel Home" />
           </a>
         </div>
-        <ul class='col-6 main-menu'>
-          <li><a href="/admin/products" class="nav-item nav-a">Products</a></li>
-          <li><a href="/admin/add-product" class="nav-item nav-a">Add product</a></li>
-          <li><a href="/admin/logout" class="nav-item nav-a">Logout</a></li>
+        <ul class='col-6 d-flex justify-content-around align-items-center'>
+          <li><a href="/admin/products">Products</a></li>
+          <li><a href="/admin/add-product">Add product</a></li>
+          <li><a href="/admin/logout/sdfklsjdlfjsdlf54654">Logout</a></li>
         </div>
       </div>
     </header>

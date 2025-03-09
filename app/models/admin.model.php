@@ -4,7 +4,6 @@ namespace app\Models;
 use Core\Model;
 use PDO;
 use PDOException;
-// require_once "Core/Model.php";
 
 class AdminModel extends Model {
   public function __construct(){

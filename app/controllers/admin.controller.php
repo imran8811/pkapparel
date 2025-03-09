@@ -13,14 +13,11 @@ class AdminController extends Controller {
 
   public function login($email, $password){
     $adminLogin = $this->adminModel->login($email, $password);
-    // return $adminLogin;
     if($adminLogin){
       return [
         "status" => "success",
         "message" => "Admin LoggedIn",
-        "data" => [
-          "email" => $adminLogin['email']
-        ]
+        "data" => $adminLogin
       ];
     } else {
       return [

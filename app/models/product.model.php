@@ -90,6 +90,56 @@ class ProductModel extends Model {
     $res = $stmt->fetch();
     return $res['MAX(article_no)']? $res['MAX(article_no)'] : '10050';
   }
+
+  public function addProduct($data) {
+    $query = "INSERT INTO product
+            (
+            article_no,
+            price,
+            dept,
+            category,
+            slug,
+            p_sizes,
+            fitting,
+            fabric_type,
+            fabric_stretch,
+            fabric_content,
+            fabric_weight,
+            front_fly,
+            wash_type,
+            moq,
+            piece_weight,
+            color,
+            product_name
+            )
+            VALUES
+            (
+            :article_no,
+            :price,
+            :dept,
+            :category,
+            :slug,
+            :p_sizes,
+            :fitting,
+            :fabric_type,
+            :fabric_stretch,
+            :fabric_content,
+            :fabric_weight,
+            :front_fly,
+            :wash_type,
+            :moq,
+            :piece_weight,
+            :color,
+            :product_name
+            )";
+    $stmt= $this->pdo->prepare($query);
+    $stmt->execute($data);
+    $stmt2 = $this->pdo->prepare('SELECT MAX(p_id) from product');
+    $stmt2->execute();
+    $res = $stmt2->fetchColumn();
+    return $res;
+  }
+
 }
 
 ?>
