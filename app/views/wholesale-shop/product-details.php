@@ -7,6 +7,7 @@
   $article_no = end($article_no);
   $getProductByArticleNo = $productController->getProductByArticleNo($article_no);
   // print_r($getProductByArticleNo);
+  $images = ['front', 'back']
 ?>
 <style>
   .swiper {
@@ -90,7 +91,14 @@
         <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper productGallery">
           <div class="swiper-wrapper">
             <div class="swiper-slide">
-              <img src="<?php echo $productDetails['image_front'] ?>" alt="<?php echo $productDetails['product_name'] ?>" />
+              <img
+                src="<?php echo '/uploads/' . $productDetails['article_no'] . '/front.jpg' ?>"
+                alt="<?php echo $productDetails['product_name'] ?>"/>
+            </div>
+            <div class="swiper-slide">
+              <img
+                src="<?php echo '/uploads/' . $productDetails['article_no'] . '/back.jpg' ?>"
+                alt="<?php echo $productDetails['product_name'] ?>"/>
             </div>
           </div>
           <div class="swiper-button-next"></div>
@@ -99,7 +107,14 @@
         <div thumbsSlider="" class="swiper productThumbs">
           <div class="swiper-wrapper">
             <div class="swiper-slide">
-              <img src="<?php echo $productDetails['image_front'] ?>" alt="<?php echo $productDetails['product_name'] ?>" />
+              <img
+                src="<?php echo '/uploads/' . $productDetails['article_no'] . '/front.jpg' ?>"
+                alt="<?php echo $productDetails['product_name'] ?>"/>
+            </div>
+            <div class="swiper-slide">
+              <img
+                src="<?php echo '/uploads/' . $productDetails['article_no'] . '/back.jpg' ?>"
+                alt="<?php echo $productDetails['product_name'] ?>"/>
             </div>
           </div>
         </div>
@@ -256,6 +271,4 @@
   </div>
   <?php endforeach ?>
 </div>
-
-
 <?php include_once("app/views/shared/footer.php"); ?>

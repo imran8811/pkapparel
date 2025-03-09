@@ -53,7 +53,7 @@
               <div class="box mb-5">
                 <a href="/wholesale-shop/<?php echo $product['dept'] ?>/<?php echo $product['category'] ?>/<?php echo $product['slug'] . '-' . $product['article_no'] ?>" class="d-block" rel="noreferrer">
                   <img
-                    src=<?php echo $product['image_front'] ?>
+                    src=<?php echo "/uploads/" . $product['article_no'] . "/" . "front.jpg" ?>
                     alt=<?php echo $product['product_name'] ?>
                     height="370"
                     class="w-100" />

@@ -10,7 +10,7 @@ class ProductModel extends Model {
   }
 
   public function getAllProducts() {
-    $query = 'SELECT * FROM product LEFT JOIN images ON product.p_id=images.p_id ORDER BY product.p_id DESC';
+    $query = 'SELECT * FROM product ORDER BY product.p_id DESC';
     $stmt = $this->pdo->prepare($query);
     $stmt->execute();
     $res = $stmt->fetchAll();
@@ -18,7 +18,7 @@ class ProductModel extends Model {
   }
 
   public function getProductByArticleNo($article_no){
-    $query = 'SELECT * FROM product INNER JOIN images ON product.p_id=images.p_id WHERE product.article_no=?';
+    $query = 'SELECT * FROM product WHERE product.article_no=?';
     $stmt = $this->pdo->prepare($query);
     $stmt->execute([$article_no]);
     $res = $stmt->fetchAll();
@@ -26,7 +26,7 @@ class ProductModel extends Model {
   }
 
   public function getProductsByDept($dept){
-    $query = 'SELECT * FROM product INNER JOIN images ON product.p_id=images.p_id WHERE product.dept=? ORDER BY product.p_id DESC';
+    $query = 'SELECT * FROM product WHERE product.dept=? ORDER BY product.p_id DESC';
     $stmt = $this->pdo->prepare($query);
     $stmt->execute([$dept]);
     $res = $stmt->fetchAll();
@@ -34,7 +34,7 @@ class ProductModel extends Model {
   }
 
   public function getProductsByCategory($category){
-    $query = 'SELECT * FROM product INNER JOIN images ON product.p_id=images.p_id WHERE product.category=? ORDER BY product.p_id DESC';
+    $query = 'SELECT * FROM product WHERE product.category=? ORDER BY product.p_id DESC';
     $stmt = $this->pdo->prepare($query);
     $stmt->execute([$category]);
     $res = $stmt->fetchAll();
@@ -42,7 +42,7 @@ class ProductModel extends Model {
   }
 
   public function getProductsByDeptCategory($dept, $category){
-    $query = 'SELECT * FROM product INNER JOIN images ON product.p_id=images.p_id WHERE product.dept=? AND product.category=? ORDER BY product.p_id DESC';
+    $query = 'SELECT * FROM product WHERE product.dept=? AND product.category=? ORDER BY product.p_id DESC';
     $stmt = $this->pdo->prepare($query);
     $stmt->execute([$dept, $category]);
     $res = $stmt->fetchAll();

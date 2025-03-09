@@ -3,55 +3,36 @@
   require_once("app/controllers/product.controller.php");
   use app\Controllers\ProductController;
   $productController = new ProductController();
-  if(isset($dept) && isset($category)){
-    $getProducts = $productController->getProductsByDeptCategory($dept, $category);
-  } else if(isset($dept)){
-    $getProducts = $productController->getProductsByDept($dept);
-  } else {
-    $getProducts = $productController->getAllProducts();
-  }
-  // print_r($getProducts);
+  $getProducts = $productController->getAllProducts();
 ?>
-<div class="mb-3">
-  <div class="shop-listing col-lg-12">
-    <div class="mb-3">
-      <div class="products-outer">
-        <div class="products">
-          <h1 class="text-center mb-5">Garments Wholesale Shop</h1>
-          <!-- <ul class="product-categories-pills mb-5">
-            <li class="mx-2 px-3">
-              <a class="text-capitalize" href="/<?php echo "men" ?>/<?php echo "jeans-pant" ?>">
-                <?php echo "Jeans Pants" ?>
-              </a>
-            </li>
-          </ul> -->
-          <div class="boxes">
-            <?php foreach($getProducts as $product): ?>
-              <div class="box mb-5">
-                <a href="/wholesale-shop/<?php echo $product['dept'] ?>/<?php echo $product['category'] ?>/<?php echo $product['slug'] . '-' . $product['article_no'] ?>" class="d-block" rel="noreferrer">
-                  <img
-                    src=<?php echo $product['image_front'] ?>
-                    alt=<?php echo $product['product_name'] ?>
-                    height="370"
-                    class="w-100" />
-                </a>
-                <a
-                  class="text-capitalize d-block pt-3 px-3 text-dark"
-                  href="/wholesale-shop/<?php echo $product['dept'] ?>/<?php echo $product['category'] ?>/<?php echo $product['slug'] . '-' . $product['article_no'] ?>">
-                  <span><?php echo $product['article_no'] ?>-</span>
-                  <span><?php echo $product['product_name'] ?></span><br />
-                  <span class="text-danger">Price: $<?php echo $product['price'] ?></span>
-                </a>
-              </div>
-            <?php endforeach ?>
+<div class="mt-5 mb-5">
+  <h2 class="text-center mb-3">Products</h2>
+  <div class="products">
+    <div class="boxes">
+      <?php foreach($getProducts as $product): ?>
+        <div class="box mb-5">
+          <a href="<?php echo '/admin/edit-product/' . $product['article_no'] ?>">
+            <img src="/uploads/<?php echo $product["article_no"]?> /front.jpg" alt="Product Front Image" />
+          </a>
+          <ul class="list-group">
+            <li class="list-item text-capitalize"><?php echo $product["product_name"] ?></li>
+            <li class="list-item"><?php echo $product["article_no"] . "-" . $product["price"] ?></li>
+            <li class="list-item"><?php echo $product["category"] . "-" . $product["color"] ?></li>
+            <li class="list-item"><?php echo $product["fabric_stretch"] . "-" . $product["fabric_weight"] ?></li>
+          </ul>
+          <div class="col-12">
+            <a href="/admin/products?productDelete=1" class="btn btn-danger">Delete</button>
+            <a href="/admin/add-product?action=d&article_no=<?php echo $product['article_no']?>" target="_blank">Duplicate</a>
           </div>
-          <?php if(count($getProducts) === 0)
-            echo '<h4 class="text-center text-danger mb-5 mt-5">Products coming soon...</h4>'
-          ?>
         </div>
+      <?php endforeach; ?>
+    <?php if(count($getProducts) === 0): ?>
+      <div class="mt-5 mb-5">
+        <h3 class="text-danger">No Product Found</h3>
       </div>
-    </div>
+    <?php endif; ?>
   </div>
+</div>
 </div>
 
 <?php include_once("app/views/admin/admin-footer.php"); ?>
