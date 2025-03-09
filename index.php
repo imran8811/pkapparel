@@ -28,6 +28,7 @@
   //admin
   $router->get('/admin', 'app/views/admin/index.php');
   $router->get('/admin/login', 'app/views/admin/admin-login.php');
+  $router->get('/admin/products', 'app/views/admin/products.php');
   $router->post('/admin/login', 'app/views/admin/admin-login.php');
   $router->get('/admin/add-product', 'app/views/admin/add-product.php');
   $router->post('/admin/add-product', 'app/views/admin/add-product.php');

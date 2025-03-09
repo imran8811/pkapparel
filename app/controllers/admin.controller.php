@@ -1,6 +1,7 @@
 <?php
 namespace app\Controllers;
 require_once dirname(__DIR__). "/models/admin.model.php";
+include_once(dirname(dirname(__DIR__)). "/Core/Controller.php");
 use Core\Controller;
 use app\Models\AdminModel;
 

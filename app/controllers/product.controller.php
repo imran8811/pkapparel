@@ -72,8 +72,6 @@ class ProductController extends Controller
   }
 
   public function productImgUpload($article_no){
-    // print_r($_FILES);
-    echo $article_no;
     if (empty($_FILES)) {
       $filesError = '$_FILES is empty - is file_uploads set to "Off" in php.ini?';
       return $filesError;

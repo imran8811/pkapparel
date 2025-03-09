@@ -42,7 +42,6 @@
   ];
   if(isset($_GET['addProduct']) && !empty($_POST['price'])){
     $addProduct = $productController->addProduct($data);
-    // print_r($addProduct);
     if($addProduct['type'] === 'success'){
       $uploadImages = $productController->productImgUpload($article_no);
     }
@@ -52,6 +51,10 @@
   <div class="row justify-content-center">
     <form action="/admin/add-product?addProduct=1" method="post" enctype="multipart/form-data">
       <div class="row mb-3">
+          <?php
+          if(isset($addProduct['message']))
+            echo '<h2 class="text-success">Product Added Successfully</h2>';
+          ?>
         <h2 class="text-center mb-5">Add Product</h2>
         <div class="col-4">
           <label for="dept">Dept.</label>
