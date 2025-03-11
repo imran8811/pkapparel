@@ -38,8 +38,11 @@
 
   //authentication
   $router->get('/login', 'app/views/auth/login.php');
+  $router->post('/login', 'app/views/auth/login.php');
   $router->get('/signup', 'app/views/auth/signup.php');
+  $router->post('/signup', 'app/views/auth/signup.php');
   $router->get('/forgot-password', 'app/views/auth/forgot-password.php');
+  $router->post('/forgot-password', 'app/views/auth/forgot-password.php');
   $router->get('/reset-password', 'app/views/auth/reset-password.php');
   $router->get('/user-account', 'app/views/auth/user-account.php');
 

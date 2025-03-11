@@ -14,6 +14,10 @@
 ?>
 <div class="mb-3">
   <div class="shop-listing col-lg-12">
+    <?php
+      if(isset($_GET['newUser']))
+        echo '<h2 class="text-success mt-5">Business Resgistered Successfully</h2>';
+    ?>
     <div class="mb-3">
       <nav aria-label="breadcrumb" class="mt-4 px-4">
         <ol class="breadcrumb">
@@ -69,7 +73,7 @@
             <?php endforeach ?>
           </div>
           <?php if(count($getProducts) === 0)
-            echo '<h4 class="text-center text-danger mb-5 mt-5">Products coming soon...</h4>'
+            echo '<h4 class="text-center text-danger mb-5 mt-5">Photoshoot in progress...</h4>'
           ?>
         </div>
       </div>
