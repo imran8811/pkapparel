@@ -76,6 +76,7 @@
             <option value="chino-pant">Chino Pant</option>
             <option value="cargo-trouser">Cargo Trouser</option>
             <option value="biker-jeans">Biker Jeans</option>
+            <option value="maxy">Maxy</option>
           </select>
           <?php
           if(isset($_POST['category']) && empty($_POST['category']))
@@ -110,6 +111,7 @@
             <option value="skinny">Skinny</option>
             <option value="regular">Regular</option>
             <option value="ankle">Ankle</option>
+            <option value="baggy">Baggy</option>
           </select>
           <?php
           if(isset($_POST['fitting']) && empty($_POST['fitting']))

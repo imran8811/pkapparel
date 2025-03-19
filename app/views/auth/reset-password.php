@@ -27,9 +27,9 @@
     <h2 class="mb-4 text-center">Reset Password</h2>
     <?php
       if(isset($_POST['linkExpired']))
-        echo '<div class="mb-3 text-center">
-          <p class="text-danger">Reset password link expired / invalid link.</p>
-        </div>';
+      echo '<div class="mb-3 text-center">
+        <p class="text-danger">Reset password link expired / invalid link.</p>
+      </div>';
     ?>
     <?php
       if(isset($_POST['resetPasswordSuccess']))

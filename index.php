@@ -47,8 +47,8 @@
   $router->get('/user-account', 'app/views/auth/user-account.php');
 
   //wholesale shop
-  $router->get('/wholesale-shop', 'app/views/wholesale-shop/shop.php');
-  $router->get('/wholesale-shop/$dept', 'app/views/wholesale-shop/shop.php');
+  $router->get('/wholesale-shop', 'app/views/wholesale-shop/shop-dept.php');
+  $router->get('/wholesale-shop/$dept', 'app/views/wholesale-shop/shop-category.php');
   $router->get('/wholesale-shop/$dept/$category', 'app/views/wholesale-shop/shop.php');
   $router->get('/wholesale-shop/$dept/$category/$name', 'app/views/wholesale-shop/product-details.php');
   $router->get('/cart', 'app/views/wholesale-shop/cart.php');

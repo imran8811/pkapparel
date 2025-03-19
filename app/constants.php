@@ -35,6 +35,16 @@ $metaData = [
     "keywords" => "t shirts factory manufacturer, hoodie making, jeans supplier",
     "description" => "Men Garments Jeans Pants Jackets Tshirts Hoodies Cargo Trousers"
   ],
+  "jeans-pant" => [
+    "title" => "Men Garments Jeans Pants Jackets Tshirts Hoodies Cargo Trousers",
+    "keywords" => "t shirts factory manufacturer, hoodie making, jeans supplier",
+    "description" => "Men Garments Jeans Pants Jackets Tshirts Hoodies Cargo Trousers"
+  ],
+  "chino-pant" => [
+    "title" => "Men Garments Jeans Pants Jackets Tshirts Hoodies Cargo Trousers",
+    "keywords" => "t shirts factory manufacturer, hoodie making, jeans supplier",
+    "description" => "Men Garments Jeans Pants Jackets Tshirts Hoodies Cargo Trousers"
+  ],
   "women" => [
     "title" => "Women Garments Jeans Pants Jackets Tshirts Hoodies Cargo Trousers",
     "keywords" => "t shirts factory manufacturer, hoodie making, jeans supplier",

@@ -27,6 +27,7 @@
     <link rel="icon" type="image/png" href="/public/images/favicon.png">
     <meta name="keywords" content="<?php echo $keywords ?>">
     <meta name="description" content="<?php echo $description ?>">
+    <meta name="google-site-verification" content="tq6NZzCuCj2a7kvdssFcuBKb8z0BdAjdUhS4e_IuiNY" />
 </head>
 <body>
   <div class="main-wrapper">

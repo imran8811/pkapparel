@@ -3,13 +3,7 @@
   require_once("app/controllers/product.controller.php");
   use app\Controllers\ProductController;
   $productController = new ProductController();
-  if(isset($dept) && isset($category)){
-    $getProducts = $productController->getProductsByDeptCategory($dept, $category);
-  } else if(isset($dept)){
-    $getProducts = $productController->getProductsByDept($dept);
-  } else {
-    $getProducts = $productController->getAllProducts();
-  }
+  $getProducts = $productController->getProductsByDeptCategory($dept, $category);
   // print_r($getProducts);
 ?>
 <div class="mb-3">
@@ -45,15 +39,9 @@
       <div class="products-outer">
         <div class="products">
           <h1 class="text-center mb-5">Garments Wholesale Shop</h1>
-          <!-- <ul class="product-categories-pills mb-5">
-            <li class="mx-2 px-3">
-              <a class="text-capitalize" href="/<?php echo "men" ?>/<?php echo "jeans-pant" ?>">
-                <?php echo "Jeans Pants" ?>
-              </a>
-            </li>
-          </ul> -->
           <div class="boxes">
             <?php foreach($getProducts as $product): ?>
+              <?php if($product['dept'] === 'men'): ?>
               <div class="box mb-5">
                 <a href="/wholesale-shop/<?php echo $product['dept'] ?>/<?php echo $product['category'] ?>/<?php echo $product['slug'] . '-' . $product['article_no'] ?>" class="d-block" rel="noreferrer">
                   <img
@@ -70,7 +58,8 @@
                   <span class="text-danger">Price: $<?php echo $product['price'] ?></span>
                 </a>
               </div>
-            <?php endforeach ?>
+            <?php endif; ?>
+            <?php endforeach; ?>
           </div>
           <?php if(count($getProducts) === 0)
             echo '<h4 class="text-center text-danger mb-5 mt-5">Photoshoot in progress...</h4>'

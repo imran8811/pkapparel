@@ -11,8 +11,8 @@
     <div class="boxes">
       <?php foreach($getProducts as $product): ?>
         <div class="box mb-5">
-          <a href="<?php echo '/admin/edit-product/' . $product['article_no'] ?>">
-            <img src="/uploads/<?php echo $product["article_no"]?> /front.jpg" alt="Product Front Image" />
+          <a href="<?php echo '/admin/edit-product/' . $product['article_no'] ?>" class="d-block">
+            <img src="/uploads/<?php echo $product["article_no"]?>/front.jpg" alt="Product Front Image" class="w-100" height="370" />
           </a>
           <ul class="list-group">
             <li class="list-item text-capitalize"><?php echo $product["product_name"] ?></li>
