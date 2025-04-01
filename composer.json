@@ -1,0 +1,13 @@
+{
+    "name": "pkapparel/pkapparel",
+    "description": "wholesale shop",
+    "autoload": {
+        "psr-4": {
+            "Core\\": "Core/",
+            "App\\": "app/"
+        }
+    },
+    "require": {
+        "phpmailer/phpmailer": "^6.9"
+    }
+}

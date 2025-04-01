@@ -1,0 +1,4 @@
+/vendor/
+.env
+.htaccess
+.DS_Store
