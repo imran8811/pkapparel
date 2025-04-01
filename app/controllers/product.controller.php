@@ -24,6 +24,12 @@ class ProductController extends Controller
     return $getAllProducts;
   }
 
+  public function getFeaturedProducts()
+  {
+    $getFeaturedProducts = $this->productModel->getFeaturedProducts();
+    return $getFeaturedProducts;
+  }
+  
   public function getLatestArticleNo()
   {
     $getLatestArticleNo = $this->productModel->getLatestArticleNo();

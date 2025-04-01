@@ -3,8 +3,8 @@
   require_once("app/controllers/product.controller.php");
   use app\Controllers\ProductController;
   $productController = new ProductController();
-  $getProducts = $productController->getAllProducts();
-  // print_r($getProducts);
+  $getFeaturedProducts = $productController->getFeaturedProducts();
+  // print_r($getFeaturedProducts);
 ?>
 <div class="container-fluid">
   <?php
@@ -16,7 +16,7 @@
       <h1 class="text-center mb-5">Garments Wholesale Shop</h1>
       <h2 class="section-heading">New Men Items </h2>
       <div class="boxes">
-        <?php $counter=0; foreach($getProducts as $product): ?>
+        <?php $counter=0; foreach($getFeaturedProducts as $product): ?>
           <?php if($product['dept'] === 'men'): ?>
           <div class="box mb-5">
             <a href="/wholesale-shop/<?php echo $product['dept'] ?>/<?php echo $product['category'] ?>/<?php echo $product['slug'] . '-' . $product['article_no'] ?>" class="d-block" rel="noreferrer">
@@ -43,7 +43,7 @@
       </div>
       <h2 class="section-heading">New Women Items </h2>
       <div class="boxes">
-        <?php $counter=0; foreach($getProducts as $product): ?>
+        <?php $counter=0; foreach($getFeaturedProducts as $product): ?>
           <?php if($product['dept'] === 'women'): ?>
           <div class="box mb-5">
             <a href="/wholesale-shop/<?php echo $product['dept'] ?>/<?php echo $product['category'] ?>/<?php echo $product['slug'] . '-' . $product['article_no'] ?>" class="d-block" rel="noreferrer">
@@ -70,7 +70,7 @@
       </div>
       <h2 class="section-heading">New Boys Items </h2>
       <div class="boxes">
-        <?php $counter=0; foreach($getProducts as $product): ?>
+        <?php $counter=0; foreach($getFeaturedProducts as $product): ?>
           <?php if($product['dept'] === 'boys'): ?>
           <div class="box mb-5">
             <a href="/wholesale-shop/<?php echo $product['dept'] ?>/<?php echo $product['category'] ?>/<?php echo $product['slug'] . '-' . $product['article_no'] ?>" class="d-block" rel="noreferrer">
@@ -97,7 +97,7 @@
       </div>
       <h2 class="section-heading">New Girls Items</h2>
       <div class="boxes">
-        <?php $counter=0; foreach($getProducts as $product): ?>
+        <?php $counter=0; foreach($getFeaturedProducts as $product): ?>
           <?php if($product['dept'] === 'girls'): ?>
           <div class="box mb-5">
             <a href="/wholesale-shop/<?php echo $product['dept'] ?>/<?php echo $product['category'] ?>/<?php echo $product['slug'] . '-' . $product['article_no'] ?>" class="d-block" rel="noreferrer">
@@ -122,7 +122,7 @@
       <div class="text-end">
         <a href="/wholesale-shop/men" class="btn btn-primary">See all girls items</a>
       </div>
-      <?php if(count($getProducts) === 0)
+      <?php if(count($getFeaturedProducts) === 0)
         echo '<h4 class="text-center text-danger mb-5 mt-5">Photoshoot in progress...</h4>'
       ?>
     </div>
