@@ -25,6 +25,14 @@ class ProductModel extends Model {
     return $res;
   }
 
+  public function getFeaturedProductsByDept($dept) {
+    $query = 'SELECT * FROM product WHERE featured=? AND dept=? ORDER BY p_id DESC';
+    $stmt = $this->pdo->prepare($query);
+    $stmt->execute(["1", $dept]);
+    $res = $stmt->fetchAll();
+    return $res;
+  }
+
   public function getProductByArticleNo($article_no){
     $query = 'SELECT * FROM product WHERE product.article_no=?';
     $stmt = $this->pdo->prepare($query);
@@ -34,7 +42,7 @@ class ProductModel extends Model {
   }
 
   public function getProductsByDept($dept){
-    $query = 'SELECT * FROM product WHERE product.dept=? ORDER BY product.p_id DESC';
+    $query = 'SELECT * FROM product WHERE dept=? ORDER BY p_id DESC';
     $stmt = $this->pdo->prepare($query);
     $stmt->execute([$dept]);
     $res = $stmt->fetchAll();

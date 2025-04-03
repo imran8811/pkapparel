@@ -29,6 +29,12 @@ class ProductController extends Controller
     $getFeaturedProducts = $this->productModel->getFeaturedProducts();
     return $getFeaturedProducts;
   }
+
+  public function getFeaturedProductsByDept($dept)
+  {
+    $getFeaturedProductsByDept = $this->productModel->getFeaturedProductsByDept($dept);
+    return $getFeaturedProductsByDept;
+  }
   
   public function getLatestArticleNo()
   {
@@ -40,12 +46,6 @@ class ProductController extends Controller
   {
     $getProductsByDept = $this->productModel->getProductsByDept($dept);
     return $getProductsByDept;
-  }
-
-  public function getProductsByCategory($dept)
-  {
-    $getProductsByCategory = $this->productModel->getProductsByCategory($dept);
-    return $getProductsByCategory;
   }
 
   public function getProductsByDeptCategory($dept, $category)
