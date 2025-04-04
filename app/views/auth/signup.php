@@ -53,7 +53,7 @@
           <p>Try <a href="/login">Login</a> or <a href="/forgot-password">Forgot Password</a></p>
         </div>'
     ?>
-    <form class="col-lg-5 col-md-6 col-12" method="post" action="/signup?userSignup=1">
+    <form class="col-lg-6 col-md-6 col-12" method="post" action="/signup?userSignup=1">
       <div class="mb-4">
         <label for="business-name">Business Name*</label>
         <input type="text" id="business-name" name="business_name" class="form-control" />
@@ -102,9 +102,7 @@
         <div class="row">
           <div class="col-4">
             <label for="country-code">Country Code*</label>
-            <select class="select-input" id="country-code" name="country_code">
-              <option value="92">+92</option>
-            </select>
+            <input type="text" id="country-code" name="country_code" class="form-control" />
             <?php
               if(isset($_POST['country_code']) && empty($_POST['country_code']))
                 echo '<p class="text-danger text-small">Required</p>';

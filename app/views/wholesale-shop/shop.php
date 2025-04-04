@@ -41,7 +41,6 @@
           <h1 class="text-center mb-5">Garments Wholesale Shop</h1>
           <div class="boxes">
             <?php foreach($getProducts as $product): ?>
-              <?php if($product['dept'] === 'men'): ?>
               <div class="box mb-5">
                 <a href="/wholesale-shop/<?php echo $product['dept'] ?>/<?php echo $product['category'] ?>/<?php echo $product['slug'] . '-' . $product['article_no'] ?>" class="d-block" rel="noreferrer">
                   <img
@@ -58,7 +57,6 @@
                   <span class="text-danger">Price: $<?php echo $product['price'] ?></span>
                 </a>
               </div>
-            <?php endif; ?>
             <?php endforeach; ?>
           </div>
           <?php if(count($getProducts) === 0)

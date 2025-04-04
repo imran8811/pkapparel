@@ -1,11 +1,12 @@
 <?php
 namespace app\Controllers;
+require_once('Core/Controller.php');
 use Core\Controller;
 use app\Models\AuthModel;
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-require_once('App/models/auth.model.php');
+require_once('app/models/auth.model.php');
 
 class AuthController extends Controller {
   private $authModel;

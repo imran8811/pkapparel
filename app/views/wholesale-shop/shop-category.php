@@ -84,7 +84,7 @@
             <?php endforeach; ?>
           </div>
           <div class="text-end">
-            <a href="/wholesale-shop/<?php echo $dept . '/jeans-pant' ?>" class="btn btn-primary">See all <?php echo $dept; ?> chino pants</a>
+            <a href="/wholesale-shop/<?php echo $dept . '/chino-pant' ?>" class="btn btn-primary">See all <?php echo $dept; ?> chino pants</a>
           </div>
         </div>
         <?php endif; ?>

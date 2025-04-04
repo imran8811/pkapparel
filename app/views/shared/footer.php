@@ -4,6 +4,8 @@
       <nav class="footer-menu">
         <ul>
           <li><a href="/wholesale-shop">Wholesale Shop</a></li>
+          <li><a href="/login">Login</a></li>
+          <li><a href="/signup">Signup</a></li>
           <li><a href="/about">About us</a></li>
           <li><a href="/factory">Factory</a></li>
           <li><a href="/blog">Blog</a></li>

@@ -16,7 +16,7 @@ class Model {
     $this->db_host = "localhost";
     $this->db_name = "pkappar2_wholesale_2166718";
     $this->db_user = "root";
-    $this->db_password = "root";
+    $this->db_password = "";
     $dsn = "mysql:host=$this->db_host;dbname=$this->db_name";
     $this->pdo = new PDO($dsn, $this->db_user, $this->db_password);
   }

@@ -9,7 +9,7 @@
         <ul>
           <li class="clearfix mb-3">
             <span>Address</span>
-            <span>Sufiabad, 18-KM Ferozepur road, <br />Lahore, Pakistan</span>
+            <span>Sufiabad stop, 18-KM Ferozepur road, <br />Lahore, Pakistan</span>
           </li>
           <li class="clearfix mb-3">
             <span>Tel/Whatsapp: </span>
@@ -22,20 +22,30 @@
         </ul>
       </div>
       <div class="mb-5">
-        <h2>Factory</h2>
+        <h2>Lahore Factory</h2>
         <hr />
         <ul>
           <li class="clearfix mb-3">
             <span>Address</span>
-            <span>21-KM, Ferozepur road, <br />Lahore, Pakistan</span>
+            <span>21-KM Ferozepur road, <br />Lahore, Pakistan</span>
           </li>
           <li class="clearfix mb-3">
             <span>Tel: </span>
             <span>(+92) 423 5216095</span>
           </li>
-          <li class="clearfix mb-2">
-            <span>Email: </span>
-            <span><a href="mailto:pkapparel2@gmail.com">pkapparel2@gmail.com</a></span>
+        </ul>
+      </div>
+      <div class="mb-5">
+        <h2>Multan Factory</h2>
+        <hr />
+        <ul>
+          <li class="clearfix mb-3">
+            <span>Address</span>
+            <span>55-Industrial Estate, Sher Shah Road<br />Multan, Pakistan</span>
+          </li>
+          <li class="clearfix mb-3">
+            <span>Tel: </span>
+            <span>(+92) 61 2166718</span>
           </li>
         </ul>
       </div>

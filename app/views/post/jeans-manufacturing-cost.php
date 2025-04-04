@@ -125,7 +125,7 @@
         <p>These are the significant factors that impact the overall cost of jeans production at the factory. So, please place your order with us and get your jeans prepared by experts.</p>
       </div>
     </div>
-    <h2 class="section-heading">Jeans Pants Costing Table</h2>
+    <h2 class="section-heading">Jeans Pants Costing (per piece)</h2>
     <table class="table">
       <thead>
         <th></th>
@@ -136,10 +136,10 @@
         <th>Cutting</th>
         <th>Stitching</th>
         <th>Washing</th>
-        <th>Accessory</th>
-        <th>Packing/Quality</th>
-        <th>Overheads</th>
-        <th>Shipping</th>
+        <th title="labels, hangtag, leather patch etc">Accessory</th>
+        <th>Packing</th>
+        <th title="factory overheads">Overheads</th>
+        <th title="to local port">Shipping</th>
         <th>Total</th>
       </thead>
       <tbody>
@@ -156,14 +156,61 @@
           <td>0.17</td>
           <td>1.35</td>
           <td>0.15</td>
-          <td>$6.2</td>
+          <td>$5.92</td>
         </tr>
         <tr>
           <td>Women</td>
-          <td>1.1</td>
+          <td>2.14</td>
+          <td>1.20</td>
+          <td>2.56</td>
+          <td>0.22</td>
+          <td>0.11</td>
+          <td>0.54</td>
+          <td>0.45</td>
+          <td>0.15</td>
+          <td>0.17</td>
+          <td>1.35</td>
+          <td>0.15</td>
+          <td>$5.70</td>
+        </tr>
+        <tr>
+          <td>Boys</td>
+          <td>2.14</td>
+          <td>0.80</td>
+          <td>1.71</td>
+          <td>0.22</td>
+          <td>0.11</td>
+          <td>0.54</td>
+          <td>0.45</td>
+          <td>0.15</td>
+          <td>0.17</td>
+          <td>1.35</td>
+          <td>0.15</td>
+          <td>$4.85</td>
+        </tr>
+        <tr>
+          <td>Girls</td>
+          <td>2.14</td>
+          <td>0.75</td>
+          <td>1.60</td>
+          <td>0.22</td>
+          <td>0.11</td>
+          <td>0.54</td>
+          <td>0.45</td>
+          <td>0.15</td>
+          <td>0.17</td>
+          <td>1.35</td>
+          <td>0.15</td>
+          <td>$4.74</td>
         </tr>
       </tbody>
     </table>
+    <p class="text-danger mb-5">Note: Above pricing table is based on current material rates and subject to change based on market fluctuation.</p>
+    <div class="pk-intro">
+      <h2 class="text-center mb-5 h1">PK Apparel</h2>
+      <p class="mb-5 h4">You are buyer for any retail chain, wholesaler, retailer and online seller, send us your inquiry and see our non beatable prices and quality. We are serving 25+ customers all over the world since 2015. </p>
+      <p class="text-center h2"><a href="/wholesale-shop">See our wholesale shop for men, women, boys and girls garments</a></p>
+    </div>
   </div>
 </div>
 <?php include_once(dirname(__DIR__)."/shared/footer.php"); ?>
