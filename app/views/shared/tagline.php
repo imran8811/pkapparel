@@ -10,7 +10,7 @@
 ?>
 <div class="tagline mb-5">
   <div class="bg-img"></div>
-  <div class="col-12 col-lg-6 text-center tagline-text">
+  <div class="col-12 col-md-9 col-lg-6 text-center tagline-text">
     <h1 class="heading mb-4"><?php echo $heading ?></h1>
     <p class="para"><?php echo $description ?></p>
   </div>

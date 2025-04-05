@@ -1,10 +1,16 @@
 <?php include_once(dirname(__DIR__)."/shared/header.php"); ?>
 <?php include_once(dirname(__DIR__)."/shared/home-slider.php"); ?>
-<div class="categories-section">
+<div class="categories-section mb-5">
   <div class="sub-cat-section">
     <div class="shop-now-overlay">
       <h3>Men</h3>
       <a href="/wholesale-shop/men" class="btn btn-primary">Shop Now</a>
+    </div>
+  </div>
+  <div class="sub-cat-section">
+    <div class="shop-now-overlay">
+      <h3>Women</h3>
+      <a href="/wholesale-shop/women" class="btn btn-primary">Shop Now</a>
     </div>
   </div>
   <div class="sub-cat-section">
@@ -15,8 +21,8 @@
   </div>
   <div class="sub-cat-section">
     <div class="shop-now-overlay">
-      <h3>Women</h3>
-      <a href="/wholesale-shop/women" class="btn btn-primary">Shop Now</a>
+      <h3>Girls</h3>
+      <a href="/wholesale-shop/girls" class="btn btn-primary">Shop Now</a>
     </div>
   </div>
 </div>

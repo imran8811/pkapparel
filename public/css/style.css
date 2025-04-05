@@ -209,6 +209,7 @@ address { line-height: 35px; }
 }
 .categories-section {
   display: flex;
+	flex-wrap: wrap;
   justify-content: space-between;
   margin-bottom: 80px;
 }
@@ -216,7 +217,6 @@ address { line-height: 35px; }
   position: relative;
   width: 50%;
   height: 450px;
-  margin: 25px;
 }
 .categories-section .sub-cat-section:first-child {
   background-image: url('../images/men-banner.jpg');
@@ -224,13 +224,18 @@ address { line-height: 35px; }
   background-size: cover;
 }
 .categories-section .sub-cat-section:nth-child(2) {
+	background-image: url('../images/women-banner1.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.categories-section .sub-cat-section:nth-child(3) {
   background-image: url('../images/boys-banner.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 30% 0;
 }
-.categories-section .sub-cat-section:nth-child(3) {
-  background-image: url('../images/women-banner1.jpg');
+.categories-section .sub-cat-section:nth-child(4) {
+  background-image: url('../images/girls-banner.jpg');
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -261,7 +266,6 @@ address { line-height: 35px; }
   .categories-section .sub-cat-section {
     width: 100%;
     height: 330px;
-    margin: 0 0 50px;
   }
 }
 .radio-input {
@@ -606,8 +610,7 @@ h3 { font-size: 1.4rem;}
 }
 .header-menu li { background: none; }
 .header-menu li a {
-	color: #333;
-	font-size: 15px;
+	font-size: 18px;
 }
 .header-menu li:hover a, .footer-menu ul li:hover a { text-decoration:none; }
 .header-menu li:first-child, .footer-menu ul li:first-child {

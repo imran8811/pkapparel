@@ -39,12 +39,7 @@
           </a>
         </div>
         <ul class="header-menu col-md-8 mt-3 mb-3">
-          <li><a href="/wholesale-shop">Wholesale Shop</a></li>
-          <li><a href="/wholesale-shop/men">Men</a></li>
-          <li><a href="/wholesale-shop/women">Women</a></li>
-          <li><a href="/wholesale-shop/boys">Boys</a></li>
-          <li><a href="/wholesale-shop/girls">Girls</a></li>
-          <li><a href="/contact">Contact us</a></li>
+          <li><a href="/wholesale-shop" class="btn-link">Wholesale Shop</a></li>
         </ul>
       </div>
     </header>

@@ -43,11 +43,11 @@
       <h3>Step 2: Fabric consumption</h3>
       <p class='mb-4'>The average consumption for each category must be determined first to determine the cost of denim for various types of denim. So, here we describe average fabric consumption for men, women, boys, and girls.</p>
       <h3>Step 3: Fabric Cost</h3>
-      <div class="row section-img mt-5 mb-5">
-        <div class="col-md-6 col-12 mb-5">
+      <div class="row section-img mt-5">
+        <div class="col-lg-6 col-12 mb-5">
           <img src="/public/images/posts/jeans-manufacturing-cost.jpg" alt="<?php echo $heading ?>" />
         </div>
-        <div class="col-md-6 col-12">
+        <div class="col-lg-6 col-12">
           <p class='mb-4'>Fabric cost, is one of the primary costs in manufacturing jeans. Produced jeans require denim fabric, which we calculate in meters. The cost of 1 meter of jean fabric is 2.14$. So, to find out the cost of fabric for jeans, we need to find out the product of average material consumption and per meter cost of fabric:</p>
         </div>
       </div>
@@ -126,85 +126,87 @@
       </div>
     </div>
     <h2 class="section-heading">Jeans Pants Costing (per piece)</h2>
-    <table class="table">
-      <thead>
-        <th></th>
-        <th>Fabric Rate</th>
-        <th title="fabric consumption in meters">Consumption </th>
-        <th title="total fabric cost (rate * consumption)">Fabric Cost</th>
-        <th>Patterns</th>
-        <th>Cutting</th>
-        <th>Stitching</th>
-        <th>Washing</th>
-        <th title="labels, hangtag, leather patch etc">Accessory</th>
-        <th>Packing</th>
-        <th title="factory overheads">Overheads</th>
-        <th title="to local port">Shipping</th>
-        <th>Total</th>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Men</td>
-          <td>2.14</td>
-          <td>1.30</td>
-          <td>2.78</td>
-          <td>0.22</td>
-          <td>0.11</td>
-          <td>0.54</td>
-          <td>0.45</td>
-          <td>0.15</td>
-          <td>0.17</td>
-          <td>1.35</td>
-          <td>0.15</td>
-          <td>$5.92</td>
-        </tr>
-        <tr>
-          <td>Women</td>
-          <td>2.14</td>
-          <td>1.20</td>
-          <td>2.56</td>
-          <td>0.22</td>
-          <td>0.11</td>
-          <td>0.54</td>
-          <td>0.45</td>
-          <td>0.15</td>
-          <td>0.17</td>
-          <td>1.35</td>
-          <td>0.15</td>
-          <td>$5.70</td>
-        </tr>
-        <tr>
-          <td>Boys</td>
-          <td>2.14</td>
-          <td>0.80</td>
-          <td>1.71</td>
-          <td>0.22</td>
-          <td>0.11</td>
-          <td>0.54</td>
-          <td>0.45</td>
-          <td>0.15</td>
-          <td>0.17</td>
-          <td>1.35</td>
-          <td>0.15</td>
-          <td>$4.85</td>
-        </tr>
-        <tr>
-          <td>Girls</td>
-          <td>2.14</td>
-          <td>0.75</td>
-          <td>1.60</td>
-          <td>0.22</td>
-          <td>0.11</td>
-          <td>0.54</td>
-          <td>0.45</td>
-          <td>0.15</td>
-          <td>0.17</td>
-          <td>1.35</td>
-          <td>0.15</td>
-          <td>$4.74</td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="table-responsive">
+      <table class="table">
+        <thead>
+          <th></th>
+          <th>Fabric Rate</th>
+          <th title="fabric consumption in meters">Consumption </th>
+          <th title="total fabric cost (rate * consumption)">Fabric Cost</th>
+          <th>Patterns</th>
+          <th>Cutting</th>
+          <th>Stitching</th>
+          <th>Washing</th>
+          <th title="labels, hangtag, leather patch etc">Accessory</th>
+          <th>Packing</th>
+          <th title="factory overheads">Overheads</th>
+          <th title="to local port">Shipping</th>
+          <th>Total</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Men</td>
+            <td>2.14</td>
+            <td>1.30</td>
+            <td>2.78</td>
+            <td>0.22</td>
+            <td>0.11</td>
+            <td>0.54</td>
+            <td>0.45</td>
+            <td>0.15</td>
+            <td>0.17</td>
+            <td>1.35</td>
+            <td>0.15</td>
+            <td>$5.92</td>
+          </tr>
+          <tr>
+            <td>Women</td>
+            <td>2.14</td>
+            <td>1.20</td>
+            <td>2.56</td>
+            <td>0.22</td>
+            <td>0.11</td>
+            <td>0.54</td>
+            <td>0.45</td>
+            <td>0.15</td>
+            <td>0.17</td>
+            <td>1.35</td>
+            <td>0.15</td>
+            <td>$5.70</td>
+          </tr>
+          <tr>
+            <td>Boys</td>
+            <td>2.14</td>
+            <td>0.80</td>
+            <td>1.71</td>
+            <td>0.22</td>
+            <td>0.11</td>
+            <td>0.54</td>
+            <td>0.45</td>
+            <td>0.15</td>
+            <td>0.17</td>
+            <td>1.35</td>
+            <td>0.15</td>
+            <td>$4.85</td>
+          </tr>
+          <tr>
+            <td>Girls</td>
+            <td>2.14</td>
+            <td>0.75</td>
+            <td>1.60</td>
+            <td>0.22</td>
+            <td>0.11</td>
+            <td>0.54</td>
+            <td>0.45</td>
+            <td>0.15</td>
+            <td>0.17</td>
+            <td>1.35</td>
+            <td>0.15</td>
+            <td>$4.74</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
     <p class="text-danger mb-5">Note: Above pricing table is based on current material rates and subject to change based on market fluctuation.</p>
     <div class="pk-intro">
       <h2 class="text-center mb-5 h1">PK Apparel</h2>
