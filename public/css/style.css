@@ -638,6 +638,18 @@ h3 { font-size: 1.4rem;}
 .header-main, .header-top {
 	padding: 0 20px;
 }
+.custom-table tr td {
+	padding: 20px 0;
+}
+.card {
+  border: none;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+}
 @media screen and (max-width: 786px) {
 	.header-menu .header-menu-dropdown ul {
 		left: -35px;

@@ -24,6 +24,7 @@
   $router->get('/post/wholesale-jeans-manufacturers', 'app/views/post/wholesale-jeans-manufacturers.php');
   $router->get('/post/wholesale-jeans-suppliers', 'app/views/post/wholesale-jeans-suppliers.php');
   $router->get('/post/wholesale-women-jeans', 'app/views/post/wholesale-women-jeans.php');
+  $router->get('/post/jeans-manufacturers-in-pakistan', 'app/views/post/jeans-manufacturers-in-pakistan.php');
 
   //admin
   $router->get('/admin', 'app/views/admin/index.php');

@@ -22,5 +22,6 @@
     <li><a href="/post/motorcycle-jeans-manufacturers">Motorcycle Jeans Manufacturers</a></li>
     <li><a href="/post/wholesale-women-jeans">Wholesale Women Jeans</a></li>
     <li><a href="/post/wholesale-jeans-bulk">Wholesale Jeans Bulk</a></li>
+    <li><a href="/post/jeans-manufacturers-in-pakistan">Jeans Manufacturers in Pakistan</a></li>
   </ul>
 </div>

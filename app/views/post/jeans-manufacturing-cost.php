@@ -214,5 +214,6 @@
       <p class="text-center h2"><a href="/wholesale-shop">See our wholesale shop for men, women, boys and girls garments</a></p>
     </div>
   </div>
+  <?php include_once(dirname(__DIR__)."/shared/post-comments.php"); ?>
 </div>
 <?php include_once(dirname(__DIR__)."/shared/footer.php"); ?>

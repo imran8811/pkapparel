@@ -40,6 +40,8 @@
         </div>
         <ul class="header-menu col-md-8 mt-3 mb-3">
           <li><a href="/wholesale-shop" class="btn-link">Wholesale Shop</a></li>
+          <li><a href="/wholesale-shop/men" class="btn-link">Men</a></li>
+          <li><a href="/wholesale-shop/women" class="btn-link">Women</a></li>
         </ul>
       </div>
     </header>

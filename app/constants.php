@@ -3,27 +3,27 @@ $metaData = [
   "" => [
     "title" => "Garments Manufacturer Wholesaler and Exporter",
     "keywords" => "t shirts factory manufacturer, hoodie making, jeans supplier",
-    "description" => "t shirts factory manufacturer, hoodie making, jeans supplier"
+    "description" => ""
   ],
   "about" => [
     "title" => "About Us - Garments manufacturer and Wholesaler",
     "keywords" => "t shirts factory manufacturer, hoodie making, jeans supplier",
-    "description" => "t shirts factory manufacturer, hoodie making, jeans supplier"
+    "description" => ""
   ],
   "contact" => [
     "title" => "Contact Us - Garments manufacturer and Wholesaler",
     "keywords" => "t shirts factory manufacturer, hoodie making, jeans supplier",
-    "description" => "t shirts factory manufacturer, hoodie making, jeans supplier"
+    "description" => ""
   ],
   "factory" => [
     "title" => "Factory Visit - Garments manufacturer and Wholesaler",
     "keywords" => "t shirts factory manufacturer, hoodie making, jeans supplier",
-    "description" => "t shirts factory manufacturer, hoodie making, jeans supplier"
+    "description" => ""
   ],
   "blog" => [
     "title" => "Blog - Garments manufacturer and Wholesaler",
     "keywords" => "t shirts factory manufacturer, hoodie making, jeans supplier",
-    "description" => "t shirts factory manufacturer, hoodie making, jeans supplier"
+    "description" => ""
   ],
   "wholesale-shop" => [
     "title" => "Garments Wholesale Shop for men women boys and girls",
@@ -114,6 +114,11 @@ $metaData = [
     "title" => "Wholesale Women Jeans",
     "keywords" => "t shirts factory manufacturer, hoodie making, jeans supplier",
     "description" => ""
+  ],
+  "jeans-manufacturers-in-pakistan" => [
+    "title" => "Jeans Manufacturers in Pakistan",
+    "keywords" => "jeans manufacturers in pakistan, list of jeans manufacturers in pakistan, top jeans manufacturers in pakistan",
+    "description" => "PK Apparel is one of the top jeans manufacturer in Pakistan, it has production capacity of 20000 pieces per day and team of professionals from all over the world"
   ],
 ];
 
