@@ -16,6 +16,7 @@
   $router->get('/post/bulk-jeans', 'app/views/post/bulk-jeans.php');
   $router->get('/post/jeans-manufacturers', 'app/views/post/jeans-manufacturers.php');
   $router->get('/post/jeans-manufacturing-cost', 'app/views/post/jeans-manufacturing-cost.php');
+  $router->post('/post/jeans-manufacturing-cost', 'app/views/post/jeans-manufacturing-cost.php');
   $router->get('/post/jeans-pants-manufacturers', 'app/views/post/jeans-pants-manufacturers.php');
   $router->get('/post/jeans-wholesale', 'app/views/post/jeans-wholesale.php');
   $router->get('/post/motorcycle-jeans-manufacturers', 'app/views/post/motorcycle-jeans-manufacturers.php');
@@ -48,9 +49,9 @@
   $router->get('/user-account', 'app/views/auth/user-account.php');
 
   //wholesale shop
-  $router->get('/wholesale-shop', 'app/views/wholesale-shop/shop-dept.php');
-  $router->get('/wholesale-shop/$dept', 'app/views/wholesale-shop/shop-category.php');
-  $router->get('/wholesale-shop/$dept/$category', 'app/views/wholesale-shop/shop.php');
+  $router->get('/wholesale-shop', 'app/views/wholesale-shop/shop.php');
+  $router->get('/wholesale-shop/$dept', 'app/views/wholesale-shop/shop-dept.php');
+  $router->get('/wholesale-shop/$dept/$category', 'app/views/wholesale-shop/shop-category.php');
   $router->get('/wholesale-shop/$dept/$category/$name', 'app/views/wholesale-shop/product-details.php');
   $router->get('/cart', 'app/views/wholesale-shop/cart.php');
   $router->get('/checkout', 'app/views/wholesale-shop/checkout.php');

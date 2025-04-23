@@ -29,6 +29,7 @@ a:hover {
 table tr td {
 	vertical-align: middle;
 }
+.p-0 { padding: 0 !important;}
 address { line-height: 35px; }
 .main-wrapper {
 	max-width: 1920px;
@@ -217,37 +218,44 @@ address { line-height: 35px; }
   position: relative;
   width: 50%;
   height: 450px;
-}
-.categories-section .sub-cat-section:first-child {
-  background-image: url('../images/men-banner.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-.categories-section .sub-cat-section:nth-child(2) {
-	background-image: url('../images/women-banner1.jpg');
 	background-repeat: no-repeat;
 	background-size: cover;
 }
+.main-section .sub-section {
+	position: relative;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.categories-section .sub-cat-section:first-child { background-image: url('../images/men-banner.jpg'); }
+.categories-section .sub-cat-section:nth-child(2) {	background-image: url('../images/women-banner1.jpg'); }
 .categories-section .sub-cat-section:nth-child(3) {
   background-image: url('../images/boys-banner.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
   background-position: 30% 0;
 }
-.categories-section .sub-cat-section:nth-child(4) {
-  background-image: url('../images/girls-banner.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-.categories-section .shop-now-overlay {
+.categories-section .sub-cat-section:nth-child(4) { background-image: url('../images/girls-banner.jpg'); }
+.bg1 { background-color: #c5a286; }
+.bg2 { background-color: #605050; }
+.bg3 { background-color: #236460; }
+.bg4 { background-color: #820a0b; }
+.bg5 { background-color: #d848ba; }
+/* .main-section .sub-section.men-jeans-pant {	background-image: url('../images/banner-bgs/men-jeans-pant.jpg'); }
+.main-section .sub-section.men-chino-pant {	background-image: url('../images/banner-bgs/men-chino-pant.jpg'); }
+.main-section .sub-section.men-cargo-trouser {	background-image: url('../images/banner-bgs/men-cargo-trouser.jpg'); }
+.main-section .sub-section.men-jeans-jacket {	background-image: url('../images/banner-bgs/men-jeans-jacket.jpg'); }
+.main-section .sub-section.women-jeans-pant {	background-image: url('../images/banner-bgs/women-jeans-pant.jpg'); } */
+.categories-section .shop-now-overlay, .main-section .shop-now-overlay {
   position: absolute;
-  left: 50px;
-  bottom: 50px;
+  left: 30px;
+  bottom: 30px;
 }
-.categories-section .shop-now-overlay h3 {
+.main-section .shop-now-overlay.right-align{
+	right: 30px;
+	left: auto;
+}
+.categories-section .shop-now-overlay h3, .main-section .shop-now-overlay h3 {
   color: #fff;
-  font-size: 25px;
-  line-height: 35px;
+  font-size: 18px;
+  line-height: 25px;
 }
 .footer {
 	background: #333;
@@ -641,14 +649,18 @@ h3 { font-size: 1.4rem;}
 .custom-table tr td {
 	padding: 20px 0;
 }
-.card {
+/* .card {
   border: none;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
 }
-
 .card:hover {
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+} */
+.max-height-100 { max-height: 100px; }
+.max-height-200 { max-height: 200px; }
+.img-wrap img {
+	max-height: auto;
 }
 @media screen and (max-width: 786px) {
 	.header-menu .header-menu-dropdown ul {

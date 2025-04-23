@@ -1,8 +1,29 @@
 <?php
   include_once("app/views/shared/header.php");
+  require_once("app/controllers/post.controller.php");
+  use app\Controllers\PostController;
+  if(isset($_GET['user_comment'])){
+    $postController = new PostController();
+    $postID="1";
+    $data = [
+      "post_id" => $postID,
+      "commenter_name" => $_POST['commenter_name'],
+      "post_comment" => $_POST['post_comment'],
+    ];
+    $addComment = $postController->addComment($data);
+    // print_r($addComment);
+  }
 ?>
 <div class="container-fluid page-content">
   <div class="row">
+    <?php if(isset($addComment)): ?>
+    <?php if($addComment['type'] === 'success'){
+      echo '<div class="alert alert-success" role="alert">
+        Comment has been posted successfully
+      </div>';
+    };
+    ?>
+    <?php endif; ?>
     <?php include_once(dirname(__DIR__). '/shared/tagline.php') ?>
     <div class='col-12 mb-5'>
       <h2 class="h2 text-center mb-5 mt-4 section-heading">Step by step guide to jeans manufacturing cost</h2>
