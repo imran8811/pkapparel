@@ -39,7 +39,7 @@
     } else {
       session_start();
       $_SESSION['user'] = $userSignup['data']['token'];
-      header("Location: /wholesale-shop?newUser=1");
+      header("Location: /shop?newUser=1");
     }
   }
 ?>

@@ -6,7 +6,7 @@
   $router = new Router();
 
   //static
-  $router->get('/', 'app/views/static/home.php');
+  $router->get('/', 'app/views/home.php');
   $router->get('/about', '/app/views/static/about.php');
   $router->get('/contact', '/app/views/static/contact.php');
   $router->get('/factory', '/app/views/static/factory.php');
@@ -49,9 +49,9 @@
   $router->get('/user-account', 'app/views/auth/user-account.php');
 
   //wholesale shop
-  $router->get('/wholesale-shop', 'app/views/wholesale-shop/shop.php');
-  $router->get('/wholesale-shop/$dept', 'app/views/wholesale-shop/shop-dept.php');
-  $router->get('/wholesale-shop/$dept/$category', 'app/views/wholesale-shop/shop-category.php');
+  $router->get('/wholesale-shop', 'app/views/wholesale-shop/wholesale-shop.php');
+  $router->get('/wholesale-shop/$dept', 'app/views/wholesale-shop/wholesale-shop-dept.php');
+  $router->get('/wholesale-shop/$dept/$category', 'app/views/wholesale-shop/wholesale-shop-category.php');
   $router->get('/wholesale-shop/$dept/$category/$name', 'app/views/wholesale-shop/product-details.php');
   $router->get('/cart', 'app/views/wholesale-shop/cart.php');
   $router->get('/checkout', 'app/views/wholesale-shop/checkout.php');

@@ -93,6 +93,7 @@
         <li>Rinse Wash</li>
         <li>Dark Wash</li>
       </ul>
+      <?php include_once('./app/views/shared/shop-ad.php'); ?>
       <p class='mb-3'>The denim wash is a crucial step to achieve the best look, texture, and finish in jeans. Different types of chemicals are used in this step to make the fabric smooth. This process is completed by using a specific amount of water and energy. That is why its cost is also included in the <strong>manufacturing cost of the jeans</strong>. For one pair of jeans, the cost of washing them is almost 0.28$, which is the same for kids and men.</p>
       <p class='mb-3'>Now, your denim and jeans are fully prepared, and if you want to add any accessories, then some additional costs for customization are added to this step as per the client&apos;s need.</p>
       <h3>Step 7: Packaging</h3>
@@ -232,7 +233,7 @@
     <div class="pk-intro">
       <h2 class="text-center mb-5 h1">PK Apparel</h2>
       <p class="mb-5 h4">You are buyer for any retail chain, wholesaler, retailer and online seller, send us your inquiry and see our non beatable prices and quality. We are serving 25+ customers all over the world since 2015. </p>
-      <p class="text-center h2"><a href="/wholesale-shop">See our wholesale shop for men, women, boys and girls garments</a></p>
+      <p class="text-center h2"><a href="/shop">See our wholesale shop for men, women, boys and girls garments</a></p>
     </div>
   </div>
   <?php include_once(dirname(__DIR__)."/shared/post-comments.php"); ?>

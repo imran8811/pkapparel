@@ -18,7 +18,7 @@
     } else {
       session_start();
       $_SESSION['user'] = $userLogin['data']['token'];
-      header("Location: /wholesale-shop");
+      header("Location: /shop");
     }
   }
 ?>

@@ -3,7 +3,7 @@
     <div class="mb-5 text-center">
       <nav class="footer-menu">
         <ul>
-          <li><a href="/wholesale-shop">Wholesale Shop</a></li>
+          <li><a href="/shop">Wholesale Shop</a></li>
           <li><a href="/login">Login</a></li>
           <li><a href="/signup">Signup</a></li>
           <li><a href="/about">About us</a></li>
@@ -23,7 +23,7 @@
     </div> -->
     <div class="footer-bottom">
       <?php include_once(dirname(__DIR__) . "/shared/keywords.php"); ?>
-      <p class="text-center pt-5 pb-5 mb-0"><strong>Copyrights&nbsp;&copy;&nbsp;PK Apparel Pvt. Ltd. | All Rights Reserved 2015-<?php echo date('Y') ?></strong></p>
+      <p class="text-center pt-5 pb-5 mb-0"><strong>Copyrights&nbsp;&copy;&nbsp;PK Apparel | All Rights Reserved 2015-<?php echo date('Y') ?></strong></p>
     </div>
   </div>
 </footer>

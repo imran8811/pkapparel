@@ -1,5 +1,11 @@
-<?php include_once(dirname(__DIR__)."/shared/header.php"); ?>
-<?php include_once(dirname(__DIR__)."/shared/home-slider.php"); ?>
+<?php
+  include_once(__DIR__)."/shared/header.php";
+  require_once("app/controllers/product.controller.php");
+  use app\Controllers\ProductController;
+  $productController = new ProductController();
+  $getFeaturedProductsByDept = $productController->getFeaturedProductsByDept("men");
+?>
+<?php include_once(__DIR__)."/shared/home-slider.php"; ?>
 <div class="categories-section mb-5">
   <div class="sub-cat-section">
     <div class="shop-now-overlay">
@@ -43,6 +49,6 @@
     </div>
   </div>
 </div>
-<?php include_once(dirname(__DIR__).'/shared/rating-reviews.php'); ?>
-<?php include_once(dirname(__DIR__).'/shared/faqs.php'); ?>
-<?php include_once(dirname(__DIR__).'/shared/footer.php'); ?>
+<?php include_once(__DIR__).'/shared/rating-reviews.php'; ?>
+<?php include_once(__DIR__).'/shared/faqs.php'; ?>
+<?php include_once(__DIR__).'/shared/footer.php'; ?>

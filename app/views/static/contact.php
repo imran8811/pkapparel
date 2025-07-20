@@ -9,11 +9,11 @@
         <ul>
           <li class="clearfix mb-3">
             <span>Address</span>
-            <span>Sufiabad stop, 18-KM Ferozepur road, <br />Lahore, Pakistan</span>
+            <span>23 Garden Town, Sher Shah Road, <br />Multan, Pakistan</span>
           </li>
           <li class="clearfix mb-3">
             <span>Tel/Whatsapp: </span>
-            <span>(+92) 3 000-911-000</span>
+            <span>(+923) 000-911-000</span>
           </li>
           <li class="clearfix mb-2">
             <span>Email: </span>
@@ -21,7 +21,7 @@
           </li>
         </ul>
       </div>
-      <div class="mb-5">
+      <!-- <div class="mb-5">
         <h2>Lahore Factory</h2>
         <hr />
         <ul>
@@ -34,9 +34,9 @@
             <span>(+92) 423 5216095</span>
           </li>
         </ul>
-      </div>
+      </div> -->
       <div class="mb-5">
-        <h2>Multan Factory</h2>
+        <h2>Factory</h2>
         <hr />
         <ul>
           <li class="clearfix mb-3">

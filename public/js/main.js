@@ -24,18 +24,23 @@ const swiper = new Swiper('.homeSlider', {
   }
 });
 
-var swiper2 = new Swiper(".productGallery", {
-  slidesPerView: 1,
+ var swiper2 = new Swiper(".productThumbs", {
+  loop: true,
+  spaceBetween: 10,
+  slidesPerView: 4,
   freeMode: true,
   watchSlidesProgress: true,
 });
-var swiper3 = new Swiper(".productThumbs", {
+
+var swiper3 = new Swiper(".productGallery", {
+  loop: true,
+  spaceBetween: 10,
   navigation: {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
   },
   thumbs: {
-    swiper: swiper,
+    swiper: swiper2,
   },
 });
 
@@ -43,7 +48,7 @@ var orderNowModal = new bootstrap.Modal(document.getElementById('orderNowModal')
 
 const btnOrderNow = document.getElementById('btnOrderNow');
 btnOrderNow.addEventListener("click", (e) => {
-  // var modalToggle = document.getElementById('myModal') // relatedTarget
+  var modalToggle = document.getElementById('myModal') // relatedTarget
   orderNowModal.show()
   // console.log(e.target);
 })

@@ -8,15 +8,15 @@
   <div class="col-7">
     <div class="header-menu text-end pt-2">
       <ul>
-        <li><a href="/wholesale-shop/checkout">Checkout (0)</a></li>
+        <li><a href="/shop/checkout">Checkout (0)</a></li>
           <li><a href="/login">Login</a></li>
           <li><a href="/signup">Signup</a></li>
           <!-- <li class="header-menu-dropdown">
             <div class="text-info m-0">PK Apparel</div>
             <ul>
               <li><a href="/manage-account">Profile</a></li>
-              <li><a href="/wholesale-shop/orders">Orders</a></li>
-              <li><a href="/wholesale-shop/invoices">Invoices</a></li>
+              <li><a href="/shop/orders">Orders</a></li>
+              <li><a href="/shop/invoices">Invoices</a></li>
               <li><a href="#">Logout</a></li>
             </ul>
           </li> -->

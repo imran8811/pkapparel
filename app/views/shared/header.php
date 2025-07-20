@@ -1,13 +1,19 @@
 <?php
-  $constants = include(dirname(dirname(__DIR__))."/constants.php");
-  $metaData = $constants['metaData'];
+  ini_set('display_errors', '1');
+  ini_set('display_startup_errors', '1');
+  error_reporting(E_ALL);
+  include_once(dirname(dirname(__DIR__))."/constants.php");
+  // $userCountry = user_info("Visitor", "Country");
+  // if($userCountry === 'Pakistan'){
+  //   header("Location: https://www.pk.pkapparel.com");
+  // }
   $currentPage = $_SERVER['REQUEST_URI'];
   $currentPage = explode('/', $currentPage);
   $currentPage = end($currentPage);
-  if(isset($metaData[$currentPage]['title']) && isset($metaData[$currentPage]['keywords']) && isset($metaData[$currentPage]['description'])){
-    $title = $metaData[$currentPage]['title'];
-    $keywords = $metaData[$currentPage]['keywords'];
-    $description = $metaData[$currentPage]['description'];
+  if(isset(metaData[$currentPage]['title']) && isset(metaData[$currentPage]['keywords']) && isset(metaData[$currentPage]['description'])){
+    $title = metaData[$currentPage]['title'];
+    $keywords = metaData[$currentPage]['keywords'];
+    $description = metaData[$currentPage]['description'];
   } else {
     $title = ucwords(str_replace("-"," ",$currentPage));
     $keywords = $currentPage;
@@ -40,8 +46,8 @@
         </div>
         <ul class="header-menu col-md-8 mt-3 mb-3">
           <li><a href="/wholesale-shop" class="btn-link">Wholesale Shop</a></li>
-          <li><a href="/wholesale-shop/men" class="btn-link">Men</a></li>
-          <li><a href="/wholesale-shop/women" class="btn-link">Women</a></li>
+          <li><a href="/login" class="btn-link">Login</a></li>
+          <li><a href="/signup" class="btn-link">Signup</a></li>
         </ul>
       </div>
     </header>

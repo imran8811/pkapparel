@@ -7,70 +7,7 @@
   $article_no = end($article_no);
   $getProductByArticleNo = $productController->getProductByArticleNo($article_no);
   // print_r($getProductByArticleNo);
-  $images = ['front', 'back']
 ?>
-<style>
-  .swiper {
-      width: 100%;
-      height: 100%;
-    }
-
-    .swiper-slide {
-      text-align: center;
-      font-size: 18px;
-      background: #fff;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .swiper-slide img {
-      display: block;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .swiper {
-      width: 100%;
-      height: 300px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .swiper-slide {
-      background-size: cover;
-      background-position: center;
-    }
-
-    .productGallery {
-      height: 80%;
-      width: 100%;
-    }
-
-    .productThumbs {
-      height: 20%;
-      box-sizing: border-box;
-      padding: 10px 0;
-    }
-
-    .productThumbs .swiper-slide {
-      width: 25%;
-      height: 100%;
-      opacity: 0.4;
-    }
-
-    .productThumbs .swiper-slide-thumb-active {
-      opacity: 1;
-    }
-
-    .swiper-slide img {
-      display: block;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-</style>
 <div class="mb-5 page-content">
   <?php foreach($getProductByArticleNo as $productDetails): ?>
   <div class="mb-5">
@@ -88,7 +25,7 @@
     </nav>
     <div class="row px-3">
       <div class="col-md-6 mb-4">
-        <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper productGallery">
+        <div class="swiper productGallery">
           <div class="swiper-wrapper">
             <div class="swiper-slide">
               <img
@@ -104,7 +41,7 @@
           <div class="swiper-button-next"></div>
           <div class="swiper-button-prev"></div>
         </div>
-        <div thumbsSlider="" class="swiper productThumbs">
+        <div class="swiper productThumbs">
           <div class="swiper-wrapper">
             <div class="swiper-slide">
               <img
@@ -121,7 +58,7 @@
       </div>
       <div class="col-md-6">
         <h1 class="mb-3 border-bottom text-capitalize"><?php echo $productDetails['product_name'] ?></h1>
-        <ul class="mb-5 p-0">
+        <ul class="mb-3 p-0">
           <li class="row mb-2">
             <span class="col-6 col-md-4 col-lg-3">Article No.</span>
             <span class="col-6 col-md-8 col-lg-9"><?php echo $productDetails['article_no'] ?></span>
@@ -163,6 +100,9 @@
             <span class="col-6 col-md-8 col-lg-9 text-danger">USD<?php echo $productDetails['price'] ?> Ex-W</span>
           </li>
         </ul>
+        <div class="mb-3 size-guide">
+          <a href="#">Size Guide</a>
+        </div>
         <h4 class="mb-4">Packing / Shipping</h4>
         <ul class="px-0 pb-3 mb-3 border-bottom">
           <li class="row mb-2">

@@ -17,7 +17,7 @@
         <ol class="breadcrumb">
           <?php if(isset($dept)): ?>
             <li class="breadcrumb-item">
-              <a href="/wholesale-shop">Wholesale Shop</a>
+              <a href="/wholesale-shop">Wholesale shop</a>
             </li>
           <?php endif; ?>
           <?php if(isset($dept)): ?>

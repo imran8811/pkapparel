@@ -26,9 +26,9 @@ class ProductModel extends Model {
   }
 
   public function getFeaturedProductsByDept($dept) {
-    $query = 'SELECT * FROM product WHERE featured=? AND dept=? ORDER BY p_id DESC';
+    $query = 'SELECT * FROM product WHERE dept=? ORDER BY p_id DESC';
     $stmt = $this->pdo->prepare($query);
-    $stmt->execute(["1", $dept]);
+    $stmt->execute([$dept]);
     $res = $stmt->fetchAll();
     return $res;
   }

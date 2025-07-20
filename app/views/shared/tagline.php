@@ -1,12 +1,12 @@
 <?php
-  $constants = include(dirname(dirname(__DIR__))."/constants.php");
-  $metaData     = $constants['metaData'];
+  // $constants    = include_once(dirname(dirname(__DIR__))."/constants.php");
+  // $metaData     = $constants['metaData'];
   $currentPage  = $_SERVER['REQUEST_URI'];
   $currentPage  = explode('?', $currentPage);
   $currentPage  = explode('/', $currentPage[0]);
   $currentPage  = end($currentPage);
-  $heading      = $metaData[$currentPage]['title'];
-  $description  = $metaData[$currentPage]['description'];
+  $heading      = metaData[$currentPage]['title'];
+  $description  = metaData[$currentPage]['description'];
 
 ?>
 <div class="tagline mb-5">

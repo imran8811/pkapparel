@@ -21,12 +21,102 @@
       <h3 class='mb-3'>Innovation with skillful stitching</h3>
       <p class="mb-2">Creating iconic designs for clothing brands is our priority as a <strong>professional jeans making factory</strong>. We have a history of experience in creating innovative designs along with the best-quality fabric. All and sundry knows well that denim is one of the core elements of clothing that everyone wears. So, we are here to produce practical, fashionable, and suitable jeans of various types for fashion designers.</p>
       <p class="mb-4">Jeans are one of the fashion mainstays that has been booming for the last few years. And that is the reason it is always an important part of the fashion industry. Therefore, as the best jeans manufacturer in the USA, we deliver superb quality jeans with skillful stitching.</p>
-      <ProductListing dept='women' category='jeans-pant' numberOfRecords={4} />
+      <h2 class="mt-5 mb-5 text-center h1">List of top Jeans Manufacturers</h2>
+      <div class="table-responsive mb-5">
+        <table class="table custom-table">
+          <thead>
+            <th class="w-200">Name</th>
+            <th class="w-150px">Country</th>
+            <th class="w-100px">MOQ</th>
+            <th class="text-center w-300">Contact No.</th>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="w-200">PK Apparel</td>
+              <td class="w-150px">Pakistan</td>
+              <td class="w-100px">999pcs</td>
+              <td class="text-center w-300">
+                <a href="tel:+923000911000" class="d-block mb-2">+92 3 000-911-000</a>
+                <a href="mailto:info@pkapparel.com" class="d-block">info@pkapparel.com</a>
+              </td>
+            </tr>
+            <tr>
+              <td class="w-200">Taiga Apparel</td>
+              <td class="w-150px">Pakistan</td>
+              <td class="w-100px">2500pcs</td>
+              <td class="text-center w-300">
+                <a href="tel:+923228724461" class="d-block mb-2">+92 322 8724461</a>
+                <a href="mailto:info@taiga-apparel.com" class="d-block">info@taiga-apparel.com</a>
+              </td>
+            </tr>
+            <tr>
+              <td class="w-200">Delta Garment</td>
+              <td class="w-150px">Pakistan</td>
+              <td class="w-100px">1500pcs</td>
+              <td class="text-center text-danger w-300">
+                <span class="d-block mb-2">Not Available</span>
+              </td>
+            </tr>
+            <tr>
+              <td class="w-200">US Apparel</td>
+              <td class="w-150px">Pakistan</td>
+              <td class="w-100px">10000pcs</td>
+              <td class="text-center w-300">
+                <a href="tel:+924235340034" class="d-block mb-2">+92 42 35340034</a>
+              </td>
+            </tr>
+            <tr>
+              <td class="w-200">Ambition Apparel</td>
+              <td class="w-150px">Pakistan</td>
+              <td class="w-100px">1200pcs</td>
+              <td class="text-center text-danger w-300">
+                <a href="tel:+923228787001" class="d-block mb-2">+92 322 8787001</a>
+                <a href="mailto:info@ambition-apparel.com" class="d-block">info@ambition-apparel.com</a>
+              </td>
+            </tr>
+            <tr>
+              <td class="w-200">Rajby Industries</td>
+              <td class="w-150px">Pakistan</td>
+              <td class="w-100px">9999pcs</td>
+              <td class="text-center text-danger w-300">
+                <span class="d-block mb-2">Not Available</span>
+              </td>
+            </tr>
+            <tr>
+              <td class="w-200">Soorty Enterprise</td>
+              <td class="w-150px">Pakistan</td>
+              <td class="w-100px">25000pcs</td>
+              <td class="text-center text-danger w-300">
+                <a href="tel:+922138709084" class="d-block mb-2">+92 21 38709084</a>
+                <a href="mailto:contactus@soorty.com" class="d-block">contactus@soorty.com</a>
+              </td>
+            </tr>
+            <tr>
+              <td class="w-200">Artistics Denim</td>
+              <td class="w-150px">Pakistan</td>
+              <td class="w-100px">25000pcs</td>
+              <td class="text-center text-danger w-300">
+                <a href="tel:+9221111263646" class="d-block mb-2">+92 21 111 263 646</a>
+                <a href="mailto:info@artisticmilliners.com" class="d-block">info@artisticmilliners.com</a>
+              </td>
+            </tr>
+            <tr>
+              <td class="w-200">Ali Murtaza Associates</td>
+              <td class="w-150px">Pakistan</td>
+              <td class="w-100px">9999pcs</td>
+              <td class="text-center text-danger w-300">
+                <span class="d-block mb-2">Not Available</span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
       <h3 class='mb-3'>Classic to advanced designs</h3>
       <p class="mb-4">Clothing brands are in search of such <strong>jeans manufacturers</strong> who can add custom designs along with custom hardware and accessories. Our expert designers would add the patches, embroidery, and buttons as per the requirements of clients. However, they are expert in creating classes to advance all types of jeans and denim for your fashion collection. Custom designs are also made at PK Apparel for all such clients who need custom jeans and denim products.</p>
       <h3 class='mb-3'>Different color combinations for jeans</h3>
       <p class="mb-4">We offer brands to create their jeans in different colors and shades. Color combinations that we offer are inclusive of blue, black, and grey tones. Like all blue <strong>jeans manufacturers</strong>, we also create blue jeans in different styles for our clients. So, we are one of the children&apos;s jeans manufacturers who offer various customization of colors for kids also.
       </p>
+      <?php include_once('./app/views/shared/shop-ad.php'); ?>
       <h3 class='mb-3'>Reach your audience with the best jean products</h3>
       <p class="mb-4">We ensure our clients reach their audience with the best jean products. As the <strong>best jeans manufacturer</strong>, we provide quality products to the brands that help in fostering strong relations with the customers. It also encourages repurchase of the jeans products. The only thing you need to do is to trust our experience and commitment to transparency. </p>
       <h3 class='mb-3'>Quality assurance of jeans</h3>
