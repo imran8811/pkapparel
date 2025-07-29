@@ -1,5 +1,8 @@
 <?php
-  include_once("app/views/shared/header.php");
+  session_start();
+  if(isset($_SESSION['user']) && $_SESSION['user'] !== ''){
+    header("Location: /wholesale-shop");
+  }
   require_once dirname(dirname(__DIR__)) . '/controllers/auth.controller.php';
   use app\Controllers\AuthController;
   $authController = new AuthController();
@@ -37,11 +40,12 @@
     if($userSignup['type'] === 'userDuplicate'){
       isset($_POST['userDuplicate']);
     } else {
-      session_start();
-      $_SESSION['user'] = $userSignup['data']['token'];
-      header("Location: /shop?newUser=1");
+      // session_start();
+      // $_SESSION['user'] = $userSignup['data']['token'];
+      header("Location: /login?newUser=1");
     }
   }
+  include_once("app/views/shared/header.php");
 ?>
 <div class="page-content">
   <div class="row justify-content-center px-3">
@@ -98,7 +102,7 @@
         ?>
         <!-- <span class="text-small text-danger">Confirm password mismatch</span> -->
       </div>
-      <div class="mb-4 pb-4 border-bottom">
+      <div class="mb-4 pb-4">
         <div class="row">
           <div class="col-4">
             <label for="country-code">Country Code*</label>

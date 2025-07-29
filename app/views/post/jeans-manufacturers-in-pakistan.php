@@ -129,7 +129,6 @@
       </div>
       <p>Pakistani jeans manufacturers cater to both large-scale international brands and smaller private labels. They offer flexibility in order sizes and customization, which attracts businesses from around the world. The skilled workforce, coupled with government incentives for exporters, further boosts the country's competitiveness in the denim market.</p>
       <p>With growing global demand for sustainable and affordable fashion, Pakistan's denim industry is poised for continued growth. Through innovation, quality control, and ethical production standards, jeans manufacturers in Pakistan are steadily cementing their position as global leaders in the denim supply chain. As the industry evolves, Pakistan remains a go-to destination for premium yet cost-effective denim solutions.</p>
-      <?php include_once('./app/views/shared/shop-ad.php'); ?>
     </div>
   </div>
 </div>

@@ -35,7 +35,7 @@ class ProductController extends Controller
     $getFeaturedProductsByDept = $this->productModel->getFeaturedProductsByDept($dept);
     return $getFeaturedProductsByDept;
   }
-  
+
   public function getLatestArticleNo()
   {
     $getLatestArticleNo = $this->productModel->getLatestArticleNo();
@@ -150,5 +150,10 @@ class ProductController extends Controller
 
     }
     return true;
+  }
+
+  public function getSizeChart($dept, $category){
+    $getSizeChart = $this->productModel->getSizeChart($dept, $category);
+    return $getSizeChart? $getSizeChart : [];
   }
 }

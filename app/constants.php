@@ -4,32 +4,32 @@ define ('metaData', [
   "" => [
     "title" => "Garments Manufacturer Wholesaler and Exporter",
     "keywords" => "t shirts factory manufacturer, hoodie making, jeans supplier",
-    "description" => ""
+    "description" => "PK Apparel provides high quality jeans manufacturing services at cheap prices, we produce top quality denim products."
   ],
   "about" => [
     "title" => "About Us - Garments manufacturer and Wholesaler",
     "keywords" => "t shirts factory manufacturer, hoodie making, jeans supplier",
-    "description" => ""
+    "description" => "PK Apparel provides high quality jeans manufacturing services at cheap prices, we produce top quality denim products."
   ],
   "contact" => [
     "title" => "Contact Us - Garments manufacturer and Wholesaler",
     "keywords" => "t shirts factory manufacturer, hoodie making, jeans supplier",
-    "description" => ""
+    "description" => "PK Apparel provides high quality jeans manufacturing services at cheap prices, we produce top quality denim products."
   ],
   "factory" => [
     "title" => "Factory Visit - Garments manufacturer and Wholesaler",
     "keywords" => "t shirts factory manufacturer, hoodie making, jeans supplier",
-    "description" => ""
+    "description" => "PK Apparel provides high quality jeans manufacturing services at cheap prices, we produce top quality denim products."
   ],
   "blog" => [
     "title" => "Blog - Garments manufacturer and Wholesaler",
     "keywords" => "t shirts factory manufacturer, hoodie making, jeans supplier",
-    "description" => ""
+    "description" => "PK Apparel provides high quality jeans manufacturing services at cheap prices, we produce top quality denim products."
   ],
-  "shop" => [
+  "wholesale-shop" => [
     "title" => "Garments Wholesale Shop for men women boys and girls",
     "keywords" => "t shirts factory manufacturer, hoodie making, jeans supplier",
-    "description" => "Garments Wholesale Shop for men women boys and girls"
+    "description" => "Garments Wholesale Shop for men women boys and girls, custom orders are also accepted."
   ],
   "men" => [
     "title" => "Men Garments Jeans Pants Jackets Tshirts Hoodies Cargo Trousers",

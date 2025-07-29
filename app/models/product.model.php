@@ -156,6 +156,14 @@ class ProductModel extends Model {
     return $res;
   }
 
+  public function getSizeChart($dept, $category){
+    $query = 'SELECT * FROM size_charts WHERE dept=? AND category=?';
+    $stmt = $this->pdo->prepare($query);
+    $stmt->execute([$dept, $category]);
+    $res = $stmt->fetchAll();
+    return $res;
+  }
+
 }
 
 ?>

@@ -21,22 +21,22 @@
           </li>
         </ul>
       </div>
-      <!-- <div class="mb-5">
-        <h2>Lahore Factory</h2>
+      <div class="mb-5">
+        <h2>Factory Lahore</h2>
         <hr />
         <ul>
           <li class="clearfix mb-3">
             <span>Address</span>
-            <span>21-KM Ferozepur road, <br />Lahore, Pakistan</span>
+            <span>Sufiabad Stop, 18-KM, Ferozepur road, <br />Lahore, Pakistan</span>
           </li>
           <li class="clearfix mb-3">
             <span>Tel: </span>
             <span>(+92) 423 5216095</span>
           </li>
         </ul>
-      </div> -->
+      </div>
       <div class="mb-5">
-        <h2>Factory</h2>
+        <h2>Factory Multan</h2>
         <hr />
         <ul>
           <li class="clearfix mb-3">
@@ -51,7 +51,7 @@
       </div>
     </div>
     <div class="col-lg-6 mb-5">
-      <h2>Map Directions</h2>
+      <!-- <h2>Map Directions</h2>
       <hr />
       <div class="justify-content-center">
         <div class="map-outer col-12">
@@ -66,7 +66,7 @@
             </iframe>
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
 </div>

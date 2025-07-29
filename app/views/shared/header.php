@@ -2,6 +2,9 @@
   ini_set('display_errors', '1');
   ini_set('display_startup_errors', '1');
   error_reporting(E_ALL);
+  if(!isset($_SESSION)){
+    session_start();
+  }
   include_once(dirname(dirname(__DIR__))."/constants.php");
   // $userCountry = user_info("Visitor", "Country");
   // if($userCountry === 'Pakistan'){
@@ -19,6 +22,8 @@
     $keywords = $currentPage;
     $description = $currentPage;
   }
+  $sessionExist = isset($_SESSION['user']) && $_SESSION['user'] !==''? true : false;
+  // echo $sessionExist;
 ?>
 <!doctype html>
 <html lang="en">
@@ -46,8 +51,14 @@
         </div>
         <ul class="header-menu col-md-8 mt-3 mb-3">
           <li><a href="/wholesale-shop" class="btn-link">Wholesale Shop</a></li>
-          <li><a href="/login" class="btn-link">Login</a></li>
-          <li><a href="/signup" class="btn-link">Signup</a></li>
+          <?php
+            if(!$sessionExist){
+              echo '<li><a href="/login" class="btn-link">Login</a></li>
+              <li><a href="/signup" class="btn-link">Signup</a></li>';
+            } else {
+              echo '<li><a href="/logout" class="btn-link">Logout</a></li>';
+            }
+          ?>
         </ul>
       </div>
     </header>

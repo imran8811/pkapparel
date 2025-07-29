@@ -47,6 +47,7 @@
   $router->post('/forgot-password', 'app/views/auth/forgot-password.php');
   $router->get('/reset-password', 'app/views/auth/reset-password.php');
   $router->get('/user-account', 'app/views/auth/user-account.php');
+  $router->get('/logout', 'app/views/auth/logout.php');
 
   //wholesale shop
   $router->get('/wholesale-shop', 'app/views/wholesale-shop/wholesale-shop.php');

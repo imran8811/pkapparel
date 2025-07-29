@@ -45,12 +45,15 @@ var swiper3 = new Swiper(".productGallery", {
 });
 
 var orderNowModal = new bootstrap.Modal(document.getElementById('orderNowModal'))
-
 const btnOrderNow = document.getElementById('btnOrderNow');
 btnOrderNow.addEventListener("click", (e) => {
-  var modalToggle = document.getElementById('myModal') // relatedTarget
   orderNowModal.show()
-  // console.log(e.target);
-})
+});
+
+var sizeChartModal = new bootstrap.Modal(document.getElementById('sizeChartModal'))
+const btnSizeChartModal = document.getElementById('btnSizeChartModal');
+btnSizeChartModal.addEventListener("click", (e) => {
+  sizeChartModal.show()
+});
 
 

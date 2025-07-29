@@ -41,8 +41,8 @@ class AuthModel extends Model {
     $data = array(
       'business_name' => $res2['business_name'],
       'business_type' => $res2['business_type'],
-      'country_code' => $res2['country_code'],
-      'contact_no' => $res2['contact_no'],
+      'country_code'  => $res2['country_code'],
+      'contact_no'    => $res2['contact_no'],
     );
     return $data;
   }
@@ -84,11 +84,11 @@ class AuthModel extends Model {
     }
   }
 
-  public function logout($userEmail){
+  public function logout($token){
     try{
-      $query = "DELETE FROM sessions WHERE user_email=?";
+      $query = "DELETE FROM sessions WHERE token=?";
       $stmt= $this->pdo->prepare($query);
-      $stmt->execute([$userEmail]);
+      $stmt->execute([$token]);
       return true;
     } catch(PDOException $e){
       return $e->getMessage();

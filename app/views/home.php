@@ -19,7 +19,7 @@
       <a href="/wholesale-shop/women" class="btn btn-primary">Shop Now</a>
     </div>
   </div>
-  <div class="sub-cat-section">
+  <!-- <div class="sub-cat-section">
     <div class="shop-now-overlay">
       <h3>Boys</h3>
       <a href="/wholesale-shop/boys" class="btn btn-primary">Shop Now</a>
@@ -30,7 +30,7 @@
       <h3>Girls</h3>
       <a href="/wholesale-shop/girls" class="btn btn-primary">Shop Now</a>
     </div>
-  </div>
+  </div> -->
 </div>
 <div class="mb-5 px-4">
   <div class="section-heading">Why choose us</div>

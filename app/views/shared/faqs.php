@@ -2,9 +2,14 @@
   <h3 class="section-heading">Questions - FAQs</h3>
   <div class="faqs-list" itemscope itemtype="https://schema.org/FAQPage">
     <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-      <h3 itemprop="name">What is your MOQ for available stock?</h3>
+      <h3 itemprop="name">What kind of stock available at the moment?</h3>
       <div class="accepted-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-        <div itemprop="text">There is no MOQ for availabe stock, you can even buy 1 set of each style or color</div>
+        <div itemprop="text">Currently, we have:
+          <ul>
+            <li>Men jeans pants in size mutiple colors, slim fit, sizes 30-38</li>
+            <li>Men Cotton Chino pants in size multiple colors, slim fit, sizes 30-38</li>
+          </ul>
+        </div>
       </div>
     </div>
     <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
@@ -16,7 +21,7 @@
     <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
       <h3 itemprop="name">Do you send samples and how much it costs?</h3>
       <div class="accepted-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-        <div itemprop="text">Yes, we send samples and for available samples cost per piece is $50 including shipping worldwide delivered in 24 hours. <br/><br/>
+        <div itemprop="text">Yes, we send samples and for available samples cost per piece is $50 plus shipping cost.<br/><br/>
         <strong>For custom design samples </strong>cost is according to design and delivered in 2 weeks.</div>
       </div>
     </div>

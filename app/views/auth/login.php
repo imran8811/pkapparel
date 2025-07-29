@@ -1,5 +1,8 @@
 <?php
-  include_once("app/views/shared/header.php");
+  session_start();
+  if(isset($_SESSION['user']) && $_SESSION['user'] !== ''){
+    header("Location: /wholesale-shop");
+  }
   require_once dirname(dirname(__DIR__)) . '/controllers/auth.controller.php';
   use app\Controllers\AuthController;
   $authController = new AuthController();
@@ -18,12 +21,17 @@
     } else {
       session_start();
       $_SESSION['user'] = $userLogin['data']['token'];
-      header("Location: /shop");
+      header("Location: /wholesale-shop");
     }
   }
+  include_once("app/views/shared/header.php");
 ?>
 <div class="page-content">
   <div class="row justify-content-center px-3">
+    <?php
+      if(isset($_GET['newUser']))
+        echo '<h2 class="text-success text-center mb-5">Business Registered Successfully</h2>';
+    ?>
     <h2 class="mb-4 text-center">User Login</h2>
     <?php
       if(isset($_POST['invalidCredentials']))

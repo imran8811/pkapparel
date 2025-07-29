@@ -6,7 +6,11 @@
   $article_no = explode("-", $name);
   $article_no = end($article_no);
   $getProductByArticleNo = $productController->getProductByArticleNo($article_no);
+  $getSizeChart = $productController->getSizeChart($dept, $category);
+  // echo "<pre>";
   // print_r($getProductByArticleNo);
+  // echo "</pre>";
+  // print_r($getSizeChart);
 ?>
 <div class="mb-5 page-content">
   <?php foreach($getProductByArticleNo as $productDetails): ?>
@@ -97,11 +101,11 @@
           </li>
           <li class="row mb-2">
             <span class="col-6 col-md-4 col-lg-3">Price</span>
-            <span class="col-6 col-md-8 col-lg-9 text-danger">USD<?php echo $productDetails['price'] ?> Ex-W</span>
+            <span class="col-6 col-md-8 col-lg-9 text-danger"><?php echo defaultCurrency ==='Rs'? defaultCurrency . $productDetails['price_pkr']: defaultCurrency . $productDetails['price'] ?></span>
           </li>
         </ul>
         <div class="mb-3 size-guide">
-          <a href="#">Size Guide</a>
+          <button class="btn btn-link" id="btnSizeChartModal">Size Chart</Button>
         </div>
         <h4 class="mb-4">Packing / Shipping</h4>
         <ul class="px-0 pb-3 mb-3 border-bottom">
@@ -131,16 +135,15 @@
           </li>
         </ul>
         <div class="add-cart-wrap d-flex justify-content-end">
-          <!-- <button class="btn btn-primary" id="btnOrderNow">Order Now</Button> -->
-          <a href="/login" class="btn btn-primary">Order Now </a>
+          <button class="btn btn-primary" id="btnOrderNow">Order Now</Button>
         </div>
       </div>
     </div>
-    <div class="modal fade" id="orderNowModal" tabindex="-1" aria-labelledby="orderNowModal" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-scrollable">
+    <div class="modal fade" id="orderNowModal">
+      <div class="modal-dialog modal-fullscreen modal-dialog-scrollable">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+            <h5 class="modal-title" id="exampleModalLabel">Input Order Details</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
@@ -196,15 +199,86 @@
               </div>
               <div class="row">
                 <div class="col-12 text-center">
-                  <h4>Total Amount: ${totalAmount}</h4>
+                  <h4>Total Amount: </h4>
                 </div>
               </div>
             </form>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
             <button type="button" class="btn btn-primary">Place Order</button>
           </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="sizeChartModal">
+      <div class="modal-dialog modal-fullscreen modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title text-capitalize" id="exampleModalLabel"><?php echo $dept . ' ' . $category . " "; ?>Size Chart <span class="text-danger">(Inches)</span></h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <?php if(count($getSizeChart) > 0 ): ?>
+            <table class="table">
+              <?php foreach($getSizeChart as $sizeChart): ?>
+              <thead>
+                <tr>
+                  <th scope="col">Size</th>
+                  <?php foreach(explode(',', $sizeChart['size']) as $size){
+                    echo '<th scope="col">'.$size .'</th>';
+                  }?>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Waist</th>
+                  <?php foreach(explode(',', $sizeChart['waist']) as $waist){
+                    echo '<td scope="col">'. $waist .'</td>';
+                  }?>
+                </tr>
+                <tr>
+                  <th scope="row">Hip</th>
+                  <?php foreach(explode(',', $sizeChart['hip']) as $hip){
+                    echo '<td scope="col">'. $hip .'</td>';
+                  }?>
+                </tr>
+                <tr>
+                  <th scope="row">Thigh</th>
+                  <?php foreach(explode(',', $sizeChart['thigh']) as $thigh){
+                    echo '<td scope="col">'. $thigh .'</td>';
+                  }?>
+                </tr>
+                <tr>
+                  <th scope="row">Front Rise</th>
+                  <?php foreach(explode(',', $sizeChart['front_rise']) as $front_rise){
+                    echo '<td scope="col">'. $front_rise .'</td>';
+                  }?>
+                </tr>
+                <tr>
+                  <th scope="row">Back Rise</th>
+                  <?php foreach(explode(',', $sizeChart['back_rise']) as $back_rise){
+                    echo '<td scope="col">'. $back_rise .'</td>';
+                  }?>
+                </tr>
+                <tr>
+                  <th scope="row">Knee</th>
+                  <?php foreach(explode(',', $sizeChart['knee']) as $knee){
+                    echo '<td scope="col">'. $knee .'</td>';
+                  }?>
+                </tr>
+                <tr>
+                  <th scope="row">Leg Opening</th>
+                  <?php foreach(explode(',', $sizeChart['leg_opening']) as $leg_opening){
+                    echo '<td scope="col">'. $leg_opening .'</td>';
+                  }?>
+                </tr>
+              </tbody>
+              <?php endforeach; ?>
+            </table>
+            <?php endif; ?>
+            <?php if(count($getSizeChart) === 0)
+              echo '<h4 class="text-center text-danger mb-5 mt-5">No Size Chart Found</h4>'
+            ?>
         </div>
       </div>
     </div>

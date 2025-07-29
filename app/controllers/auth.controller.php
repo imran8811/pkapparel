@@ -48,7 +48,7 @@ class AuthController extends Controller {
         'user_email'    => $userLogin['user_email'],
         'business_name' => $userLogin['business_name'],
         'business_type' => $userLogin['business_type'],
-        'calling_code'  => $userLogin['calling_code'],
+        'country_code'  => $userLogin['country_code'],
         'contact_no'    => $userLogin['contact_no'],
         'joined_at'     => $userLogin['joined_at'],
         'status'        => $userLogin['status'],
@@ -68,20 +68,9 @@ class AuthController extends Controller {
     return $res;
   }
 
-  public function logout($data) {
-    $userLogout = $this->authModel->logout($data['userEmail']);
-    if($userLogout){
-      $res = [
-        'type' => 'success',
-        'message' => 'User Logged Out'
-      ];
-    } else {
-      $res = [
-        'type' => 'Bad Request',
-        'message' => 'Unable to logout'
-      ];
-    }
-    return $res;
+  public function logout($token) {
+    $userLogout = $this->authModel->logout($token);
+    return $userLogout? true : false;
   }
 
   public function forgotPassword($data) {
