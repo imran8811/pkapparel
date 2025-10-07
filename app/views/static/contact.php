@@ -13,7 +13,7 @@
           </li>
           <li class="clearfix mb-3">
             <span>Tel/Whatsapp: </span>
-            <span>(+923) 000-911-000</span>
+            <span>(+92) 301 9062877</span>
           </li>
           <li class="clearfix mb-2">
             <span>Email: </span>
@@ -29,10 +29,6 @@
             <span>Address</span>
             <span>Sufiabad Stop, 18-KM, Ferozepur road, <br />Lahore, Pakistan</span>
           </li>
-          <li class="clearfix mb-3">
-            <span>Tel: </span>
-            <span>(+92) 423 5216095</span>
-          </li>
         </ul>
       </div>
       <div class="mb-5">
@@ -42,10 +38,6 @@
           <li class="clearfix mb-3">
             <span>Address</span>
             <span>55-Industrial Estate, Sher Shah Road<br />Multan, Pakistan</span>
-          </li>
-          <li class="clearfix mb-3">
-            <span>Tel: </span>
-            <span>(+92) 61 2166718</span>
           </li>
         </ul>
       </div>

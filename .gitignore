@@ -1,4 +1,6 @@
 /vendor/
+/pk-apis-php/
+/pkapparel-com/
 .env
 .htaccess
 .DS_Store

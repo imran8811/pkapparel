@@ -62,7 +62,8 @@
       </div>
       <div class="col-md-6">
         <h1 class="mb-3 border-bottom text-capitalize"><?php echo $productDetails['product_name'] ?></h1>
-        <ul class="mb-3 p-0">
+        <p class="product-price"><?php echo $productDetails['price_pkr'] ?></p>
+        <!-- <ul class="mb-3 p-0">
           <li class="row mb-2">
             <span class="col-6 col-md-4 col-lg-3">Article No.</span>
             <span class="col-6 col-md-8 col-lg-9"><?php echo $productDetails['article_no'] ?></span>
@@ -101,7 +102,7 @@
           </li>
           <li class="row mb-2">
             <span class="col-6 col-md-4 col-lg-3">Price</span>
-            <span class="col-6 col-md-8 col-lg-9 text-danger"><?php echo defaultCurrency ==='Rs'? defaultCurrency . $productDetails['price_pkr']: defaultCurrency . $productDetails['price'] ?></span>
+            <span class="col-6 col-md-8 col-lg-9">PKR <?php echo $productDetails['price_pkr'] ?></span>
           </li>
         </ul>
         <div class="mb-3 size-guide">
@@ -136,7 +137,7 @@
         </ul>
         <div class="add-cart-wrap d-flex justify-content-end">
           <button class="btn btn-primary" id="btnOrderNow">Order Now</Button>
-        </div>
+        </div> -->
       </div>
     </div>
     <div class="modal fade" id="orderNowModal">

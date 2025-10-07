@@ -4,27 +4,27 @@ define ('metaData', [
   "" => [
     "title" => "Garments Manufacturer Wholesaler and Exporter",
     "keywords" => "t shirts factory manufacturer, hoodie making, jeans supplier",
-    "description" => "PK Apparel provides high quality jeans manufacturing services at cheap prices, we produce top quality denim products."
+    "description" => "PK Sourcing provides high quality jeans manufacturing services at cheap prices, we produce top quality denim products."
   ],
   "about" => [
     "title" => "About Us - Garments manufacturer and Wholesaler",
     "keywords" => "t shirts factory manufacturer, hoodie making, jeans supplier",
-    "description" => "PK Apparel provides high quality jeans manufacturing services at cheap prices, we produce top quality denim products."
+    "description" => "PK Sourcing provides high quality jeans manufacturing services at cheap prices, we produce top quality denim products."
   ],
   "contact" => [
     "title" => "Contact Us - Garments manufacturer and Wholesaler",
     "keywords" => "t shirts factory manufacturer, hoodie making, jeans supplier",
-    "description" => "PK Apparel provides high quality jeans manufacturing services at cheap prices, we produce top quality denim products."
+    "description" => "PK Sourcing provides high quality jeans manufacturing services at cheap prices, we produce top quality denim products."
   ],
   "factory" => [
     "title" => "Factory Visit - Garments manufacturer and Wholesaler",
     "keywords" => "t shirts factory manufacturer, hoodie making, jeans supplier",
-    "description" => "PK Apparel provides high quality jeans manufacturing services at cheap prices, we produce top quality denim products."
+    "description" => "PK Sourcing provides high quality jeans manufacturing services at cheap prices, we produce top quality denim products."
   ],
   "blog" => [
     "title" => "Blog - Garments manufacturer and Wholesaler",
     "keywords" => "t shirts factory manufacturer, hoodie making, jeans supplier",
-    "description" => "PK Apparel provides high quality jeans manufacturing services at cheap prices, we produce top quality denim products."
+    "description" => "PK Sourcing provides high quality jeans manufacturing services at cheap prices, we produce top quality denim products."
   ],
   "wholesale-shop" => [
     "title" => "Garments Wholesale Shop for men women boys and girls",
@@ -123,85 +123,12 @@ define ('metaData', [
   ],
 ]);
 
-function user_info($ip = NULL, $purpose = "location", $deep_detect = TRUE){
-  $output = NULL;
-  if (filter_var($ip, FILTER_VALIDATE_IP) === FALSE) {
-    $ip = $_SERVER["REMOTE_ADDR"];
-    if ($deep_detect) {
-      if (filter_var(@$_SERVER['HTTP_X_FORWARDED_FOR'], FILTER_VALIDATE_IP))
-        $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
-      if (filter_var(@$_SERVER['HTTP_CLIENT_IP'], FILTER_VALIDATE_IP))
-        $ip = $_SERVER['HTTP_CLIENT_IP'];
-    }
-  }
-  $purpose    = str_replace(array("name", "\n", "\t", " ", "-", "_"), "", strtolower(trim($purpose)));
-  $support    = array("country", "countrycode", "state", "region", "city", "location", "address");
-  $continents = array(
-    "AF" => "Africa",
-    "AN" => "Antarctica",
-    "AS" => "Asia",
-    "EU" => "Europe",
-    "OC" => "Australia (Oceania)",
-    "NA" => "North America",
-    "SA" => "South America"
-  );
-  if (filter_var($ip, FILTER_VALIDATE_IP) && in_array($purpose, $support)) {
-    $ipdat = @json_decode(file_get_contents("http://www.geoplugin.net/json.gp?ip=" . $ip));
-    if (@strlen(trim($ipdat->geoplugin_countryCode)) == 2) {
-      switch ($purpose) {
-        case "location":
-          $output = array(
-            "city"           => @$ipdat->geoplugin_city,
-            "state"          => @$ipdat->geoplugin_regionName,
-            "country"        => @$ipdat->geoplugin_countryName,
-            "country_code"   => @$ipdat->geoplugin_countryCode,
-            "continent"      => @$continents[strtoupper($ipdat->geoplugin_continentCode)],
-            "continent_code" => @$ipdat->geoplugin_continentCode
-          );
-          break;
-        case "address":
-          $address = array($ipdat->geoplugin_countryName);
-          if (@strlen($ipdat->geoplugin_regionName) >= 1)
-            $address[] = $ipdat->geoplugin_regionName;
-          if (@strlen($ipdat->geoplugin_city) >= 1)
-            $address[] = $ipdat->geoplugin_city;
-          $output = implode(", ", array_reverse($address));
-          break;
-        case "city":
-          $output = @$ipdat->geoplugin_city;
-          break;
-        case "state":
-          $output = @$ipdat->geoplugin_regionName;
-          break;
-        case "region":
-          $output = @$ipdat->geoplugin_regionName;
-          break;
-        case "country":
-          $output = @$ipdat->geoplugin_countryName;
-          break;
-        case "countrycode":
-          $output = @$ipdat->geoplugin_countryCode;
-          break;
-      }
-    }
-  }
-  return $output;
-}
-$userCountry = user_info("Visitor", "Country");
-$bannedCountries = ["Pakistan", "India", "China", "Vietnam", "Bangladesh", "Nepal", "Sri Lanka"];
-define('userCountry', $userCountry);
+$bannedCountries = ["India", "China", "Vietnam", "Bangladesh", "Nepal", "Sri Lanka"];
 define('bannedCountries', $bannedCountries);
-if($userCountry === 'Pakistan'){
-  define('defaultCurrency', "Rs");
-} else {
-  define('defaultCurrency', "$");
-}
 
 return [
   metaData,
-  userCountry,
   bannedCountries,
-  defaultCurrency
 ]
 
 ?>

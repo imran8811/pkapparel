@@ -5,7 +5,7 @@
 ?>
 <div class="container-fluid page-content">
   <div class="row">
-    <?php include_once(dirname(__DIR__). '/shared/tagline.php') ?>
+    <?php include_once(dirname(__DIR__). "/shared/tagline.php") ?>
     <div class="mb-5">
       <p class="mb-4">denim jeans have seen a rapid evolution over the years. Today, the denim offers a luxury feel and still costs quite less. Every other person these days wear jeans. Being rough and tough, jeans are very practical to wear for our regular casual days. At the same time, jeans are also beautiful to look at and comfortable to wear. This makes jeans also practical to wear for special venues. </p>
       <p class="mb-4">Even for fashion events and civic gatherings, jeans make perfect apparels. The clothing industry is expanding over time, and so is the jeans industry. Jeans take a considerable portion of the clothing and apparel industry.</p>

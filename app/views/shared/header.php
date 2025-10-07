@@ -6,10 +6,7 @@
     session_start();
   }
   include_once(dirname(dirname(__DIR__))."/constants.php");
-  // $userCountry = user_info("Visitor", "Country");
-  // if($userCountry === 'Pakistan'){
-  //   header("Location: https://www.pk.pkapparel.com");
-  // }
+
   $currentPage = $_SERVER['REQUEST_URI'];
   $currentPage = explode('/', $currentPage);
   $currentPage = end($currentPage);
@@ -23,7 +20,6 @@
     $description = $currentPage;
   }
   $sessionExist = isset($_SESSION['user']) && $_SESSION['user'] !==''? true : false;
-  // echo $sessionExist;
 ?>
 <!doctype html>
 <html lang="en">

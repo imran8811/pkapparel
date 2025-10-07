@@ -54,7 +54,7 @@
                   href="/wholesale-shop/<?php echo $product['dept'] ?>/<?php echo $product['category'] ?>/<?php echo $product['slug'] . '-' . $product['article_no'] ?>">
                   <span><?php echo $product['article_no'] ?>-</span>
                   <span><?php echo $product['product_name'] ?></span><br />
-                  <span class="text-danger"><?php echo defaultCurrency ==='Rs'? defaultCurrency . $product['price_pkr']: defaultCurrency . $product['price'] ?></span>
+                  <span class="text-danger"><?php echo $product['price_pkr'] ?></span>
                 </a>
               </div>
             <?php endforeach; ?>

@@ -48,7 +48,7 @@
                 href="/wholesale-shop/<?php echo $product['dept'] ?>/<?php echo $product['category'] ?>/<?php echo $product['slug'] . '-' . $product['article_no'] ?>">
                 <span><?php echo $product['article_no'] ?>-</span>
                 <span><?php echo $product['product_name'] ?></span><br />
-                <span class="text-danger"><?php echo defaultCurrency ==='Rs'? defaultCurrency . $product['price_pkr']: defaultCurrency . $product['price'] ?></span>
+                <span class="text-danger">PKR <?php echo $product['price_pkr'] ?></span>
               </a>
             </div>
             <?php endif; ?>
@@ -76,7 +76,8 @@
                 class="text-capitalize d-block pt-3 px-3 text-dark"
                 href="/wholesale-shop/<?php echo $product['dept'] ?>/<?php echo $product['category'] ?>/<?php echo $product['slug'] . '-' . $product['article_no'] ?>">
                 <span><?php echo $product['article_no'] ?>-</span>
-                <span><?php echo $product['product_name'] ?></span><br /><span class="text-danger"><?php echo defaultCurrency ==='Rs'? defaultCurrency . $product['price_pkr']: defaultCurrency . $product['price'] ?></span>
+                <span><?php echo $product['product_name'] ?></span><br />
+                <span class="text-danger">PKR <?php echo $product['price_pkr'] ?></span>
               </a>
             </div>
             <?php endif; ?>
@@ -103,7 +104,8 @@
                 class="text-capitalize d-block pt-3 px-3 text-dark"
                 href="/wholesale-shop/<?php echo $product['dept'] ?>/<?php echo $product['category'] ?>/<?php echo $product['slug'] . '-' . $product['article_no'] ?>">
                 <span><?php echo $product['article_no'] ?>-</span>
-                <span><?php echo $product['product_name'] ?></span><br /><span class="text-danger"><?php echo defaultCurrency ==='Rs'? defaultCurrency . $product['price_pkr']: defaultCurrency . $product['price'] ?></span>
+                <span><?php echo $product['product_name'] ?></span><br />
+                <span class="text-danger">PKR <?php echo $product['price_pkr'] ?></span>
               </a>
             </div>
             <?php endif; ?>

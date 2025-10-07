@@ -5,7 +5,7 @@
   <div class="row">
     <?php include_once(dirname(__DIR__). '/shared/tagline.php') ?>
     <div class="mb-5">
-      <p class='mb-4'>Pakistan has emerged as a key player in the global denim industry, with its jeans manufacturers gaining international recognition for quality, craftsmanship, and competitive pricing. Over the years, the country has developed a strong textile infrastructure, making it one of the top exporters of denim fabric and finished jeans to markets in the USA, Europe, and beyond.</p>
+      <p class="mb-4">Pakistan has emerged as a key player in the global denim industry, with its jeans manufacturers gaining international recognition for quality, craftsmanship, and competitive pricing. Over the years, the country has developed a strong textile infrastructure, making it one of the top exporters of denim fabric and finished jeans to markets in the USA, Europe, and beyond.</p>
       <p>Major cities like Lahore, Karachi, and Faisalabad are home to numerous denim mills and garment factories equipped with state-of-the-art machinery. These manufacturers offer a wide range of services including fabric weaving, dyeing, stitching, and finishing—all under one roof. Some leading names in the industry include PK Apparel, Artistic Milliners, Soorty Enterprises, US Apparel & Textiles, and Crescent Bahuman. These companies are not only known for their production capacity but also for their sustainable practices, including the use of eco-friendly dyes, water recycling systems, and organic cotton.</p>
       <h2 class="mt-5 mb-5 text-center h1">List of Jeans Manufacturers in Pakistan</h2>
       <div class="table-responsive mb-5">
@@ -28,7 +28,7 @@
               <td class="w-100px">999pcs</td>
               <td class="w-150px">Lahore</td>
               <td class="text-center w-300">
-                <a href="tel:+923000911000" class="d-block mb-2">+92 3 000-911-000</a>
+                <a href="tel:+923000911000" class="d-block mb-2">+92 301 9062877</a>
                 <a href="mailto:info@pkapparel.com" class="d-block">info@pkapparel.com</a>
               </td>
             </tr>
