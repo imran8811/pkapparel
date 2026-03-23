@@ -20,6 +20,7 @@
     $description = $currentPage;
   }
   $sessionExist = isset($_SESSION['user']) && $_SESSION['user'] !==''? true : false;
+  
 ?>
 <!doctype html>
 <html lang="en">
@@ -46,13 +47,20 @@
           </a>
         </div>
         <ul class="header-menu col-md-8 mt-3 mb-3">
-          <li><a href="/wholesale-shop" class="btn-link">Wholesale Shop</a></li>
+          <li><a href="/wholesale-shop" class="btn-link">Shop</a></li>
+          <li>
+            <a href="/cart" class="btn-link cart-link">
+              <i class="fas fa-shopping-cart"></i> Cart
+              <span class="cart-badge" id="cartBadge" style="display:none;">0</span>
+            </a>
+          </li>
           <?php
             if(!$sessionExist){
               echo '<li><a href="/login" class="btn-link">Login</a></li>
               <li><a href="/signup" class="btn-link">Signup</a></li>';
             } else {
-              echo '<li><a href="/logout" class="btn-link">Logout</a></li>';
+              echo '<li><a href="/orders" class="btn-link">Orders</a></li>
+              <li><a href="/logout" class="btn-link">Logout</a></li>';
             }
           ?>
         </ul>

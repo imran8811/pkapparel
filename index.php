@@ -1,10 +1,8 @@
 <?php
-  $constants = include(__DIR__."/app/constants.php");
   require_once(__DIR__."/vendor/autoload.php");
   include_once('./Core/Router.php');
   use \Core\Router;
   $router = new Router();
-
   //static
   $router->get('/', 'app/views/home.php');
   $router->get('/about', '/app/views/static/about.php');
@@ -34,6 +32,10 @@
   $router->post('/admin/login', 'app/views/admin/admin-login.php');
   $router->get('/admin/add-product', 'app/views/admin/add-product.php');
   $router->post('/admin/add-product', 'app/views/admin/add-product.php');
+  $router->get('/admin/users', 'app/views/admin/users.php');
+  $router->post('/admin/users', 'app/views/admin/users.php');
+  $router->get('/admin/edit-user/$userId', 'app/views/admin/edit-user.php');
+  $router->post('/admin/edit-user/$userId', 'app/views/admin/edit-user.php');
   $router->get('/admin/logout/$token', function($token){
     echo $token;
   });
@@ -57,6 +59,7 @@
   $router->get('/cart', 'app/views/wholesale-shop/cart.php');
   $router->get('/checkout', 'app/views/wholesale-shop/checkout.php');
   $router->get('/orders', 'app/views/wholesale-shop/orders.php');
+  $router->get('/order-placed', 'app/views/wholesale-shop/order-placed.php');
   $router->get('/orders-invoice', 'app/views/wholesale-shop/orders-invoice.php');
 
 

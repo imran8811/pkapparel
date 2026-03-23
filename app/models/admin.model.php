@@ -222,6 +222,63 @@ class AdminModel extends Model {
     $res = $query->execute();
     return $res;
   }
+
+  // ===== USER CRUD =====
+
+  public function getAllUsers(){
+    $query = 'SELECT user_id, business_name, business_type, user_email, country_code, contact_no, joined_at, status FROM users ORDER BY user_id DESC';
+    $stmt = $this->pdo->prepare($query);
+    $stmt->execute();
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+  }
+
+  public function getUserById($id){
+    $query = 'SELECT user_id, business_name, business_type, user_email, country_code, contact_no, joined_at, status FROM users WHERE user_id=?';
+    $stmt = $this->pdo->prepare($query);
+    $stmt->execute([$id]);
+    return $stmt->fetch(PDO::FETCH_ASSOC);
+  }
+
+  public function updateUser($data){
+    try {
+      $query = 'UPDATE users SET business_name=:business_name, business_type=:business_type, user_email=:user_email, country_code=:country_code, contact_no=:contact_no, status=:status WHERE user_id=:user_id';
+      $stmt = $this->pdo->prepare($query);
+      $stmt->execute([
+        ':business_name' => $data['business_name'],
+        ':business_type' => $data['business_type'],
+        ':user_email'    => $data['user_email'],
+        ':country_code'  => $data['country_code'],
+        ':contact_no'    => $data['contact_no'],
+        ':status'        => $data['status'],
+        ':user_id'       => $data['user_id'],
+      ]);
+      return $stmt->rowCount() >= 0;
+    } catch(PDOException $e){
+      return false;
+    }
+  }
+
+  public function deleteUser($id){
+    try {
+      $query = 'DELETE FROM users WHERE user_id=?';
+      $stmt = $this->pdo->prepare($query);
+      $stmt->execute([$id]);
+      return $stmt->rowCount() > 0;
+    } catch(PDOException $e){
+      return false;
+    }
+  }
+
+  public function updateUserStatus($userId, $status){
+    try {
+      $query = 'UPDATE users SET status=? WHERE user_id=?';
+      $stmt = $this->pdo->prepare($query);
+      $stmt->execute([$status, $userId]);
+      return $stmt->rowCount() >= 0;
+    } catch(PDOException $e){
+      return false;
+    }
+  }
 }
 
 ?>

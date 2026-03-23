@@ -2,67 +2,91 @@
   session_start();
   if(isset($_SESSION['user']) && $_SESSION['user'] !== ''){
     header("Location: /wholesale-shop");
+    exit;
   }
   require_once dirname(dirname(__DIR__)) . '/controllers/auth.controller.php';
   use app\Controllers\AuthController;
   $authController = new AuthController();
 
-  $user_email = isset($_POST['user_email'])? $_POST['user_email'] : '';
-  $user_password = isset($_POST['user_password'])? $_POST['user_password'] : '';
+  $user_email    = isset($_POST['user_email']) ? trim($_POST['user_email']) : '';
+  $user_password = isset($_POST['user_password']) ? $_POST['user_password'] : '';
 
-  if(isset($_GET['userLogin']) && isset($user_email) && !empty($user_email) && isset($user_password) && !empty($user_password)){
-    $data = [
-      "user_email" => $user_email,
-      "user_password" => $user_password
-    ];
-    $userLogin = $authController->login($data);
-    if($userLogin['type'] === 'error'){
-      $_POST['invalidCredentials'] = true;
-    } else {
-      session_start();
-      $_SESSION['user'] = $userLogin['data']['token'];
-      header("Location: /wholesale-shop");
+  $errors = [];
+  $loginError = '';
+  $newUser = isset($_GET['newUser']) && $_GET['newUser'] == '1';
+
+  if(isset($_GET['userLogin'])){
+    // Validate email
+    if(empty($user_email)){
+      $errors['user_email'] = 'Email is required';
+    } elseif(!filter_var($user_email, FILTER_VALIDATE_EMAIL)){
+      $errors['user_email'] = 'Please enter a valid email address';
+    }
+
+    // Validate password
+    if(empty($user_password)){
+      $errors['user_password'] = 'Password is required';
+    }
+
+    if(empty($errors)){
+      $data = [
+        "user_email"    => $user_email,
+        "user_password" => $user_password,
+      ];
+      $userLogin = $authController->login($data);
+      if($userLogin['type'] === 'success'){
+        $_SESSION['user'] = $userLogin['data']['token'];
+        $_SESSION['user_email'] = $userLogin['data']['user_email'];
+        $_SESSION['business_name'] = $userLogin['data']['business_name'];
+        header("Location: /wholesale-shop");
+        exit;
+      } else {
+        $loginError = 'Invalid email or password';
+      }
     }
   }
+
   include_once("app/views/shared/header.php");
 ?>
 <div class="page-content">
   <div class="row justify-content-center px-3">
-    <?php
-      if(isset($_GET['newUser']))
-        echo '<h2 class="text-success text-center mb-5">Business Registered Successfully</h2>';
-    ?>
-    <h2 class="mb-4 text-center">User Login</h2>
-    <?php
-      if(isset($_POST['invalidCredentials']))
-        echo '<div class="mb-3 text-center">
-          <p class="text-danger">Invalid Username/Password</p>
-        </div>';
-    ?>
-    <form class="col-lg-5 col-md-6 col-12" method="post" action="/login?userLogin=1">
+    <h2 class="text-center mb-4">Login</h2>
+    <?php if($newUser): ?>
+      <div class="mb-3 text-center">
+        <p class="text-success"><strong>Registration successful! Please login.</strong></p>
+      </div>
+    <?php endif; ?>
+    <?php if(!empty($loginError)): ?>
+      <div class="mb-3 text-center">
+        <p class="text-danger"><?php echo htmlspecialchars($loginError); ?></p>
+        <p><a href="/forgot-password">Forgot Password?</a></p>
+      </div>
+    <?php endif; ?>
+    <form class="col-lg-5 col-md-6 col-12" method="post" action="/login?userLogin=1" novalidate>
       <div class="mb-4">
-        <input type="text" placeholder="Email" name="user_email" class="form-control" />
-        <?php
-          if(isset($_POST['user_email']) && empty($_POST['user_email']))
-            echo '<p class="text-danger text-small">Required</p>';
-        ?>
+        <label for="user-email">Email*</label>
+        <input type="email" id="user-email" name="user_email" class="form-control" value="<?php echo htmlspecialchars($user_email); ?>" />
+        <?php if(isset($errors['user_email'])): ?>
+          <p class="text-danger text-small"><?php echo htmlspecialchars($errors['user_email']); ?></p>
+        <?php endif; ?>
       </div>
       <div class="mb-4">
-        <input type="password" placeholder="Password" name="user_password" class="form-control" />
-        <?php
-          if(isset($_POST['user_password']) && empty($_POST['user_password']))
-            echo '<p class="text-danger text-small">Required</p>';
-        ?>
+        <label for="user-password">Password*</label>
+        <input type="password" id="user-password" name="user_password" class="form-control" />
+        <?php if(isset($errors['user_password'])): ?>
+          <p class="text-danger text-small"><?php echo htmlspecialchars($errors['user_password']); ?></p>
+        <?php endif; ?>
       </div>
-      <div class="row mb-3">
-        <div class="col-8">
-          <a href="/forgot-password" class="btn-a mb-2">Forgot Password</a>
-          <span class="divider px-2">|</span>
-          <a href="/signup" class="btn-a">Sign up</a>
+      <div class="d-flex mb-3">
+        <div class="col-6">
+          <a href="/signup" class="btn-a">Signup</a>
         </div>
-        <div class="col-4 text-end">
+        <div class="col-6 text-end">
           <button type="submit" class="btn btn-primary">Login</button>
         </div>
+      </div>
+      <div class="text-center mt-3">
+        <a href="/forgot-password">Forgot Password?</a>
       </div>
     </form>
   </div>

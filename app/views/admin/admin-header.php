@@ -23,6 +23,7 @@
         <ul class='col-6 d-flex justify-content-around align-items-center'>
           <li><a href="/admin/products">Products</a></li>
           <li><a href="/admin/add-product">Add product</a></li>
+          <li><a href="/admin/users">Users</a></li>
           <li><a href="/admin/logout/sdfklsjdlfjsdlf54654">Logout</a></li>
         </div>
       </div>

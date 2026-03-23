@@ -27,4 +27,24 @@ class AdminController extends Controller {
       ];
     }
   }
+
+  public function getAllUsers(){
+    return $this->adminModel->getAllUsers();
+  }
+
+  public function getUserById($id){
+    return $this->adminModel->getUserById($id);
+  }
+
+  public function updateUser($data){
+    return $this->adminModel->updateUser($data);
+  }
+
+  public function deleteUser($id){
+    return $this->adminModel->deleteUser($id);
+  }
+
+  public function updateUserStatus($userId, $status){
+    return $this->adminModel->updateUserStatus($userId, $status);
+  }
 }
