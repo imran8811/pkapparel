@@ -6,6 +6,9 @@
     session_start();
   }
   include_once(dirname(dirname(__DIR__))."/constants.php");
+  require_once("app/controllers/cart.controller.php");
+  use app\Controllers\CartController;
+  $__cartCtrl = new CartController();
 
   $currentPage = $_SERVER['REQUEST_URI'];
   $currentPage = explode('/', $currentPage);
@@ -20,7 +23,13 @@
     $description = $currentPage;
   }
   $sessionExist = isset($_SESSION['user']) && $_SESSION['user'] !==''? true : false;
-  
+  $cartCount = 0;
+  if($sessionExist && isset($_SESSION['user_email'])){
+    $__userId = $__cartCtrl->getUserIdByEmail($_SESSION['user_email']);
+    if($__userId){
+      $cartCount = $__cartCtrl->getCartCount($__userId);
+    }
+  }
 ?>
 <!doctype html>
 <html lang="en">
@@ -51,7 +60,7 @@
           <li>
             <a href="/cart" class="btn-link cart-link">
               <i class="fas fa-shopping-cart"></i> Cart
-              <span class="cart-badge" id="cartBadge" style="display:none;">0</span>
+              <span class="cart-badge" id="cartBadge" style="<?php echo $cartCount > 0 ? '' : 'display:none;'; ?>"><?php echo $cartCount; ?></span>
             </a>
           </li>
           <?php
@@ -66,3 +75,12 @@
         </ul>
       </div>
     </header>
+<?php if(isset($_GET['cart_added'])): ?>
+<div class="toast-container position-fixed top-0 end-0 p-3" style="z-index:9999">
+  <div class="alert alert-success alert-dismissible fade show mb-0" role="alert">
+    <i class="fas fa-check-circle me-1"></i> Item added to cart!
+    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+  </div>
+</div>
+<script>setTimeout(function(){ document.querySelector('.toast-container')?.remove(); history.replaceState({}, '', location.pathname); }, 3000);</script>
+<?php endif; ?>

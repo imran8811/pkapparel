@@ -38,6 +38,8 @@
         $_SESSION['user'] = $userLogin['data']['token'];
         $_SESSION['user_email'] = $userLogin['data']['user_email'];
         $_SESSION['business_name'] = $userLogin['data']['business_name'];
+        $_SESSION['country_code'] = $userLogin['data']['country_code'];
+        $_SESSION['contact_no'] = $userLogin['data']['contact_no'];
         header("Location: /wholesale-shop");
         exit;
       } else {

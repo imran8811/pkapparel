@@ -97,21 +97,18 @@
         </div>
 
         <!-- Add to Cart -->
-        <div class="d-flex gap-2 mb-4">
-          <button class="btn btn-primary btn-lg" id="detailAddCart"
-            data-article="<?php echo htmlspecialchars($productDetails['article_no']); ?>"
-            data-name="<?php echo htmlspecialchars($productDetails['product_name']); ?>"
-            data-price="<?php echo htmlspecialchars($productDetails['price_pkr']); ?>"
-            data-dept="<?php echo htmlspecialchars($productDetails['dept']); ?>"
-            data-category="<?php echo htmlspecialchars($productDetails['category']); ?>"
-            data-slug="<?php echo htmlspecialchars($productDetails['slug']); ?>"
-            data-sizes="<?php echo htmlspecialchars($productDetails['p_sizes']); ?>">
+        <form method="POST" action="/cart/add" class="d-flex gap-2 mb-4" id="detailCartForm">
+          <input type="hidden" name="article" value="<?php echo htmlspecialchars($productDetails['article_no']); ?>" />
+          <input type="hidden" name="sizes" value="<?php echo htmlspecialchars($productDetails['p_sizes']); ?>" />
+          <input type="hidden" name="price" value="<?php echo htmlspecialchars($productDetails['price_pkr']); ?>" />
+          <input type="hidden" name="quantity" value="1" id="detailQtyHidden" />
+          <button type="submit" class="btn btn-primary btn-lg" id="detailAddCart">
             <i class="fas fa-cart-plus me-1"></i> Add to Cart
           </button>
-          <a href="/checkout" class="btn btn-outline-success btn-lg" id="buyNowBtn">
+          <button type="submit" name="redirect" value="/checkout" class="btn btn-outline-success btn-lg">
             <i class="fas fa-bolt me-1"></i> Buy Now
-          </a>
-        </div>
+          </button>
+        </form>
 
         <hr />
 

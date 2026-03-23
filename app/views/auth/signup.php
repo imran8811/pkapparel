@@ -103,24 +103,15 @@
         <!-- <span class="text-small text-danger">Confirm password mismatch</span> -->
       </div>
       <div class="mb-4 pb-4">
-        <div class="row">
-          <div class="col-4">
-            <label for="country-code">Country Code*</label>
-            <input type="text" id="country-code" name="country_code" class="form-control" />
-            <?php
-              if(isset($_POST['country_code']) && empty($_POST['country_code']))
-                echo '<p class="text-danger text-small">Required</p>';
-            ?>
-          </div>
-          <div class="col-8">
-            <label for="contact-no">Contact No.*</label>
-            <input type="number" id="contact-no" name="contact_no" class="form-control" />
-            <?php
-              if(isset($_POST['contact_no']) && empty($_POST['contact_no']))
-                echo '<p class="text-danger text-small">Required</p>';
-            ?>
-          </div>
-        </div>
+        <label for="contact-no">Phone Number*</label>
+        <input type="tel" id="contact-no" name="contact_no" class="form-control" />
+        <input type="hidden" id="country-code" name="country_code" value="+92" />
+        <?php
+          if(isset($_POST['country_code']) && empty($_POST['country_code']))
+            echo '<p class="text-danger text-small">Required</p>';
+          if(isset($_POST['contact_no']) && empty($_POST['contact_no']))
+            echo '<p class="text-danger text-small">Required</p>';
+        ?>
       </div>
       <div class="d-flex mb-3">
         <div class="col-6">
@@ -134,3 +125,24 @@
   </div>
 </div>
 <?php include_once("app/views/shared/footer.php"); ?>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@24.8.2/build/css/intlTelInput.css" />
+<script src="https://cdn.jsdelivr.net/npm/intl-tel-input@24.8.2/build/js/intlTelInput.min.js"></script>
+<script>
+  var phoneInput = document.getElementById('contact-no');
+  var countryCodeInput = document.getElementById('country-code');
+  var iti = intlTelInput(phoneInput, {
+    initialCountry: 'pk',
+    preferredCountries: ['pk', 'us', 'gb', 'ae', 'sa', 'in'],
+    separateDialCode: true,
+    utilsScript: 'https://cdn.jsdelivr.net/npm/intl-tel-input@24.8.2/build/js/utils.js'
+  });
+  phoneInput.addEventListener('countrychange', function(){
+    countryCodeInput.value = '+' + iti.getSelectedCountryData().dialCode;
+  });
+  phoneInput.closest('form').addEventListener('submit', function(){
+    countryCodeInput.value = '+' + iti.getSelectedCountryData().dialCode;
+  });
+</script>
+<style>
+  .iti { width: 100%; }
+</style>

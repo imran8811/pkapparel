@@ -57,7 +57,10 @@
   $router->get('/wholesale-shop/$dept/$category', 'app/views/wholesale-shop/wholesale-shop-category.php');
   $router->get('/wholesale-shop/$dept/$category/$name', 'app/views/wholesale-shop/product-details.php');
   $router->get('/cart', 'app/views/wholesale-shop/cart.php');
+  $router->post('/cart', 'app/views/wholesale-shop/cart-action.php');
+  $router->post('/cart/add', 'app/views/wholesale-shop/cart-action.php');
   $router->get('/checkout', 'app/views/wholesale-shop/checkout.php');
+  $router->post('/checkout', 'app/views/wholesale-shop/checkout.php');
   $router->get('/orders', 'app/views/wholesale-shop/orders.php');
   $router->get('/order-placed', 'app/views/wholesale-shop/order-placed.php');
   $router->get('/orders-invoice', 'app/views/wholesale-shop/orders-invoice.php');

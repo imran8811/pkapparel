@@ -91,32 +91,37 @@
 <div class="modal fade" id="sizeSelectModal" tabindex="-1">
   <div class="modal-dialog modal-dialog-centered modal-sm">
     <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Add Sets to Cart</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-      </div>
-      <div class="modal-body">
-        <div class="mb-2">
-          <label class="fw-bold mb-1 d-block">Available Sizes:</label>
-          <div id="sizeOptions" class="d-flex flex-wrap gap-1 justify-content-center"></div>
+      <form method="POST" action="/cart/add">
+        <input type="hidden" name="article" id="modalArticle" />
+        <input type="hidden" name="sizes" id="modalSizes" />
+        <input type="hidden" name="price" id="modalPrice" />
+        <div class="modal-header">
+          <h5 class="modal-title">Add Sets to Cart</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
         </div>
-        <div class="alert alert-info py-2 mb-2 small">
-          <i class="fas fa-box me-1"></i> <strong>1 Set = 10 Pieces</strong> (2 pcs per size)
-        </div>
-        <div class="mb-0">
-          <label class="fw-bold mb-1" for="modalSetQty">Number of Sets:</label>
-          <div class="d-flex align-items-center gap-2 justify-content-center">
-            <button type="button" class="btn btn-outline-secondary btn-sm" id="modalQtyMinus">-</button>
-            <input type="number" id="modalSetQty" value="1" min="1" max="999" class="form-control text-center" style="width:70px;" />
-            <button type="button" class="btn btn-outline-secondary btn-sm" id="modalQtyPlus">+</button>
+        <div class="modal-body">
+          <div class="mb-2">
+            <label class="fw-bold mb-1 d-block">Available Sizes:</label>
+            <div id="sizeOptions" class="d-flex flex-wrap gap-1 justify-content-center"></div>
           </div>
-          <small class="text-muted d-block text-center mt-1" id="modalPiecesInfo">1 set = 10 pieces</small>
+          <div class="alert alert-info py-2 mb-2 small">
+            <i class="fas fa-box me-1"></i> <strong>1 Set = 10 Pieces</strong> (2 pcs per size)
+          </div>
+          <div class="mb-0">
+            <label class="fw-bold mb-1" for="modalSetQty">Number of Sets:</label>
+            <div class="d-flex align-items-center gap-2 justify-content-center">
+              <button type="button" class="btn btn-outline-secondary btn-sm" id="modalQtyMinus">-</button>
+              <input type="number" id="modalSetQty" name="quantity" value="1" min="1" max="999" class="form-control text-center" style="width:70px;" />
+              <button type="button" class="btn btn-outline-secondary btn-sm" id="modalQtyPlus">+</button>
+            </div>
+            <small class="text-muted d-block text-center mt-1" id="modalPiecesInfo">1 set = 10 pieces</small>
+          </div>
         </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Cancel</button>
-        <button type="button" class="btn btn-primary btn-sm" id="confirmAddCart">Add to Cart</button>
-      </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Cancel</button>
+          <button type="submit" class="btn btn-primary btn-sm">Add to Cart</button>
+        </div>
+      </form>
     </div>
   </div>
 </div>
