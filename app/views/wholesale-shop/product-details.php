@@ -13,9 +13,9 @@
   <?php foreach($getProductByArticleNo as $productDetails): ?>
     <nav aria-label="breadcrumb" class="mb-4">
       <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="/">Shop</a></li>
-        <li class="breadcrumb-item text-capitalize"><a href="/<?php echo htmlspecialchars($productDetails['dept']); ?>"><?php echo htmlspecialchars($productDetails['dept']); ?></a></li>
-        <li class="breadcrumb-item text-capitalize"><a href="/<?php echo htmlspecialchars($productDetails['dept']); ?>/<?php echo htmlspecialchars($productDetails['category']); ?>"><?php echo htmlspecialchars(str_replace('-', ' ', $productDetails['category'])); ?></a></li>
+        <li class="breadcrumb-item"><a href="/wholesale-shop">Shop</a></li>
+        <li class="breadcrumb-item text-capitalize"><a href="/wholesale-shop/<?php echo htmlspecialchars($productDetails['dept']); ?>"><?php echo htmlspecialchars($productDetails['dept']); ?></a></li>
+        <li class="breadcrumb-item text-capitalize"><a href="/wholesale-shop/<?php echo htmlspecialchars($productDetails['dept']); ?>/<?php echo htmlspecialchars($productDetails['category']); ?>"><?php echo htmlspecialchars(str_replace('-', ' ', $productDetails['category'])); ?></a></li>
         <li class="breadcrumb-item active"><?php echo htmlspecialchars($productDetails['article_no']); ?></li>
       </ol>
     </nav>

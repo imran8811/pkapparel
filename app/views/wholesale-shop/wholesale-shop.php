@@ -10,15 +10,23 @@
     $key = $p['dept'] . '/' . $p['category'];
     $categoryGroups[$key][] = $p;
   }
-  // Sort: men categories first, then women, then everything else
+  // Sort: men jeans first, men chino pants, men cargo trousers, then rest
   uksort($categoryGroups, function($a, $b){
+    $priority = [
+      'men/jeans-pant' => 0,
+      'men/chino-pant' => 1,
+      'men/cargo-trouser' => 2,
+    ];
+    $orderA = isset($priority[$a]) ? $priority[$a] : 100;
+    $orderB = isset($priority[$b]) ? $priority[$b] : 100;
+    if($orderA !== $orderB) return $orderA - $orderB;
+    // Within non-priority: men before women before others
     $deptOrder = ['men' => 0, 'women' => 1];
     $deptA = explode('/', $a)[0];
     $deptB = explode('/', $b)[0];
-    $orderA = isset($deptOrder[$deptA]) ? $deptOrder[$deptA] : 2;
-    $orderB = isset($deptOrder[$deptB]) ? $deptOrder[$deptB] : 2;
-    if($orderA !== $orderB) return $orderA - $orderB;
-    return 0;
+    $dA = isset($deptOrder[$deptA]) ? $deptOrder[$deptA] : 2;
+    $dB = isset($deptOrder[$deptB]) ? $deptOrder[$deptB] : 2;
+    return $dA - $dB;
   });
 ?>
 <div class="page-content">
@@ -37,21 +45,21 @@
     <div class="shop-section mb-5">
       <div class="d-flex justify-content-between align-items-center mb-3">
         <h2 class="section-heading mb-0"><?php echo htmlspecialchars($displayName); ?></h2>
-        <a href="/<?php echo htmlspecialchars($deptName); ?>/<?php echo htmlspecialchars($catName); ?>" class="btn btn-outline-primary btn-sm">View All <i class="fas fa-arrow-right ms-1"></i></a>
+        <a href="/wholesale-shop/<?php echo htmlspecialchars($deptName); ?>/<?php echo htmlspecialchars($catName); ?>" class="btn btn-outline-primary btn-sm">View All <i class="fas fa-arrow-right ms-1"></i></a>
       </div>
       <div class="swiper shopCarousel-<?php echo htmlspecialchars($deptName . '-' . $catName); ?>">
         <div class="swiper-wrapper">
           <?php foreach($carouselProducts as $product): ?>
           <div class="swiper-slide">
             <div class="product-card">
-              <a href="/<?php echo htmlspecialchars($product['dept']); ?>/<?php echo htmlspecialchars($product['category']); ?>/<?php echo htmlspecialchars($product['slug'] . '-' . $product['article_no']); ?>" class="product-card-img-link">
+              <a href="/wholesale-shop/<?php echo htmlspecialchars($product['dept']); ?>/<?php echo htmlspecialchars($product['category']); ?>/<?php echo htmlspecialchars($product['slug'] . '-' . $product['article_no']); ?>" class="product-card-img-link">
                 <img
                   src="/uploads/<?php echo htmlspecialchars($product['article_no']); ?>/front.jpg"
                   alt="<?php echo htmlspecialchars($product['product_name']); ?>"
                   class="product-card-img" loading="lazy" />
               </a>
               <div class="product-card-body">
-                <a href="/<?php echo htmlspecialchars($product['dept']); ?>/<?php echo htmlspecialchars($product['category']); ?>/<?php echo htmlspecialchars($product['slug'] . '-' . $product['article_no']); ?>" class="product-card-title text-capitalize">
+                <a href="/wholesale-shop/<?php echo htmlspecialchars($product['dept']); ?>/<?php echo htmlspecialchars($product['category']); ?>/<?php echo htmlspecialchars($product['slug'] . '-' . $product['article_no']); ?>" class="product-card-title text-capitalize">
                   <?php echo htmlspecialchars($product['product_name']); ?>
                 </a>
                 <div class="product-card-rating">

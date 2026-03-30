@@ -63,7 +63,7 @@
               ?>
               <tr>
                 <td><img src="/uploads/<?php echo htmlspecialchars($item['article_no']); ?>/front.jpg" alt="<?php echo htmlspecialchars($item['product_name']); ?>" /></td>
-                <td><a href="/<?php echo htmlspecialchars($item['dept']); ?>/<?php echo htmlspecialchars($item['category']); ?>/<?php echo htmlspecialchars($item['slug'] . '-' . $item['article_no']); ?>" class="text-capitalize"><?php echo htmlspecialchars($item['product_name']); ?></a></td>
+                <td><a href="/wholesale-shop/<?php echo htmlspecialchars($item['dept']); ?>/<?php echo htmlspecialchars($item['category']); ?>/<?php echo htmlspecialchars($item['slug'] . '-' . $item['article_no']); ?>" class="text-capitalize"><?php echo htmlspecialchars($item['product_name']); ?></a></td>
                 <td><small><?php echo htmlspecialchars(str_replace(',', ', ', $item['cart_sizes'])); ?></small></td>
                 <td>$<?php echo number_format($item['cart_amount'] / 320, 2); ?></td>
                 <td>

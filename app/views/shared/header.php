@@ -73,10 +73,7 @@
         </div>
         <ul class="header-menu col-md-8 mt-3 mb-3">
           <li>
-            <a href="/cart" class="btn-link cart-link">
-              <i class="fas fa-shopping-cart"></i> Cart
-              <span class="cart-badge" id="cartBadge" style="<?php echo $cartCount > 0 ? '' : 'display:none;'; ?>"><?php echo $cartCount; ?></span>
-            </a>
+            <a href="/wholesale-shop" class="btn-link">Wholesale Shop</a>
           </li>
           <?php
             if(!$sessionExist){
@@ -87,6 +84,12 @@
               <li><a href="/logout" class="btn-link">Logout</a></li>';
             }
           ?>
+          <li>
+            <a href="/cart" class="btn-link cart-link">
+              <i class="fas fa-shopping-cart"></i> Cart
+              <span class="cart-badge" id="cartBadge" style="<?php echo $cartCount > 0 ? '' : 'display:none;'; ?>"><?php echo $cartCount; ?></span>
+            </a>
+          </li>
         </ul>
       </div>
     </header>
