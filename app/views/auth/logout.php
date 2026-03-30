@@ -3,10 +3,12 @@
   require_once dirname(dirname(__DIR__)) . '/controllers/auth.controller.php';
   use app\Controllers\AuthController;
   $authController = new AuthController();
-  $token = $_SESSION['user'];
-  $userLogout = $authController->logout($token);
-  if($userLogout){
-    session_destroy();
-    header("Location: /wholesale-shop");
+  $token = $_SESSION['user'] ?? '';
+  if($token){
+    $authController->logout($token);
   }
+  session_unset();
+  session_destroy();
+  header("Location: /");
+  exit;
 ?>

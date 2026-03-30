@@ -23,7 +23,7 @@
     <div class="text-center py-5">
       <i class="fas fa-box-open fa-3x text-muted mb-3"></i>
       <h4 class="text-muted">No orders yet</h4>
-      <a href="/wholesale-shop" class="btn btn-primary mt-3">Start Shopping</a>
+      <a href="/" class="btn btn-primary mt-3">Start Shopping</a>
     </div>
     <?php else: ?>
     <div class="table-responsive">
@@ -52,7 +52,7 @@
             <td><strong><?php echo htmlspecialchars($order['order_number']); ?></strong></td>
             <td><?php echo date('Y-m-d', strtotime($order['created_at'])); ?></td>
             <td><?php echo $totalSets; ?> set(s) / <?php echo $totalPieces; ?> pcs</td>
-            <td class="fw-bold">PKR <?php echo number_format($order['total']); ?></td>
+            <td class="fw-bold">$<?php echo number_format($order['total'] / 320, 2); ?></td>
             <td>
               <span class="badge <?php
                 switch($order['status']){
@@ -123,12 +123,12 @@
                   <td><?php echo htmlspecialchars(str_replace(',', ', ', $item['sizes'])); ?></td>
                   <td><?php echo $item['sets']; ?></td>
                   <td><?php echo $item['pieces']; ?></td>
-                  <td>PKR <?php echo number_format($item['price'] * $item['pieces']); ?></td>
+                  <td>$<?php echo number_format(($item['price'] * $item['pieces']) / 320, 2); ?></td>
                 </tr>
                 <?php endforeach; ?>
               </tbody>
             </table>
-            <div class="text-end fw-bold fs-5">Total: PKR <?php echo number_format($order['total']); ?></div>
+            <div class="text-end fw-bold fs-5">Total: $<?php echo number_format($order['total'] / 320, 2); ?></div>
           </div>
         </div>
       </div>

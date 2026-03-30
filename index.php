@@ -1,5 +1,6 @@
 <?php
   require_once(__DIR__."/vendor/autoload.php");
+  require_once(__DIR__."/app/env.php");
   include_once('./Core/Router.php');
   use \Core\Router;
   $router = new Router();
@@ -52,10 +53,6 @@
   $router->get('/logout', 'app/views/auth/logout.php');
 
   //wholesale shop
-  $router->get('/wholesale-shop', 'app/views/wholesale-shop/wholesale-shop.php');
-  $router->get('/wholesale-shop/$dept', 'app/views/wholesale-shop/wholesale-shop-dept.php');
-  $router->get('/wholesale-shop/$dept/$category', 'app/views/wholesale-shop/wholesale-shop-category.php');
-  $router->get('/wholesale-shop/$dept/$category/$name', 'app/views/wholesale-shop/product-details.php');
   $router->get('/cart', 'app/views/wholesale-shop/cart.php');
   $router->post('/cart', 'app/views/wholesale-shop/cart-action.php');
   $router->post('/cart/add', 'app/views/wholesale-shop/cart-action.php');
@@ -64,6 +61,11 @@
   $router->get('/orders', 'app/views/wholesale-shop/orders.php');
   $router->get('/order-placed', 'app/views/wholesale-shop/order-placed.php');
   $router->get('/orders-invoice', 'app/views/wholesale-shop/orders-invoice.php');
+
+  //dynamic shop routes (must be after all static routes)
+  $router->get('/$dept', 'app/views/wholesale-shop/wholesale-shop-dept.php');
+  $router->get('/$dept/$category', 'app/views/wholesale-shop/wholesale-shop-category.php');
+  $router->get('/$dept/$category/$name', 'app/views/wholesale-shop/product-details.php');
 
 
   // get('/user/$id', 'views/user');

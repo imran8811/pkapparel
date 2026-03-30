@@ -1,4 +1,9 @@
 <?php
+  if(!isset($_SESSION)) session_start();
+  if(!isset($_SESSION['admin']) || empty($_SESSION['admin'])){
+    header("Location: /admin/login");
+    exit;
+  }
   include_once __DIR__ ."/admin-header.php";
   require_once dirname(dirname(__DIR__)) . '/controllers/product.controller.php';
   use app\Controllers\ProductController;

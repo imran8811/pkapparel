@@ -6,6 +6,7 @@
     session_start();
   }
   include_once(dirname(dirname(__DIR__))."/constants.php");
+  require_once(__DIR__ . "/../../../app/csrf.php");
   require_once("app/controllers/cart.controller.php");
   use app\Controllers\CartController;
   $__cartCtrl = new CartController();
@@ -23,6 +24,21 @@
     $description = $currentPage;
   }
   $sessionExist = isset($_SESSION['user']) && $_SESSION['user'] !==''? true : false;
+
+  // Session timeout check
+  $sessionTimeout = (int)(getenv('SESSION_TIMEOUT') ?: 3600);
+  if($sessionExist && isset($_SESSION['last_activity'])){
+    if(time() - $_SESSION['last_activity'] > $sessionTimeout){
+      session_unset();
+      session_destroy();
+      header("Location: /login");
+      exit;
+    }
+  }
+  if($sessionExist){
+    $_SESSION['last_activity'] = time();
+  }
+
   $cartCount = 0;
   if($sessionExist && isset($_SESSION['user_email'])){
     $__userId = $__cartCtrl->getUserIdByEmail($_SESSION['user_email']);
@@ -56,7 +72,6 @@
           </a>
         </div>
         <ul class="header-menu col-md-8 mt-3 mb-3">
-          <li><a href="/wholesale-shop" class="btn-link">Shop</a></li>
           <li>
             <a href="/cart" class="btn-link cart-link">
               <i class="fas fa-shopping-cart"></i> Cart

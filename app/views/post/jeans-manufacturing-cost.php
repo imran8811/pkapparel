@@ -2,16 +2,44 @@
   include_once("app/views/shared/header.php");
   require_once("app/controllers/post.controller.php");
   use app\Controllers\PostController;
-  if(isset($_GET['user_comment'])){
-    $postController = new PostController();
-    $postID="1";
-    $data = [
-      "post_id" => $postID,
-      "commenter_name" => $_POST['commenter_name'],
-      "post_comment" => $_POST['post_comment'],
-    ];
-    $addComment = $postController->addComment($data);
-    // print_r($addComment);
+
+  $commentError = '';
+  $addComment = null;
+
+  if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['post_comment'])){
+    // Honeypot check — bots fill this hidden field, humans leave it empty
+    if(!empty($_POST['website'] ?? '')){
+      // Silently reject — looks like success to the bot
+      $addComment = ['type' => 'success'];
+    }
+    // Time-gate — reject if form submitted in under 3 seconds
+    elseif(isset($_POST['_ts']) && (time() - (int)$_POST['_ts']) < 3){
+      $commentError = 'Please wait a moment before submitting.';
+    }
+    // CSRF check
+    elseif(!csrf_verify()){
+      $commentError = 'Invalid form submission, please try again.';
+    } else {
+      $commenter_name = trim($_POST['commenter_name'] ?? '');
+      $post_comment   = trim($_POST['post_comment'] ?? '');
+
+      if(empty($commenter_name) || empty($post_comment)){
+        $commentError = 'Name and comment are required.';
+      } elseif(strlen($commenter_name) > 100){
+        $commentError = 'Name is too long (max 100 characters).';
+      } elseif(strlen($post_comment) > 2000){
+        $commentError = 'Comment is too long (max 2000 characters).';
+      } else {
+        $postController = new PostController();
+        $postID = "1";
+        $data = [
+          "post_id" => $postID,
+          "commenter_name" => $commenter_name,
+          "post_comment" => $post_comment,
+        ];
+        $addComment = $postController->addComment($data);
+      }
+    }
   }
 ?>
 <div class="container-fluid page-content">
@@ -23,6 +51,11 @@
       </div>';
     };
     ?>
+    <?php endif; ?>
+    <?php if(!empty($commentError)): ?>
+      <div class="alert alert-danger" role="alert">
+        <?php echo htmlspecialchars($commentError); ?>
+      </div>
     <?php endif; ?>
     <?php include_once(dirname(__DIR__). '/shared/tagline.php') ?>
     <div class="col-12 mb-5">
@@ -232,7 +265,7 @@
     <div class="pk-intro">
       <h2 class="text-center mb-5 h1">PK Apparel</h2>
       <p class="mb-5 h4">You are buyer for any retail chain, wholesaler, retailer and online seller, send us your inquiry and see our non beatable prices and quality. We are serving 25+ customers all over the world since 2015. </p>
-      <p class="text-center h2"><a href="/wholesale-shop">See our wholesale shop for men, women, boys and girls garments</a></p>
+      <p class="text-center h2"><a href="/">See our wholesale shop for men, women, boys and girls garments</a></p>
     </div>
   </div>
   <?php include_once(dirname(__DIR__)."/shared/post-comments.php"); ?>

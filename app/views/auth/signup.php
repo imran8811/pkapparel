@@ -1,9 +1,10 @@
 <?php
   session_start();
   if(isset($_SESSION['user']) && $_SESSION['user'] !== ''){
-    header("Location: /wholesale-shop");
+    header("Location: /");
   }
   require_once dirname(dirname(__DIR__)) . '/controllers/auth.controller.php';
+  require_once dirname(dirname(dirname(__DIR__))) . '/app/csrf.php';
   use app\Controllers\AuthController;
   $authController = new AuthController();
 
@@ -15,7 +16,7 @@
   $contact_no     = isset($_POST['contact_no'])? $_POST['contact_no'] : '';
 
   if(
-    isset($_GET['userSignup']) &&
+    $_SERVER['REQUEST_METHOD'] === 'POST' &&
     isset($business_name) &&
     !empty($business_name) &&
     isset($business_type) &&
@@ -28,7 +29,16 @@
     !empty($country_code) &&
     isset($contact_no) &&
     !empty($contact_no)){
-    $data = [
+    if(!csrf_verify()){
+      $signupError = 'Invalid form submission, please try again.';
+    } elseif(!filter_var($user_email, FILTER_VALIDATE_EMAIL)){
+      $signupError = 'Please enter a valid email address.';
+    } elseif(strlen($user_password) < 8 || !preg_match('/[A-Za-z]/', $user_password) || !preg_match('/[0-9]/', $user_password)){
+      $signupError = 'Password must be at least 8 characters with letters and numbers.';
+    } elseif($user_password !== ($_POST['confirm_password'] ?? '')){
+      $signupError = 'Passwords do not match.';
+    } else {
+      $data = [
       "business_name" => $business_name,
       "business_type" => $business_type,
       "user_email"    => $user_email,
@@ -40,9 +50,8 @@
     if($userSignup['type'] === 'userDuplicate'){
       isset($_POST['userDuplicate']);
     } else {
-      // session_start();
-      // $_SESSION['user'] = $userSignup['data']['token'];
       header("Location: /login?newUser=1");
+    }
     }
   }
   include_once("app/views/shared/header.php");
@@ -50,6 +59,11 @@
 <div class="page-content">
   <div class="row justify-content-center px-3">
     <h2 class="text-center mb-4">Business Registration</h2>
+    <?php if(isset($signupError)): ?>
+      <div class="mb-3 text-center">
+        <p class="text-danger"><?php echo htmlspecialchars($signupError); ?></p>
+      </div>
+    <?php endif; ?>
     <?php
       if(isset($userSignup['type']) && $userSignup['type'] === 'userDuplicate')
         echo '<div class="mb-3 text-center">
@@ -57,7 +71,8 @@
           <p>Try <a href="/login">Login</a> or <a href="/forgot-password">Forgot Password</a></p>
         </div>'
     ?>
-    <form class="col-lg-6 col-md-6 col-12" method="post" action="/signup?userSignup=1">
+    <form class="col-lg-6 col-md-6 col-12" method="post" action="/signup">
+      <?php echo csrf_field(); ?>
       <div class="mb-4">
         <label for="business-name">Business Name*</label>
         <input type="text" id="business-name" name="business_name" class="form-control" />
@@ -79,7 +94,7 @@
       </div>
       <div class="mb-4">
         <label for="user-email">Email*</label>
-        <input type="text" id="user-email" name="user_email" class="form-control" />
+        <input type="email" id="user-email" name="user_email" class="form-control" />
         <?php
           if(isset($_POST['user_email']) && empty($_POST['user_email']))
             echo '<p class="text-danger text-small">Required</p>';

@@ -1,4 +1,9 @@
 <?php
+  if(!isset($_SESSION)) session_start();
+  if(!isset($_SESSION['admin']) || empty($_SESSION['admin'])){
+    header("Location: /admin/login");
+    exit;
+  }
   include_once("app/views/admin/admin-header.php");
   require_once("app/controllers/product.controller.php");
   use app\Controllers\ProductController;

@@ -13,9 +13,9 @@
   <?php foreach($getProductByArticleNo as $productDetails): ?>
     <nav aria-label="breadcrumb" class="mb-4">
       <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="/wholesale-shop">Shop</a></li>
-        <li class="breadcrumb-item text-capitalize"><a href="/wholesale-shop/<?php echo htmlspecialchars($productDetails['dept']); ?>"><?php echo htmlspecialchars($productDetails['dept']); ?></a></li>
-        <li class="breadcrumb-item text-capitalize"><a href="/wholesale-shop/<?php echo htmlspecialchars($productDetails['dept']); ?>/<?php echo htmlspecialchars($productDetails['category']); ?>"><?php echo htmlspecialchars(str_replace('-', ' ', $productDetails['category'])); ?></a></li>
+        <li class="breadcrumb-item"><a href="/">Shop</a></li>
+        <li class="breadcrumb-item text-capitalize"><a href="/<?php echo htmlspecialchars($productDetails['dept']); ?>"><?php echo htmlspecialchars($productDetails['dept']); ?></a></li>
+        <li class="breadcrumb-item text-capitalize"><a href="/<?php echo htmlspecialchars($productDetails['dept']); ?>/<?php echo htmlspecialchars($productDetails['category']); ?>"><?php echo htmlspecialchars(str_replace('-', ' ', $productDetails['category'])); ?></a></li>
         <li class="breadcrumb-item active"><?php echo htmlspecialchars($productDetails['article_no']); ?></li>
       </ol>
     </nav>
@@ -60,7 +60,7 @@
           <span class="ms-2 text-muted">(4.5 / 5 — 12 reviews)</span>
         </div>
 
-        <h3 class="text-danger mb-3">PKR <?php echo htmlspecialchars($productDetails['price_pkr']); ?></h3>
+        <h3 class="text-danger mb-3">$<?php echo htmlspecialchars(number_format($productDetails['price_pkr'] / 320, 2)); ?></h3>
 
         <!-- Available Sizes -->
         <?php if(!empty($productDetails['p_sizes'])): ?>
@@ -100,7 +100,7 @@
         <form method="POST" action="/cart/add" class="d-flex gap-2 mb-4" id="detailCartForm">
           <input type="hidden" name="article" value="<?php echo htmlspecialchars($productDetails['article_no']); ?>" />
           <input type="hidden" name="sizes" value="<?php echo htmlspecialchars($productDetails['p_sizes']); ?>" />
-          <input type="hidden" name="price" value="<?php echo htmlspecialchars($productDetails['price_pkr']); ?>" />
+          <input type="hidden" name="price" value="<?php echo htmlspecialchars(round($productDetails['price_pkr'] / 320, 2)); ?>" />
           <input type="hidden" name="quantity" value="1" id="detailQtyHidden" />
           <button type="submit" class="btn btn-primary btn-lg" id="detailAddCart">
             <i class="fas fa-cart-plus me-1"></i> Add to Cart

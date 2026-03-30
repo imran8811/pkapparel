@@ -13,7 +13,7 @@
   <div class="container-fluid px-4">
     <nav aria-label="breadcrumb" class="mb-4">
       <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="/wholesale-shop">Shop</a></li>
+        <li class="breadcrumb-item"><a href="/">Shop</a></li>
         <li class="breadcrumb-item active text-capitalize"><?php echo htmlspecialchars($dept); ?></li>
       </ol>
     </nav>
@@ -23,18 +23,18 @@
     <div class="shop-section mb-5">
       <div class="d-flex justify-content-between align-items-center mb-3">
         <h2 class="section-heading mb-0 text-capitalize"><?php echo htmlspecialchars(str_replace('-', ' ', $catName)); ?></h2>
-        <a href="/wholesale-shop/<?php echo htmlspecialchars($dept); ?>/<?php echo htmlspecialchars($catName); ?>" class="btn btn-outline-primary btn-sm">View All <i class="fas fa-arrow-right ms-1"></i></a>
+        <a href="/<?php echo htmlspecialchars($dept); ?>/<?php echo htmlspecialchars($catName); ?>" class="btn btn-outline-primary btn-sm">View All <i class="fas fa-arrow-right ms-1"></i></a>
       </div>
       <div class="swiper shopCarousel-<?php echo htmlspecialchars($dept . '-' . $catName); ?>">
         <div class="swiper-wrapper">
           <?php foreach(array_slice($products, 0, 10) as $product): ?>
           <div class="swiper-slide">
             <div class="product-card">
-              <a href="/wholesale-shop/<?php echo htmlspecialchars($product['dept']); ?>/<?php echo htmlspecialchars($product['category']); ?>/<?php echo htmlspecialchars($product['slug'] . '-' . $product['article_no']); ?>" class="product-card-img-link">
+              <a href="/<?php echo htmlspecialchars($product['dept']); ?>/<?php echo htmlspecialchars($product['category']); ?>/<?php echo htmlspecialchars($product['slug'] . '-' . $product['article_no']); ?>" class="product-card-img-link">
                 <img src="/uploads/<?php echo htmlspecialchars($product['article_no']); ?>/front.jpg" alt="<?php echo htmlspecialchars($product['product_name']); ?>" class="product-card-img" loading="lazy" />
               </a>
               <div class="product-card-body">
-                <a href="/wholesale-shop/<?php echo htmlspecialchars($product['dept']); ?>/<?php echo htmlspecialchars($product['category']); ?>/<?php echo htmlspecialchars($product['slug'] . '-' . $product['article_no']); ?>" class="product-card-title text-capitalize">
+                <a href="/<?php echo htmlspecialchars($product['dept']); ?>/<?php echo htmlspecialchars($product['category']); ?>/<?php echo htmlspecialchars($product['slug'] . '-' . $product['article_no']); ?>" class="product-card-title text-capitalize">
                   <?php echo htmlspecialchars($product['product_name']); ?>
                 </a>
                 <div class="product-card-rating">
@@ -42,7 +42,7 @@
                   <span class="rating-count">(4.5)</span>
                 </div>
                 <div class="product-card-price">
-                  <span class="price-current">PKR <?php echo htmlspecialchars($product['price_pkr']); ?></span>
+                  <span class="price-current">$<?php echo htmlspecialchars(number_format($product['price_pkr'] / 320, 2)); ?></span>
                 </div>
                 <?php if(!empty($product['p_sizes'])): ?>
                 <div class="product-card-sizes">
@@ -54,7 +54,7 @@
                 <button class="btn btn-primary btn-sm btn-add-cart w-100 mt-2"
                   data-article="<?php echo htmlspecialchars($product['article_no']); ?>"
                   data-name="<?php echo htmlspecialchars($product['product_name']); ?>"
-                  data-price="<?php echo htmlspecialchars($product['price_pkr']); ?>"
+                  data-price="<?php echo htmlspecialchars(round($product['price_pkr'] / 320, 2)); ?>"
                   data-dept="<?php echo htmlspecialchars($product['dept']); ?>"
                   data-category="<?php echo htmlspecialchars($product['category']); ?>"
                   data-slug="<?php echo htmlspecialchars($product['slug']); ?>"

@@ -1,10 +1,11 @@
 <?php
   session_start();
   if(isset($_SESSION['user']) && $_SESSION['user'] !== ''){
-    header("Location: /wholesale-shop");
+    header("Location: /");
     exit;
   }
   require_once dirname(dirname(__DIR__)) . '/controllers/auth.controller.php';
+  require_once dirname(dirname(dirname(__DIR__))) . '/app/csrf.php';
   use app\Controllers\AuthController;
   $authController = new AuthController();
 
@@ -15,7 +16,10 @@
   $loginError = '';
   $newUser = isset($_GET['newUser']) && $_GET['newUser'] == '1';
 
-  if(isset($_GET['userLogin'])){
+  if($_SERVER['REQUEST_METHOD'] === 'POST'){
+    if(!csrf_verify()){
+      $loginError = 'Invalid form submission, please try again.';
+    } else {
     // Validate email
     if(empty($user_email)){
       $errors['user_email'] = 'Email is required';
@@ -40,11 +44,12 @@
         $_SESSION['business_name'] = $userLogin['data']['business_name'];
         $_SESSION['country_code'] = $userLogin['data']['country_code'];
         $_SESSION['contact_no'] = $userLogin['data']['contact_no'];
-        header("Location: /wholesale-shop");
+        header("Location: /");
         exit;
       } else {
         $loginError = 'Invalid email or password';
       }
+    }
     }
   }
 
@@ -64,7 +69,8 @@
         <p><a href="/forgot-password">Forgot Password?</a></p>
       </div>
     <?php endif; ?>
-    <form class="col-lg-5 col-md-6 col-12" method="post" action="/login?userLogin=1" novalidate>
+    <form class="col-lg-5 col-md-6 col-12" method="post" action="/login" novalidate>
+      <?php echo csrf_field(); ?>
       <div class="mb-4">
         <label for="user-email">Email*</label>
         <input type="email" id="user-email" name="user_email" class="form-control" value="<?php echo htmlspecialchars($user_email); ?>" />

@@ -9,7 +9,7 @@
         <ul>
           <li class="clearfix mb-3">
             <span>Address</span>
-            <span>23 Garden Town, Sher Shah Road, <br />Multan, Pakistan</span>
+            <span>Lucky Hotel Stop, 21-KM, Ferozpur Road, <br />Lahore, Pakistan</span>
           </li>
           <li class="clearfix mb-3">
             <span>Tel/Whatsapp: </span>
@@ -31,7 +31,7 @@
           </li>
         </ul>
       </div>
-      <div class="mb-5">
+      <!-- <div class="mb-5">
         <h2>Factory Multan</h2>
         <hr />
         <ul>
@@ -40,7 +40,7 @@
             <span>55-Industrial Estate, Sher Shah Road<br />Multan, Pakistan</span>
           </li>
         </ul>
-      </div>
+      </div> -->
     </div>
     <div class="col-lg-6 mb-5">
       <!-- <h2>Map Directions</h2>

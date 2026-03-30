@@ -3,7 +3,6 @@
     <div class="mb-5 text-center">
       <nav class="footer-menu">
         <ul>
-          <li><a href="/wholesale-shop">Shop</a></li>
           <li><a href="/cart">Cart</a></li>
           <li><a href="/login">Login</a></li>
           <li><a href="/signup">Signup</a></li>

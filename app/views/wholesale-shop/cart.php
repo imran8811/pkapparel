@@ -35,7 +35,7 @@
     <div class="text-center py-5">
       <i class="fas fa-shopping-cart fa-3x text-muted mb-3"></i>
       <h4 class="text-muted">Your cart is empty</h4>
-      <a href="/wholesale-shop" class="btn btn-primary mt-3">Continue Shopping</a>
+      <a href="/" class="btn btn-primary mt-3">Continue Shopping</a>
     </div>
     <?php else: ?>
     <div class="row">
@@ -63,9 +63,9 @@
               ?>
               <tr>
                 <td><img src="/uploads/<?php echo htmlspecialchars($item['article_no']); ?>/front.jpg" alt="<?php echo htmlspecialchars($item['product_name']); ?>" /></td>
-                <td><a href="/wholesale-shop/<?php echo htmlspecialchars($item['dept']); ?>/<?php echo htmlspecialchars($item['category']); ?>/<?php echo htmlspecialchars($item['slug'] . '-' . $item['article_no']); ?>" class="text-capitalize"><?php echo htmlspecialchars($item['product_name']); ?></a></td>
+                <td><a href="/<?php echo htmlspecialchars($item['dept']); ?>/<?php echo htmlspecialchars($item['category']); ?>/<?php echo htmlspecialchars($item['slug'] . '-' . $item['article_no']); ?>" class="text-capitalize"><?php echo htmlspecialchars($item['product_name']); ?></a></td>
                 <td><small><?php echo htmlspecialchars(str_replace(',', ', ', $item['cart_sizes'])); ?></small></td>
-                <td>PKR <?php echo number_format($item['cart_amount']); ?></td>
+                <td>$<?php echo number_format($item['cart_amount'] / 320, 2); ?></td>
                 <td>
                   <form method="POST" action="/cart" class="d-flex align-items-center gap-1">
                     <input type="hidden" name="action" value="update" />
@@ -76,7 +76,7 @@
                   </form>
                 </td>
                 <td><?php echo $pieces; ?></td>
-                <td class="fw-bold">PKR <?php echo number_format($subtotal); ?></td>
+                <td class="fw-bold">$<?php echo number_format($subtotal / 320, 2); ?></td>
                 <td>
                   <form method="POST" action="/cart" class="d-inline">
                     <input type="hidden" name="action" value="remove" />
@@ -90,7 +90,7 @@
           </table>
         </div>
         <div class="d-flex justify-content-between mt-3">
-          <a href="/wholesale-shop" class="btn btn-outline-secondary"><i class="fas fa-arrow-left me-1"></i> Continue Shopping</a>
+          <a href="/" class="btn btn-outline-secondary"><i class="fas fa-arrow-left me-1"></i> Continue Shopping</a>
           <form method="POST" action="/cart" class="d-inline">
             <input type="hidden" name="action" value="clear" />
             <button type="submit" class="btn btn-outline-danger" onclick="return confirm('Clear all items from cart?')"><i class="fas fa-trash me-1"></i> Clear Cart</button>
@@ -105,7 +105,7 @@
             <h5 class="card-title mb-3">Order Summary</h5>
             <div class="d-flex justify-content-between mb-2">
               <span>Subtotal (<?php echo $totalSets; ?> sets)</span>
-              <span>PKR <?php echo number_format($total); ?></span>
+              <span>$<?php echo number_format($total / 320, 2); ?></span>
             </div>
             <div class="d-flex justify-content-between mb-2">
               <span>Shipping</span>

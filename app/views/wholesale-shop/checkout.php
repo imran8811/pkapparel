@@ -88,7 +88,7 @@
     <div class="text-center py-5">
       <i class="fas fa-shopping-cart fa-3x text-muted mb-3"></i>
       <h4 class="text-muted">Your cart is empty</h4>
-      <a href="/wholesale-shop" class="btn btn-primary mt-3">Continue Shopping</a>
+      <a href="/" class="btn btn-primary mt-3">Continue Shopping</a>
     </div>
     <?php else: ?>
     <div class="row">
@@ -177,13 +177,13 @@
                 <strong class="text-capitalize"><?php echo htmlspecialchars($ci['product_name']); ?></strong>
                 <small>Sizes: <?php echo htmlspecialchars(str_replace(',', ', ', $ci['cart_sizes'])); ?> | <?php echo $sets; ?> set(s) = <?php echo $pieces; ?> pcs</small>
               </div>
-              <span class="fw-bold">PKR <?php echo number_format($sub); ?></span>
+              <span class="fw-bold">$<?php echo number_format($sub / 320, 2); ?></span>
             </div>
             <?php endforeach; ?>
             <hr />
             <div class="d-flex justify-content-between mb-2">
               <span>Subtotal</span>
-              <span>PKR <?php echo number_format($total); ?></span>
+              <span>$<?php echo number_format($total / 320, 2); ?></span>
             </div>
             <div class="d-flex justify-content-between mb-2">
               <span>Shipping</span>
@@ -192,7 +192,7 @@
             <hr />
             <div class="d-flex justify-content-between fw-bold fs-5 mb-3">
               <span>Total</span>
-              <span class="text-danger">PKR <?php echo number_format($total); ?></span>
+              <span class="text-danger">$<?php echo number_format($total / 320, 2); ?></span>
             </div>
             <button type="submit" form="checkoutForm" class="btn btn-primary w-100 btn-lg d-none d-lg-block">
               <i class="fas fa-check me-1"></i> Place Order

@@ -18,7 +18,7 @@ if(!$userId){
 }
 
 $action = $_POST['action'] ?? 'add';
-$referer = $_SERVER['HTTP_REFERER'] ?? '/wholesale-shop';
+$referer = $_SERVER['HTTP_REFERER'] ?? '/';
 
 if($action === 'add'){
   $article = trim($_POST['article'] ?? '');
