@@ -34,8 +34,12 @@
               <?php echo htmlspecialchars($product['product_name']); ?>
             </a>
             <div class="product-card-rating">
-              <i class="fas fa-comment"></i>
-              <span class="rating-count">(<?php echo isset($reviewCounts[$product['p_id']]) ? $reviewCounts[$product['p_id']] : 0; ?> reviews)</span>
+              <?php
+                $rc = isset($reviewCounts[$product['p_id']]) ? $reviewCounts[$product['p_id']] : ['count' => 0, 'avg_rating' => 0];
+                $avg = round($rc['avg_rating']);
+                for($si = 1; $si <= 5; $si++) echo $si <= $avg ? '<i class="fas fa-star text-warning"></i>' : '<i class="far fa-star text-warning"></i>';
+              ?>
+              <span class="rating-count">(<?php echo $rc['count']; ?> reviews)</span>
             </div>
             <div class="product-card-price">
               <span class="price-current">$<?php echo htmlspecialchars(number_format($product['price'], 2)); ?></span>

@@ -15,9 +15,14 @@
   $reviewMessage = '';
   $reviewMessageType = '';
 
+  $sessionExist = isset($_SESSION['user']) && $_SESSION['user'] !== '';
+  $currentUserId = null;
+  if($sessionExist){
+    $currentUserId = $reviewController->getUserIdByEmail($_SESSION['user_email']);
+  }
+
   // Handle review submission
   if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['review_submit'])){
-    $sessionExist = isset($_SESSION['user']) && $_SESSION['user'] !== '';
     if(!$sessionExist){
       $reviewMessage = 'Please login to submit a review.';
       $reviewMessageType = 'warning';
@@ -26,6 +31,7 @@
       $reviewMessageType = 'danger';
     } else {
       $reviewText = trim($_POST['review_text'] ?? '');
+      $rating = intval($_POST['rating'] ?? 5);
       if(empty($reviewText) || strlen($reviewText) < 5){
         $reviewMessage = 'Review must be at least 5 characters.';
         $reviewMessageType = 'danger';
@@ -33,10 +39,9 @@
         $reviewMessage = 'Review must be under 1000 characters.';
         $reviewMessageType = 'danger';
       } else {
-        $userId = $reviewController->getUserIdByEmail($_SESSION['user_email']);
         if(!empty($getProductByArticleNo)){
           $pId = $getProductByArticleNo[0]['p_id'];
-          $added = $reviewController->addReview($userId, $pId, $reviewText);
+          $added = $reviewController->addReview($currentUserId, $pId, $reviewText, $rating);
           if($added){
             $reviewMessage = 'Review submitted successfully!';
             $reviewMessageType = 'success';
@@ -45,6 +50,52 @@
             $reviewMessageType = 'danger';
           }
         }
+      }
+    }
+  }
+
+  // Handle review edit
+  if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['review_edit'])){
+    if(!$sessionExist){
+      $reviewMessage = 'Please login.';
+      $reviewMessageType = 'warning';
+    } elseif(!csrf_verify()){
+      $reviewMessage = 'Invalid form submission.';
+      $reviewMessageType = 'danger';
+    } else {
+      $editReviewId = intval($_POST['review_id'] ?? 0);
+      $editText = trim($_POST['review_text'] ?? '');
+      $editRating = intval($_POST['rating'] ?? 5);
+      if(empty($editText) || strlen($editText) < 5){
+        $reviewMessage = 'Review must be at least 5 characters.';
+        $reviewMessageType = 'danger';
+      } else {
+        $updated = $reviewController->updateReview($editReviewId, $currentUserId, $editText, $editRating);
+        if($updated){
+          $reviewMessage = 'Review updated successfully!';
+          $reviewMessageType = 'success';
+        } else {
+          $reviewMessage = 'Failed to update review.';
+          $reviewMessageType = 'danger';
+        }
+      }
+    }
+  }
+
+  // Handle review delete
+  if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['review_delete'])){
+    if(!$sessionExist || !csrf_verify()){
+      $reviewMessage = 'Invalid request.';
+      $reviewMessageType = 'danger';
+    } else {
+      $deleteReviewId = intval($_POST['review_id'] ?? 0);
+      $deleted = $reviewController->deleteReviewByUser($deleteReviewId, $currentUserId);
+      if($deleted){
+        $reviewMessage = 'Review deleted.';
+        $reviewMessageType = 'success';
+      } else {
+        $reviewMessage = 'Failed to delete review.';
+        $reviewMessageType = 'danger';
       }
     }
   }
@@ -95,12 +146,29 @@
         <?php
           $productReviews = $reviewController->getReviewsByProductId($productDetails['p_id']);
           $reviewCount = count($productReviews);
+          $avgRating = 0;
+          if($reviewCount > 0){
+            $totalRating = 0;
+            foreach($productReviews as $r) $totalRating += $r['rating'];
+            $avgRating = round($totalRating / $reviewCount, 1);
+          }
         ?>
         <div class="product-detail-rating mb-3">
-          <i class="fas fa-comment text-primary"></i>
-          <span class="ms-2 text-muted">
-            <?php echo $reviewCount; ?> review<?php echo $reviewCount !== 1 ? 's' : ''; ?>
-          </span>
+          <?php if($reviewCount > 0): ?>
+            <?php for($i = 1; $i <= 5; $i++): ?>
+              <?php if($i <= floor($avgRating)): ?>
+                <i class="fas fa-star text-warning"></i>
+              <?php elseif($i - $avgRating < 1 && $i - $avgRating > 0): ?>
+                <i class="fas fa-star-half-alt text-warning"></i>
+              <?php else: ?>
+                <i class="far fa-star text-warning"></i>
+              <?php endif; ?>
+            <?php endfor; ?>
+            <span class="ms-2 text-muted">(<?php echo $avgRating; ?> / 5 — <?php echo $reviewCount; ?> review<?php echo $reviewCount !== 1 ? 's' : ''; ?>)</span>
+          <?php else: ?>
+            <i class="far fa-star text-muted"></i>
+            <span class="ms-2 text-muted">No reviews yet</span>
+          <?php endif; ?>
         </div>
 
         <h3 class="text-danger mb-3">$<?php echo htmlspecialchars(number_format($productDetails['price'], 2)); ?></h3>
@@ -217,15 +285,21 @@
         <?php endif; ?>
 
         <!-- Review Form -->
-        <?php
-          $sessionExist = isset($_SESSION['user']) && $_SESSION['user'] !== '';
-        ?>
         <?php if($sessionExist): ?>
         <div class="card mb-4">
           <div class="card-body">
             <h6 class="card-title">Write a Review</h6>
             <form method="POST">
               <?php echo csrf_field(); ?>
+              <div class="mb-3">
+                <label class="form-label">Your Rating</label>
+                <div class="star-rating-input" data-target="rating-new">
+                  <?php for($i = 1; $i <= 5; $i++): ?>
+                    <i class="far fa-star star-pick" data-value="<?php echo $i; ?>"></i>
+                  <?php endfor; ?>
+                </div>
+                <input type="hidden" name="rating" id="rating-new" value="5">
+              </div>
               <div class="mb-3">
                 <textarea name="review_text" class="form-control" rows="3" placeholder="Share your experience with this product..." required minlength="5" maxlength="1000"></textarea>
               </div>
@@ -247,10 +321,66 @@
           <div class="card mb-3">
             <div class="card-body">
               <div class="d-flex justify-content-between align-items-center mb-2">
-                <strong><i class="fas fa-user-circle me-1"></i> <?php echo htmlspecialchars($review['business_name']); ?></strong>
+                <div>
+                  <strong><i class="fas fa-user-circle me-1"></i> <?php echo htmlspecialchars($review['business_name']); ?></strong>
+                  <span class="ms-2 text-warning">
+                    <?php
+                      $rVal = intval($review['rating'] ?? 0);
+                      for($i = 1; $i <= 5; $i++){
+                        echo $i <= $rVal ? '<i class="fas fa-star"></i>' : '<i class="far fa-star"></i>';
+                      }
+                    ?>
+                  </span>
+                </div>
                 <small class="text-muted"><?php echo htmlspecialchars(date('M d, Y', strtotime($review['created_at']))); ?></small>
               </div>
-              <p class="mb-0"><?php echo nl2br(htmlspecialchars($review['review_text'])); ?></p>
+
+              <!-- Display mode -->
+              <div class="review-display-<?php echo $review['review_id']; ?>">
+                <p class="mb-2"><?php echo nl2br(htmlspecialchars($review['review_text'])); ?></p>
+                <?php if($sessionExist && $currentUserId == $review['user_id']): ?>
+                <div class="d-flex gap-2">
+                  <button type="button" class="btn btn-sm btn-outline-secondary" onclick="toggleEditReview(<?php echo $review['review_id']; ?>, <?php echo $rVal; ?>)">
+                    <i class="fas fa-edit me-1"></i>Edit
+                  </button>
+                  <form method="POST" class="d-inline" onsubmit="return confirm('Delete this review?')">
+                    <?php echo csrf_field(); ?>
+                    <input type="hidden" name="review_id" value="<?php echo $review['review_id']; ?>">
+                    <button type="submit" name="review_delete" value="1" class="btn btn-sm btn-outline-danger">
+                      <i class="fas fa-trash me-1"></i>Delete
+                    </button>
+                  </form>
+                </div>
+                <?php endif; ?>
+              </div>
+
+              <!-- Edit mode (hidden by default) -->
+              <?php if($sessionExist && $currentUserId == $review['user_id']): ?>
+              <div class="review-edit-<?php echo $review['review_id']; ?>" style="display:none;">
+                <form method="POST">
+                  <?php echo csrf_field(); ?>
+                  <input type="hidden" name="review_id" value="<?php echo $review['review_id']; ?>">
+                  <div class="mb-2">
+                    <div class="star-rating-input" data-target="rating-edit-<?php echo $review['review_id']; ?>">
+                      <?php for($i = 1; $i <= 5; $i++): ?>
+                        <i class="<?php echo $i <= $rVal ? 'fas' : 'far'; ?> fa-star star-pick" data-value="<?php echo $i; ?>"></i>
+                      <?php endfor; ?>
+                    </div>
+                    <input type="hidden" name="rating" id="rating-edit-<?php echo $review['review_id']; ?>" value="<?php echo $rVal; ?>">
+                  </div>
+                  <div class="mb-2">
+                    <textarea name="review_text" class="form-control" rows="3" required minlength="5" maxlength="1000"><?php echo htmlspecialchars($review['review_text']); ?></textarea>
+                  </div>
+                  <div class="d-flex gap-2">
+                    <button type="submit" name="review_edit" value="1" class="btn btn-sm btn-primary">
+                      <i class="fas fa-save me-1"></i>Save
+                    </button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary" onclick="toggleEditReview(<?php echo $review['review_id']; ?>)">Cancel</button>
+                  </div>
+                </form>
+              </div>
+              <?php endif; ?>
+
             </div>
           </div>
           <?php endforeach; ?>
@@ -264,4 +394,46 @@
   </div>
 </div>
 <script>var PIECES_PER_SET = 2;</script>
+<style>
+  .star-rating-input { font-size: 1.4rem; cursor: pointer; }
+  .star-rating-input .star-pick { color: #ffc107; transition: color 0.15s; }
+  .star-rating-input .star-pick:hover { color: #e0a800; }
+</style>
+<script>
+// Star rating picker
+document.querySelectorAll('.star-rating-input').forEach(function(container){
+  var targetId = container.getAttribute('data-target');
+  var stars = container.querySelectorAll('.star-pick');
+  function setStars(val){
+    stars.forEach(function(s){
+      var v = parseInt(s.getAttribute('data-value'));
+      s.className = (v <= val ? 'fas' : 'far') + ' fa-star star-pick';
+    });
+    document.getElementById(targetId).value = val;
+  }
+  stars.forEach(function(s){
+    s.addEventListener('click', function(){ setStars(parseInt(this.getAttribute('data-value'))); });
+    s.addEventListener('mouseenter', function(){
+      var val = parseInt(this.getAttribute('data-value'));
+      stars.forEach(function(st){ st.className = (parseInt(st.getAttribute('data-value')) <= val ? 'fas' : 'far') + ' fa-star star-pick'; });
+    });
+  });
+  container.addEventListener('mouseleave', function(){ setStars(parseInt(document.getElementById(targetId).value)); });
+  // Init: highlight stars for existing value
+  setStars(parseInt(document.getElementById(targetId).value));
+});
+
+// Toggle edit/display for a review
+function toggleEditReview(reviewId){
+  var display = document.querySelector('.review-display-' + reviewId);
+  var edit = document.querySelector('.review-edit-' + reviewId);
+  if(edit.style.display === 'none'){
+    edit.style.display = 'block';
+    display.style.display = 'none';
+  } else {
+    edit.style.display = 'none';
+    display.style.display = 'block';
+  }
+}
+</script>
 <?php include_once("app/views/shared/footer.php"); ?>

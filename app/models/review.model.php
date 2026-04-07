@@ -10,10 +10,26 @@ class ReviewModel extends Model {
     parent::__construct();
   }
 
-  public function addReview($userId, $pId, $reviewText){
-    $query = 'INSERT INTO reviews (user_id, p_id, review_text) VALUES (?, ?, ?)';
+  public function addReview($userId, $pId, $reviewText, $rating){
+    $rating = max(1, min(5, intval($rating)));
+    $query = 'INSERT INTO reviews (user_id, p_id, review_text, rating) VALUES (?, ?, ?, ?)';
     $stmt = $this->pdo->prepare($query);
-    $stmt->execute([$userId, $pId, $reviewText]);
+    $stmt->execute([$userId, $pId, $reviewText, $rating]);
+    return $stmt->rowCount() > 0;
+  }
+
+  public function updateReview($reviewId, $userId, $reviewText, $rating){
+    $rating = max(1, min(5, intval($rating)));
+    $query = 'UPDATE reviews SET review_text = ?, rating = ? WHERE review_id = ? AND user_id = ?';
+    $stmt = $this->pdo->prepare($query);
+    $stmt->execute([$reviewText, $rating, $reviewId, $userId]);
+    return $stmt->rowCount() >= 0;
+  }
+
+  public function deleteReviewByUser($reviewId, $userId){
+    $query = 'DELETE FROM reviews WHERE review_id = ? AND user_id = ?';
+    $stmt = $this->pdo->prepare($query);
+    $stmt->execute([$reviewId, $userId]);
     return $stmt->rowCount() > 0;
   }
 
@@ -38,13 +54,13 @@ class ReviewModel extends Model {
   public function getReviewCountsForProducts($pIds){
     if(empty($pIds)) return [];
     $placeholders = implode(',', array_fill(0, count($pIds), '?'));
-    $query = "SELECT p_id, COUNT(*) as count FROM reviews WHERE p_id IN ($placeholders) GROUP BY p_id";
+    $query = "SELECT p_id, COUNT(*) as count, ROUND(AVG(rating), 1) as avg_rating FROM reviews WHERE p_id IN ($placeholders) GROUP BY p_id";
     $stmt = $this->pdo->prepare($query);
     $stmt->execute($pIds);
     $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
     $map = [];
     foreach($rows as $row){
-      $map[$row['p_id']] = $row['count'];
+      $map[$row['p_id']] = ['count' => $row['count'], 'avg_rating' => $row['avg_rating']];
     }
     return $map;
   }
