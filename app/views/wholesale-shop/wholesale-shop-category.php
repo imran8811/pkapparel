@@ -31,7 +31,7 @@
           </a>
           <div class="product-card-body">
             <a href="/wholesale-shop/<?php echo htmlspecialchars($product['dept']); ?>/<?php echo htmlspecialchars($product['category']); ?>/<?php echo htmlspecialchars($product['slug'] . '-' . $product['article_no']); ?>" class="product-card-title text-capitalize">
-              <?php echo htmlspecialchars($product['product_name']); ?>
+              <?php echo htmlspecialchars("PK" . $product['article_no'] . '-' . $product['product_name']); ?>
             </a>
             <div class="product-card-rating">
               <?php

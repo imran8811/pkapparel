@@ -37,10 +37,10 @@
 ?>
 <div class="page-content">
   <div class="container-fluid px-4">
-    <div class="shop-banner text-center mb-5">
+    <!-- <div class="shop-banner text-center mb-5">
       <h1 class="mb-2">PK Apparel Shop</h1>
       <p class="text-muted">Premium quality jeans & apparel — direct from factory</p>
-    </div>
+    </div> -->
 
     <?php foreach($categoryGroups as $groupKey => $products): ?>
     <?php
@@ -66,7 +66,7 @@
               </a>
               <div class="product-card-body">
                 <a href="/wholesale-shop/<?php echo htmlspecialchars($product['dept']); ?>/<?php echo htmlspecialchars($product['category']); ?>/<?php echo htmlspecialchars($product['slug'] . '-' . $product['article_no']); ?>" class="product-card-title text-capitalize">
-                  <?php echo htmlspecialchars($product['product_name']); ?>
+                  <?php echo htmlspecialchars("PK" . $product['article_no'] . '-' . $product['product_name']); ?>
                 </a>
                 <div class="product-card-rating">
                   <?php

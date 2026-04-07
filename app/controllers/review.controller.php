@@ -19,6 +19,10 @@ class ReviewController extends Controller {
     return $this->reviewModel->addReview($userId, $pId, $reviewText, $rating);
   }
 
+  public function hasUserReviewed($userId, $pId){
+    return $this->reviewModel->hasUserReviewed($userId, $pId);
+  }
+
   public function updateReview($reviewId, $userId, $reviewText, $rating){
     return $this->reviewModel->updateReview($reviewId, $userId, $reviewText, $rating);
   }

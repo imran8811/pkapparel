@@ -38,6 +38,9 @@
       } elseif(strlen($reviewText) > 1000){
         $reviewMessage = 'Review must be under 1000 characters.';
         $reviewMessageType = 'danger';
+      } elseif(!empty($getProductByArticleNo) && $reviewController->hasUserReviewed($currentUserId, $getProductByArticleNo[0]['p_id'])){
+        $reviewMessage = 'You have already reviewed this product. You can edit your existing review.';
+        $reviewMessageType = 'warning';
       } else {
         if(!empty($getProductByArticleNo)){
           $pId = $getProductByArticleNo[0]['p_id'];
@@ -147,9 +150,13 @@
           $productReviews = $reviewController->getReviewsByProductId($productDetails['p_id']);
           $reviewCount = count($productReviews);
           $avgRating = 0;
+          $userAlreadyReviewed = false;
           if($reviewCount > 0){
             $totalRating = 0;
-            foreach($productReviews as $r) $totalRating += $r['rating'];
+            foreach($productReviews as $r){
+              $totalRating += $r['rating'];
+              if($currentUserId && $r['user_id'] == $currentUserId) $userAlreadyReviewed = true;
+            }
             $avgRating = round($totalRating / $reviewCount, 1);
           }
         ?>
@@ -285,14 +292,14 @@
         <?php endif; ?>
 
         <!-- Review Form -->
-        <?php if($sessionExist): ?>
+        <?php if($sessionExist && !$userAlreadyReviewed): ?>
         <div class="card mb-4">
           <div class="card-body">
             <h6 class="card-title">Write a Review</h6>
             <form method="POST">
               <?php echo csrf_field(); ?>
               <div class="mb-3">
-                <label class="form-label">Your Rating</label>
+                <!-- <label class="form-label">Your Rating</label> -->
                 <div class="star-rating-input" data-target="rating-new">
                   <?php for($i = 1; $i <= 5; $i++): ?>
                     <i class="far fa-star star-pick" data-value="<?php echo $i; ?>"></i>
@@ -308,6 +315,10 @@
               </button>
             </form>
           </div>
+        </div>
+        <?php elseif($sessionExist && $userAlreadyReviewed): ?>
+        <div class="alert alert-info border mb-4">
+          <i class="fas fa-info-circle me-1"></i> You have already reviewed this product. You can edit or delete your review below.
         </div>
         <?php else: ?>
         <div class="alert alert-light border mb-4">

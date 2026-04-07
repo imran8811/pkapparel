@@ -18,6 +18,14 @@ class ReviewModel extends Model {
     return $stmt->rowCount() > 0;
   }
 
+  public function hasUserReviewed($userId, $pId){
+    $query = 'SELECT COUNT(*) as cnt FROM reviews WHERE user_id = ? AND p_id = ?';
+    $stmt = $this->pdo->prepare($query);
+    $stmt->execute([$userId, $pId]);
+    $res = $stmt->fetch(PDO::FETCH_ASSOC);
+    return $res['cnt'] > 0;
+  }
+
   public function updateReview($reviewId, $userId, $reviewText, $rating){
     $rating = max(1, min(5, intval($rating)));
     $query = 'UPDATE reviews SET review_text = ?, rating = ? WHERE review_id = ? AND user_id = ?';
