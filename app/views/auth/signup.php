@@ -129,7 +129,7 @@
       </div>
       <div class="mb-4 pb-4">
         <label for="contact-no">Phone Number*</label>
-        <input type="tel" id="contact-no" name="contact_no" class="form-control" required pattern="\d{6,15}" />
+        <input type="number" id="contact-no" name="contact_no" class="form-control" required />
         <input type="hidden" id="country-code" name="country_code" value="+92" />
         <?php
           if(isset($_POST['country_code']) && empty($_POST['country_code']))

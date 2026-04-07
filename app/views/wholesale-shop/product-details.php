@@ -1,12 +1,53 @@
 <?php
   include_once("app/views/shared/header.php");
   require_once "app/controllers/product.controller.php";
+  require_once "app/controllers/review.controller.php";
+  require_once "app/csrf.php";
   use app\Controllers\ProductController;
+  use app\Controllers\ReviewController;
   $productController = new ProductController();
+  $reviewController = new ReviewController();
   $article_no = explode("-", $name);
   $article_no = end($article_no);
   $getProductByArticleNo = $productController->getProductByArticleNo($article_no);
   $getSizeChart = $productController->getSizeChart($dept, $category);
+
+  $reviewMessage = '';
+  $reviewMessageType = '';
+
+  // Handle review submission
+  if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['review_submit'])){
+    $sessionExist = isset($_SESSION['user']) && $_SESSION['user'] !== '';
+    if(!$sessionExist){
+      $reviewMessage = 'Please login to submit a review.';
+      $reviewMessageType = 'warning';
+    } elseif(!csrf_verify()){
+      $reviewMessage = 'Invalid form submission, please try again.';
+      $reviewMessageType = 'danger';
+    } else {
+      $reviewText = trim($_POST['review_text'] ?? '');
+      if(empty($reviewText) || strlen($reviewText) < 5){
+        $reviewMessage = 'Review must be at least 5 characters.';
+        $reviewMessageType = 'danger';
+      } elseif(strlen($reviewText) > 1000){
+        $reviewMessage = 'Review must be under 1000 characters.';
+        $reviewMessageType = 'danger';
+      } else {
+        $userId = $reviewController->getUserIdByEmail($_SESSION['user_email']);
+        if(!empty($getProductByArticleNo)){
+          $pId = $getProductByArticleNo[0]['p_id'];
+          $added = $reviewController->addReview($userId, $pId, $reviewText);
+          if($added){
+            $reviewMessage = 'Review submitted successfully!';
+            $reviewMessageType = 'success';
+          } else {
+            $reviewMessage = 'Failed to submit review.';
+            $reviewMessageType = 'danger';
+          }
+        }
+      }
+    }
+  }
 ?>
 <div class="page-content">
   <div class="container-fluid px-4">
@@ -51,16 +92,18 @@
       <div class="col-md-6">
         <h1 class="mb-2 text-capitalize"><?php echo htmlspecialchars($productDetails['product_name']); ?></h1>
 
+        <?php
+          $productReviews = $reviewController->getReviewsByProductId($productDetails['p_id']);
+          $reviewCount = count($productReviews);
+        ?>
         <div class="product-detail-rating mb-3">
-          <i class="fas fa-star text-warning"></i>
-          <i class="fas fa-star text-warning"></i>
-          <i class="fas fa-star text-warning"></i>
-          <i class="fas fa-star text-warning"></i>
-          <i class="fas fa-star-half-alt text-warning"></i>
-          <span class="ms-2 text-muted">(4.5 / 5 — 12 reviews)</span>
+          <i class="fas fa-comment text-primary"></i>
+          <span class="ms-2 text-muted">
+            <?php echo $reviewCount; ?> review<?php echo $reviewCount !== 1 ? 's' : ''; ?>
+          </span>
         </div>
 
-        <h3 class="text-danger mb-3">$<?php echo htmlspecialchars(number_format($productDetails['price_pkr'] / 320, 2)); ?></h3>
+        <h3 class="text-danger mb-3">$<?php echo htmlspecialchars(number_format($productDetails['price'], 2)); ?></h3>
 
         <!-- Available Sizes -->
         <?php if(!empty($productDetails['p_sizes'])): ?>
@@ -90,7 +133,7 @@
           <?php echo csrf_field(); ?>
           <input type="hidden" name="article" value="<?php echo htmlspecialchars($productDetails['article_no']); ?>" />
           <input type="hidden" name="sizes" value="<?php echo htmlspecialchars($productDetails['p_sizes']); ?>" />
-          <input type="hidden" name="price" value="<?php echo htmlspecialchars(round($productDetails['price_pkr'] / 320, 2)); ?>" />
+          <input type="hidden" name="price" value="<?php echo htmlspecialchars($productDetails['price']); ?>" />
           <input type="hidden" name="quantity" value="1" id="detailQtyHidden" />
           <button type="submit" class="btn btn-primary btn-lg" id="detailAddCart">
             <i class="fas fa-cart-plus me-1"></i> Add to Cart
@@ -160,6 +203,63 @@
         </div>
       </div>
     </div>
+
+    <!-- Customer Reviews Section -->
+    <div class="row mt-5">
+      <div class="col-12">
+        <h4 class="mb-4"><i class="fas fa-comments me-2"></i>Customer Reviews (<?php echo $reviewCount; ?>)</h4>
+
+        <?php if($reviewMessage): ?>
+          <div class="alert alert-<?php echo $reviewMessageType; ?> alert-dismissible fade show" role="alert">
+            <?php echo htmlspecialchars($reviewMessage); ?>
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+          </div>
+        <?php endif; ?>
+
+        <!-- Review Form -->
+        <?php
+          $sessionExist = isset($_SESSION['user']) && $_SESSION['user'] !== '';
+        ?>
+        <?php if($sessionExist): ?>
+        <div class="card mb-4">
+          <div class="card-body">
+            <h6 class="card-title">Write a Review</h6>
+            <form method="POST">
+              <?php echo csrf_field(); ?>
+              <div class="mb-3">
+                <textarea name="review_text" class="form-control" rows="3" placeholder="Share your experience with this product..." required minlength="5" maxlength="1000"></textarea>
+              </div>
+              <button type="submit" name="review_submit" value="1" class="btn btn-primary">
+                <i class="fas fa-paper-plane me-1"></i> Submit Review
+              </button>
+            </form>
+          </div>
+        </div>
+        <?php else: ?>
+        <div class="alert alert-light border mb-4">
+          <a href="/login" class="text-primary">Login</a> to write a review.
+        </div>
+        <?php endif; ?>
+
+        <!-- Reviews List -->
+        <?php if($reviewCount > 0): ?>
+          <?php foreach($productReviews as $review): ?>
+          <div class="card mb-3">
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-center mb-2">
+                <strong><i class="fas fa-user-circle me-1"></i> <?php echo htmlspecialchars($review['business_name']); ?></strong>
+                <small class="text-muted"><?php echo htmlspecialchars(date('M d, Y', strtotime($review['created_at']))); ?></small>
+              </div>
+              <p class="mb-0"><?php echo nl2br(htmlspecialchars($review['review_text'])); ?></p>
+            </div>
+          </div>
+          <?php endforeach; ?>
+        <?php else: ?>
+          <p class="text-muted">No reviews yet. Be the first to review this product!</p>
+        <?php endif; ?>
+      </div>
+    </div>
+
   <?php endforeach; ?>
   </div>
 </div>

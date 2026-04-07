@@ -68,6 +68,7 @@
   $router->get('/wholesale-shop/$dept', 'app/views/wholesale-shop/wholesale-shop-dept.php');
   $router->get('/wholesale-shop/$dept/$category', 'app/views/wholesale-shop/wholesale-shop-category.php');
   $router->get('/wholesale-shop/$dept/$category/$name', 'app/views/wholesale-shop/product-details.php');
+  $router->post('/wholesale-shop/$dept/$category/$name', 'app/views/wholesale-shop/product-details.php');
 
 
   // get('/user/$id', 'views/user');

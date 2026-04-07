@@ -32,7 +32,7 @@ class CartModel extends Model {
   }
 
   public function getCartItems($userId){
-    $query = 'SELECT c.*, p.product_name, p.article_no, p.price_pkr, p.dept, p.category, p.slug, p.p_sizes
+    $query = 'SELECT c.*, p.product_name, p.article_no, p.price, p.dept, p.category, p.slug, p.p_sizes
               FROM cart c
               JOIN product p ON c.p_id = p.p_id
               WHERE c.user_id = ?

@@ -1,9 +1,14 @@
 <?php
   include_once("app/views/shared/header.php");
   require_once("app/controllers/product.controller.php");
+  require_once("app/controllers/review.controller.php");
   use app\Controllers\ProductController;
+  use app\Controllers\ReviewController;
   $productController = new ProductController();
+  $reviewController = new ReviewController();
   $getProducts = $productController->getProductsByDeptCategory($dept, $category);
+  $allPIds = array_column($getProducts, 'p_id');
+  $reviewCounts = $reviewController->getReviewCountsForProducts($allPIds);
 ?>
 <div class="page-content">
   <div class="container-fluid px-4">
@@ -29,11 +34,11 @@
               <?php echo htmlspecialchars($product['product_name']); ?>
             </a>
             <div class="product-card-rating">
-              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
-              <span class="rating-count">(4.5)</span>
+              <i class="fas fa-comment"></i>
+              <span class="rating-count">(<?php echo isset($reviewCounts[$product['p_id']]) ? $reviewCounts[$product['p_id']] : 0; ?> reviews)</span>
             </div>
             <div class="product-card-price">
-              <span class="price-current">$<?php echo htmlspecialchars(number_format($product['price_pkr'] / 320, 2)); ?></span>
+              <span class="price-current">$<?php echo htmlspecialchars(number_format($product['price'], 2)); ?></span>
             </div>
             <?php if(!empty($product['p_sizes'])): ?>
             <div class="product-card-sizes">
@@ -45,7 +50,7 @@
             <button class="btn btn-primary btn-sm btn-add-cart w-100 mt-2"
               data-article="<?php echo htmlspecialchars($product['article_no']); ?>"
               data-name="<?php echo htmlspecialchars($product['product_name']); ?>"
-              data-price="<?php echo htmlspecialchars(round($product['price_pkr'] / 320, 2)); ?>"
+              data-price="<?php echo htmlspecialchars($product['price']); ?>"
               data-dept="<?php echo htmlspecialchars($product['dept']); ?>"
               data-category="<?php echo htmlspecialchars($product['category']); ?>"
               data-slug="<?php echo htmlspecialchars($product['slug']); ?>"
