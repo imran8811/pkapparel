@@ -34,6 +34,8 @@
   $router->post('/admin/add-product', 'app/views/admin/add-product.php');
   $router->get('/admin/users', 'app/views/admin/users.php');
   $router->post('/admin/users', 'app/views/admin/users.php');
+  $router->get('/admin/edit-product/$articleNo', 'app/views/admin/edit-product.php');
+  $router->post('/admin/edit-product/$articleNo', 'app/views/admin/edit-product.php');
   $router->get('/admin/edit-user/$userId', 'app/views/admin/edit-user.php');
   $router->post('/admin/edit-user/$userId', 'app/views/admin/edit-user.php');
   $router->get('/admin/logout/$token', function($token){

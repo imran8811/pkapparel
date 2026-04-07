@@ -2,6 +2,7 @@
 if(!isset($_SESSION)) session_start();
 
 require_once("app/controllers/cart.controller.php");
+require_once("app/csrf.php");
 use app\Controllers\CartController;
 $cartCtrl = new CartController();
 
@@ -17,16 +18,21 @@ if(!$userId){
   exit;
 }
 
+if(!csrf_verify()){
+  header('Location: /cart');
+  exit;
+}
+
 $action = $_POST['action'] ?? 'add';
-$referer = $_SERVER['HTTP_REFERER'] ?? '/';
+$referer = $_SERVER['HTTP_REFERER'] ?? '/wholesale-shop';
 
 if($action === 'add'){
-  $article = trim($_POST['article'] ?? '');
-  $sizes   = trim($_POST['sizes'] ?? '30,32,34,36,38');
+  $article = preg_replace('/[^0-9]/', '', trim($_POST['article'] ?? ''));
+  $sizes   = preg_replace('/[^0-9,]/', '', trim($_POST['sizes'] ?? '30,32,34,36,38'));
   $price   = floatval($_POST['price'] ?? 0);
   $qty     = max(1, intval($_POST['quantity'] ?? 1));
 
-  if($article !== '' && $price > 0){
+  if($article !== '' && $price > 0 && $qty <= 999){
     $pId = $cartCtrl->getProductIdByArticle($article);
     if($pId){
       $cartCtrl->addItem($userId, $pId, $sizes, $qty, $price);
@@ -38,6 +44,8 @@ if($action === 'add'){
     header('Location: /checkout');
   } else {
     $referer = strtok($referer, '?');
+    // Only allow internal redirects
+    if(strpos($referer, '/') !== 0) $referer = '/wholesale-shop';
     header('Location: ' . $referer . '?cart_added=1');
   }
   exit;

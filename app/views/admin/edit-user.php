@@ -6,6 +6,7 @@
   }
   include_once("app/views/admin/admin-header.php");
   require_once("app/controllers/admin.controller.php");
+  require_once("app/csrf.php");
   use app\Controllers\AdminController;
   $adminController = new AdminController();
 
@@ -21,18 +22,37 @@
 
   // Handle form submission
   if($_SERVER['REQUEST_METHOD'] === 'POST'){
+    if(!csrf_verify()){
+      $message = 'Invalid form submission, please try again.';
+      $messageType = 'danger';
+    } else {
     $data = [
       'user_id'       => intval($userId),
       'business_name' => trim($_POST['business_name'] ?? ''),
       'business_type' => trim($_POST['business_type'] ?? ''),
-      'user_email'    => trim($_POST['user_email'] ?? ''),
+      'user_email'    => trim(strtolower($_POST['user_email'] ?? '')),
       'country_code'  => trim($_POST['country_code'] ?? ''),
       'contact_no'    => trim($_POST['contact_no'] ?? ''),
       'status'        => trim($_POST['status'] ?? 'active'),
     ];
 
-    if(empty($data['business_name']) || empty($data['user_email'])){
-      $message = 'Business name and email are required';
+    if(empty($data['business_name']) || strlen($data['business_name']) < 2 || strlen($data['business_name']) > 100){
+      $message = 'Business name must be 2-100 characters.';
+      $messageType = 'danger';
+    } elseif(!filter_var($data['user_email'], FILTER_VALIDATE_EMAIL) || !preg_match('/^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$/', $data['user_email'])){
+      $message = 'Please enter a valid email address.';
+      $messageType = 'danger';
+    } elseif(!in_array($data['business_type'], ['retailer', 'wholesaler', ''], true)){
+      $message = 'Invalid business type.';
+      $messageType = 'danger';
+    } elseif(!empty($data['country_code']) && !preg_match('/^\+\d{1,4}$/', $data['country_code'])){
+      $message = 'Invalid country code format.';
+      $messageType = 'danger';
+    } elseif(!empty($data['contact_no']) && !preg_match('/^\d{6,15}$/', $data['contact_no'])){
+      $message = 'Phone number must be 6-15 digits.';
+      $messageType = 'danger';
+    } elseif(!in_array($data['status'], ['active', 'inactive'], true)){
+      $message = 'Invalid status.';
       $messageType = 'danger';
     } else {
       $updated = $adminController->updateUser($data);
@@ -44,6 +64,7 @@
         $message = 'Failed to update user';
         $messageType = 'danger';
       }
+    }
     }
   }
 ?>
@@ -65,6 +86,7 @@
       <div class="card">
         <div class="card-body">
           <form method="POST">
+            <?php echo csrf_field(); ?>
             <div class="row mb-3">
               <div class="col-md-6">
                 <label class="form-label" for="business_name">Business Name *</label>

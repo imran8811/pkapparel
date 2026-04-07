@@ -68,10 +68,10 @@
     <form class="col-lg-5 col-md-6 col-12" method="post" action="/reset-password?token=<?php echo htmlspecialchars($linkToken); ?>">
       <?php echo csrf_field(); ?>
       <div class="mb-4">
-        <input type="password" placeholder="Password" name="user_password" class="form-control" />
+        <input type="password" placeholder="Password" name="user_password" class="form-control" required minlength="8" maxlength="128" />
       </div>
       <div class="mb-4">
-        <input type="password" placeholder="Confirm Password" name="confirm_password" class="form-control" />
+        <input type="password" placeholder="Confirm Password" name="confirm_password" class="form-control" required minlength="8" maxlength="128" />
       </div>
       <div class="row mb-3">
         <div class="col-12 text-end">

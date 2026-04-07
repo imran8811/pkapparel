@@ -8,12 +8,12 @@
   use app\Controllers\AuthController;
   $authController = new AuthController();
 
-  $business_name  = isset($_POST['business_name'])? $_POST['business_name'] : '';
-  $business_type  = isset($_POST['business_type'])? $_POST['business_type'] : '';
-  $user_email     = isset($_POST['user_email'])? $_POST['user_email'] : '';
+  $business_name  = isset($_POST['business_name'])? trim($_POST['business_name']) : '';
+  $business_type  = isset($_POST['business_type'])? trim($_POST['business_type']) : '';
+  $user_email     = isset($_POST['user_email'])? trim(strtolower($_POST['user_email'])) : '';
   $user_password  = isset($_POST['user_password'])? $_POST['user_password'] : '';
-  $country_code   = isset($_POST['country_code'])? $_POST['country_code'] : '';
-  $contact_no     = isset($_POST['contact_no'])? $_POST['contact_no'] : '';
+  $country_code   = isset($_POST['country_code'])? trim($_POST['country_code']) : '';
+  $contact_no     = isset($_POST['contact_no'])? trim($_POST['contact_no']) : '';
 
   if(
     $_SERVER['REQUEST_METHOD'] === 'POST' &&
@@ -31,20 +31,30 @@
     !empty($contact_no)){
     if(!csrf_verify()){
       $signupError = 'Invalid form submission, please try again.';
-    } elseif(!filter_var($user_email, FILTER_VALIDATE_EMAIL)){
+    } elseif(strlen($business_name) < 2 || strlen($business_name) > 100 || !preg_match('/^[a-zA-Z0-9\s\.\-\&\']+$/', $business_name)){
+      $signupError = 'Business name must be 2-100 characters and contain only letters, numbers, spaces, dots, hyphens, or &.';
+    } elseif(!in_array($business_type, ['retailer', 'wholesaler'], true)){
+      $signupError = 'Please select a valid business type.';
+    } elseif(!filter_var($user_email, FILTER_VALIDATE_EMAIL) || !preg_match('/^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$/', $user_email)){
       $signupError = 'Please enter a valid email address.';
+    } elseif(!checkdnsrr(substr(strrchr($user_email, '@'), 1), 'MX')){
+      $signupError = 'Email domain does not appear to be valid.';
     } elseif(strlen($user_password) < 8 || !preg_match('/[A-Za-z]/', $user_password) || !preg_match('/[0-9]/', $user_password)){
       $signupError = 'Password must be at least 8 characters with letters and numbers.';
     } elseif($user_password !== ($_POST['confirm_password'] ?? '')){
       $signupError = 'Passwords do not match.';
+    } elseif(!preg_match('/^\+\d{1,4}$/', $country_code)){
+      $signupError = 'Invalid country code.';
+    } elseif(!preg_match('/^\d{6,15}$/', $contact_no)){
+      $signupError = 'Phone number must be 6-15 digits.';
     } else {
       $data = [
-      "business_name" => $business_name,
+      "business_name" => htmlspecialchars($business_name, ENT_QUOTES, 'UTF-8'),
       "business_type" => $business_type,
-      "user_email"    => $user_email,
+      "user_email"    => filter_var($user_email, FILTER_SANITIZE_EMAIL),
       "user_password" => $user_password,
       "country_code"  => $country_code,
-      "contact_no"    => $contact_no
+      "contact_no"    => preg_replace('/[^0-9]/', '', $contact_no)
     ];
     $userSignup = $authController->signup($data);
     if($userSignup['type'] === 'userDuplicate'){
@@ -75,7 +85,7 @@
       <?php echo csrf_field(); ?>
       <div class="mb-4">
         <label for="business-name">Business Name*</label>
-        <input type="text" id="business-name" name="business_name" class="form-control" />
+        <input type="text" id="business-name" name="business_name" class="form-control" required minlength="2" maxlength="100" pattern="[a-zA-Z0-9\s\.\-\&']+" />
         <?php
           if(isset($_POST['business_name']) && empty($_POST['business_name']))
             echo '<p class="text-danger text-small">Required</p>';
@@ -94,7 +104,7 @@
       </div>
       <div class="mb-4">
         <label for="user-email">Email*</label>
-        <input type="email" id="user-email" name="user_email" class="form-control" />
+        <input type="email" id="user-email" name="user_email" class="form-control" required maxlength="254" />
         <?php
           if(isset($_POST['user_email']) && empty($_POST['user_email']))
             echo '<p class="text-danger text-small">Required</p>';
@@ -102,7 +112,7 @@
       </div>
       <div class="mb-4">
         <label for="user-password">Password*</label>
-        <input type="password" id="user-password" name="user_password" class="form-control" />
+        <input type="password" id="user-password" name="user_password" class="form-control" required minlength="8" maxlength="128" />
         <?php
           if(isset($_POST['user_password']) && empty($_POST['user_password']))
             echo '<p class="text-danger text-small">Required</p>';
@@ -110,7 +120,7 @@
       </div>
       <div class="mb-4">
         <label for="confirm-password">Confirm Password*</label>
-        <input type="password" id="confirm-password" name="confirm_password" class="form-control" />
+        <input type="password" id="confirm-password" name="confirm_password" class="form-control" required minlength="8" maxlength="128" />
         <?php
           if(isset($_POST['confirm_password']) && empty($_POST['confirm_password']))
             echo '<p class="text-danger text-small">Required</p>';
@@ -119,7 +129,7 @@
       </div>
       <div class="mb-4 pb-4">
         <label for="contact-no">Phone Number*</label>
-        <input type="tel" id="contact-no" name="contact_no" class="form-control" />
+        <input type="tel" id="contact-no" name="contact_no" class="form-control" required pattern="\d{6,15}" />
         <input type="hidden" id="country-code" name="country_code" value="+92" />
         <?php
           if(isset($_POST['country_code']) && empty($_POST['country_code']))

@@ -53,7 +53,7 @@ document.querySelectorAll('[class*="shopCarousel"]').forEach(function(el){
 /* ============================================
    CART MANAGEMENT (server-side)
    ============================================ */
-var PIECES_PER_SET = 10;
+if(typeof PIECES_PER_SET === 'undefined') var PIECES_PER_SET = 10;
 
 /* ============================================
    ADD TO CART MODAL (listing pages)

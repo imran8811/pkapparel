@@ -83,6 +83,7 @@
   <div class="modal-dialog modal-dialog-centered modal-sm">
     <div class="modal-content">
       <form method="POST" action="/cart/add">
+        <?php echo csrf_field(); ?>
         <input type="hidden" name="article" id="modalArticle" />
         <input type="hidden" name="sizes" id="modalSizes" />
         <input type="hidden" name="price" id="modalPrice" />

@@ -74,17 +74,6 @@
         </div>
         <?php endif; ?>
 
-        <!-- Bundle Info -->
-        <div class="alert alert-info py-2 mb-3">
-          <i class="fas fa-box me-1"></i>
-          <strong>1 Set = 10 Pieces</strong> — 2 pcs each of sizes
-          <?php if(!empty($productDetails['p_sizes'])): ?>
-            <?php echo htmlspecialchars($productDetails['p_sizes']); ?>
-          <?php else: ?>
-            30, 32, 34, 36, 38
-          <?php endif; ?>
-        </div>
-
         <!-- Number of Sets -->
         <div class="mb-3">
           <label class="fw-bold mb-2" for="qty">Number of Sets:</label>
@@ -93,11 +82,12 @@
             <input type="number" id="qty" value="1" min="1" max="999" class="form-control text-center" style="width:70px;" />
             <button type="button" class="btn btn-outline-secondary btn-sm" id="qtyPlus">+</button>
           </div>
-          <small class="text-muted mt-1 d-block" id="qtyPiecesInfo">1 set = 10 pieces</small>
+          <small class="text-muted mt-1 d-block" id="qtyPiecesInfo">1 set = 2 pieces of each size</small>
         </div>
 
         <!-- Add to Cart -->
         <form method="POST" action="/cart/add" class="d-flex gap-2 mb-4" id="detailCartForm">
+          <?php echo csrf_field(); ?>
           <input type="hidden" name="article" value="<?php echo htmlspecialchars($productDetails['article_no']); ?>" />
           <input type="hidden" name="sizes" value="<?php echo htmlspecialchars($productDetails['p_sizes']); ?>" />
           <input type="hidden" name="price" value="<?php echo htmlspecialchars(round($productDetails['price_pkr'] / 320, 2)); ?>" />
@@ -173,4 +163,5 @@
   <?php endforeach; ?>
   </div>
 </div>
+<script>var PIECES_PER_SET = 2;</script>
 <?php include_once("app/views/shared/footer.php"); ?>

@@ -1,6 +1,7 @@
 <?php
   if(!isset($_SESSION)){ session_start(); }
   require_once("app/controllers/cart.controller.php");
+  require_once("app/csrf.php");
   use app\Controllers\CartController;
   $cartCtrl = new CartController();
 
@@ -68,6 +69,7 @@
                 <td>$<?php echo number_format($item['cart_amount'] / 320, 2); ?></td>
                 <td>
                   <form method="POST" action="/cart" class="d-flex align-items-center gap-1">
+                    <?php echo csrf_field(); ?>
                     <input type="hidden" name="action" value="update" />
                     <input type="hidden" name="cart_id" value="<?php echo $item['cart_id']; ?>" />
                     <button type="submit" name="quantity" value="<?php echo max(1, $sets - 1); ?>" class="btn btn-sm btn-outline-secondary">-</button>
@@ -79,6 +81,7 @@
                 <td class="fw-bold">$<?php echo number_format($subtotal / 320, 2); ?></td>
                 <td>
                   <form method="POST" action="/cart" class="d-inline">
+                    <?php echo csrf_field(); ?>
                     <input type="hidden" name="action" value="remove" />
                     <input type="hidden" name="cart_id" value="<?php echo $item['cart_id']; ?>" />
                     <button type="submit" class="btn btn-sm btn-outline-danger"><i class="fas fa-times"></i></button>
@@ -92,6 +95,7 @@
         <div class="d-flex justify-content-between mt-3">
           <a href="/" class="btn btn-outline-secondary"><i class="fas fa-arrow-left me-1"></i> Continue Shopping</a>
           <form method="POST" action="/cart" class="d-inline">
+            <?php echo csrf_field(); ?>
             <input type="hidden" name="action" value="clear" />
             <button type="submit" class="btn btn-outline-danger" onclick="return confirm('Clear all items from cart?')"><i class="fas fa-trash me-1"></i> Clear Cart</button>
           </form>

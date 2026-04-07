@@ -2,6 +2,7 @@
   if(!isset($_SESSION)){ session_start(); }
   require_once("app/controllers/order.controller.php");
   require_once("app/controllers/cart.controller.php");
+  require_once("app/csrf.php");
   use app\Controllers\OrderController;
   use app\Controllers\CartController;
   $orderCtrl = new OrderController();
@@ -25,7 +26,36 @@
   $piecesPerSet = 10;
 
   // Handle order submission via POST
+  $checkoutError = '';
   if($_SERVER['REQUEST_METHOD'] === 'POST' && $userId && count($cartItems) > 0){
+    if(!csrf_verify()){
+      $checkoutError = 'Invalid form submission, please try again.';
+    } else {
+    $shName    = trim($_POST['shFullName'] ?? '');
+    $shEmail   = trim(strtolower($_POST['shEmail'] ?? ''));
+    $shCode    = trim($_POST['shCountryCode'] ?? '');
+    $shPhone   = trim($_POST['shPhone'] ?? '');
+    $shAddress = trim($_POST['shAddress'] ?? '');
+    $shCity    = trim($_POST['shCity'] ?? '');
+    $shState   = trim($_POST['shState'] ?? '');
+    $shCountry = trim($_POST['shCountry'] ?? '');
+    $shNotes   = trim($_POST['shNotes'] ?? '');
+
+    if(empty($shName) || strlen($shName) < 2 || strlen($shName) > 100 || !preg_match('/^[a-zA-Z0-9\s\.\-\&\']+$/', $shName)){
+      $checkoutError = 'Please enter a valid full name (2-100 characters).';
+    } elseif(!filter_var($shEmail, FILTER_VALIDATE_EMAIL) || !preg_match('/^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$/', $shEmail)){
+      $checkoutError = 'Please enter a valid email address.';
+    } elseif(!preg_match('/^\+\d{1,4}$/', $shCode)){
+      $checkoutError = 'Invalid country code.';
+    } elseif(!preg_match('/^\d{6,15}$/', $shPhone)){
+      $checkoutError = 'Phone number must be 6-15 digits.';
+    } elseif(empty($shAddress) || strlen($shAddress) < 5 || strlen($shAddress) > 500){
+      $checkoutError = 'Please enter a valid address (5-500 characters).';
+    } elseif(empty($shCity) || strlen($shCity) < 2 || strlen($shCity) > 100){
+      $checkoutError = 'Please enter a valid city.';
+    } elseif(empty($shCountry) || strlen($shCountry) < 2 || strlen($shCountry) > 100){
+      $checkoutError = 'Please enter a valid country.';
+    } else {
     $total = 0;
     $totalPieces = 0;
     $orderItems = [];
@@ -52,14 +82,14 @@
       'user_id'         => $userId,
       'total'           => $total,
       'total_pieces'    => $totalPieces,
-      'shipping_name'   => trim($_POST['shFullName'] ?? ''),
-      'shipping_email'  => trim($_POST['shEmail'] ?? ''),
-      'shipping_phone'  => trim(($_POST['shCountryCode'] ?? '') . ($_POST['shPhone'] ?? '')),
-      'shipping_address'=> trim($_POST['shAddress'] ?? ''),
-      'shipping_city'   => trim($_POST['shCity'] ?? ''),
-      'shipping_state'  => trim($_POST['shState'] ?? ''),
-      'shipping_country'=> trim($_POST['shCountry'] ?? ''),
-      'shipping_notes'  => trim($_POST['shNotes'] ?? ''),
+      'shipping_name'   => htmlspecialchars($shName, ENT_QUOTES, 'UTF-8'),
+      'shipping_email'  => filter_var($shEmail, FILTER_SANITIZE_EMAIL),
+      'shipping_phone'  => htmlspecialchars($shCode . $shPhone, ENT_QUOTES, 'UTF-8'),
+      'shipping_address'=> htmlspecialchars($shAddress, ENT_QUOTES, 'UTF-8'),
+      'shipping_city'   => htmlspecialchars($shCity, ENT_QUOTES, 'UTF-8'),
+      'shipping_state'  => htmlspecialchars($shState, ENT_QUOTES, 'UTF-8'),
+      'shipping_country'=> htmlspecialchars($shCountry, ENT_QUOTES, 'UTF-8'),
+      'shipping_notes'  => htmlspecialchars($shNotes, ENT_QUOTES, 'UTF-8'),
       'status'          => 'pending',
     ];
 
@@ -69,6 +99,8 @@
       $_SESSION['last_order_number'] = $orderNumber;
       header('Location: /order-placed');
       exit;
+    }
+    }
     }
   }
 
@@ -103,55 +135,59 @@
         <div class="card mb-4">
           <div class="card-body">
             <h5 class="card-title mb-3">Shipping Information</h5>
+            <?php if(!empty($checkoutError)): ?>
+              <div class="alert alert-danger"><?php echo htmlspecialchars($checkoutError); ?></div>
+            <?php endif; ?>
             <form id="checkoutForm" method="POST" action="/checkout">
+              <?php echo csrf_field(); ?>
               <div class="row">
                 <div class="col-md-6 mb-3">
                   <label class="form-label" for="shFullName">Full Name *</label>
-                  <input type="text" class="form-control" id="shFullName" name="shFullName" value="<?php echo $prefillName; ?>" required />
+                  <input type="text" class="form-control" id="shFullName" name="shFullName" value="<?php echo $prefillName; ?>" required minlength="2" maxlength="100" />
                   <div class="invalid-feedback">Full name is required</div>
                 </div>
                 <div class="col-md-6 mb-3">
                   <label class="form-label" for="shEmail">Email *</label>
-                  <input type="email" class="form-control" id="shEmail" name="shEmail" value="<?php echo $prefillEmail; ?>" required />
+                  <input type="email" class="form-control" id="shEmail" name="shEmail" value="<?php echo $prefillEmail; ?>" required maxlength="254" />
                   <div class="invalid-feedback">Valid email is required</div>
                 </div>
               </div>
               <div class="row">
                 <div class="col-md-4 mb-3">
                   <label class="form-label" for="shCountryCode">Country Code *</label>
-                  <input type="text" class="form-control" id="shCountryCode" name="shCountryCode" placeholder="+92" value="<?php echo $prefillCode; ?>" required />
+                  <input type="text" class="form-control" id="shCountryCode" name="shCountryCode" placeholder="+92" value="<?php echo $prefillCode; ?>" required pattern="\+\d{1,4}" maxlength="5" />
                   <div class="invalid-feedback">Required</div>
                 </div>
                 <div class="col-md-8 mb-3">
                   <label class="form-label" for="shPhone">Phone *</label>
-                  <input type="tel" class="form-control" id="shPhone" name="shPhone" value="<?php echo $prefillPhone; ?>" required />
+                  <input type="tel" class="form-control" id="shPhone" name="shPhone" value="<?php echo $prefillPhone; ?>" required pattern="\d{6,15}" maxlength="15" />
                   <div class="invalid-feedback">Phone number is required</div>
                 </div>
               </div>
               <div class="mb-3">
                 <label class="form-label" for="shAddress">Address *</label>
-                <textarea class="form-control" id="shAddress" name="shAddress" rows="2" required></textarea>
-                <div class="invalid-feedback">Address is required</div>
+                <textarea class="form-control" id="shAddress" name="shAddress" rows="2" required minlength="5" maxlength="500"></textarea>
+                  <div class="invalid-feedback">Address is required</div>
               </div>
               <div class="row">
                 <div class="col-md-4 mb-3">
                   <label class="form-label" for="shCity">City *</label>
-                  <input type="text" class="form-control" id="shCity" name="shCity" required />
+                  <input type="text" class="form-control" id="shCity" name="shCity" required minlength="2" maxlength="100" />
                   <div class="invalid-feedback">City is required</div>
                 </div>
                 <div class="col-md-4 mb-3">
                   <label class="form-label" for="shState">State / Province</label>
-                  <input type="text" class="form-control" id="shState" name="shState" />
+                  <input type="text" class="form-control" id="shState" name="shState" maxlength="100" />
                 </div>
                 <div class="col-md-4 mb-3">
                   <label class="form-label" for="shCountry">Country *</label>
-                  <input type="text" class="form-control" id="shCountry" name="shCountry" required />
+                  <input type="text" class="form-control" id="shCountry" name="shCountry" required minlength="2" maxlength="100" />
                   <div class="invalid-feedback">Country is required</div>
                 </div>
               </div>
               <div class="mb-3">
                 <label class="form-label" for="shNotes">Order Notes (optional)</label>
-                <textarea class="form-control" id="shNotes" name="shNotes" rows="2" placeholder="Special instructions for your order"></textarea>
+                <textarea class="form-control" id="shNotes" name="shNotes" rows="2" placeholder="Special instructions for your order" maxlength="1000"></textarea>
               </div>
               <button type="submit" class="btn btn-primary w-100 btn-lg d-lg-none mt-2">
                 <i class="fas fa-check me-1"></i> Place Order

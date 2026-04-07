@@ -6,6 +6,7 @@
   }
   include_once __DIR__ ."/admin-header.php";
   require_once dirname(dirname(__DIR__)) . '/controllers/product.controller.php';
+  require_once dirname(dirname(dirname(__DIR__))) . '/app/csrf.php';
   use app\Controllers\ProductController;
   $productController = new ProductController();
   $latestArticleNo = $productController->getLatestArticleNo() + 1;
@@ -46,15 +47,20 @@
     "product_name"    => $product_name,
   ];
   if(isset($_GET['addProduct']) && !empty($_POST['price'])){
-    $addProduct = $productController->addProduct($data);
-    if($addProduct['type'] === 'success'){
-      $uploadImages = $productController->productImgUpload($article_no);
+    if(!csrf_verify()){
+      $addProductError = 'Invalid form submission, please try again.';
+    } else {
+      $addProduct = $productController->addProduct($data);
+      if($addProduct['type'] === 'success'){
+        $uploadImages = $productController->productImgUpload($article_no);
+      }
     }
   }
 ?>
 <div class="container-fluid mt-5 mb-5">
   <div class="row justify-content-center">
     <form action="/admin/add-product?addProduct=1" method="post" enctype="multipart/form-data">
+      <?php echo csrf_field(); ?>
       <div class="row mb-3">
         <?php
           if(isset($addProduct['message']))

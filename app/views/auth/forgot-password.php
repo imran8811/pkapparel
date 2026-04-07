@@ -5,7 +5,7 @@
   use app\Controllers\AuthController;
   $authController = new AuthController();
 
-  $user_email = isset($_POST['user_email'])? $_POST['user_email'] : '';
+  $user_email = isset($_POST['user_email'])? trim(strtolower($_POST['user_email'])) : '';
 
   if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($user_email) && !empty($user_email)){
     if(!csrf_verify()){
@@ -49,7 +49,7 @@
     <form class="col-lg-5 col-md-6 col-12" method="post" action="/forgot-password">
       <?php echo csrf_field(); ?>
       <div class="mb-4">
-        <input type="text" placeholder="Enter email" name="user_email" class="form-control" />
+        <input type="email" placeholder="Enter email" name="user_email" class="form-control" required maxlength="254" />
         <?php
           if(isset($_POST['user_email']) && empty($_POST['user_email']))
             echo '<p class="text-danger text-small">Required</p>';
