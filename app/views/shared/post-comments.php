@@ -10,7 +10,7 @@ $getPostComments = $postController->getPostComments($postID);
 <hr />
 <h3 class="mt-5 text-center h2">Users Comments</h3>
 <div class="row justify-content-between">
-  <div class="col-lg-6 col-md-7 col-12 user-comments mt-3 mb-3">
+  <div class="col-lg-6 col-md-6 col-12 user-comments mt-3 mb-3">
     <?php foreach($getPostComments as $postComment): ?>
       <div class="card mb-3">
         <div class="card-body">
@@ -24,7 +24,7 @@ $getPostComments = $postController->getPostComments($postID);
       </div>
     <?php endforeach; ?>
   </div>
-  <div class="col-lg-4 col-md-5 col-12 mt-3">
+  <div class="col-lg-6 col-md-6 col-12 mt-3">
     <form action="<?php echo htmlspecialchars($_SERVER['REQUEST_URI']); ?>" method="post">
       <?php echo csrf_field(); ?>
       <input type="hidden" name="_ts" value="<?php echo time(); ?>" />

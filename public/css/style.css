@@ -1021,13 +1021,21 @@ h3 { font-size: 1.4rem;}
 .post-table-wrap { background: #fff; border-radius: 12px; border: 1px solid #eee; overflow: hidden; margin-bottom: 15px; }
 .post-table-wrap .table { margin: 0; }
 .post-table-wrap thead { background: linear-gradient(135deg, #2d639e, #1a3f6f); }
-.post-table-wrap thead th { color: #fff !important; font-size: 13px; font-weight: 600; padding: 14px 12px; border: none; white-space: nowrap; text-align: center; }
+.post-table-wrap thead th { color: #000 !important; font-size: 13px; font-weight: 600; padding: 14px 12px; border: none; white-space: nowrap; text-align: center; }
 .post-table-wrap tbody td { padding: 12px; text-align: center; font-size: 14px; color: #444; vertical-align: middle; border-color: #f0f0f0; }
 .post-table-wrap tbody tr:hover { background: #f8f9fa; }
 .post-table-wrap tbody td:first-child { font-weight: 700; color: #333; text-align: left; }
 
 /* Post CTA */
 .post-cta { background: linear-gradient(135deg, #2d639e 0%, #1a3f6f 100%); border-radius: 16px; padding: 50px 40px; text-align: center; color: #fff; margin: 40px 0; }
+
+/* Post FAQ */
+.post-faq .faq-list { border-radius: 12px; overflow: hidden; border: 1px solid #e8eef5; }
+.post-faq .faq-item { border-bottom: 1px solid #e8eef5; }
+.post-faq .faq-item:last-child { border-bottom: none; }
+.post-faq .faq-question { font-weight: 600; font-size: 15px; color: #222; padding: 18px 22px; background: #f8fafd; cursor: default; }
+.post-faq .faq-question i { color: #2d639e; width: 20px; text-align: center; font-size: 14px; }
+.post-faq .faq-answer { padding: 0 22px 20px; font-size: 15px; color: #444; line-height: 1.75; background: #fff; }
 .post-cta h2 { font-size: 2rem; margin-bottom: 15px; color: #fff; }
 .post-cta p { font-size: 17px; color: rgba(255,255,255,0.92); max-width: 600px; margin: 0 auto 25px; line-height: 1.7; }
 .post-cta .btn-cta { display: inline-block; background: #fff; color: #2d639e; padding: 14px 35px; border-radius: 30px; font-weight: 700; font-size: 16px; transition: transform 0.2s, box-shadow 0.2s; }

@@ -42,6 +42,7 @@ document.querySelectorAll('[class*="shopCarousel"]').forEach(function(el){
       prevEl: el.querySelector('.swiper-button-prev'),
     },
     breakpoints: {
+      400:  { slidesPerView: 1 },
       576:  { slidesPerView: 2 },
       768:  { slidesPerView: 3 },
       992:  { slidesPerView: 4 },

@@ -71,9 +71,9 @@ define ('metaData', [
     "description" => ""
   ],
   "jeans-manufacturing-cost" => [
-    "title" => "Jeans Manufacturing Cost",
-    "keywords" => "t shirts factory manufacturer, hoodie making, jeans supplier",
-    "description" => "Good quality jeans manufacturing cost is between $3.5 to $5.2, depending on the material, sizes, styling and washing affects. Learn how material sourcing, production scale, and geographic location impact pricing."
+    "title" => "Jeans Manufacturing Cost — Complete Breakdown Per Pair (2026)",
+    "keywords" => "jeans manufacturing cost, cost to manufacture jeans, denim manufacturing cost, jeans production cost, cost of making jeans, jeans factory price",
+    "description" => "Jeans manufacturing cost ranges from $4.74 to $5.92 per pair. See the full cost breakdown including fabric, cutting, stitching, washing, packaging, and overheads at factory level."
   ],
   "jeans-pants-manufacturers" => [
     "title" => "Jeans Pants Manufacturers",
