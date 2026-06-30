@@ -13,7 +13,7 @@
           </li>
           <li class="clearfix mb-3">
             <span>Tel/Whatsapp: </span>
-            <span>(+92) 301 9062877</span>
+            <span>(+92) 300 8811310</span>
           </li>
           <li class="clearfix mb-2">
             <span>Email: </span>

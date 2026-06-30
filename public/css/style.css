@@ -901,11 +901,15 @@ h3 { font-size: 1.4rem;}
 }
 
 /* Cart Page */
-#cartTableBody img {
-  width: 60px;
-  height: 60px;
+.cart-table .cart-img-cell {
+  width: 80px;
+}
+.cart-table .cart-img-cell img {
+  width: 64px;
+  height: 64px;
   object-fit: cover;
   border-radius: 4px;
+  display: block;
 }
 .cart-qty-input {
   width: 60px;

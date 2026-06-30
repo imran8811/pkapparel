@@ -52,7 +52,7 @@
             <td><strong><?php echo htmlspecialchars($order['order_number']); ?></strong></td>
             <td><?php echo date('Y-m-d', strtotime($order['created_at'])); ?></td>
             <td><?php echo $totalSets; ?> set(s) / <?php echo $totalPieces; ?> pcs</td>
-            <td class="fw-bold">$<?php echo number_format($order['total'] / 320, 2); ?></td>
+            <td class="fw-bold">$<?php echo number_format($order['total'], 2); ?></td>
             <td>
               <span class="badge <?php
                 switch($order['status']){
@@ -120,15 +120,15 @@
                 <?php foreach($items as $item): ?>
                 <tr>
                   <td class="text-capitalize"><?php echo htmlspecialchars($item['product_name']); ?></td>
-                  <td><?php echo htmlspecialchars(str_replace(',', ', ', $item['sizes'])); ?></td>
+                  <td><?php echo htmlspecialchars(str_replace(',', ' - ', $item['sizes'])); ?></td>
                   <td><?php echo $item['sets']; ?></td>
                   <td><?php echo $item['pieces']; ?></td>
-                  <td>$<?php echo number_format(($item['price'] * $item['pieces']) / 320, 2); ?></td>
+                  <td>$<?php echo number_format($item['price'] * $item['pieces'], 2); ?></td>
                 </tr>
                 <?php endforeach; ?>
               </tbody>
             </table>
-            <div class="text-end fw-bold fs-5">Total: $<?php echo number_format($order['total'] / 320, 2); ?></div>
+            <div class="text-end fw-bold fs-5">Total: $<?php echo number_format($order['total'], 2); ?></div>
           </div>
         </div>
       </div>

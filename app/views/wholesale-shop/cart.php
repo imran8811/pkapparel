@@ -43,7 +43,7 @@
       <!-- Cart Items -->
       <div class="col-lg-8 mb-4">
         <div class="table-responsive">
-          <table class="table align-middle">
+          <table class="table align-middle cart-table">
             <thead class="table-light">
               <tr>
                 <th style="width:80px">Image</th>
@@ -63,10 +63,10 @@
                 $subtotal = (float)$item['cart_amount'] * $pieces;
               ?>
               <tr>
-                <td><img src="/uploads/<?php echo htmlspecialchars($item['article_no']); ?>/front.jpg" alt="<?php echo htmlspecialchars($item['product_name']); ?>" /></td>
+                <td class="cart-img-cell"><img src="/uploads/<?php echo htmlspecialchars($item['article_no']); ?>/front.jpg" alt="<?php echo htmlspecialchars($item['product_name']); ?>" /></td>
                 <td><a href="/wholesale-shop/<?php echo htmlspecialchars($item['dept']); ?>/<?php echo htmlspecialchars($item['category']); ?>/<?php echo htmlspecialchars($item['slug'] . '-' . $item['article_no']); ?>" class="text-capitalize"><?php echo htmlspecialchars($item['product_name']); ?></a></td>
-                <td><small><?php echo htmlspecialchars(str_replace(',', ', ', $item['cart_sizes'])); ?></small></td>
-                <td>$<?php echo number_format($item['cart_amount'] / 320, 2); ?></td>
+                <td><small><?php echo htmlspecialchars(str_replace(',', ' - ', $item['cart_sizes'])); ?></small></td>
+                <td>$<?php echo number_format($item['cart_amount'], 2); ?></td>
                 <td>
                   <form method="POST" action="/cart" class="d-flex align-items-center gap-1">
                     <?php echo csrf_field(); ?>
@@ -78,7 +78,7 @@
                   </form>
                 </td>
                 <td><?php echo $pieces; ?></td>
-                <td class="fw-bold">$<?php echo number_format($subtotal / 320, 2); ?></td>
+                <td class="fw-bold">$<?php echo number_format($subtotal, 2); ?></td>
                 <td>
                   <form method="POST" action="/cart" class="d-inline">
                     <?php echo csrf_field(); ?>
@@ -109,7 +109,7 @@
             <h5 class="card-title mb-3">Order Summary</h5>
             <div class="d-flex justify-content-between mb-2">
               <span>Subtotal (<?php echo $totalSets; ?> sets)</span>
-              <span>$<?php echo number_format($total / 320, 2); ?></span>
+              <span>$<?php echo number_format($total, 2); ?></span>
             </div>
             <div class="d-flex justify-content-between mb-2">
               <span>Shipping</span>
@@ -118,7 +118,7 @@
             <hr />
             <div class="d-flex justify-content-between fw-bold fs-5 mb-3">
               <span>Total</span>
-              <span class="text-danger">PKR <?php echo number_format($total); ?></span>
+              <span class="text-danger">$<?php echo number_format($total, 2); ?></span>
             </div>
             <a href="/checkout" class="btn btn-primary w-100 btn-lg"><i class="fas fa-lock me-1"></i> Proceed to Checkout</a>
           </div>

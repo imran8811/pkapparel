@@ -211,15 +211,15 @@
               <img src="/uploads/<?php echo htmlspecialchars($ci['article_no']); ?>/front.jpg" alt="<?php echo htmlspecialchars($ci['product_name']); ?>" />
               <div class="checkout-item-info">
                 <strong class="text-capitalize"><?php echo htmlspecialchars($ci['product_name']); ?></strong>
-                <small>Sizes: <?php echo htmlspecialchars(str_replace(',', ', ', $ci['cart_sizes'])); ?> | <?php echo $sets; ?> set(s) = <?php echo $pieces; ?> pcs</small>
+                <small>Sizes: <?php echo htmlspecialchars(str_replace(',', ' - ', $ci['cart_sizes'])); ?> | <?php echo $sets; ?> set(s) = <?php echo $pieces; ?> pcs</small>
               </div>
-              <span class="fw-bold">$<?php echo number_format($sub / 320, 2); ?></span>
+              <span class="fw-bold">$<?php echo number_format($sub, 2); ?></span>
             </div>
             <?php endforeach; ?>
             <hr />
             <div class="d-flex justify-content-between mb-2">
               <span>Subtotal</span>
-              <span>$<?php echo number_format($total / 320, 2); ?></span>
+              <span>$<?php echo number_format($total, 2); ?></span>
             </div>
             <div class="d-flex justify-content-between mb-2">
               <span>Shipping</span>
@@ -228,7 +228,7 @@
             <hr />
             <div class="d-flex justify-content-between fw-bold fs-5 mb-3">
               <span>Total</span>
-              <span class="text-danger">$<?php echo number_format($total / 320, 2); ?></span>
+              <span class="text-danger">$<?php echo number_format($total, 2); ?></span>
             </div>
             <button type="submit" form="checkoutForm" class="btn btn-primary w-100 btn-lg d-none d-lg-block">
               <i class="fas fa-check me-1"></i> Place Order
