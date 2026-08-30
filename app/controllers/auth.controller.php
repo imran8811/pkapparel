@@ -17,6 +17,20 @@ class AuthController extends Controller {
     $this->mail = new PHPMailer(true);
   }
 
+  private function configureMail($recipientEmail) {
+    $this->mail->clearAddresses();
+    $this->mail->isSMTP();
+    $this->mail->Host       = getenv('SMTP_HOST');
+    $this->mail->SMTPAuth   = true;
+    $this->mail->Username   = getenv('SMTP_USERNAME');
+    $this->mail->Password   = getenv('SMTP_PASSWORD');
+    $this->mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+    $this->mail->Port       = (int)getenv('SMTP_PORT');
+    $this->mail->setFrom(getenv('SMTP_FROM_EMAIL'), getenv('SMTP_FROM_NAME'));
+    $this->mail->addAddress($recipientEmail);
+    $this->mail->isHTML(true);
+  }
+
   public function signup($data) {
     $userSignup = $this->authModel->signup($data);
     if($userSignup && $userSignup !== 'userDuplicate'){
@@ -126,23 +140,7 @@ class AuthController extends Controller {
 
   private function signupEmail($recipientEmail, $businessName){
     try {
-      //Server settings
-      // $this->mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
-      $this->mail->isSMTP();                                            //Send using SMTP
-      $this->mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
-      $this->mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-      $this->mail->Username   = 'pkapparel2@gmail.com';                     //SMTP username
-      $this->mail->Password   = 'xysdlwmqurjidkom';                               //SMTP password
-      $this->mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
-      $this->mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
-
-      //Recipients
-      $this->mail->setFrom('pkapparel2@gmail.com', 'PK Apparel');
-      // $this->mail->addAddress('joe@example.net', 'Joe User');     //Add a recipient
-      $this->mail->addAddress($recipientEmail);               //Name is optional
-      // $this->mail->addReplyTo('info@example.com', 'Information');
-      // $this->mail->addCC('cc@example.com');
-      // $this->mail->addBCC('bcc@example.com');
+      $this->configureMail($recipientEmail);
 
       //Attachments
       // $this->mail->addAttachment('/var/tmp/file.tar.gz');         //Add attachments
@@ -232,7 +230,6 @@ class AuthController extends Controller {
       </html>';
 
       //Content
-      $this->mail->isHTML(true);                                  //Set email format to HTML
       $this->mail->Subject = 'Welcome to PK Apparel';
       $this->mail->Body    = $emailBody;
       $this->mail->AltBody = 'Welcome to PK Apparel';
@@ -247,27 +244,7 @@ class AuthController extends Controller {
 
   private function forgotPasswordEmail($recipientEmail, $token){
     try {
-      //Server settings
-      // $this->mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
-      $this->mail->isSMTP();                                            //Send using SMTP
-      $this->mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
-      $this->mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-      $this->mail->Username   = 'pkapparel2@gmail.com';                     //SMTP username
-      $this->mail->Password   = 'xysdlwmqurjidkom';                               //SMTP password
-      $this->mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
-      $this->mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
-
-      //Recipients
-      $this->mail->setFrom('pkapparel2@gmail.com', 'PK Apparel');
-      // $this->mail->addAddress('joe@example.net', 'Joe User');     //Add a recipient
-      $this->mail->addAddress($recipientEmail);               //Name is optional
-      // $this->mail->addReplyTo('info@example.com', 'Information');
-      // $this->mail->addCC('cc@example.com');
-      // $this->mail->addBCC('bcc@example.com');
-
-      //Attachments
-      // $this->mail->addAttachment('/var/tmp/file.tar.gz');         //Add attachments
-      // $this->mail->addAttachment('/tmp/image.jpg', 'new.jpg');    //Optional name
+      $this->configureMail($recipientEmail);
 
       $emailBody = '
       <!DOCTYPE html>
@@ -355,7 +332,6 @@ class AuthController extends Controller {
       </html>';
 
       //Content
-      $this->mail->isHTML(true);                                  //Set email format to HTML
       $this->mail->Subject = 'Password Reset - PK Apparel';
       $this->mail->Body    = $emailBody;
       $this->mail->AltBody = 'Password Reset - PK Apparel';
@@ -372,27 +348,7 @@ class AuthController extends Controller {
 
   private function resetPasswordEmail($recipientEmail){
     try {
-      //Server settings
-      // $this->mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
-      $this->mail->isSMTP();                                            //Send using SMTP
-      $this->mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
-      $this->mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-      $this->mail->Username   = 'pkapparel2@gmail.com';                     //SMTP username
-      $this->mail->Password   = 'xysdlwmqurjidkom';                               //SMTP password
-      $this->mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
-      $this->mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
-
-      //Recipients
-      $this->mail->setFrom('pkapparel2@gmail.com', 'PK Apparel');
-      // $this->mail->addAddress('joe@example.net', 'Joe User');     //Add a recipient
-      $this->mail->addAddress($recipientEmail);               //Name is optional
-      // $this->mail->addReplyTo('info@example.com', 'Information');
-      // $this->mail->addCC('cc@example.com');
-      // $this->mail->addBCC('bcc@example.com');
-
-      //Attachments
-      // $this->mail->addAttachment('/var/tmp/file.tar.gz');         //Add attachments
-      // $this->mail->addAttachment('/tmp/image.jpg', 'new.jpg');    //Optional name
+      $this->configureMail($recipientEmail);
 
       $emailBody = '
       <!DOCTYPE html>
@@ -481,7 +437,6 @@ class AuthController extends Controller {
       </html>';
 
       //Content
-      $this->mail->isHTML(true);                                  //Set email format to HTML
       $this->mail->Subject = 'Password Reset Successful - PK Apparel';
       $this->mail->Body    = $emailBody;
       $this->mail->AltBody = 'Password Reset Successful - PK Apparel';

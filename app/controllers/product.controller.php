@@ -156,4 +156,38 @@ class ProductController extends Controller
     $getSizeChart = $this->productModel->getSizeChart($dept, $category);
     return $getSizeChart? $getSizeChart : [];
   }
+
+  public function updateProduct($data, $article_no){
+    $updated = $this->productModel->updateProduct($data, $article_no);
+    if($updated){
+      return ['type' => 'success', 'message' => 'Product updated successfully'];
+    }
+    return ['type' => 'error', 'message' => 'Failed to update product'];
+  }
+
+  public function deleteProduct($p_id){
+    $deleted = $this->productModel->deleteProductById($p_id);
+    return $deleted;
+  }
+
+  public function duplicateProduct($article_no){
+    $new_article_no = $this->productModel->getLatestArticleNo() + 1;
+    $result = $this->productModel->duplicateProduct($article_no, $new_article_no);
+    if($result){
+      // Copy upload folder
+      $srcDir = dirname(dirname(__DIR__)) . "/uploads/" . $article_no;
+      $destDir = dirname(dirname(__DIR__)) . "/uploads/" . $new_article_no;
+      if(is_dir($srcDir)){
+        mkdir($destDir, 0777, true);
+        $files = scandir($srcDir);
+        foreach($files as $file){
+          if($file !== '.' && $file !== '..'){
+            copy($srcDir . '/' . $file, $destDir . '/' . $file);
+          }
+        }
+      }
+      return ['type' => 'success', 'message' => 'Product duplicated successfully', 'new_article_no' => $new_article_no];
+    }
+    return ['type' => 'error', 'message' => 'Failed to duplicate product'];
+  }
 }
